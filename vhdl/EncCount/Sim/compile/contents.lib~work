@@ -1,0 +1,5 @@
+7
+~E 1 "./../../blink.vhd" 7 blink
+~A 1 "./../../blink.vhd" 11 behavior
+~E 1 "./../../decoder.vhd" 4 decoder
+~E 1 "./../../i2c.vhd" 4 i2c_slave

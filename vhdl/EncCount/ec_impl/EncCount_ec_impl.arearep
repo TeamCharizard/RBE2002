@@ -1,0 +1,108 @@
+----------------------------------------------------------------------
+Report for cell i2c_slave.TECH
+Register bits:  82 of 322 (25.466%)
+I/O cells:      8
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                 BB         1          100.0
+                              CCU2D        19          100.0
+                            FD1P3AX        14          100.0
+                            FD1P3JX         1          100.0
+                            FD1S3AX        46          100.0
+                            FD1S3IX        21          100.0
+                                GSR         1          100.0
+                                 IB         5          100.0
+                               LUT4       107          100.0
+                                 OB         2          100.0
+                               OSCH         1          100.0
+                              PFUMX        10          100.0
+SUB MODULES
+                            decoder         1
+                         decoder_U5         1
+                          filter(4)         1
+                       filter(4)_U0         1
+                       filter(4)_U1         1
+                       filter(4)_U2         1
+                       filter(4)_U3         1
+                       filter(4)_U4         1
+                              TOTAL       236
+----------------------------------------------------------------------
+Report for cell decoder_U5.v1
+Instance Path : dec1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         5           26.3
+                            FD1P3AX         2           14.3
+                            FD1S3AX        16           34.8
+                               LUT4         4            3.7
+SUB MODULES
+                       filter(4)_U1         1
+                       filter(4)_U2         1
+                              TOTAL        29
+----------------------------------------------------------------------
+Report for cell filter(4)_U1.v1
+Instance Path : dec1.B_filter
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         1            7.1
+                            FD1S3AX         3            6.5
+                               LUT4         1            0.9
+                              TOTAL         5
+----------------------------------------------------------------------
+Report for cell filter(4)_U2.v1
+Instance Path : dec1.A_filter
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         1            7.1
+                            FD1S3AX         3            6.5
+                               LUT4         1            0.9
+                              TOTAL         5
+----------------------------------------------------------------------
+Report for cell filter(4)_U4.v1
+Instance Path : scl_filter
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         1            7.1
+                            FD1S3AX         3            6.5
+                               LUT4         1            0.9
+                              TOTAL         5
+----------------------------------------------------------------------
+Report for cell decoder.v1
+Instance Path : dec2
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         5           26.3
+                            FD1P3AX         2           14.3
+                            FD1S3AX        16           34.8
+                               LUT4         5            4.7
+SUB MODULES
+                          filter(4)         1
+                       filter(4)_U0         1
+                              TOTAL        30
+----------------------------------------------------------------------
+Report for cell filter(4).v1
+Instance Path : dec2.B_filter
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         1            7.1
+                            FD1S3AX         3            6.5
+                               LUT4         1            0.9
+                              TOTAL         5
+----------------------------------------------------------------------
+Report for cell filter(4)_U0.v1
+Instance Path : dec2.A_filter
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         1            7.1
+                            FD1S3AX         3            6.5
+                               LUT4         1            0.9
+                              TOTAL         5
+----------------------------------------------------------------------
+Report for cell filter(4)_U3.v1
+Instance Path : sda_filter
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         1            7.1
+                            FD1S3AX         3            6.5
+                               LUT4         1            0.9
+                              TOTAL         5

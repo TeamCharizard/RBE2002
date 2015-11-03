@@ -1,0 +1,16 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Mon Nov 02 14:44:52 2015 *
+NOTE DESIGN NAME: i2c_slave *
+NOTE DEVICE NAME: LCMXO2-256HC-6QFN32 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS scl : 28 : in *
+NOTE PINS sda_x : 12 : out *
+NOTE PINS scl_x : 11 : out *
+NOTE PINS enc1a : 23 : in *
+NOTE PINS sda : 27 : inout *
+NOTE PINS enc1b : 25 : in *
+NOTE PINS enc2a : 20 : in *
+NOTE PINS enc2b : 21 : in *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: on *

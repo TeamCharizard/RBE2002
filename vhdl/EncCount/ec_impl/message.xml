@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliMessageLog>
+    <Task name="Lattice_Synthesis">
+        <Message>
+            <ID>35002000</ID>
+            <Severity>Info</Severity>
+        </Message>
+        <Message>
+            <ID>35921504</ID>
+            <Severity>Info</Severity>
+            <Dynamic></Dynamic>
+            <Dynamic>C:/Users/Joseph Martin/EncCount/ec_impl</Dynamic>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/joseph martin/enccount/filter.vhd(4): </Dynamic>
+            <Dynamic>filter</Dynamic>
+            <Navigation>c:/users/joseph martin/enccount/filter.vhd</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/joseph martin/enccount/filter.vhd(11): </Dynamic>
+            <Dynamic>arch</Dynamic>
+            <Navigation>c:/users/joseph martin/enccount/filter.vhd</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/joseph martin/enccount/decoder.vhd(5): </Dynamic>
+            <Dynamic>decoder</Dynamic>
+            <Navigation>c:/users/joseph martin/enccount/decoder.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/joseph martin/enccount/decoder.vhd(9): </Dynamic>
+            <Dynamic>arch</Dynamic>
+            <Navigation>c:/users/joseph martin/enccount/decoder.vhd</Navigation>
+            <Navigation>9</Navigation>
+        </Message>
+        <Message>
+            <ID>35921012</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/joseph martin/enccount/i2c.vhd(5): </Dynamic>
+            <Dynamic>i2c_slave</Dynamic>
+            <Navigation>c:/users/joseph martin/enccount/i2c.vhd</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35921010</ID>
+            <Severity>Info</Severity>
+            <Dynamic>c:/users/joseph martin/enccount/i2c.vhd(16): </Dynamic>
+            <Dynamic>arch</Dynamic>
+            <Navigation>c:/users/joseph martin/enccount/i2c.vhd</Navigation>
+            <Navigation>16</Navigation>
+        </Message>
+        <Message>
+            <ID>35921205</ID>
+            <Severity>Warning</Severity>
+            <Dynamic>c:/users/joseph martin/enccount/i2c.vhd(14): </Dynamic>
+            <Dynamic>i2c_slave</Dynamic>
+            <Dynamic>arch</Dynamic>
+            <Navigation>c:/users/joseph martin/enccount/i2c.vhd</Navigation>
+            <Navigation>14</Navigation>
+        </Message>
+        <Message>
+            <ID>35001611</ID>
+            <Severity>Warning</Severity>
+        </Message>
+    </Task>
+</BaliMessageLog>

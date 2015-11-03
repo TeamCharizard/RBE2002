@@ -1,0 +1,7 @@
+#Start recording tcl command: 10/21/2015 15:39:56
+#Project Location: C:/Users/Joseph Martin/EncCount; Project name: EncCount
+prj_project open "C:/Users/Joseph Martin/EncCount/EncCount.ldf"
+pgr_project open "C:/Users/Joseph Martin/EncCount/ec_impl/ec_impl.xcf"
+pgr_program run
+prj_project close
+#Stop recording: 10/21/2015 15:43:03

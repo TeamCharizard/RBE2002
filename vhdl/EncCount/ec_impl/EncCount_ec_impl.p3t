@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "EncCount_ec_impl.log"
+-o "EncCount_ec_impl.csv"
+-pr "EncCount_ec_impl.prf"

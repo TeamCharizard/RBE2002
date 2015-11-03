@@ -1,0 +1,1 @@
+-w -s "C:\Users\Joseph Martin\EncCount\Sim\library.cfg"  -j "C:\Users\Joseph Martin\EncCount\Sim\projlib.cfg"  -d "C:\Users\Joseph Martin\EncCount\Sim\compile"   -work work  -dbg -e 100 "C:/Users/Joseph Martin/EncCount/decoder.vhd"
