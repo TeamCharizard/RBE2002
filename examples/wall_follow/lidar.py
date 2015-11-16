@@ -1,7 +1,11 @@
+import time
 import mraa
 
+millis = lambda: int(round(time.time() * 1000))
+
+
 class Lidar(object):
-    'class to represent vx-11 lidar'
+    '''class to represent vx-11 lidar'''
 
     distances = [0] * 360
     packet = [0] * 22
@@ -21,7 +25,6 @@ class Lidar(object):
         if self.uart.dataAvailable():
             byte = self.uart.read(1)
             byte = int(ord(byte))
-            print byte
 
             if self.startReading:
                 if self.packetIndex == 21:
@@ -62,7 +65,6 @@ class Lidar(object):
                                 d = 0
 
                             # finally, store valid data
-                            print d
                             self.distances[self.distanceIndex] = d
 
                 else:

@@ -11,4 +11,8 @@ if __name__ == "__main__":
   t0 = millis()
   while True:
     # get the wall distances
-    lidar.read()
+    fullSweep = lidar.read()
+    if fullSweep:
+      d = lidar.getLatestDistances()
+      print d[0]
+

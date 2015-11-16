@@ -2,7 +2,7 @@ import mraa
 import math
 from time import sleep
 
-head = mraa.Pwm(3)
+head = mraa.Pwm(9)
 head.period_ms(20)
 head.pulsewidth_ms(1)
 head.enable(True)
