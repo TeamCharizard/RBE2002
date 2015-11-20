@@ -3,7 +3,7 @@ from time import sleep
 
 class Fan:
 
-  def __init__(self, port=9):
+  def __init__(self, port=3):
     self.port = port
     self.motor = mraa.Pwm(self.port)
     self.motor.period_ms(20)
@@ -17,7 +17,7 @@ class Fan:
     self.motor.pulsewidth_ms(1)
 
   def spin(self):
-    self.motor.pulsewidth_ms(2)
+    self.motor.pulsewidth_us(1800)
 
   def set(self, speed):
     '''speed from 0 to 100'''
