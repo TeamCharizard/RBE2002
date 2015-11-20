@@ -17,27 +17,31 @@ class Lidar(object):
         self.ser = serial.Serial(port, 115200)
 
     def read(self):
-        if self.ser.inWaiting() > 0:
-            byte = self.ser.read()
-            byte = int(ord(byte))
+        waiting = self.ser.inWaiting()
+        if waiting > 0:
+            data = self.ser.read(waiting)
 
-            if self.startReading:
-                if self.packetIndex == 21:
-                    self.startReading = False
-                    self.processEndOfPacket()
-                    # let the calling function know we're done
-                    return self.distanceIndex >= 359
-                else:
-                    self.packet[self.packetIndex] = byte
-                    self.packetIndex += 1
-                    return False
+            for byte in data:
+              byte = int(ord(byte))
+              print byte
 
-            if not self.startReading and byte == 0xFA:
-                self.startReading = True
-                self.packetIndex = 0
-                self.packet[self.packetIndex] = byte
-                self.packetIndex += 1
-                return False
+              if self.startReading:
+                  if self.packetIndex == 21:
+                      self.startReading = False
+                      self.processEndOfPacket()
+                      # let the calling function know we're done
+                      return self.distanceIndex >= 359
+                  else:
+                      self.packet[self.packetIndex] = byte
+                      self.packetIndex += 1
+                      return False
+
+              if not self.startReading and byte == 0xFA:
+                  self.startReading = True
+                  self.packetIndex = 0
+                  self.packet[self.packetIndex] = byte
+                  self.packetIndex += 1
+                  return False
 
     def processEndOfPacket(self):
         newPacketNumber = self.packet[1]
