@@ -1,3 +1,5 @@
+#pragma once
+
 #include "mraa.hpp"
 
 typedef char BYTE;

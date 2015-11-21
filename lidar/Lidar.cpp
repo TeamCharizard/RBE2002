@@ -1,4 +1,4 @@
-#include "lidar.hpp"
+#include "Lidar.hpp"
 #include "stdio.h"
 #include "iostream"
 
@@ -70,7 +70,6 @@ void Lidar::processEndOfPacket(){
             }
 
             distances[distanceIndex] = d;
-            printf("%d, %d\n", distanceIndex, d);
           }
         }
       }
@@ -88,9 +87,3 @@ bool Lidar::isDataIndex(int index){
   return index == 4 || index == 8 || index == 12 || index == 16;
 }
 
-int main(int argc, char **argv){
-  Lidar lidar;
-  while (true) {
-    lidar.read();
-  }
-}
