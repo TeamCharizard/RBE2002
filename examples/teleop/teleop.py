@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from motor import DriveMotor
 import curses
 from lidar import Lidar
@@ -35,10 +37,6 @@ def main(stdscr):
         r.set(0)
     else:
       fullSweep = lidar.read()
-      if fullSweep:
-        ds = lidar.getLatestDistances()
-        print ds[0]
-        stdscr.refresh()
 
 if __name__ == "__main__":
   curses.wrapper(main)
