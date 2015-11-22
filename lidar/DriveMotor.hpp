@@ -8,6 +8,7 @@ class DriveMotor {
 
   public:
     DriveMotor(int port);
+    ~DriveMotor();
     void set(int speed);
 
 };

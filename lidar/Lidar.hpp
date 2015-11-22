@@ -6,18 +6,10 @@ typedef char BYTE;
 
 class Lidar {
 
-  int distances[360];
-  int packet[22];
-
-  bool startReading;
-
-  int packetNumber,
-      packetIndex,
-      distanceIndex;
-
-  mraa::Uart dev;
 
   public:
+    int distances[360];
+
     Lidar();
 
     bool read();
@@ -25,5 +17,16 @@ class Lidar {
     void processEndOfPacket();
 
     bool isDataIndex(int index);
+
+  private:
+    int packet[22];
+
+    bool startReading;
+
+    int packetNumber,
+        packetIndex,
+        distanceIndex;
+
+    mraa::Uart dev;
 
 };
