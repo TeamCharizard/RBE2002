@@ -2,10 +2,7 @@
 
 #include "mraa.hpp"
 
-typedef char BYTE;
-
 class Lidar {
-
 
   public:
     int distances[360];
@@ -19,7 +16,7 @@ class Lidar {
     bool isDataIndex(int index);
 
   private:
-    int packet[22];
+    char packet[22];
 
     bool startReading;
 

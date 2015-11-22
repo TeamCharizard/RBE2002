@@ -22,9 +22,6 @@ Lidar::Lidar() try : dev(0),
     std::cout << "Error initialize uart" << std::endl;
     std::terminate();
 
-    for (int i=0; i < 360; i++){
-      distances[i] = -1;
-    }
 }
 
 bool Lidar::read(){
@@ -67,9 +64,9 @@ void Lidar::processEndOfPacket(){
             distances[distanceIndex] = -1;
           }
           else {
-            int d = packet[i] | ((packet[i+1] & (char)0x3f) << 8);
+            int d = (unsigned char)packet[i] | (packet[i+1] << 8);
 
-            if (d < 0 || d > 6000){
+            if (d <= 0 || d > 6000){
               d = -1;
             }
 
