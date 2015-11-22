@@ -17,34 +17,51 @@ void my_handler(int s){
 
 void avoidInFront(int distance){
   if (distance < 600 && distance > 0){
-    left.set(50);
-    right.set(50);
+    left.set(100);
+    right.set(100);
   }
   else {
-    left.set(-50);
-    right.set(50);
+    left.set(-100);
+    right.set(100);
   }
 }
 
 void avoidAllAround(int d0, int dLeft, int dRight){
-  int min = 300;
-  printf("%d, %d, %d\n", dLeft, d0, dRight);
+  int min = 500;
   if (d0 < min && d0 > 0){
-    left.set(50);
-    right.set(50);
+    left.set(100);
+    right.set(100);
   }
   else if (dRight < min && dRight > 0){
-    left.set(-50);
-    right.set(50);
+    left.set(-100);
+    right.set(-100);
   }
   else if (dLeft < min && dLeft > 0){
-    left.set(50);
-    right.set(-50);
+    left.set(100);
+    right.set(100);
   }
   else {
-    left.set(-50);
-    right.set(50);
+    left.set(-100);
+    right.set(100);
   }
+}
+
+int mod(int a, int b)
+{
+  int r = a % b;
+  return r < 0 ? r + b : r;
+}
+
+int surroundingAvg(int *arr, int len, int i){
+  int s = 30;
+  int min = mod((i - s), len);
+  int max = mod((i + s), len);
+  int sum=0;
+  for (int j=min; j!=max; j = (j+1)%len){
+    sum += arr[j];
+  }
+  int avg = sum/(s * 2);
+  return avg;
 }
 
 int main(int argc, char **argv){
@@ -63,13 +80,12 @@ int main(int argc, char **argv){
 
     if (fullSweep){
       distances = lidar.distances;
-      int c=0;
-      for (int i=0;i<360;i++){
-        if (distances[i] == -1) {
-          c++;
-        }
-      }
-      //avoidAllAround(distances[0], distances[90], distances[270]);
+
+      int d0 = surroundingAvg(distances, 360, 0);
+      int dLeft = surroundingAvg(distances, 360, 90);
+      int dRight = surroundingAvg(distances, 360, 270);
+
+      avoidAllAround(d0, dLeft, dRight);
 
       //avoidInFront(distances[0]);
 
