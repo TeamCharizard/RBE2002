@@ -3,6 +3,7 @@
 #include "DriveMotor.hpp"
 #include <signal.h>
 #include <stdio.h>
+#include <cmath>
 
 Lidar lidar;
 DriveMotor left(6);
@@ -10,18 +11,19 @@ DriveMotor right(5);
 
 void turnToFace(int angle){
   //turn so that angle will become zero
-  int power = -1;
-  if (angle > 180){
-    power = 100*(360-angle)/180;
-    left.set(-power);
-    right.set(-power);
+  int power = 25;
+  if (std::abs(angle < 10)){
+    left.set(0);
+    right.set(0);
   }
-  else {
-    power = 100*angle/180;
+  if (angle > 180){
     left.set(power);
     right.set(power);
   }
-  printf("power = %d\n",power);
+  else {
+    left.set(-power);
+    right.set(-power);
+  }
 }
 
 void my_handler(int s){

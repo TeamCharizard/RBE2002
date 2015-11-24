@@ -7,7 +7,7 @@ CandleDetector::CandleDetector(){}
 int CandleDetector::detect(int radii[]){
   int lastRadius,
       dRadius = 0,
-      widthBetweenSpikes = 0,
+      aBetweenSpikes = 0,
       lastSpikeA = 0;
 
   //in the event that we are facing the candle...
@@ -32,9 +32,15 @@ int CandleDetector::detect(int radii[]){
       }
       //spikes on the falling edge
       if (dRadius < -MIN_SPIKE && dRadius > -MAX_SPIKE){
-        widthBetweenSpikes = std::abs(lastSpikeA - a);
-        if (std::abs(widthBetweenSpikes - WIDTH) < WIDTH_TOLERANCE){
-          return angle + widthBetweenSpikes/2;
+        //calculate the distance between the points
+        aBetweenSpikes = std::abs(lastSpikeA - a);
+        int c = sqrt(radius*radius + lastRadius*lastRadius -
+            2*radius*lastRadius*cos(aBetweenSpikes));
+        printf("%d\n",c);
+
+
+        if (std::abs(c - WIDTH) < WIDTH_TOLERANCE){
+          return angle + aBetweenSpikes/2;
         }
       }
       lastRadius = radius;

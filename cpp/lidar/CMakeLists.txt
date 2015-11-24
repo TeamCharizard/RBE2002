@@ -3,7 +3,7 @@ project(lidar)
 file(GLOB_RECURSE shared shared/*.cpp)
 file(GLOB_RECURSE main main/*.cpp)
 
-set(tests point)
+set(tests point teleop)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11")
 
@@ -18,3 +18,4 @@ foreach(test ${tests})
   target_link_libraries(TEST_${test} mraa gsl gslcblas)
 endforeach()
 
+target_link_libraries(TEST_teleop ncurses)

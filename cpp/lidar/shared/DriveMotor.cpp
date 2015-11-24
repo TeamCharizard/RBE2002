@@ -1,4 +1,3 @@
-
 #include "DriveMotor.hpp"
 #include "stdio.h"
 
@@ -6,7 +5,7 @@ DriveMotor::DriveMotor(int port) :
   pwm(port) {
   pwm.period_ms(20);
   pwm.pulsewidth_us(1350);
-//  pwm.enable(true);
+  pwm.enable(true);
 }
 
 DriveMotor::~DriveMotor(){
