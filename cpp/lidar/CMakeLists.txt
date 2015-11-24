@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.7)
+project(lidar)
+file(GLOB_RECURSE sources lidar/*.cpp)
+message(${sources})
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11")
+add_executable(${PROJECT_NAME} ${sources})
+target_link_libraries(${PROJECT_NAME} mraa gsl gslcblas)

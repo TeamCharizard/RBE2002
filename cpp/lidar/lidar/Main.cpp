@@ -1,5 +1,8 @@
 #include "Lidar.hpp"
+#include "Ransac.hpp"
+#include "CandleDetector.hpp"
 #include "DriveMotor.hpp"
+#include <math.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -46,8 +49,7 @@ void avoidAllAround(int d0, int dLeft, int dRight){
   }
 }
 
-int mod(int a, int b)
-{
+int mod(int a, int b){
   int r = a % b;
   return r < 0 ? r + b : r;
 }
@@ -65,7 +67,6 @@ int surroundingAvg(int *arr, int len, int i){
 }
 
 int main(int argc, char **argv){
-
   struct sigaction sigIntHandler;
 
   sigIntHandler.sa_handler = my_handler;
@@ -75,21 +76,25 @@ int main(int argc, char **argv){
   sigaction(SIGINT, &sigIntHandler, NULL);
 
   int *distances;
+  Ransac r;
+  CandleDetector cd;
+
   while (true) {
     bool fullSweep = lidar.read();
 
     if (fullSweep){
       distances = lidar.distances;
 
-      int d0 = surroundingAvg(distances, 360, 0);
-      int dLeft = surroundingAvg(distances, 360, 90);
-      int dRight = surroundingAvg(distances, 360, 270);
+      cd.detect(distances);
 
-      avoidAllAround(d0, dLeft, dRight);
-
-      //avoidInFront(distances[0]);
-
+      //double xs[360];
+      //double ys[360];
+      //for (int i=0; i < 360; i++){
+      //  double rad = i * 3.1419265358979323 / 180;
+      //  xs[i] = cos(rad) * distances[i];
+      //  ys[i] = sin(rad) * distances[i];
+      //}
+      //r.run(xs,ys);
     }
-
   }
 }
