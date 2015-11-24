@@ -84,7 +84,6 @@ int main(int argc, char **argv){
       distances = lidar.distances;
 
       int candleLocation = cd.detect(distances);
-      printf("LOCATION = %d\n", candleLocation);
     }
   }
 }
