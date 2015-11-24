@@ -1,5 +1,4 @@
 #include "Lidar.hpp"
-#include "Ransac.hpp"
 #include "CandleDetector.hpp"
 #include "DriveMotor.hpp"
 #include <math.h>
@@ -76,7 +75,6 @@ int main(int argc, char **argv){
   sigaction(SIGINT, &sigIntHandler, NULL);
 
   int *distances;
-  Ransac r;
   CandleDetector cd;
 
   while (true) {
@@ -85,16 +83,8 @@ int main(int argc, char **argv){
     if (fullSweep){
       distances = lidar.distances;
 
-      cd.detect(distances);
-
-      //double xs[360];
-      //double ys[360];
-      //for (int i=0; i < 360; i++){
-      //  double rad = i * 3.1419265358979323 / 180;
-      //  xs[i] = cos(rad) * distances[i];
-      //  ys[i] = sin(rad) * distances[i];
-      //}
-      //r.run(xs,ys);
+      int candleLocation = cd.detect(distances);
+      printf("LOCATION = %d\n", candleLocation);
     }
   }
 }
