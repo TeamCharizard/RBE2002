@@ -29,23 +29,27 @@ void avoidInFront(int distance){
 }
 
 void avoidAllAround(int d0, int dLeft, int dRight){
-  int min = 500;
+  int min = 300;
   if (d0 < min && d0 > 0){
     left.set(100);
     right.set(100);
   }
   else if (dRight < min && dRight > 0){
-    left.set(-100);
-    right.set(-100);
-  }
-  else if (dLeft < min && dLeft > 0){
     left.set(100);
     right.set(100);
+  }
+  else if (dLeft < min && dLeft > 0){
+    left.set(-100);
+    right.set(-100);
   }
   else {
     left.set(-100);
     right.set(100);
   }
+}
+
+int wallFollow(int front, int back){
+
 }
 
 int mod(int a, int b){
@@ -78,12 +82,18 @@ int main(int argc, char **argv){
   CandleDetector cd;
 
   while (true) {
+
     bool fullSweep = lidar.read();
 
     if (fullSweep){
       distances = lidar.distances;
+      avoidInFront(distances[0]);
 
       int candleLocation = cd.detect(distances);
+      if (candleLocation != 0){
+        break;
+      }
     }
   }
+  printf("CANDLE FOUND!\n");
 }

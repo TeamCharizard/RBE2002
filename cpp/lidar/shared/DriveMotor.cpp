@@ -15,6 +15,17 @@ DriveMotor::~DriveMotor(){
 
 // for -100 to 100
 void DriveMotor::set(int speed){
+  if (speed > 5){
+    speed = 20 + speed;
+  }
   int pulsewidth = speed * 3.5 + 1350;
+
+  if (pulsewidth > 2000){
+    pulsewidth = 2000;
+  }
+
+  if (pulsewidth < 1000){
+    pulsewidth = 1000;
+  }
   pwm.pulsewidth_us(pulsewidth);
 }

@@ -11,16 +11,19 @@ DriveMotor right(5);
 
 void turnToFace(int angle){
   //turn so that angle will become zero
-  int power = 25;
+  int power = 0;
+  double kP = .5;
   if (std::abs(angle < 10)){
     left.set(0);
     right.set(0);
   }
-  if (angle > 180){
+  else if (angle > 180){
+    power = (360-angle)*kP;
     left.set(power);
     right.set(power);
   }
   else {
+    power = (360-angle)*kP;
     left.set(-power);
     right.set(-power);
   }
@@ -51,7 +54,6 @@ int main(int argc, char **argv){
       distances = lidar.distances;
 
       int candleLocation = cd.detect(distances);
-      printf("LOCATION = %d\n", candleLocation);
 
       //turn to face that angle
       turnToFace(candleLocation);

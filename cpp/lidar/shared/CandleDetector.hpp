@@ -12,9 +12,9 @@ class CandleDetector{
     int detect(int radii[]);
 
   private:
-    const static int WIDTH = 100,
-          WIDTH_TOLERANCE = 30,
-          MIN_SPIKE = 300,
-          MAX_SPIKE = 450;
+    const static int WIDTH = 120,
+          WIDTH_TOLERANCE = 60,
+          MIN_SPIKE = 200,
+          MAX_SPIKE = 1000;
 
 };
