@@ -28,6 +28,14 @@ Vec<float> Odom::update() {
     return pos;
 }
 
+Vec<float> Odom::updateDifferential() {
+    left_disp = enc1.read(true);
+    right_disp = enc2.read(true);
+
+    (right_disp - left_disp)/2.0;
+    (left_disp + right_disp)/2.0;
+}
+
 int main(int argc, char** argv) {
     Odom odom(11, 8, 4, 2);
     while(true) {

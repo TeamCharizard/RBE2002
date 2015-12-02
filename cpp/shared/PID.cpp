@@ -1,6 +1,6 @@
 #include "pwm.hpp"
 
-Pid::Pid(double  kP, double  kI, double  kD){
+Pid::Pid(double  kP, double  kI, double  kD, unsigned long controTime){
   this -> kP = kP;
   this -> kI = kI;
   this -> kD = kD;
@@ -17,6 +17,6 @@ Pid::run(double value){
   double error = setPoint - value;
   iTerm += (error * kI);
   double output = (kP * error) + iTerm +(kD * (error - lastError ));
-    lastError = error;
-    return output;
+  lastError = error;
+  return output;
 }
