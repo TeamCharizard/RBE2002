@@ -87,6 +87,7 @@ int main(int argc, char **argv){
 
     if (fullSweep){
       distances = lidar.distances;
+      printf("d0=%d\n",distances[0]);
       avoidInFront(distances[0]);
 
       int candleLocation = cd.detect(distances);
