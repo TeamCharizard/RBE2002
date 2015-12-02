@@ -1,6 +1,6 @@
 #pragma once
 
-Class Pid{
+class PID{
  private
   double kP;
   double kI;
@@ -10,7 +10,7 @@ Class Pid{
   double iTerm;
 
 public
-  void  Pid::Pid(double  kP, double kI, double kD);
-  void  Pid::~Pid();
-  void  Pid::setSetpoint(double setPoint);
-  double  Pid::run(double value);
+  void  PID::PID(double  kP, double kI, double kD);
+  void  PID::~PID();
+  void  PID::setSetpoint(double setPoint);
+  double  PID::run(double value);

@@ -1,5 +1,4 @@
 #include "Odom.hpp"
-#include <iostream>
 #include <math.h>
 
 Odom::Odom(int enc1a, int enc1b, int enc2a, int enc2b) :
@@ -7,14 +6,12 @@ Odom::Odom(int enc1a, int enc1b, int enc2a, int enc2b) :
   last_update(steady_clock::now())
 { pos.x() = 0.0; pos.y() = 0.0; }
 
-Vec<float> Odom::update() {
+Point<float> Odom::update() {
     time_point now = steady_clock::now();
     auto timestep = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_update);
 
     int rot_counts = enc1.read(true);
     int disp_counts = enc2.read(true);
-
-
 
     float disp = disp_counts*2*M_PI*wheel_radius/360;
     float rot_disp = rot_counts*2*M_PI*wheel_radius/(360*rot_wheel_pos);
@@ -28,19 +25,21 @@ Vec<float> Odom::update() {
     return pos;
 }
 
-Vec<float> Odom::updateDifferential() {
-    left_disp = enc1.read(true);
-    right_disp = enc2.read(true);
+Point<float> Odom::updateDifferential() {
+    time_point now = steady_clock::now();
+    auto timestep = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_update);
 
-    (right_disp - left_disp)/2.0;
-    (left_disp + right_disp)/2.0;
-}
+    int left_disp = enc1.read(true);
+    int right_disp = -enc2.read(true);
 
-int main(int argc, char** argv) {
-    Odom odom(11, 8, 4, 2);
-    while(true) {
-        usleep(50000);
-        auto pos = odom.update();
-        printf("(%f, %f), %f\n", pos.x(), pos.y(), odom.dir);
-    }
+    float rot_disp = (right_disp - left_disp)*M_PI*wheel_radius/(360*7.5/2);
+    float disp = (left_disp + right_disp)*M_PI*wheel_radius/360;
+
+    dir += rot_disp;
+
+    pos.x() += disp*cos(dir);
+    pos.y() += disp*sin(dir);
+
+    last_update = now;
+    return pos;
 }

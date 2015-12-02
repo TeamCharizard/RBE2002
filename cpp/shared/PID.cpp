@@ -1,4 +1,4 @@
-#include "pwm.hpp"
+#include "PID.hpp"
 
 Pid::Pid(double  kP, double  kI, double  kD, unsigned long controTime){
   this -> kP = kP;
