@@ -1,12 +1,12 @@
 ## BUILDING
-make a build directory, or go to one if it exists and type
+python doens't need building, just type
 
+    python nameOfThing.py
+
+For cpp, you need to build first. Go to cpp/ and then one of the projects
+The go to build directory. Here's an example
+
+    cd cpp/lidar/build
     cmake .. && make
 
-This will build everything. executables like "main" will appear in the build directory
-
-## Notes
-
-you have to source bashrc every  time you reboot. Run this
-
-    source ~/.bashrc
+executables like "main" will appear in the build directory
