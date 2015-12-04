@@ -23,35 +23,49 @@ int main(int argc, char **argv){
   sigaction(SIGINT, &sigIntHandler, NULL);
 
   int *distances;
+  bool turning = false;
+  int dFront, dRight, dLeft;
+  time_point last_update;
 
   while (true) {
+    time_point now = steady_clock::now();
     bool fullSweep = lidar.read();
 
     if (fullSweep){
       distances = lidar.distances;
-      int dFront = distances[0],
-          dRight = distances[10],
-          dLeft = distances[350];
+      dFront = distances[0];
+      dRight = distances[10];
+      dLeft = distances[350];
+    }
 
-      printf("dFront=%d dRight=%d dLeft=%d\n",dFront,dRight,dLeft);
+    printf("dFront=%d dRight=%d dLeft=%d\n",dFront,dRight,dLeft);
 
-      if (dFront < 400 && dFront > 0){
-        if (dRight > dLeft){
-          //turn right
-          left.set(100);
-          right.set(0);
-        }
-        else {
-          //turn left
-          left.set(0);
-          right.set(100);
-        }
+    if (dFront < 400 && dFront > 0){
+      turning = true;
+    }
+    else if (!turning) {
+      left.set(-50);
+      right.set(50);
+
+    }
+
+    if (turning){
+      auto timestep = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_update);
+      if (timestep > 1000){
+        turning = false;
+      }
+      if (dRight > dLeft){
+        //turn right
+        left.set(100);
+        right.set(0);
       }
       else {
-        left.set(-50);
-        right.set(50);
-
+        //turn left
+        left.set(0);
+        right.set(100);
       }
     }
+
+    last_update = now;
   }
 }
