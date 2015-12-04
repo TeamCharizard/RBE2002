@@ -3,7 +3,7 @@
 #include <iostream>
 
 int main(int argc, char** argv) {
-    Odom odom(12, 13, 4, 8);
+    Odom odom(12, 13, 8, 11);
     while(true) {
         usleep(50000);
         auto pos = odom.updateDifferential();
