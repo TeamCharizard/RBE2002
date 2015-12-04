@@ -1,3 +1,4 @@
+#pragma once
 #include <mraa.hpp>
 
 class Encoder {

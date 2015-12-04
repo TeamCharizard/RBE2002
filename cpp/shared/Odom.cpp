@@ -7,7 +7,7 @@ Odom::Odom(int enc1a, int enc1b, int enc2a, int enc2b) :
   last_update(steady_clock::now())
 { pos.x() = 0.0; pos.y() = 0.0; }
 
-Point<float> Odom::update() {
+void Odom::update() {
     time_point now = steady_clock::now();
     auto timestep = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_update);
 
@@ -23,10 +23,9 @@ Point<float> Odom::update() {
     pos.y() += disp*sin(dir);
 
     last_update = now;
-    return pos;
 }
 
-Point<float> Odom::updateDifferential() {
+void Odom::updateDifferential() {
     time_point now = steady_clock::now();
     auto timestep = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_update);
 
@@ -42,5 +41,8 @@ Point<float> Odom::updateDifferential() {
     pos.y() += disp*sin(dir);
 
     last_update = now;
-    return pos;
+}
+
+Point<float> Odom::robotToWorld(Point<float> robotPoint) {
+    return robotPoint.rotate(dir).translate(pos);
 }

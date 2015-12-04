@@ -9,7 +9,7 @@ class CandleDetector{
       * If no candle is found, it returns 0
       * If a candle is found, it returns the degree of it's location
       */
-    int detect(int radii[]);
+    bool detect(int& distance, int& angle, int radii[]);
 
   private:
     const static int WIDTH = 120,

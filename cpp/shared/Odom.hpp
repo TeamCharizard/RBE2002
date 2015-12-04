@@ -17,7 +17,10 @@ public:
     Odom(int enc1a, int enc1b, int enc2a, int enc2b);
 
     float dir;
-    Point<float> update();
-    Point<float> updateDifferential();
+    void update();
+    void updateDifferential();
+
+    inline Point<float> getPos() { return pos; }
+    Point<float> robotToWorld(Point<float> robotPoint);
 };
 

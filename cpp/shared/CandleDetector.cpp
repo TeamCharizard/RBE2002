@@ -4,7 +4,7 @@
 
 CandleDetector::CandleDetector(){}
 
-int CandleDetector::detect(int radii[]){
+bool CandleDetector::detect(int& distanceOut, int& angleOut, int radii[]){
   int lastRadius,
       dRadius = 0,
       lastSpikeRad = 0,
@@ -20,8 +20,8 @@ int CandleDetector::detect(int radii[]){
     int radius = radii[angle];
 
     //ignore obviously invalid data
-    //80mm is within the robot
-    if (radius > 80) {
+    //120mm is within the robot
+    if (radius > 120) {
 
       dRadius = lastRadius - radius;
 
@@ -39,17 +39,19 @@ int CandleDetector::detect(int radii[]){
         int c = sqrt(lastRadius*lastRadius + lastSpikeRad*lastSpikeRad -
             2*lastRadius*lastSpikeRad*cos(angleInRadians));
 
-        int midAngle = angle + angleBetweenSpikes/2;
+        int midAngle = angle - angleBetweenSpikes/2;
         int midRadius = (lastRadius + lastSpikeRad)/2;
 
         if (std::abs(c - WIDTH) < WIDTH_TOLERANCE){
           printf("candle at %ddeg and %dmm away\n",midAngle,midRadius);
-          return midAngle;
+          distanceOut = midRadius;
+          angleOut = midAngle;
+          return true;
         }
       }
       lastRadius = radius;
     }
   }
 
-  return 0;
+  return false;
 }

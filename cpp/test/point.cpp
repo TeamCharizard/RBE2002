@@ -53,10 +53,12 @@ int main(int argc, char **argv){
     if (fullSweep){
       distances = lidar.distances;
 
-      int candleLocation = cd.detect(distances);
-
-      //turn to face that angle
-      turnToFace(candleLocation);
+      int candleLocation = 0;
+      int candleDistance = 0;
+      if(cd.detect(candleDistance, candleLocation, distances)) {
+        //turn to face that angle
+        turnToFace(candleLocation);
+      }
     }
   }
 }
