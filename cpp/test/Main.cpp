@@ -97,8 +97,12 @@ int main(int argc, char **argv){
 
       if (cd.detect(candleDistance, candleAngle, distances)){
         count++;
+        // Only stop and report that a candle is found once
+        // the candle has been detected multiple times.
+        // (otherwise sometimes I think the robot will detect it,
+        // stop, jerk back a bit and no longer detect the candle)
         if(count > 4) {
-        break;
+          break;
         }
       }
     }
@@ -117,6 +121,8 @@ int main(int argc, char **argv){
       printf("d0=%d\n",distances[0]);
       if (cd.detect(candleDistance, candleAngle, distances)){
         count++;
+        // Wait until we've detected the candle 5 times
+        // (this will ensure that we have come to a complete stop)
         if(count > 5) {
         break;
         }
