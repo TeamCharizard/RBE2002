@@ -1,3 +1,6 @@
+#pragma once
+#include <math.h>
+
 template<typename T>
 class Point {
 private:
@@ -8,6 +11,9 @@ public:
 
     Point(T x, T y) : x_(x), y_(y) {
     }
+
+    Point<T> rotate(float angle){ return Point<T>(cos(angle)*x()-sin(angle)*y(), sin(angle)*x()+cos(angle)*y()); }
+    Point<T> translate(Point p){ return Point<T>(x()+p.x(), y()+p.y()); }
 
     T& x() { return x_; }
     T& y() { return y_; }

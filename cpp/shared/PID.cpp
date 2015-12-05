@@ -1,19 +1,19 @@
 #include "PID.hpp"
 
-Pid::Pid(double  kP, double  kI, double  kD, unsigned long controTime){
-  this -> kP = kP;
-  this -> kI = kI;
-  this -> kD = kD;
+PID::PID(double kP, double kI, double kD){
+  this->kP = kP;
+  this->kI = kI;
+  this->kD = kD;
 }
 
-Pid::~Pid(){
+PID::~PID(){
 }
 
-Pid::setSetpoint(double setPoint){
-  this -> setPoint = setPoint;
+void PID::setSetpoint(double setPoint){
+  this->setPoint = setPoint;
 }
 
-Pid::run(double value){
+double PID::run(double value){
   double error = setPoint - value;
   iTerm += (error * kI);
   double output = (kP * error) + iTerm +(kD * (error - lastError ));
