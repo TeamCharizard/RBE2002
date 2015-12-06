@@ -44,34 +44,26 @@ int main(int argc, char **argv){
     }
 
     if (dFront < 500 && dFront > 0 && !turning){
-      now = steady_clock::now();
+      last_update = now;
       turning = true;
-      printf("starting turn\n");
-    }
-    else if (!turning) {
-      left.set(-50);
-      right.set(50);
+      if (dRight > dLeft){
+        left.set(-50);
+        right.set(-50);
+      }
+      else {
+        left.set(50);
+        right.set(50);
+      }
     }
 
     if (turning){
+      now = steady_clock::now();
       auto timestep = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_update);
-      std::cout << "timestep = " << timestep.count() << std::endl;
-      if (timestep.count() > 5000){
-        printf("done turning\n");
+      if (timestep.count() > 2000){
         turning = false;
-      }
-
-      if (dRight > dLeft){
-        left.set(50);
-        right.set(0);
-      }
-      else {
-        left.set(0);
+        left.set(-50);
         right.set(50);
       }
-
-      last_update = now;
     }
-
   }
 }

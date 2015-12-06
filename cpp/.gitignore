@@ -2,4 +2,6 @@ bin/
 *.un~
 *.swo
 *.swp
+*.cpp~
+*.hpp~
 build/
