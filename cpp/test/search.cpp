@@ -2,6 +2,7 @@
 #include "Lidar.hpp"
 #include <stdio.h>
 #include <signal.h>
+#include <iostream>
 #include <chrono>
 
 typedef std::chrono::steady_clock steady_clock;
@@ -33,7 +34,6 @@ int main(int argc, char **argv){
 
   time_point now;
   while (true) {
-     now = steady_clock::now();
     bool fullSweep = lidar.read();
 
     if (fullSweep){
@@ -43,34 +43,35 @@ int main(int argc, char **argv){
       dLeft = distances[350];
     }
 
-    printf("dFront=%d dRight=%d dLeft=%d\n",dFront,dRight,dLeft);
-
-    if (dFront < 400 && dFront > 0){
+    if (dFront < 500 && dFront > 0 && !turning){
+      now = steady_clock::now();
       turning = true;
+      printf("starting turn\n");
     }
     else if (!turning) {
       left.set(-50);
       right.set(50);
-
     }
 
     if (turning){
       auto timestep = std::chrono::duration_cast<std::chrono::milliseconds>(now - last_update);
-      if (timestep.count() > 1000){
+      std::cout << "timestep = " << timestep.count() << std::endl;
+      if (timestep.count() > 5000){
+        printf("done turning\n");
         turning = false;
       }
+
       if (dRight > dLeft){
-        //turn right
-        left.set(100);
+        left.set(50);
         right.set(0);
       }
       else {
-        //turn left
         left.set(0);
-        right.set(100);
+        right.set(50);
       }
+
+      last_update = now;
     }
 
-    last_update = now;
   }
 }

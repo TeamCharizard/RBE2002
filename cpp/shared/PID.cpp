@@ -15,8 +15,8 @@ void PID::setSetpoint(double setPoint){
 
 double PID::run(double value){
   double error = setPoint - value;
-  iTerm += (error * kI);
-  double output = (kP * error) + iTerm +(kD * (error - lastError ));
+  iTerm += error;
+  double output = (kP * error) + kI*iTerm +(kD * (error - lastError ));
   lastError = error;
   return output;
 }
