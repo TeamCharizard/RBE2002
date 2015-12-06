@@ -11,7 +11,7 @@ add_library(${PROJECT_NAME} ${shared})
 target_link_libraries(${PROJECT_NAME} mraa)
 
 foreach(test ${tests})
-  get_filename_component(test_name ${test} NAME)
+  get_filename_component(test_name ${test} NAME_WE)
   add_executable(${test_name} ${test})
   target_link_libraries(${test_name} ${PROJECT_NAME} mraa)
 endforeach()
