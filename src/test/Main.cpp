@@ -4,6 +4,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+void driveUntilCandle::setup(){
+  left.setup(5);
+  right.setup(6);
+  lidar.setup();
+  Odom.setup();
+}
+
 void driveUntilCandle::avoidInFront(int distance){
   if (distance < 600 && distance > 0){
     left.set(100);

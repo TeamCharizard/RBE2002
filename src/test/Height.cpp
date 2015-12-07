@@ -1,8 +1,11 @@
-void Height::setup(){
+#include "Height.hpp"
+#include "Arduino.h"
 
+void Height::setup(){
+  ff.setup();
 }
 
 void Height::loop(){
   ff.checkHeightInFront(30);
-  getchar();
+  sleep(500);
 }

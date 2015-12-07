@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MainSketch.hpp"
 #include "../shared/Odom.hpp"
 #include "../shared/Point.hpp"
 
@@ -9,5 +10,5 @@ class PrintOdom : public MainSketch {
     void loop();
 
   private:
-    Odom odom(12, 13, 8, 11);
+    Odom odom;
 };

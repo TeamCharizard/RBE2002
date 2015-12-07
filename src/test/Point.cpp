@@ -1,6 +1,12 @@
 #include "Point.hpp"
 #include <cmath>
 
+void Point::setup(){
+  left.setup(5);
+  right.setup(6);
+  lidar.setup();
+}
+
 void Point::turnToFace(int angle){
   //turn so that angle will become zero
   int power = 0;

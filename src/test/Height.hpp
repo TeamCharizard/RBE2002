@@ -1,7 +1,8 @@
 #pragma once
 
-#include "FireFinder.hpp"
-#include "Lidar.hpp"
+#include "MainSketch.hpp"
+#include "../shared/FireFinder.hpp"
+#include "../shared/Lidar.hpp"
 
 class FireFinder : public MainSketch {
   public:

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MainSketch.hpp"
 #include "../shared/DriveMotor.hpp"
 #include "../shared/Lidar.hpp"
 
@@ -10,8 +11,8 @@ class Search : public MainSketch {
 
   private:
     Lidar lidar;
-    DriveMotor left(6);
-    DriveMotor right(5);
+    DriveMotor left;
+    DriveMotor right;
     int *distances;
     bool turning = false;
     int dFront, dRight, dLeft;

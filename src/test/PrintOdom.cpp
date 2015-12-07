@@ -1,7 +1,7 @@
 #include "PrintOdom.hpp"
 
 void PrintOdom::setup(){
-
+  odom.setup();
 }
 
 void PrintOdom::loop(){

@@ -15,8 +15,7 @@ class Point : public MainSketch {
 
     CandleDetector cd;
     Lidar lidar;
-    DriveMotor left(6);
-    DriveMotor right(5);
-
+    DriveMotor left;
+    DriveMotor right;
     int *distances;
 };

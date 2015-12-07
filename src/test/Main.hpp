@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MainSketch.hpp"
 #include "../shared/Lidar.hpp"
 #include "../shared/CandleDetector.hpp"
 #include "../shared/DriveMotor.hpp"
@@ -12,9 +13,9 @@ class driveUntilCandle : public MainSketch {
 
   private:
     Lidar lidar;
-    DriveMotor left(6);
-    DriveMotor right(5);
-    Odom odom(12, 13, 8, 11);
+    DriveMotor left;
+    DriveMotor right;
+    Odom odom;
     int *distances;
     bool stop;
     CandleDetector cd;

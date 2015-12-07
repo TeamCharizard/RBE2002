@@ -1,8 +1,10 @@
 #include "Search.hpp"
+#include "Arduino.h"
 
 void Search::setup(){
-  left.setup();
-  right.setup();
+  left.setup(5);
+  right.setup(6);
+  lidar.setup();
 }
 
 void Search::loop(){
