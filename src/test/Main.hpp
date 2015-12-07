@@ -1,28 +1,23 @@
 #pragma once
 
-#include "MainSketch.hpp"
-#include "../shared/Lidar.hpp"
-#include "../shared/CandleDetector.hpp"
-#include "../shared/DriveMotor.hpp"
-#include "../shared/Odom.hpp"
+#include "Robot.hpp"
 
-class driveUntilCandle : public MainSketch {
-  public:
-    void setup();
-    void loop();
-    void avoidInFront(int distance);
+class Main{
 
-  private:
-    Lidar lidar;
-    DriveMotor left;
-    DriveMotor right;
-    typedef Encoder<2,3> LeftEnc;
-    typedef Encoder<18,19> RightEnc;
-    Odom<LeftEnc, RightEnc> odom;
-    int *distances;
-    bool stop;
-    CandleDetector cd;
-    int candleAngle = 0;
-    int candleDistance = 0;
-    int count = 0;
+    public:
+        void setup();
+        void loop();
+
+    private:
+        enum RobotState {
+            SEARCH_FOR_CANDLE,
+            DRIVE_TO_CANDLE,
+            FIND_CANDLE_HEIGHT,
+            EXTINGUISH_CANDLE,
+            RETURN_TO_ORIGIN,
+            END
+        };
+        
+        RobotState state = SEARCH_FOR_CANDLE;
+        Robot *charizard;
 };
