@@ -1,7 +1,5 @@
 #pragma once
 
-#include "mraa.hpp"
-
 class Lidar {
 
   public:

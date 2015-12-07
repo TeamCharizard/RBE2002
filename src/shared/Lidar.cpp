@@ -1,6 +1,4 @@
 #include "Lidar.hpp"
-#include "stdio.h"
-#include "iostream"
 
 Lidar::Lidar() try : dev(0),
     packetNumber(0),
