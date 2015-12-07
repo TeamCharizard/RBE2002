@@ -1,252 +1,0 @@
-<HTML>
-<HEAD><TITLE>Synthesis and Ngdbuild Report</TITLE>
-<STYLE TYPE="text/css">
-<!--
- body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
--->
-</STYLE>
-</HEAD>
-<PRE><A name="Syn"></A><B><U><big>Synthesis and Ngdbuild  Report</big></U></B>
-synthesis:  version Diamond (64-bit) 3.5.0.102
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Nov 02 14:42:04 2015
-
-
-Command Line:  synthesis -f EncCount_ec_impl_lattice.synproj -gui -msgset C:/Users/Joseph Martin/EncCount/promote.xml 
-
-Synthesis options:
-The -a option is MachXO2.
-The -s option is 6.
-The -t option is QFN32.
-The -d option is LCMXO2-256HC.
-Using package QFN32.
-Using performance grade 6.
-                                                          
-
-##########################################################
-
-### Lattice Family : MachXO2
-
-### Device  : LCMXO2-256HC
-
-### Package : QFN32
-
-### Speed   : 6
-
-##########################################################
-
-                                                          
-
-Optimization goal = Balanced
-Top-level module name = i2c_slave.
-Target frequency = 200.000000 MHz.
-Maximum fanout = 1000.
-Timing path count = 3
-BRAM utilization = 100.000000 %
-DSP usage = true
-DSP utilization = 100.000000 %
-fsm_encoding_style = auto
-resolve_mixed_drivers = 0
-fix_gated_clocks = 1
-
-Mux style = Auto
-Use Carry Chain = true
-carry_chain_length = 0
-Loop Limit = 1950.
-Use IO Insertion = TRUE
-Use IO Reg = AUTO
-
-Resource Sharing = TRUE
-Propagate Constants = TRUE
-Remove Duplicate Registers = TRUE
-force_gsr = auto
-ROM style = auto
-RAM style = auto
-The -comp option is FALSE.
-The -syn option is FALSE.
--p C:/lscc/diamond/3.5_x64/ispfpga/xo2c00/data (searchpath added)
--p C:/Users/Joseph Martin/EncCount/ec_impl (searchpath added)
--p C:/Users/Joseph Martin/EncCount (searchpath added)
-VHDL library = work
-VHDL design file = C:/Users/Joseph Martin/EncCount/i2c.vhd
-VHDL design file = C:/Users/Joseph Martin/EncCount/decoder.vhd
-VHDL design file = C:/Users/Joseph Martin/EncCount/filter.vhd
-NGD file = EncCount_ec_impl.ngd
--sdc option: SDC file input not used.
--lpf option: Output file option is ON.
--vh2008
-
-Hardtimer checking is enabled (default). The -dt option is not used.
-The -r option is OFF. [ Remove LOC Properties is OFF. ]
-Technology check ok...
-
-Analyzing Verilog file C:/lscc/diamond/3.5_x64/ispfpga/userware/NT/SYNTHESIS_HEADERS/machxo2.v. VERI-1482
-Compile design.
-Compile Design Begin
-INFO - synthesis: The default VHDL library search path is now "C:/Users/Joseph Martin/EncCount/ec_impl". VHDL-1504
-Analyzing VHDL file c:/users/joseph martin/enccount/filter.vhd. VHDL-1481
-INFO - synthesis: c:/users/joseph martin/enccount/filter.vhd(4): analyzing entity filter. VHDL-1012
-INFO - synthesis: c:/users/joseph martin/enccount/filter.vhd(11): analyzing architecture arch. VHDL-1010
-Analyzing VHDL file c:/users/joseph martin/enccount/decoder.vhd. VHDL-1481
-INFO - synthesis: c:/users/joseph martin/enccount/decoder.vhd(5): analyzing entity decoder. VHDL-1012
-INFO - synthesis: c:/users/joseph martin/enccount/decoder.vhd(9): analyzing architecture arch. VHDL-1010
-Analyzing VHDL file c:/users/joseph martin/enccount/i2c.vhd. VHDL-1481
-INFO - synthesis: c:/users/joseph martin/enccount/i2c.vhd(5): analyzing entity i2c_slave. VHDL-1012
-INFO - synthesis: c:/users/joseph martin/enccount/i2c.vhd(16): analyzing architecture arch. VHDL-1010
-unit i2c_slave is not yet analyzed. VHDL-1485
-c:/users/joseph martin/enccount/i2c.vhd(5): executing i2c_slave(arch)
-
-WARNING - synthesis: c:/users/joseph martin/enccount/i2c.vhd(14): replacing existing netlist i2c_slave(arch). VHDL-1205
-Top module name (VHDL): i2c_slave
-Loading NGL library 'C:/lscc/diamond/3.5_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
-Loading NGL library 'C:/lscc/diamond/3.5_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
-Loading NGL library 'C:/lscc/diamond/3.5_x64/ispfpga/or5g00/data/orc5glib.ngl'...
-Loading device for application map from file 'xo2c256.nph' in environment: C:/lscc/diamond/3.5_x64/ispfpga.
-Package Status:                     Advanced       Version 1.38.
-Top-level module name = i2c_slave.
-######## Converting I/O port scl to input.
-
-
-
-GSR will not be inferred because no asynchronous signal was found in the netlist.
-Applying 200.000000 MHz constraint to all clocks
-
-WARNING - synthesis: No user .sdc file.
-Results of NGD DRC are available in i2c_slave_drc.log.
-Loading NGL library 'C:/lscc/diamond/3.5_x64/ispfpga/xo2c00/data/xo2clib.ngl'...
-Loading NGL library 'C:/lscc/diamond/3.5_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
-Loading NGL library 'C:/lscc/diamond/3.5_x64/ispfpga/or5g00/data/orc5glib.ngl'...
-All blocks are expanded and NGD expansion is successful.
-Writing NGD file EncCount_ec_impl.ngd.
-
-################### Begin Area Report (i2c_slave)######################
-Number of register bits => 82 of 322 (25 % )
-BB => 1
-CCU2D => 19
-FD1P3AX => 14
-FD1P3JX => 1
-FD1S3AX => 46
-FD1S3IX => 21
-GSR => 1
-IB => 5
-LUT4 => 107
-OB => 2
-OSCH => 1
-PFUMX => 10
-################### End Area Report ##################
-
-################### Begin BlackBox Report ######################
-TSALL => 1
-################### End BlackBox Report ##################
-
-################### Begin Clock Report ######################
-Clock Nets
-Number of Clocks: 1
-  Net : clk, loads : 82
-Clock Enable Nets
-Number of Clock Enables: 9
-Top 9 highest fanout Clock Enables:
-  Net : clk_enable_8, loads : 7
-  Net : dec1/A_filter/output_N_144, loads : 1
-  Net : scl_filter/output_N_144, loads : 1
-  Net : clk_enable_9, loads : 1
-  Net : dec2/B_filter/output_N_144, loads : 1
-  Net : clk_enable_1, loads : 1
-  Net : dec2/A_filter/output_N_144, loads : 1
-  Net : dec1/B_filter/output_N_144, loads : 1
-  Net : sda_filter/output_N_144, loads : 1
-Highest fanout non-clock nets
-Top 10 highest fanout non-clock nets:
-  Net : timeout_15, loads : 26
-  Net : n68, loads : 25
-  Net : n3752, loads : 19
-  Net : n785, loads : 16
-  Net : state_0, loads : 13
-  Net : state_1, loads : 12
-  Net : state_2, loads : 11
-  Net : n3748, loads : 11
-  Net : n3743, loads : 11
-  Net : n49, loads : 10
-################### End Clock Report ##################
-
-<A name="lse_trs"></A><B><U><big>Timing Report Summary</big></U></B>
---------------
---------------------------------------------------------------------------------
-Constraint                              |   Constraint|       Actual|Levels
---------------------------------------------------------------------------------
-                                        |             |             |
-create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets clk]                     |  200.000 MHz|   79.688 MHz|    10 *
-                                        |             |             |
---------------------------------------------------------------------------------
-
-
-1 constraints not met.
-
-
-Peak Memory Usage: 93.371  MB
-
---------------------------------------------------------------
-Elapsed CPU time for LSE flow : 0.750  secs
---------------------------------------------------------------
-
-
-
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-</PRE></FONT>
-</BODY>
-</HTML>

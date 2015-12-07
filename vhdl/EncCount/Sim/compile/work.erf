@@ -1,5 +1,0 @@
-MESSAGE "File: C:\Users\Joseph Martin\EncCount\decoder.vhd" 
-MESSAGE "Compile Entity "decoder"" 
-MESSAGE "Compile Architecture "arch" of Entity "decoder"" 
-ERROR COMP96_0316: "Case expression must be of a locally static subtype." "C:\Users\Joseph Martin\EncCount\decoder.vhd" 14 8
-FAILURE "Compile failure 1 Errors 0 Warnings  Analysis time :  16.0 [ms]" 

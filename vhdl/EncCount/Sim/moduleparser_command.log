@@ -1,1 +1,0 @@
-C:/lscc/diamond/3.5_x64/bin/nt64/moduleparser.exe -PROJ Sim -pf C:/lscc/diamond/3.5_x64/cae_library/synthesis/vhdl/machxo2.vhd -lib machxo2 -pkg C:/lscc/diamond/3.5_x64/cae_library/vhdl_packages/vdbs -lst C:/Users/Joseph Martin/EncCount/Sim/source_files.lst

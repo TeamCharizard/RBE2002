@@ -1,256 +1,0 @@
-<HTML>
-<HEAD><TITLE>Lattice Synthesis Timing Report</TITLE>
-<STYLE TYPE="text/css">
-<!--
- body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
--->
-</STYLE>
-</HEAD>
-<PRE><A name="Map_Twr"></A><B><U><big>Lattice Synthesis Timing Report</big></U></B>
---------------------------------------------------------------------------------
-Lattice Synthesis Timing Report, Version  
-Thu Oct 29 16:25:58 2015
-
-Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
-Copyright (c) 1995 AT&T Corp.   All rights reserved.
-Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
-Copyright (c) 2001 Agere Systems   All rights reserved.
-Copyright (c) 2002-2015 Lattice Semiconductor Corporation,  All rights reserved.
-
-<A name="mtw1_ri"></A><B><U><big>Report Information</big></U></B>
-------------------
-Design:     test
-Constraint file:  
-Report level:    verbose report, limited to 3 items per constraint
---------------------------------------------------------------------------------
-
-
-
-================================================================================
-Constraint: create_clock -period 5.000000 -name clk0 [get_nets osclk]
-            834 items scored, 480 timing errors detected.
---------------------------------------------------------------------------------
-
-
-Error:  The following path violates requirements by 5.382ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1S3IX    CK             c_176__i13  (from osclk +)
-   Destination:    FD1P3AX    SP             state_i0_i1  (to osclk +)
-
-   Delay:                  10.146ns  (31.8% logic, 68.2% route), 8 logic levels.
-
- Constraint Details:
-
-     10.146ns data_path c_176__i13 to state_i0_i1 violates
-      5.000ns delay constraint less
-      0.236ns LCE_S requirement (totaling 4.764ns) by 5.382ns
-
- Path Details: c_176__i13 to state_i0_i1
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367             CK to Q              c_176__i13 (from osclk)
-Route         2   e 0.838                                  c[13]
-LUT4        ---     0.408              D to Z              i6_4_lut
-Route         1   e 0.660                                  n14
-LUT4        ---     0.408              B to Z              i7_4_lut
-Route         1   e 0.660                                  n721
-LUT4        ---     0.408              B to Z              i5_4_lut
-Route         1   e 0.660                                  n12
-LUT4        ---     0.408              B to Z              i622_4_lut
-Route        18   e 1.271                                  c_13__N_29
-LUT4        ---     0.408              B to Z              i1_2_lut_rep_4_3_lut_4_lut
-Route         9   e 1.099                                  osclk_enable_15
-LUT4        ---     0.408              A to Z              i2_3_lut_4_lut
-Route         4   e 0.937                                  n329
-LUT4        ---     0.408              B to Z              i1_4_lut_adj_2
-Route         2   e 0.798                                  osclk_enable_9
-                  --------
-                   10.146  (31.8% logic, 68.2% route), 8 logic levels.
-
-
-Error:  The following path violates requirements by 5.382ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1S3IX    CK             c_176__i13  (from osclk +)
-   Destination:    FD1P3AX    SP             state_i0_i0  (to osclk +)
-
-   Delay:                  10.146ns  (31.8% logic, 68.2% route), 8 logic levels.
-
- Constraint Details:
-
-     10.146ns data_path c_176__i13 to state_i0_i0 violates
-      5.000ns delay constraint less
-      0.236ns LCE_S requirement (totaling 4.764ns) by 5.382ns
-
- Path Details: c_176__i13 to state_i0_i0
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367             CK to Q              c_176__i13 (from osclk)
-Route         2   e 0.838                                  c[13]
-LUT4        ---     0.408              D to Z              i6_4_lut
-Route         1   e 0.660                                  n14
-LUT4        ---     0.408              B to Z              i7_4_lut
-Route         1   e 0.660                                  n721
-LUT4        ---     0.408              B to Z              i5_4_lut
-Route         1   e 0.660                                  n12
-LUT4        ---     0.408              B to Z              i622_4_lut
-Route        18   e 1.271                                  c_13__N_29
-LUT4        ---     0.408              B to Z              i1_2_lut_rep_4_3_lut_4_lut
-Route         9   e 1.099                                  osclk_enable_15
-LUT4        ---     0.408              A to Z              i2_3_lut_4_lut
-Route         4   e 0.937                                  n329
-LUT4        ---     0.408              B to Z              i1_4_lut_adj_2
-Route         2   e 0.798                                  osclk_enable_9
-                  --------
-                   10.146  (31.8% logic, 68.2% route), 8 logic levels.
-
-
-Error:  The following path violates requirements by 5.382ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1S3IX    CK             c_176__i10  (from osclk +)
-   Destination:    FD1P3AX    SP             state_i0_i1  (to osclk +)
-
-   Delay:                  10.146ns  (31.8% logic, 68.2% route), 8 logic levels.
-
- Constraint Details:
-
-     10.146ns data_path c_176__i10 to state_i0_i1 violates
-      5.000ns delay constraint less
-      0.236ns LCE_S requirement (totaling 4.764ns) by 5.382ns
-
- Path Details: c_176__i10 to state_i0_i1
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367             CK to Q              c_176__i10 (from osclk)
-Route         2   e 0.838                                  c[10]
-LUT4        ---     0.408              B to Z              i6_4_lut
-Route         1   e 0.660                                  n14
-LUT4        ---     0.408              B to Z              i7_4_lut
-Route         1   e 0.660                                  n721
-LUT4        ---     0.408              B to Z              i5_4_lut
-Route         1   e 0.660                                  n12
-LUT4        ---     0.408              B to Z              i622_4_lut
-Route        18   e 1.271                                  c_13__N_29
-LUT4        ---     0.408              B to Z              i1_2_lut_rep_4_3_lut_4_lut
-Route         9   e 1.099                                  osclk_enable_15
-LUT4        ---     0.408              A to Z              i2_3_lut_4_lut
-Route         4   e 0.937                                  n329
-LUT4        ---     0.408              B to Z              i1_4_lut_adj_2
-Route         2   e 0.798                                  osclk_enable_9
-                  --------
-                   10.146  (31.8% logic, 68.2% route), 8 logic levels.
-
-Warning: 10.382 ns is the maximum delay for this constraint.
-
-
-<A name="mtw1_rs"></A><B><U><big>Timing Report Summary</big></U></B>
---------------
---------------------------------------------------------------------------------
-Constraint                              |   Constraint|       Actual|Levels
---------------------------------------------------------------------------------
-                                        |             |             |
-create_clock -period 5.000000 -name     |             |             |
-clk0 [get_nets osclk]                   |     5.000 ns|    10.382 ns|     8 *
-                                        |             |             |
---------------------------------------------------------------------------------
-
-
-1 constraints not met.
-
---------------------------------------------------------------------------------
-Critical Nets                           |   Loads|  Errors| % of total
---------------------------------------------------------------------------------
-c_13__N_29                              |      18|     468|     97.50%
-                                        |        |        |
-n12                                     |       1|     420|     87.50%
-                                        |        |        |
-n721                                    |       1|     336|     70.00%
-                                        |        |        |
-osclk_enable_15                         |       9|     179|     37.29%
-                                        |        |        |
-n14                                     |       1|     168|     35.00%
-                                        |        |        |
-n798                                    |       2|     126|     26.25%
-                                        |        |        |
-n507                                    |       7|      98|     20.42%
-                                        |        |        |
-n10                                     |       1|      84|     17.50%
-                                        |        |        |
-n329                                    |       4|      82|     17.08%
-                                        |        |        |
-osclk_enable_9                          |       2|      68|     14.17%
-                                        |        |        |
---------------------------------------------------------------------------------
-
-
-<A name="mtw1_ts"></A><B><U><big>Timing summary:</big></U></B>
----------------
-
-Timing errors: 480  Score: 1000036
-
-Constraints cover  834 paths, 76 nets, and 191 connections (94.6% coverage)
-
-
-Peak memory: 92295168 bytes, TRCE: 1765376 bytes, DLYMAN: 0 bytes
-CPU_TIME_REPORT: 0 secs 
-
-
-
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-<BR>
-</PRE></FONT>
-</BODY>
-</HTML>
