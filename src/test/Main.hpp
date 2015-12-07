@@ -10,12 +10,15 @@ class driveUntilCandle : public MainSketch {
   public:
     void setup();
     void loop();
+    void avoidInFront(int distance);
 
   private:
     Lidar lidar;
     DriveMotor left;
     DriveMotor right;
-    Odom odom;
+    typedef Encoder<2,3> LeftEnc;
+    typedef Encoder<18,19> RightEnc;
+    Odom<LeftEnc, RightEnc> odom;
     int *distances;
     bool stop;
     CandleDetector cd;

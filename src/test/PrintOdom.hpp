@@ -10,5 +10,7 @@ class PrintOdom : public MainSketch {
     void loop();
 
   private:
-    Odom odom;
+    typedef Encoder<2,3> LeftEnc;
+    typedef Encoder<18,19> RightEnc;
+    Odom<LeftEnc, RightEnc> odom;
 };

@@ -1,12 +1,10 @@
 #pragma once
+#include <Servo.h>
 
 class DriveMotor {
-
-  mraa::Pwm pwm;
-
-  public:
-    DriveMotor(int port);
-    ~DriveMotor();
+private:
+    Servo motor;
+public:
+    void setup(int port);
     void set(int speed);
-
 };

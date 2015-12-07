@@ -1,31 +1,17 @@
+#include <Arduino.h>
 #include "Lidar.hpp"
 
-Lidar::Lidar() try : dev(0),
+Lidar::Lidar() :
     packetNumber(0),
     packetIndex(0),
     distanceIndex(0),
-    startReading(false) {
+    startReading(false) {}
 
-  if (dev.setBaudRate(115200) != mraa::SUCCESS) {
-       std::cout << "Error setting parity on UART" << std::endl;
-   }
-   if (dev.setMode(8, mraa::UART_PARITY_NONE, 1) != mraa::SUCCESS) {
-       std::cout << "Error setting parity on UART" << std::endl;
-   }
-   if (dev.setFlowcontrol(false, false) != mraa::SUCCESS) {
-       std::cout << "Error setting flow control UART" << std::endl;
-   }
-}
-  catch (std::exception) {
-    std::cout << "Error initialize uart" << std::endl;
-    std::terminate();
-
-}
+void Lidar::setup() {}
 
 bool Lidar::read(){
-  if (dev.dataAvailable()) {
-    char b;
-    int read = dev.read(&b, 1);
+  if (Serial1.available()) {
+    char b = Serial1.read();
 
     if (startReading) {
       if (packetIndex == 21) {

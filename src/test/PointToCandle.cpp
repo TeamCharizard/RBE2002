@@ -1,17 +1,17 @@
-#include "Point.hpp"
-#include <cmath>
+#include <Arduino.h>
+#include "PointToCandle.hpp"
 
-void Point::setup(){
+void PointToCandle::setup(){
   left.setup(5);
   right.setup(6);
   lidar.setup();
 }
 
-void Point::turnToFace(int angle){
+void PointToCandle::turnToFace(int angle){
   //turn so that angle will become zero
   int power = 0;
   double kP = .5;
-  if (std::abs(angle < 10)){
+  if (abs(angle < 10)){
     left.set(0);
     right.set(0);
   }
@@ -27,7 +27,7 @@ void Point::turnToFace(int angle){
   }
 }
 
-void Point::loop(){
+void PointToCandle::loop(){
   bool fullSweep = lidar.read();
 
   if (fullSweep){

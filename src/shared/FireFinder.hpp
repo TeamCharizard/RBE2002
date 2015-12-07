@@ -1,12 +1,13 @@
 #pragma once
-
-#include "mraa.hpp"
+#include <Servo.h>
 
 class FireFinder {
 
   public:
 
     FireFinder();
+
+    void setup();
 
     bool scanInFront();
 
@@ -16,8 +17,7 @@ class FireFinder {
 
     bool checkHeight(int angle, int distanceToCandle);
 
-    mraa::Aio sensor;
-    mraa::Pwm head;
+    Servo head;
 
   private:
 

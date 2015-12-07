@@ -32,7 +32,7 @@ void Search::loop(){
 
   if (turning){
     long timestep = millis() - last_update;
-    if (timestep.count() > 2000){
+    if (timestep > 2000){
       turning = false;
       left.set(-50);
       right.set(50);

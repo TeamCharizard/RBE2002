@@ -1,6 +1,7 @@
+#include <Arduino.h>
 #include "CandleDetector.hpp"
 #include <stdio.h>
-#include <cmath>
+#include <math.h>
 
 CandleDetector::CandleDetector(){}
 
@@ -34,7 +35,7 @@ bool CandleDetector::detect(int& distanceOut, int& angleOut, int radii[]){
       //spikes on the falling edge
       if (dRadius < -MIN_SPIKE && dRadius > -MAX_SPIKE){
         //calculate the distance between the points
-        int angleBetweenSpikes = std::abs(lastSpikeA - a);
+        int angleBetweenSpikes = abs(lastSpikeA - a);
         double angleInRadians = angleBetweenSpikes*3.1415926535/180.0;
         int c = sqrt(lastRadius*lastRadius + lastSpikeRad*lastSpikeRad -
             2*lastRadius*lastSpikeRad*cos(angleInRadians));
@@ -42,7 +43,7 @@ bool CandleDetector::detect(int& distanceOut, int& angleOut, int radii[]){
         int midAngle = angle - angleBetweenSpikes/2;
         int midRadius = (lastRadius + lastSpikeRad)/2;
 
-        if (std::abs(c - WIDTH) < WIDTH_TOLERANCE){
+        if (abs(c - WIDTH) < WIDTH_TOLERANCE){
           printf("candle at %ddeg and %dmm away\n",midAngle,midRadius);
           distanceOut = midRadius;
           angleOut = midAngle;

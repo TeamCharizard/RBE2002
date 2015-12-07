@@ -7,6 +7,8 @@ class Lidar {
 
     Lidar();
 
+    void setup();
+
     bool read();
 
     void processEndOfPacket();
@@ -21,7 +23,4 @@ class Lidar {
     int packetNumber,
         packetIndex,
         distanceIndex;
-
-    mraa::Uart dev;
-
 };

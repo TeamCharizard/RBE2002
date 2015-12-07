@@ -1,20 +1,14 @@
 #include "DriveMotor.hpp"
 #include <stdio.h>
 
-DriveMotor::DriveMotor(int port) :
-  pwm(port) {
-  pwm.period_ms(20);
-  pwm.pulsewidth_us(1350);
-  pwm.enable(true);
-}
-
-DriveMotor::~DriveMotor(){
-  pwm.pulsewidth_us(1350);
-  pwm.enable(false);
+void DriveMotor::setup(int port) {
+    motor.attach(port, 1000, 2000);
 }
 
 // for -100 to 100
 void DriveMotor::set(int speed){
+    motor.write(((speed+100)*180)/200);
+/*
   if (speed > 5){
     speed = 20 + speed;
   }
@@ -28,4 +22,5 @@ void DriveMotor::set(int speed){
     pulsewidth = 1000;
   }
   pwm.pulsewidth_us(pulsewidth);
+*/
 }

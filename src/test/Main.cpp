@@ -1,14 +1,11 @@
 #include "Main.hpp"
 #include <math.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 void driveUntilCandle::setup(){
   left.setup(5);
   right.setup(6);
   lidar.setup();
-  Odom.setup();
+  odom.setup();
 }
 
 void driveUntilCandle::avoidInFront(int distance){
@@ -44,9 +41,11 @@ void driveUntilCandle::loop(){
           left.set(0);
           right.set(0);
         }
+        /*
         else if (count > 8){
           break;
         }
+        */
       }
     }
     odom.updateDifferential();
@@ -66,5 +65,5 @@ void driveUntilCandle::loop(){
   printf("Robot_dir = %f\n", odom.dir);
 
   printf("CANDLE FOUND! At x=%f, y=%f\n", candlePos.x(), candlePos.y());
-*/
 }
+*/

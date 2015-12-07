@@ -5,7 +5,7 @@
 #include "../shared/Lidar.hpp"
 #include "../shared/DriveMotor.hpp"
 
-class Point : public MainSketch {
+class PointToCandle : public MainSketch {
   public:
     void setup();
     void loop();

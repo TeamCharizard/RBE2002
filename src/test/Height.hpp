@@ -4,7 +4,7 @@
 #include "../shared/FireFinder.hpp"
 #include "../shared/Lidar.hpp"
 
-class FireFinder : public MainSketch {
+class Height : public MainSketch {
   public:
     void setup();
     void loop();

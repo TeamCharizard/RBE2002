@@ -1,7 +1,9 @@
-#include "test/point.hpp"
-#include "test/search.hpp"
+#include "test/PointToCandle.hpp"
+#include "test/Search.hpp"
+#include "test/Main.hpp"
+#include <Servo.h>
 
-Point main;
+driveUntilCandle main;
 
 void setup(){
   main.setup();

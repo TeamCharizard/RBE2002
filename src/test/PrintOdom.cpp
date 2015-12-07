@@ -5,7 +5,7 @@ void PrintOdom::setup(){
 }
 
 void PrintOdom::loop(){
-  usleep(50000);
+  delay(20);
   odom.updateDifferential();
   auto pos = odom.getPos();
 }
