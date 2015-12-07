@@ -5,10 +5,15 @@
 #include "../shared/Lidar.hpp"
 #include "../shared/CandleDetector.hpp"
 #include "../shared/DriveMotor.hpp"
+#include "../shared/Search.hpp"
 #include "../shared/Odom.hpp"
-class Robot{
+
+class Robot {
     public:
         static Robot *getInstance();
+
+        void drive(DriveDirection dir);
+
         bool search();
         bool driveToCandle();
         bool findCandleHeight();
@@ -17,6 +22,7 @@ class Robot{
 
     private:
         Robot();
+        Searcher searcher;
         Lidar lidar;
         DriveMotor left;
         DriveMotor right;
@@ -25,7 +31,5 @@ class Robot{
         Odom<LeftEnc, RightEnc> odom;
         int *distances;
         static Robot *instance;
-
-
 
 };

@@ -8,31 +8,52 @@ Robot::Robot(){
 }
 
 Robot *Robot::getInstance(){
-if(instance == NULL){
+  if(instance == NULL){
     instance = new Robot();
-}
-return instance;
+  }
+  return instance;
 
+}
+
+void Robot::drive(DriveDirection dir){
+  if (dir == DriveDirection::FORWARD){
+    right.set(50);
+    left.set(-50);
+  }
+  else if (dir == DriveDirection::LEFT){
+    right.set(50);
+    left.set(50);
+  }
+  else if (dir == DriveDirection::RIGHT){
+    right.set(-50);
+    left.set(-50);
+  }
+  else if (dir == DriveDirection::BACKWARD){
+    right.set(-50);
+    left.set(50);
+  }
 }
 
 bool Robot::search(){
-    return false;
+  DriveDirection dir = searcher.getDirection();
+  drive(dir);
+  return false;
 }
 
 bool Robot::driveToCandle(){
-    return false;
+  return false;
 }
 
 bool Robot::findCandleHeight(){
-    return false;
+  return false;
 }
 
 bool Robot::extinguishCandle(){
-    return false;
+  return false;
 }
 
 bool Robot::returnToOrigin(){
-    return false;
+  return false;
 }
-    
-    
+
+
