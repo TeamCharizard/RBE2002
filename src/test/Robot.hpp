@@ -1,8 +1,8 @@
 #pragma once
 
-
 #include "MainSketch.hpp"
 #include "../shared/Lidar.hpp"
+#include "../shared/PID.hpp"
 #include "../shared/CandleDetector.hpp"
 #include "../shared/DriveMotor.hpp"
 #include "../shared/Search.hpp"
@@ -12,12 +12,26 @@ class Robot {
     public:
         static Robot *getInstance();
 
-        void drive(DriveDirection dir);
+        void setup();
 
+        void drive();
+
+        /** given a direction, set the motor PIDs accordingly
+         * @param dir the direction you want to go
+         */
+        void setDrive(DriveDirection dir);
+
+        /** search for candle by driving around
+         * @return true when the candle has been found
+         */
         bool search();
+
         bool driveToCandle();
+
         bool findCandleHeight();
+
         bool extinguishCandle();
+
         bool returnToOrigin();
 
     private:
@@ -29,6 +43,7 @@ class Robot {
         typedef Encoder<2,3> LeftEnc;
         typedef Encoder<18,19> RightEnc;
         Odom<LeftEnc, RightEnc> odom;
+        DriveDirection driveDirection;
         int *distances;
         static Robot *instance;
 

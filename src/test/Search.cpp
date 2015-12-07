@@ -1,7 +1,9 @@
 #include "Search.hpp"
 #include "Arduino.h"
 
-Search::Search() : lcd(40, 41, 42, 43, 44, 45) {}
+Search::Search() : lcd(40, 41, 42, 43, 44, 45),
+  left(0,0,0),
+  right(0,0,0){}
 
 void Search::setup(){
   left.setup(9);

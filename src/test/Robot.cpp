@@ -1,6 +1,14 @@
 #include "Robot.hpp"
+#include "Arduino.h"
 
-Robot::Robot(){
+Robot *Robot::instance = NULL;
+
+Robot::Robot() :
+  left(0,0,0),
+  right(0,0,0) {
+}
+
+void Robot::setup(){
   left.setup(5);
   right.setup(6);
   lidar.setup();
@@ -15,28 +23,35 @@ Robot *Robot::getInstance(){
 
 }
 
-void Robot::drive(DriveDirection dir){
-  if (dir == DriveDirection::FORWARD){
-    right.set(50);
-    left.set(-50);
+void Robot::drive(){
+  switch (this->driveDirection){
+    case DriveDirection::FORWARD:
+      left.set(50);
+      right.set(50);
+      break;
+    case DriveDirection::LEFT:
+      left.set(50);
+      right.set(-50);
+      break;
+    case DriveDirection::RIGHT:
+      left.set(-50);
+      right.set(50);
+      break;
+    case DriveDirection::BACKWARD:
+      left.set(-50);
+      right.set(-50);
+      break;
   }
-  else if (dir == DriveDirection::LEFT){
-    right.set(50);
-    left.set(50);
-  }
-  else if (dir == DriveDirection::RIGHT){
-    right.set(-50);
-    left.set(-50);
-  }
-  else if (dir == DriveDirection::BACKWARD){
-    right.set(-50);
-    left.set(50);
-  }
+}
+
+void Robot::setDrive(DriveDirection dir){
+  this->driveDirection = dir;
 }
 
 bool Robot::search(){
   DriveDirection dir = searcher.getDirection();
-  drive(dir);
+  setDrive(dir);
+  drive();
   return false;
 }
 
@@ -55,5 +70,3 @@ bool Robot::extinguishCandle(){
 bool Robot::returnToOrigin(){
   return false;
 }
-
-

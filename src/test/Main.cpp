@@ -3,6 +3,7 @@
 
 void Main::setup(){
     charizard = Robot::getInstance();
+    charizard->setup();
 }
 
 void Main::loop(){
@@ -12,7 +13,7 @@ void Main::loop(){
                 state = DRIVE_TO_CANDLE;
             }
             break;
-        case DRIVE_TO_CANDLE:  
+        case DRIVE_TO_CANDLE:
             if (charizard->driveToCandle()){
                 state = FIND_CANDLE_HEIGHT;
             }
