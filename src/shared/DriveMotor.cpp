@@ -7,7 +7,7 @@ void DriveMotor::setup(int port) {
 
 // for -100 to 100
 void DriveMotor::set(int speed){
-    motor.write(((speed+100)*180)/200);
+    motor.write((((long)speed+100)*180)/200);
 /*
   if (speed > 5){
     speed = 20 + speed;

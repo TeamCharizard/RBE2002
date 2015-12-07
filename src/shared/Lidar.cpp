@@ -17,6 +17,7 @@ bool Lidar::read(){
       if (packetIndex == 21) {
         startReading = false;
         processEndOfPacket();
+        //Serial.println(distanceIndex);
 
         return distanceIndex >= 359;
       }

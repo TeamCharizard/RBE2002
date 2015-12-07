@@ -2,8 +2,8 @@
 #include <math.h>
 
 void driveUntilCandle::setup(){
-  left.setup(5);
-  right.setup(6);
+  left.setup(9);
+  right.setup(8);
   lidar.setup();
   odom.setup();
 }
