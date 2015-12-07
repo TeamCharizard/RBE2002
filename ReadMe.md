@@ -2,10 +2,22 @@ RBE 2002 - Team Charzard
 ========================
 
 # Wiring
-Pin | Item
-9     Head motor
-5     right drive motor
-6     left drive motor
-3     fan
+Item | Pin
 
+Head:10
 
+Left:9
+
+Right:8
+
+Left Enc:18,19
+
+Right Enc:2,3
+
+Pushbutton :29
+
+Flame Sensor:A0
+
+Lidar:17(Serial2)
+
+LCD:40,41,42,43,44,45
