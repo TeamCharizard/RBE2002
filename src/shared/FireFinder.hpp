@@ -1,4 +1,5 @@
 #pragma once
+
 #include <Servo.h>
 
 class FireFinder {
@@ -9,22 +10,23 @@ class FireFinder {
 
     void setup();
 
-    bool scanInFront();
+    void startScan();
 
-    bool scanAtAngle(int angle);
-
-    bool checkHeightInFront(int distanceToCandle);
-
-    bool checkHeight(int angle, int distanceToCandle);
-
-    Servo head;
+    int watch(int dToCandle);
 
   private:
 
-    const static int PIN = 9,
+    Servo head;
+
+    int minIntensity = 1024,
+        minPosition = 180,
+        position = 0;
+
+    bool scanning = false;
+
+    const static int MOTOR_PIN = 10,
           SENSOR_PIN = 0,
           MAX_HEAD_ANGLE = 65,
           MIN_HEAD_ANGLE = 30,
           SENSOR_HEIGHT = 190;
-
 };
