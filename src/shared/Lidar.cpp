@@ -31,9 +31,9 @@ bool Lidar::read(){
       packetIndex = 0;
       packet[packetIndex] = b;
       packetIndex++;
-      return false;
     }
   }
+  return false;
 }
 
 void Lidar::processEndOfPacket(){
