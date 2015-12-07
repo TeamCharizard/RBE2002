@@ -2,6 +2,6 @@
 
 class MainSketch {
   public:
-    void virtual setup();
-    void virtual loop();
+    void virtual setup() = 0;
+    void virtual loop() = 0;
 };

@@ -5,8 +5,6 @@ class Lidar {
   public:
     int distances[360];
 
-    Lidar();
-
     void setup();
 
     bool read();

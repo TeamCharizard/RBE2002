@@ -1,17 +1,17 @@
 #include <Arduino.h>
 #include "Lidar.hpp"
 
-Lidar::Lidar() :
-    packetNumber(0),
-    packetIndex(0),
-    distanceIndex(0),
-    startReading(false) {}
-
-void Lidar::setup() {}
+void Lidar::setup() {
+    Serial2.begin(115200);
+    packetNumber = 0;
+    packetIndex = 0;
+    distanceIndex = 0;
+    startReading = false;
+}
 
 bool Lidar::read(){
-  if (Serial1.available()) {
-    char b = Serial1.read();
+  if (Serial2.available()) {
+    char b = Serial2.read();
 
     if (startReading) {
       if (packetIndex == 21) {
