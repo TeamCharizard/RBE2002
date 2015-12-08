@@ -11,8 +11,15 @@ void Height::setup(){
 }
 
 void Height::loop(){
-  ff.watch(30);
-  if (digitalRead(BUTTON_PIN)){
+  if (!digitalRead(BUTTON_PIN)){
     ff.startScan();
   }
+
+  int height = ff.watch(30);
+
+  if (height > 0){
+    Serial.print("HEIGHT = ");
+    Serial.println(height);
+  }
+
 }

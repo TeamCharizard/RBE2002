@@ -6,8 +6,6 @@ class FireFinder {
 
   public:
 
-    FireFinder();
-
     void setup();
 
     void startScan();
@@ -19,14 +17,21 @@ class FireFinder {
     Servo head;
 
     int minIntensity = 1024,
+        sum = 0,
         minPosition = 180,
         position = 0;
 
+
     bool scanning = false;
+
+    long timeToChangeAngle = 0l,
+        sweepTime = 2500l,
+        step = 5;
 
     const static int MOTOR_PIN = 10,
           SENSOR_PIN = 0,
-          MAX_HEAD_ANGLE = 65,
-          MIN_HEAD_ANGLE = 30,
+          MAX_HEAD_ANGLE = 30,
+          MIN_HEAD_ANGLE = -20,
+          SAMPLE_SIZE = 10,
           SENSOR_HEIGHT = 190;
 };
