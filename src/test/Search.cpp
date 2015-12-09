@@ -1,9 +1,6 @@
 #include "Search.hpp"
 #include "Arduino.h"
 
-Search::Search() :  left(0,0,0),
-  right(0,0,0){}
-
 void Search::setup(){
   left.setup(9);
   right.setup(8);

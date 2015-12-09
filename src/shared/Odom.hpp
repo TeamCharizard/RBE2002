@@ -18,11 +18,12 @@ public:
     }
 
     float dir;
-    void update();
+    int left_disp,
+        right_disp;
 
     void updateDifferential() {
-        int left_disp = Enc1::read(true);
-        int right_disp = Enc2::read(true);
+        left_disp = Enc1::read(true);
+        right_disp = Enc2::read(true);
 
         float rot_disp = (right_disp - left_disp)*M_PI*wheel_radius/(360*7.5/2);
         float disp = (left_disp + right_disp)*M_PI*wheel_radius/360;
@@ -31,6 +32,14 @@ public:
 
         pos.x() += disp*cos(dir);
         pos.y() += disp*sin(dir);
+    }
+
+    int leftDisplacement() {
+      return left_disp;
+    }
+
+    int rightDisplacement() {
+      return right_disp;
     }
 
     inline Point<float> getPos() { return pos; }

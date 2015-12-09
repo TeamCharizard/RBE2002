@@ -1,26 +1,16 @@
 #include "DriveMotor.hpp"
 #include <stdio.h>
-
-DriveMotor::DriveMotor(float kP, float kI, float kD) :
-    PID(kP,kI,kD) {
-
-}
+#include "Arduino.h"
 
 void DriveMotor::setup(int port) {
   motor.attach(port, 1000, 2000);
 }
 
 // for -100 to 100
-void DriveMotor::set(int setpoint){
-  this->setPoint = setPoint;
-  //motor.write((((long)speed+100)*180)/200);
+void DriveMotor::set(int power){
+  long scaledUp = (power + 100l) * 180l;
+  power = scaledUp / 200;
+  if (power > 180) power = 180;
+  if (power < 0) power = 0;
+  motor.write(power);
 }
-
-int DriveMotor::run(int value){
-  int error = setPoint - value;
-  iTerm += error;
-  int output = (kP * error) + kI*iTerm +(kD * (error - lastError ));
-  lastError = error;
-  return output;
-}
-

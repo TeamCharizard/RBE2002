@@ -3,9 +3,8 @@
 
 Robot *Robot::instance = NULL;
 
-Robot::Robot() :
-  left(0,0,0),
-  right(0,0,0) {
+Robot::Robot()
+  {
 }
 
 void Robot::setup(){
@@ -70,7 +69,7 @@ bool Robot::driveToCandle(){
             stopDrive();
             ff.startScan();
             return true;
-        }   
+        }
     }
     return false;
 }

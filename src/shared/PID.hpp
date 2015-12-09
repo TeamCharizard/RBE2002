@@ -12,4 +12,5 @@ class PID{
            iTerm;
 
     int setPoint;
+    int output;
 };

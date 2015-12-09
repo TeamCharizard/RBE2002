@@ -7,7 +7,6 @@
 
 class Search : public MainSketch {
   public:
-    Search();
     void setup();
     void loop();
 
