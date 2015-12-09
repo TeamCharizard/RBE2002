@@ -1,11 +1,11 @@
 #include "DriveUntilCandle.hpp"
 #include "../main.hpp"
-#include <MemoryFree.h>
 #include <math.h>
 
 void DriveUntilCandle::setup(){
   lidar.setup();
   base.setup();
+  pinMode(29,INPUT_PULLUP);
 }
 
 void DriveUntilCandle::avoidInFront(int distance){
@@ -22,11 +22,19 @@ void DriveUntilCandle::loop(){
   bool fullSweep = lidar.read();
 
   if (fullSweep){
-    Serial.println(freeMemory());
     base.run();
     distances = lidar.distances;
 
-    avoidInFront(distances[0]);
+    if (digitalRead(29)){
+      avoidInFront(distances[0]);
+      char msg[16];
+      snprintf(msg,16,"d0=%-5d", distances[0]);
+      Display.setCursor(0,1);
+      Display.print(msg);
+    }
+    else {
+      base.stop();
+    }
 
     if (cd.detect(&candleDistance, &candleAngle, distances)){
       count++;
@@ -41,21 +49,9 @@ void DriveUntilCandle::loop(){
       Display.print(msg);
       Serial.println(msg);
     }
+    else {
+      Display.setCursor(0,0);
+      Display.print("a=    d=    ");
+    }
   }
 }
-
-/*
-   float angle = (360-candleAngle)*M_PI/180;
-   float distance = candleDistance/25.4+1.0;
-   printf("Distance=%f, angle=%f\n", distance, angle);
-//Point<float> candlePos(distance*cos(angle), distance*sin(angle));
-Point<float> candlePos(distance, 0.0);
-candlePos = candlePos.rotate(angle);
-printf("Candle_R = (%f, %f)\n", candlePos.x(), candlePos.y());
-candlePos = odom.robotToWorld(candlePos);
-printf("Candle_W = (%f, %f)\n", candlePos.x(), candlePos.y());
-printf("Robot_W = (%f, %f)\n", odom.getPos().x(), odom.getPos().y());
-printf("Robot_dir = %f\n", odom.dir);
-
-printf("CANDLE FOUND! At x=%f, y=%f\n", candlePos.x(), candlePos.y());
-*/

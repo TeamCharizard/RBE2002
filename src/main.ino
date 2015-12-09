@@ -12,7 +12,7 @@
 
 LiquidCrystal Display(40,41,42,43,44,45);
 
-TestOdom sketch;
+DriveUntilCandle sketch;
 
 void setup(){
   Display.begin(16,2);

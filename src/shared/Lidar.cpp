@@ -51,12 +51,6 @@ void Lidar::processEndOfPacket(){
       if (isDataIndex(i)){
         distanceIndex = (newPacketNumber - (char)0xA0) * 4 + i/4 - 1;
 
-        //lidar is off by 10 degrees so compensate
-        distanceIndex -= 10;
-        if (distanceIndex < 0){
-          distanceIndex = 360 + distanceIndex;
-        }
-
         if ((distanceIndex >= 0) && (distanceIndex < 360)){
           if ((packet[i+1] & (char)0x80) >> 7){
             distances[distanceIndex] = -1;
@@ -64,7 +58,7 @@ void Lidar::processEndOfPacket(){
           else {
             int d = (unsigned char)packet[i] | (packet[i+1] << 8);
 
-            if (d <= 160 || d > 6000){
+            if (d <= 140 || d > 6000){
               invalids++;
               d = -1;
             }

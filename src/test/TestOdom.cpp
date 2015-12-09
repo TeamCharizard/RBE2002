@@ -28,14 +28,17 @@ void TestOdom::loop(){
 
     avoidInFront(distances[0]);
 
-    char msg1[16];
-    char msg2[16];
-    snprintf(msg1,16,"pos = (%d, %d)\n", (int)base.x(), (int)base.y());
-    snprintf(msg2,16,"dir = %d\n", (int)base.dir());
     Display.setCursor(0,0);
-    Display.print(msg1);
+    Display.print("pos=");
+    Display.print(base.x(),1);
+    Display.print(",");
+    Display.print(base.y(),1);
+
     Display.setCursor(0,1);
-    Display.print(msg2);
+    Display.print("dir=");
+    float degrees = base.dir() * 180 / 3.14159;
+    Display.print(degrees ,1);
+
 
   }
 }
