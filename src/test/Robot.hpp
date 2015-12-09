@@ -2,59 +2,56 @@
 
 #include "MainSketch.hpp"
 #include "../shared/Lidar.hpp"
-#include "../shared/PID.hpp"
 #include "../shared/CandleDetector.hpp"
-#include "../shared/DriveMotor.hpp"
 #include "../shared/Searcher.hpp"
-#include "../shared/Odom.hpp"
+#include "../shared/PIDBase.hpp"
 #include "../shared/FireFinder.hpp"
 
 class Robot {
-    public:
-        static Robot *getInstance();
+  public:
+    static Robot *getInstance();
 
-        void setup();
+    void setup();
 
-        void drive();
-        
-        void stopDrive();
+    void drive();
 
-        /** given a direction, set the motor PIDs accordingly
-         * @param dir the direction you want to go
-         */
-        void setDrive(DriveDirection dir);
+    void stop();
 
-        /** search for candle by driving around
-         * @return true when the candle has been found
-         */
-        bool search();
+    /** given a direction, set the motor PIDs accordingly
+     * @param dir the direction you want to go
+     */
+    void setDrive(DriveDirection dir);
 
-        bool driveToCandle();
+    /** search for candle by driving around
+     * @return true when the candle has been found
+     */
+    bool search();
 
-        bool findCandleHeight();
+    bool driveToCandle();
 
-        bool extinguishCandle();
+    bool findCandleHeight();
 
-        bool returnToOrigin();
+    bool extinguishCandle();
 
-        bool turnToFace(int angle);
+    bool returnToOrigin();
 
-        void driveAndAvoid();
-    private:
-        Robot();
-        Searcher searcher;
-        Lidar lidar;
-        DriveMotor left;
-        DriveMotor right;
-        typedef Encoder<2,3> LeftEnc;
-        typedef Encoder<18,19> RightEnc;
-        Odom<LeftEnc, RightEnc> odom;
-        DriveDirection driveDirection;
-        int *distances;
-        static Robot *instance;
-        CandleDetector detector;
-        int distanceToCandle;
-        const int GOAL_DISTANCE = 300;
-        int angleToCandle;
-        FireFinder ff;
+    bool turnToFace(int angle);
+
+    void driveAndAvoid();
+  private:
+
+    /** constructor is private because it's a singleton class */
+    Robot();
+
+    Searcher searcher;
+    Lidar lidar;
+    DriveDirection driveDirection;
+    CandleDetector detector;
+    FireFinder ff;
+    PIDBase base;
+    int *distances;
+    static Robot *instance;
+    int distanceToCandle;
+    const int GOAL_DISTANCE = 300;
+    int angleToCandle;
 };

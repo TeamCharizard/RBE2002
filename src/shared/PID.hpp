@@ -2,8 +2,7 @@
 
 class PID{
   public:
-    PID(float kP, float  kI, float kD);
-    ~PID();
+    PID(float kP, float  kI, float kD, bool feedForward);
     void set(int setPoint);
     int run(int value);
 
@@ -13,4 +12,6 @@ class PID{
 
     int setPoint;
     int output;
+
+    bool feedForward = false;
 };

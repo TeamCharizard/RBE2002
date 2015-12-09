@@ -8,10 +8,8 @@ Robot::Robot()
 }
 
 void Robot::setup(){
-  left.setup(5);
-  right.setup(6);
   lidar.setup();
-  odom.setup();
+  base.setup();
   ff.setup();
 }
 
@@ -26,27 +24,22 @@ Robot *Robot::getInstance(){
 void Robot::drive(){
   switch (this->driveDirection){
     case DriveDirection::FORWARD:
-      left.set(50);
-      right.set(50);
+      base.setSpeeds(10,10);
       break;
     case DriveDirection::LEFT:
-      left.set(50);
-      right.set(-50);
+      base.setSpeeds(-10,10);
       break;
     case DriveDirection::RIGHT:
-      left.set(-50);
-      right.set(50);
+      base.setSpeeds(10,-10);
       break;
     case DriveDirection::BACKWARD:
-      left.set(-50);
-      right.set(-50);
+      base.setSpeeds(-10,-10);
       break;
   }
 }
 
-void Robot::stopDrive(){
-    left.set(0);
-    right.set(0);
+void Robot::stop(){
+  base.stop();
 }
 
 void Robot::setDrive(DriveDirection dir){
@@ -66,7 +59,7 @@ bool Robot::driveToCandle(){
   if(turnToFace(angleToCandle)){
         search();
         if(distanceToCandle < GOAL_DISTANCE){
-            stopDrive();
+            stop();
             ff.startScan();
             return true;
         }
@@ -90,22 +83,21 @@ bool Robot::returnToOrigin(){
 bool  Robot::turnToFace(int angle){
   //turn so that angle will become zero
   //if angle is within 5 degrees, end
+  //this is really dumb and should be fixed
   int power = 0;
   double kP = .5;
   if (abs(angle < 5)){
-    left.set(0);
-    right.set(0);
+    stop();
     return true;
   }
   else if (angle > 180){
     power = (360-angle)*kP;
-    left.set(power);
-    right.set(power);
+    base.setSpeeds(power,-power);
+
   }
   else {
     power = (360-angle)*kP;
-    left.set(-power);
-    right.set(-power);
+    base.setSpeeds(-power,power);
   }
   return false;
 
