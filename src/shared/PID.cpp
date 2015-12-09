@@ -1,6 +1,6 @@
 #include "PID.hpp"
 
-PID::PID(double kP, double kI, double kD){
+PID::PID(float kP, float kI, float kD){
   this->kP = kP;
   this->kI = kI;
   this->kD = kD;
@@ -9,14 +9,14 @@ PID::PID(double kP, double kI, double kD){
 PID::~PID(){
 }
 
-void PID::setSetpoint(double setPoint){
+void PID::set(int setPoint){
   this->setPoint = setPoint;
 }
 
-double PID::run(double value){
-  double error = setPoint - value;
+int PID::run(int value){
+  int error = setPoint - value;
   iTerm += error;
-  double output = (kP * error) + kI*iTerm +(kD * (error - lastError ));
+  int output = (kP * error) + kI*iTerm +(kD * (error - lastError ));
   lastError = error;
   return output;
 }

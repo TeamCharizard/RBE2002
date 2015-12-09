@@ -7,6 +7,7 @@
 #include "../shared/DriveMotor.hpp"
 #include "../shared/Searcher.hpp"
 #include "../shared/Odom.hpp"
+#include "../shared/FireFinder.hpp"
 
 class Robot {
     public:
@@ -15,6 +16,8 @@ class Robot {
         void setup();
 
         void drive();
+        
+        void stopDrive();
 
         /** given a direction, set the motor PIDs accordingly
          * @param dir the direction you want to go
@@ -53,4 +56,5 @@ class Robot {
         int distanceToCandle;
         const int GOAL_DISTANCE = 300;
         int angleToCandle;
+        FireFinder ff;
 };

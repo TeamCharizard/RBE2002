@@ -13,6 +13,7 @@ void Robot::setup(){
   right.setup(6);
   lidar.setup();
   odom.setup();
+  ff.setup();
 }
 
 Robot *Robot::getInstance(){
@@ -44,6 +45,11 @@ void Robot::drive(){
   }
 }
 
+void Robot::stopDrive(){
+    left.set(0);
+    right.set(0);
+}
+
 void Robot::setDrive(DriveDirection dir){
   this->driveDirection = dir;
 }
@@ -61,6 +67,8 @@ bool Robot::driveToCandle(){
   if(turnToFace(angleToCandle)){
         search();
         if(distanceToCandle < GOAL_DISTANCE){
+            stopDrive();
+            ff.startScan();
             return true;
         }   
     }
@@ -68,7 +76,8 @@ bool Robot::driveToCandle(){
 }
 
 bool Robot::findCandleHeight(){
-  return false;
+    ff.watch(distanceToCandle);
+    return false;
 }
 
 bool Robot::extinguishCandle(){

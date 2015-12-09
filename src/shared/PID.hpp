@@ -2,14 +2,14 @@
 
 class PID{
   public:
-    PID(double kP, double kI, double kD);
+    PID(float kP, float  kI, float kD);
     ~PID();
-    void setSetpoint(double setPoint);
-    double run(double value);
+    void set(int setPoint);
+    int run(int value);
 
-  private:
-    double kP, kI, kD;
-    double setPoint,
-           lastError,
+    float kP, kI, kD;
+    int  lastError,
            iTerm;
+
+    int setPoint;
 };
