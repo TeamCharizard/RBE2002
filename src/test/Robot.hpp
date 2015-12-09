@@ -5,7 +5,7 @@
 #include "../shared/PID.hpp"
 #include "../shared/CandleDetector.hpp"
 #include "../shared/DriveMotor.hpp"
-#include "../shared/Search.hpp"
+#include "../shared/Searcher.hpp"
 #include "../shared/Odom.hpp"
 
 class Robot {
@@ -34,6 +34,9 @@ class Robot {
 
         bool returnToOrigin();
 
+        bool turnToFace(int angle);
+
+        void driveAndAvoid();
     private:
         Robot();
         Searcher searcher;
@@ -46,5 +49,8 @@ class Robot {
         DriveDirection driveDirection;
         int *distances;
         static Robot *instance;
-
+        CandleDetector detector;
+        int distanceToCandle;
+        const int GOAL_DISTANCE = 300;
+        int angleToCandle;
 };

@@ -22,7 +22,7 @@ class DriveUntilCandle : public MainSketch {
     int *distances;
     bool stop;
     CandleDetector cd;
-    int candleAngle = 0;
-    int candleDistance = 0;
+    int *candleAngle = 0;
+    int *candleDistance = 0;
     int count = 0;
 };

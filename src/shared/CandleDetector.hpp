@@ -5,11 +5,11 @@ class CandleDetector{
   public:
     CandleDetector();
 
-    /** looks are 360deg array and finds candles.
-      * If no candle is found, it returns 0
-      * If a candle is found, it returns the degree of it's location
+    /** Looks for candle and returns true if found
+     *  assigns values to given pointers for distance and angle
+     *  based on input array of distances
       */
-    bool detect(int& distance, int& angle, int radii[]);
+    bool detect(int *distance, int *angle, int *radii);
 
   private:
     const static int WIDTH = 120,

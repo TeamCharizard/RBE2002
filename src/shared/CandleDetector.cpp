@@ -5,7 +5,7 @@
 
 CandleDetector::CandleDetector(){}
 
-bool CandleDetector::detect(int& distanceOut, int& angleOut, int radii[]){
+bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
   int lastRadius,
       dRadius = 0,
       lastSpikeRad = 0,
@@ -45,8 +45,8 @@ bool CandleDetector::detect(int& distanceOut, int& angleOut, int radii[]){
 
         if (abs(c - WIDTH) < WIDTH_TOLERANCE){
           printf("candle at %ddeg and %dmm away\n",midAngle,midRadius);
-          distanceOut = midRadius;
-          angleOut = midAngle;
+          *distanceOut = midRadius;
+          *angleOut = midAngle;
           return true;
         }
       }
