@@ -21,5 +21,6 @@ void LidarBenchmark::loop(){
     on = !on;
 
     digitalWrite(13,on);
+    //delayMicroseconds(200);
   }
 }
