@@ -1,17 +1,15 @@
 #include "Search.hpp"
 #include "Arduino.h"
 
-Search::Search() : lcd(40, 41, 42, 43, 44, 45),
-  left(0,0,0),
+Search::Search() :  left(0,0,0),
   right(0,0,0){}
 
 void Search::setup(){
   left.setup(9);
   right.setup(8);
-  lidar.setup();
   left.set(100);
   right.set(-100);
-  lcd.begin(16, 2);
+  lidar.setup();
 }
 
 void Search::loop(){
@@ -23,10 +21,10 @@ void Search::loop(){
     dFront = distances[0];
     dRight = distances[10];
     dLeft = distances[350];
-    lcd.setCursor(1,1);
+    Display.setCursor(1,1);
     char str[18];
     sprintf(str, "l=%d, f=%d, r=%d", dLeft, dFront, dRight);
-    lcd.print(str);
+    Display.print(str);
     Serial.println(str);
   }
 

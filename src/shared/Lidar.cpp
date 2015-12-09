@@ -17,9 +17,11 @@ bool Lidar::read(){
       if (packetIndex == 21) {
         startReading = false;
         processEndOfPacket();
-        //Serial.println(distanceIndex);
 
-        return distanceIndex >= 359;
+        if (distanceIndex >= 359){
+          return true;
+        }
+        return false;
       }
       else {
         packet[packetIndex] = b;
@@ -28,6 +30,10 @@ bool Lidar::read(){
     }
 
     if (!startReading && (b == (char) 0xfa)){
+      if (distanceIndex >= 359){
+        misses = 0;
+        invalids = 0;
+      }
       startReading = true;
       packetIndex = 0;
       packet[packetIndex] = b;
@@ -45,14 +51,9 @@ void Lidar::processEndOfPacket(){
       if (isDataIndex(i)){
         distanceIndex = (newPacketNumber - (char)0xA0) * 4 + i/4 - 1;
 
-        //since lidar is 10 degrees off, we compensate here
-        /*
-        distanceIndex -= 10;
-
         if (distanceIndex < 0){
           distanceIndex = 360 + distanceIndex;
         }
-        */
 
         if ((distanceIndex >= 0) && (distanceIndex < 360)){
           if ((packet[i+1] & (char)0x80) >> 7){
@@ -61,7 +62,8 @@ void Lidar::processEndOfPacket(){
           else {
             int d = (unsigned char)packet[i] | (packet[i+1] << 8);
 
-            if (d <= 0 || d > 6000){
+            if (d <= 160 || d > 6000){
+              invalids++;
               d = -1;
             }
 
@@ -70,6 +72,9 @@ void Lidar::processEndOfPacket(){
         }
       }
     }
+  }
+  else {
+    misses++;
   }
 
   packetNumber = newPacketNumber;

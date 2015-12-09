@@ -1,9 +1,9 @@
 #pragma once
 
 #include "MainSketch.hpp"
+#include "../main.hpp"
 #include "../shared/DriveMotor.hpp"
 #include "../shared/Lidar.hpp"
-#include <LiquidCrystal.h>
 
 class Search : public MainSketch {
   public:
@@ -20,5 +20,4 @@ class Search : public MainSketch {
     int dFront, dRight, dLeft;
     long last_update, lastMotorLoop;
     bool fullSweep;
-    LiquidCrystal lcd;
 };
