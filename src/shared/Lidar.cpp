@@ -18,7 +18,7 @@ bool Lidar::read(){
         startReading = false;
         processEndOfPacket();
 
-        if (distanceIndex >= 359){
+        if (distanceIndex >= 357){
           return true;
         }
         return false;
@@ -30,7 +30,7 @@ bool Lidar::read(){
     }
 
     if (!startReading && (b == (char) 0xfa)){
-      if (distanceIndex >= 359){
+      if (distanceIndex >= 357){
         misses = 0;
         invalids = 0;
       }
@@ -51,6 +51,8 @@ void Lidar::processEndOfPacket(){
       if (isDataIndex(i)){
         distanceIndex = (newPacketNumber - (char)0xA0) * 4 + i/4 - 1;
 
+        //lidar is off by 10 degrees so compensate
+        distanceIndex -= 10;
         if (distanceIndex < 0){
           distanceIndex = 360 + distanceIndex;
         }

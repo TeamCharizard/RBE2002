@@ -1,16 +1,18 @@
 #include "main.hpp"
 
+#include <MemoryFree.h>
 #include "test/PointToCandle.hpp"
 #include "test/Search.hpp"
 #include "test/Main.hpp"
+#include "test/TestOdom.hpp"
 #include "test/Height.hpp"
 #include "test/PrintOdom.hpp"
-#include "test/PIDTest.hpp"
+#include "test/DriveUntilCandle.hpp"
 #include "test/LidarBenchmark.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
 
-PIDTest sketch;
+TestOdom sketch;
 
 void setup(){
   Display.begin(16,2);

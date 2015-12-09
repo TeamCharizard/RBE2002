@@ -54,5 +54,6 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
     }
   }
 
+
   return false;
 }

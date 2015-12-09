@@ -4,7 +4,7 @@
 #include "../shared/CandleDetector.hpp"
 #include "../shared/PIDBase.hpp"
 
-class DriveUntilCandle : public MainSketch {
+class TestOdom : public MainSketch {
 
     public:
     void setup();

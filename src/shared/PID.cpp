@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "PID.hpp"
 #include "../main.hpp"
 
@@ -11,6 +12,7 @@ PID::~PID(){
 }
 
 void PID::set(int setPoint){
+  Serial.println(setPoint);
   this->setPoint = setPoint;
 }
 

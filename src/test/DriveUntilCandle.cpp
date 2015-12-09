@@ -1,54 +1,47 @@
 #include "DriveUntilCandle.hpp"
+#include "../main.hpp"
+#include <MemoryFree.h>
 #include <math.h>
 
 void DriveUntilCandle::setup(){
-    left.setup(5);
-    right.setup(6);
-    lidar.setup();
-    odom.setup();
+  lidar.setup();
+  base.setup();
 }
 
 void DriveUntilCandle::avoidInFront(int distance){
-    if (distance < 600 && distance > 0){
-        left.set(100);
-        right.set(100);
-    }
-    else {
-        left.set(-100);
-        right.set(100);
-    }
+  if (distance < 500 && distance > 0){
+    base.setSpeeds(-10,10);
+  }
+  else {
+    base.setSpeeds(10,10);
+  }
 }
 
 void DriveUntilCandle::loop(){
-    bool fullSweep = lidar.read();
 
-    if (fullSweep){
-        distances = lidar.distances;
+  bool fullSweep = lidar.read();
 
-        if (!stop){
-            avoidInFront(distances[0]);
-        }
+  if (fullSweep){
+    Serial.println(freeMemory());
+    base.run();
+    distances = lidar.distances;
 
-        if (cd.detect(candleDistance, candleAngle, distances)){
-            count++;
-            // Only stop and report that a candle is found once
-            // the candle has been detected multiple times.
-            // (otherwise sometimes I think the robot will detect it,
-            // stop, jerk back a bit and no longer detect the candle)
+    avoidInFront(distances[0]);
 
-            if(count > 4) {
-                stop = true;
-                left.set(0);
-                right.set(0);
-            }
-            /*
-               else if (count > 8){
-               break;
-               }
-               */
-        }
+    if (cd.detect(&candleDistance, &candleAngle, distances)){
+      count++;
+
+      // Only stop and report that a candle is found once
+      // the candle has been detected multiple times.
+      // (otherwise sometimes I think the robot will detect it,
+      // stop, jerk back a bit and no longer detect the candle)
+      char msg[16];
+      snprintf(msg,16,"a=%-3d d=%-4d", candleAngle, candleDistance);
+      Display.setCursor(0,0);
+      Display.print(msg);
+      Serial.println(msg);
     }
-    odom.updateDifferential();
+  }
 }
 
 /*
