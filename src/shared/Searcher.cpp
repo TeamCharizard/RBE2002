@@ -1,7 +1,10 @@
 #include "Searcher.hpp"
 #include "Arduino.h"
+#include "../test/Robot.hpp"
 
-DriveDirection Searcher::getDirection(float direction, int *distances){
+DriveDirection Searcher::getDirection() {
+  int *distances = Robot::getInstance()->lidar.distances;
+  float direction = Robot::getInstance()->base.dir();
   dFront = distances[0];
   dRight = distances[10];
   dLeft = distances[350];

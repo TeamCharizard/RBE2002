@@ -23,19 +23,23 @@ Robot *Robot::getInstance(){
 void Robot::drive(){
   switch (this->driveDirection){
     case DriveDirection::FORWARD:
+      debugPrint(1,"FORWARD");
       base.setSpeeds(10,10);
       break;
     case DriveDirection::LEFT:
+      debugPrint(1,"LEFT");
       base.setSpeeds(-10,10);
       break;
     case DriveDirection::RIGHT:
+      debugPrint(1,"RIGHT");
       base.setSpeeds(10,-10);
       break;
     case DriveDirection::BACKWARD:
+      debugPrint(1,"BACKWARD");
       base.setSpeeds(-10,-10);
       break;
   }
-  base.run();
+  //base.run();
 }
 
 void Robot::stop(){
@@ -111,7 +115,7 @@ bool  Robot::turnToFace(int angle){
 }
 
 void Robot::driveAndAvoid(){
-  DriveDirection dir = searcher.getDirection(base.dir(), lidar.distances);
+  DriveDirection dir = searcher.getDirection();
   setDrive(dir);
   drive();
 }

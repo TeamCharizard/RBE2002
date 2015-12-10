@@ -12,7 +12,7 @@
 
 LiquidCrystal Display(40,41,42,43,44,45);
 
-DriveUntilCandle sketch;
+Main sketch;
 
 void debugPrint(int line, const char *format, ...){
   va_list args;
@@ -20,6 +20,7 @@ void debugPrint(int line, const char *format, ...){
 
   char msg[16];
   snprintf(msg, 17, format, args);
+  Serial.println(msg);
   Display.setCursor(0,line);
   Display.print(msg);
 

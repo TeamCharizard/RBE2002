@@ -38,6 +38,11 @@ class Robot {
     bool turnToFace(int angle);
 
     void driveAndAvoid();
+
+    /** making these public so other subsystems (candle) */
+    Lidar lidar;
+    PIDBase base;
+
   private:
 
     /** constructor is private because it's a singleton class */
@@ -45,11 +50,9 @@ class Robot {
     static Robot *instance;
 
     Searcher searcher;
-    Lidar lidar;
     DriveDirection driveDirection;
     CandleDetector detector;
     FireFinder ff;
-    PIDBase base;
 
     int *distances;
     int distanceToCandle;

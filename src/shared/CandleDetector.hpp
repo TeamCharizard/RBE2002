@@ -17,4 +17,6 @@ class CandleDetector{
           MIN_SPIKE = 300,
           MAX_SPIKE = 3000;
 
+    const static float VALID_CANDLE_THRESHOLD;
+
 };

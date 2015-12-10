@@ -2,11 +2,11 @@
 
 #include <Servo.h>
 
-enum DriveDirection {
+enum DriveDirection{
   FORWARD,
-  LEFT,
-  RIGHT,
   BACKWARD,
+  LEFT,
+  RIGHT
 };
 
 class DriveMotor {

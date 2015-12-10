@@ -5,7 +5,7 @@
 
 class Searcher {
   public:
-    DriveDirection getDirection(float direction, int *distances);
+    DriveDirection getDirection();
 
   private:
     bool turning = false;
