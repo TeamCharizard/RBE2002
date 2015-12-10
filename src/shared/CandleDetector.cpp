@@ -6,9 +6,11 @@ CandleDetector::CandleDetector(){}
 
 bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
   double lastRadius = 0,
+         lastA = 0,
       dRadius = 0,
       lastSpikeRad = 0,
-      lastSpikeA = 0;
+      lastSpikeA = 0,
+      lastSpikeAStart = 0;
 
   //in the event that we are facing the candle...
   // the values could be split across 0 degress
@@ -29,6 +31,7 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
       if (dRadius > MIN_SPIKE && dRadius < MAX_SPIKE){
         //we use "a" here because we want +10 and +355 to be 15deg apart
         lastSpikeA = a;
+        lastSpikeAStart = lastA;
         lastSpikeRad = radius;
       }
       //spikes on the falling edge
@@ -45,11 +48,20 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
 
         if (abs(c - WIDTH) < WIDTH_TOLERANCE){
 
-          for (int i=lastSpikeA-5;i<a+5;i++){
+          int valid = 0;
+          for (int i=lastSpikeAStart;i<=a;i++){
+            int ang = i < 0 ? 360 + i : i;
             Serial.print(i);
             Serial.print(" ");
-            Serial.println(radii[i<0?360+i:i]);
+            Serial.println(radii[ang]);
+            if(radii[ang] > 0) {
+                valid++;
+            }
           }
+
+          float validPercent = (float)valid/(a-lastSpikeAStart+1);
+          Serial.print("Percent valid: ");
+          Serial.println(validPercent);
 
           *distanceOut = midRadius;
           *angleOut = midAngle;
@@ -57,6 +69,7 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
         }
       }
       lastRadius = radius;
+      lastA = a;
     }
   }
   return false;
