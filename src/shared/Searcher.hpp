@@ -5,13 +5,11 @@
 
 class Searcher {
   public:
-    DriveDirection getDirection();
+    DriveDirection getDirection(float direction, int *distances);
 
   private:
-    Lidar lidar;
-    int *distances;
     bool turning = false;
     int dFront, dRight, dLeft;
-    long last_update, now;
+    float lastDirection;
     bool fullSweep;
 };

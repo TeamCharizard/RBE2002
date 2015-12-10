@@ -42,6 +42,7 @@ class Robot {
 
     /** constructor is private because it's a singleton class */
     Robot();
+    static Robot *instance;
 
     Searcher searcher;
     Lidar lidar;
@@ -49,9 +50,10 @@ class Robot {
     CandleDetector detector;
     FireFinder ff;
     PIDBase base;
+
     int *distances;
-    static Robot *instance;
     int distanceToCandle;
-    const int GOAL_DISTANCE = 300;
     int angleToCandle;
+
+    const static int GOAL_DISTANCE = 300;
 };

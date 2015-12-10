@@ -1,11 +1,10 @@
 #include "Robot.hpp"
+#include "../main.hpp"
 #include "Arduino.h"
 
 Robot *Robot::instance = NULL;
 
-Robot::Robot()
-  {
-}
+Robot::Robot() {}
 
 void Robot::setup(){
   lidar.setup();
@@ -36,6 +35,7 @@ void Robot::drive(){
       base.setSpeeds(-10,-10);
       break;
   }
+  base.run();
 }
 
 void Robot::stop(){
@@ -47,29 +47,36 @@ void Robot::setDrive(DriveDirection dir){
 }
 
 bool Robot::search(){
-  driveAndAvoid();
-  if (detector.detect(&distanceToCandle, &angleToCandle, distances))
-  {
-     return true;
+  bool fullSweep = lidar.read();
+
+  if (fullSweep){
+    driveAndAvoid();
+    bool candleFound = detector.detect(&distanceToCandle, &angleToCandle, distances);
+
+    if (candleFound){
+      debugPrint(1,"a=%-3d d=%-4d", angleToCandle, distanceToCandle);
+      return true;
+    }
+
   }
   return false;
 }
 
 bool Robot::driveToCandle(){
   if(turnToFace(angleToCandle)){
-        search();
-        if(distanceToCandle < GOAL_DISTANCE){
-            stop();
-            ff.startScan();
-            return true;
-        }
+    search();
+    if(distanceToCandle < GOAL_DISTANCE){
+      stop();
+      ff.startScan();
+      return true;
     }
-    return false;
+  }
+  return false;
 }
 
 bool Robot::findCandleHeight(){
-    ff.watch(distanceToCandle);
-    return false;
+  ff.watch(distanceToCandle);
+  return false;
 }
 
 bool Robot::extinguishCandle(){
@@ -104,7 +111,7 @@ bool  Robot::turnToFace(int angle){
 }
 
 void Robot::driveAndAvoid(){
-  DriveDirection dir = searcher.getDirection();
+  DriveDirection dir = searcher.getDirection(base.dir(), lidar.distances);
   setDrive(dir);
   drive();
 }

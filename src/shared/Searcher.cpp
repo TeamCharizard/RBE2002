@@ -1,18 +1,12 @@
 #include "Searcher.hpp"
 #include "Arduino.h"
 
-DriveDirection Searcher::getDirection(){
-  fullSweep = lidar.read();
-
-  if (fullSweep){
-    distances = lidar.distances;
-    dFront = distances[0];
-    dRight = distances[10];
-    dLeft = distances[350];
-  }
+DriveDirection Searcher::getDirection(float direction, int *distances){
+  dFront = distances[0];
+  dRight = distances[10];
+  dLeft = distances[350];
 
   if (dFront < 500 && dFront > 0 && !turning){
-    last_update = now;
     turning = true;
     if (dRight > dLeft){
       return DriveDirection::RIGHT;
@@ -23,10 +17,13 @@ DriveDirection Searcher::getDirection(){
   }
 
   if (turning){
-    long timestep = millis() - last_update;
-    if (timestep > 2000){
+
+    float turnAngle = direction - lastDirection;
+    if (turnAngle > 1.57079633){
       turning = false;
       return DriveDirection::FORWARD;
     }
   }
+
+  lastDirection = direction;
 }
