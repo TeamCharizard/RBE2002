@@ -44,6 +44,13 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
         int midRadius = (lastRadius + lastSpikeRad)/2;
 
         if (abs(c - WIDTH) < WIDTH_TOLERANCE){
+
+          for (int i=lastSpikeA;i<a;i++){
+            Serial.print(i);
+            Serial.println(" ");
+            Serial.print(distances[i]);
+          }
+
           *distanceOut = midRadius;
           *angleOut = midAngle;
           return true;
