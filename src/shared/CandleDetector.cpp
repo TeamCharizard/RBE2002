@@ -2,7 +2,7 @@
 #include "CandleDetector.hpp"
 #include <stdio.h>
 
-const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.9;
+const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.8;
 
 CandleDetector::CandleDetector(){}
 
@@ -53,19 +53,27 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
           int valid = 0;
           for (int i=lastSpikeAStart;i<=a;i++){
             int ang = i < 0 ? 360 + i : i;
+            /*
             Serial.print(i);
             Serial.print(" ");
             Serial.println(radii[ang]);
+            */
             if(radii[ang] > 0) {
                 valid++;
             }
           }
 
           float validPercent = (float)valid/(a-lastSpikeAStart+1);
+          /*
           Serial.print("Percent valid: ");
-          Serial.println(validPercent);
+          Serial.print(validPercent);
+          Serial.print(", a=");
+          Serial.print(midAngle);
+          Serial.print(", r=");
+          Serial.println(midRadius);
+          */
 
-          if (validPercent > VALID_CANDLE_THRESHOLD){
+          if (validPercent >= VALID_CANDLE_THRESHOLD){
             *distanceOut = midRadius;
             *angleOut = midAngle;
             return true;
