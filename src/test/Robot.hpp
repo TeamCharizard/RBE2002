@@ -35,7 +35,7 @@ class Robot {
 
     bool returnToOrigin();
 
-    bool turnToFace(int angle);
+    bool turnToFace(double angle);
 
     void driveAndAvoid();
 
@@ -54,6 +54,7 @@ class Robot {
     FireFinder ff;
 
     int distanceToCandle;
+    double startAngle;
     int angleToCandle;
 
     int candleHeight_mm;
