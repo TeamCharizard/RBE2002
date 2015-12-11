@@ -1,6 +1,6 @@
 #include "FireFinder.hpp"
 #include "Arduino.h"
-#include <math.h>
+//#include <math.h>
 #include <stdio.h>
 
 void FireFinder::setup() {
@@ -18,7 +18,7 @@ void FireFinder::startScan(){
 int FireFinder::watch(int dToCandle){
   if (scanning){
     if (position > 180){
-
+      head.write(0);
       if (minIntensity > 50){
         return -1;
       }
@@ -28,6 +28,7 @@ int FireFinder::watch(int dToCandle){
       int angle = (minPosition * (MAX_HEAD_ANGLE - MIN_HEAD_ANGLE) / 180) + MIN_HEAD_ANGLE;
       Serial.println(angle);
       int height = SENSOR_HEIGHT + tan(angle*3.14159265/180.0) * dToCandle;
+      Serial.println(height);
       return height;
     }
     else {
@@ -42,8 +43,8 @@ int FireFinder::watch(int dToCandle){
           sum += analogRead(SENSOR_PIN);
         }
         int intensity = sum / SAMPLE_SIZE;
-
-        if (intensity < minIntensity){
+        Serial.println(intensity);
+        if (intensity <  minIntensity){
           minIntensity = intensity;
           minPosition = position;
         }

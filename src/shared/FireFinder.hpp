@@ -25,13 +25,14 @@ class FireFinder {
     bool scanning = false;
 
     long timeToChangeAngle = 0l,
-        sweepTime = 2500l,
+        sweepTime = 5000l,
         step = 5;
 
     const static int MOTOR_PIN = 10,
           SENSOR_PIN = 0,
-          MAX_HEAD_ANGLE = 30,
-          MIN_HEAD_ANGLE = -20,
+          MAX_HEAD_ANGLE = 20,
+          MIN_HEAD_ANGLE = -35,
           SAMPLE_SIZE = 10,
-          SENSOR_HEIGHT = 190;
+          SENSOR_HEIGHT = 210,
+          INTENSITY_THRESHOLD = 35;
 };
