@@ -1,4 +1,5 @@
 #include "Fan.hpp"
+#include "Arduino.h"
 
 void Fan::setup(){
   motor.attach(11);

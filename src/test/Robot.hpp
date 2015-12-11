@@ -3,6 +3,7 @@
 #include "MainSketch.hpp"
 #include "../shared/Lidar.hpp"
 #include "../shared/CandleDetector.hpp"
+#include "../shared/Extinguisher.hpp"
 #include "../shared/Searcher.hpp"
 #include "../shared/PIDBase.hpp"
 #include "../shared/FireFinder.hpp"
@@ -42,6 +43,7 @@ class Robot {
     /** making these public so other subsystems (candle) */
     Lidar lidar;
     PIDBase base;
+    FireFinder ff;
 
   private:
 
@@ -51,8 +53,7 @@ class Robot {
 
     DriveDirection driveDirection;
     CandleDetector detector;
-    FireFinder ff;
-    Fan fan;
+    Extinguisher extinguisher;
 
     int distanceToCandle;
     double startAngle;

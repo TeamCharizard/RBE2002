@@ -5,7 +5,7 @@
 void Main::setup(){
   charizard = Robot::getInstance();
   charizard->setup();
-  state =SEARCH_FOR_CANDLE;
+  state = EXTINGUISH_CANDLE;
   debugPrint(0,stateNames[state]);
 }
 

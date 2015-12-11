@@ -10,6 +10,11 @@ class FireFinder {
 
     void startScan();
 
+    /** looks directly in front for a candle
+     * THIS METHOD IS BLOCKING!
+     */
+    bool seesCandle();
+
     int watch(int dToCandle);
 
   private:

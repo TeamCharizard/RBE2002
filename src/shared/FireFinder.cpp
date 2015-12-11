@@ -1,10 +1,20 @@
 #include "FireFinder.hpp"
 #include "Arduino.h"
-//#include <math.h>
 #include <stdio.h>
 
 void FireFinder::setup() {
   head.attach(MOTOR_PIN);
+}
+
+bool FireFinder::seesCandle(){
+  bool seesCandle;
+  head.write(50);
+  seesCandle = (analogRead(SENSOR_PIN) < 900);
+  delay(500);
+  head.write(130);
+  seesCandle = seesCandle && (analogRead(SENSOR_PIN) < 900);
+  delay(500);
+  return seesCandle;
 }
 
 void FireFinder::startScan(){

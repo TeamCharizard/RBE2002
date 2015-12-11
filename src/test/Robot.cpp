@@ -10,8 +10,8 @@ void Robot::setup(){
   lidar.setup();
   base.setup();
   ff.setup();
+  extinguisher.setup();
   pinMode(29,INPUT_PULLUP);
-  fan.setup();
 }
 
 Robot *Robot::getInstance(){
@@ -89,20 +89,11 @@ bool Robot::search(){
 }
 
 bool Robot::driveToCandle(){
-  //debugPrint(1, "%3d, %3d, %3d ", angleToCandle, (int)(base.dir()*180/M_PI), (int)(startAngle*180/M_PI));
   double angleTurned = -(base.dir()-startAngle);
   debugPrint(1, "at=%+3d, ac=%+3d", (int)(angleTurned*180/M_PI), angleToCandle);
   if(turnToFace(angleToCandle-angleTurned*180/M_PI)) {
     stop();
     return false;
-    /*
-    search();
-    if(distanceToCandle < GOAL_DISTANCE){
-      stop();
-      ff.startScan();
-      return true;
-    }
-    */
   }
   return false;
 }
@@ -120,7 +111,7 @@ bool Robot::findCandleHeight(){
 }
 
 bool Robot::extinguishCandle(){
-  return false;
+  return extinguisher.run();
 }
 
 bool Robot::returnToOrigin(){
