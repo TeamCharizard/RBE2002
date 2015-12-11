@@ -78,6 +78,9 @@ bool Robot::search(){
 
     if (candleFound){
       debugPrint(1,"a=%-3d d=%-4d", angleToCandle, distanceToCandle);
+      if(angleToCandle > 180) angleToCandle -= 360;
+      startAngle = base.dir();
+      debugPrint(1,"sa=%+3d",(int)(startAngle*180/M_PI));
       return true;
     }
 
@@ -86,13 +89,20 @@ bool Robot::search(){
 }
 
 bool Robot::driveToCandle(){
-  if(turnToFace(angleToCandle)){
+  //debugPrint(1, "%3d, %3d, %3d ", angleToCandle, (int)(base.dir()*180/M_PI), (int)(startAngle*180/M_PI));
+  double angleTurned = -(base.dir()-startAngle);
+  debugPrint(1, "at=%+3d, ac=%+3d", (int)(angleTurned*180/M_PI), angleToCandle);
+  if(turnToFace(angleToCandle-angleTurned*180/M_PI)) {
+    stop();
+    return false;
+    /*
     search();
     if(distanceToCandle < GOAL_DISTANCE){
       stop();
       ff.startScan();
       return true;
     }
+    */
   }
   return false;
 }
@@ -117,12 +127,27 @@ bool Robot::returnToOrigin(){
   return false;
 }
 
-bool  Robot::turnToFace(int angle){
+bool  Robot::turnToFace(double angle){
   //turn so that angle will become zero
   //if angle is within 5 degrees, end
   //this is really dumb and should be fixed
-  int power = 0;
   double kP = .05;
+  //int power = max(-10, min(10, (int)(kP*angle)));
+  int power = kP*angle;
+  if(power > 10) power = 10;
+  if(power < -10) power = -10;
+  debugPrint(1, "a=%+3d p=%+2d %+2d", (int)angle, power, -power);
+  base.setSpeeds(power,-power);
+  if(digitalRead(29)){
+    base.run();
+  }
+  /*
+  if(angle < 2) {
+      stop();
+      return true;
+  }
+  */
+  /*
   if (abs(angle < 5)){
     stop();
     return true;
@@ -133,7 +158,8 @@ bool  Robot::turnToFace(int angle){
   else {
     setDrive(DriveDirection::RIGHT);
   }
-  drive();
+  */
+  //drive();
   return false;
 
 }
