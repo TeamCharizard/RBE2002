@@ -26,7 +26,7 @@ class FireFinder {
 
     long timeToChangeAngle = 0l,
         sweepTime = 5000l,
-        step = 5;
+        step = 3;
 
     const static int MOTOR_PIN = 10,
           SENSOR_PIN = 0,

@@ -15,7 +15,7 @@ void Height::loop(){
     ff.startScan();
   }
 
-  int height = ff.watch(30);
+  int height = ff.watch(1000);
 
   if (height > 0){
     Serial.print("HEIGHT = ");

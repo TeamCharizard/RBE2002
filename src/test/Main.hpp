@@ -17,7 +17,7 @@ class Main{
       RETURN_TO_ORIGIN,
       END
     };
-    char* stateNames[6] = {"SERCH_FOR_CANDLE",
+    char* stateNames[6] = {"SEARCH_FOR_CANDLE",
       "DRIVE_TO_CANDLE",
       "CANDLE_HEIGHT",
       "EXTNGISH_CANDLE",

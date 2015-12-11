@@ -11,7 +11,6 @@ void PIDBase::setup(){
   rMotor.setup(8);
   lMotor.setup(9);
   odom.setup();
-
   lastUpdate = millis();
 }
 
@@ -54,11 +53,10 @@ void PIDBase::run(){
     int dr = odom.rightDisplacement();
     int rOut = rPID.run(dr);
     rMotor.set(-rOut);
-
+    }
 //    char msg[16];
 //    snprintf(msg, 16, "lS=%-3d lR=%-3d",scale(dl),scale(dr));
 //    Display.setCursor(0,1);
 //    Display.print(msg);
 
-  }
 }

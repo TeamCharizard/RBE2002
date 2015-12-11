@@ -22,6 +22,7 @@ void DriveUntilCandle::loop(){
   bool fullSweep = lidar.read();
 
   if (fullSweep){
+    debugPrint(1,"full sweep");
     base.run();
     distances = lidar.distances;
 

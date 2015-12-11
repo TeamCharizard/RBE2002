@@ -22,6 +22,7 @@ void debugPrint(int line, const char *format, ...){
   snprintf(msg, 17, format, args);
   Serial.println(msg);
   Display.setCursor(0,line);
+  //Display.print("                ");
   Display.print(msg);
 
   va_end(args);
