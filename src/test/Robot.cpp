@@ -70,6 +70,7 @@ void Robot::setDrive(DriveDirection dir){
 }
 
 bool Robot::search(){
+  Serial.println("FUCK YOU");
   bool fullSweep = lidar.read();
 
   if (fullSweep){

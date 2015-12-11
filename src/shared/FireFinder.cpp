@@ -8,12 +8,10 @@ void FireFinder::setup() {
 
 bool FireFinder::seesCandle(){
   bool seesCandle;
-  head.write(50);
-  seesCandle = (analogRead(SENSOR_PIN) < 900);
-  delay(500);
-  head.write(130);
-  seesCandle = seesCandle && (analogRead(SENSOR_PIN) < 900);
-  delay(500);
+  head.write(90);
+  int intensity = analogRead(SENSOR_PIN);
+  Serial.println(intensity);
+  seesCandle = (intensity < MIN_INTENSITY);
   return seesCandle;
 }
 

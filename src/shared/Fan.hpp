@@ -10,5 +10,5 @@ class Fan{
 
   private:
     Servo motor;
-    const static int INIT_PAUSE = 2000;
+    const static int INIT_PAUSE = 4000;
 };

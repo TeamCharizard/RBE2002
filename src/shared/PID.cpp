@@ -20,7 +20,7 @@ int PID::run(int value){
     output = (kP * error) + kI*iTerm +(kD * (error - lastError ));
   }
 
-  debugPrint(1,"%d %d",error,value);
+  //debugPrint(1,"%d %d",error,value);
   lastError = error;
   return output;
 }

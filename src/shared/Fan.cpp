@@ -2,7 +2,7 @@
 #include "Arduino.h"
 
 void Fan::setup(){
-  motor.attach(11);
+  motor.attach(11,1000,2000);
   motor.write(180);
   delay(INIT_PAUSE);
   motor.write(0);

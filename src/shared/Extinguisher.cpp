@@ -1,11 +1,15 @@
 #include "Extinguisher.hpp"
+#include "../main.hpp"
 #include "../test/Robot.hpp"
 
 void Extinguisher::setup(){
   fan.setup();
+  state = BLOWING;
+  startSpinTime = millis();
 }
 
 bool Extinguisher::run(){
+  //debugPrint(1,"%s",stateNames[state]);
   switch(state){
     case TURNING_TO_BLOW:
       {
@@ -38,7 +42,8 @@ bool Extinguisher::run(){
       break;
 
     case VERIFYING:
-      if (Robot::getInstance()->ff.seesCandle()){
+      bool found = Robot::getInstance()->ff.seesCandle();
+      if (found){
         return true;
       }
       break;
