@@ -1,0 +1,257 @@
+\hypertarget{classPIDBase}{\section{P\-I\-D\-Base Class Reference}
+\label{classPIDBase}\index{P\-I\-D\-Base@{P\-I\-D\-Base}}
+}
+
+
+{\ttfamily \#include $<$P\-I\-D\-Base.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPIDBase_a3d1adc8f47087f795979fb5596ea3e7d}{P\-I\-D\-Base} ()
+\item 
+void \hyperlink{classPIDBase_a326fb682c5a801ed57a98418db7702a4}{setup} ()
+\item 
+void \hyperlink{classPIDBase_af2accfb7aea58dc4e05d07e095785f23}{run} ()
+\item 
+void \hyperlink{classPIDBase_ab078b6c0e03b48efc73def33eb1b03e2}{set\-Speeds} (int left\-Speed, int right\-Speed)
+\item 
+void \hyperlink{classPIDBase_adf5a06686538194d39659ddadc78def6}{stop} ()
+\item 
+float \hyperlink{classPIDBase_adcec556fd426590a5b05054614344b89}{x} ()
+\item 
+float \hyperlink{classPIDBase_a9557526e6f2048616cb84ccf65cfe235}{y} ()
+\item 
+float \hyperlink{classPIDBase_abde01e16704fe190c8eff5bb9bb5f2ae}{dir} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classEncoder}{Encoder}$<$ 2, 3 $>$ \hyperlink{classPIDBase_af7a230a127fe585279e6ed264f504d51}{Left\-Enc}
+\item 
+typedef \hyperlink{classEncoder}{Encoder}$<$ 18, 19 $>$ \hyperlink{classPIDBase_a1b40a4e43b87a65c6d501ccf5789acc3}{Right\-Enc}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classPIDBase_acf14092bf5bcbc54e8bb717b37524534}{scale} (int speed)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDriveMotor}{Drive\-Motor} \hyperlink{classPIDBase_a344ca2736e618d42445d568d038be7d9}{l\-Motor}
+\item 
+\hyperlink{classDriveMotor}{Drive\-Motor} \hyperlink{classPIDBase_ae52cf8a147c90af4334e1ad14f48aa4a}{r\-Motor}
+\item 
+\hyperlink{classOdom}{Odom}$<$ \hyperlink{classPIDBase_af7a230a127fe585279e6ed264f504d51}{Left\-Enc}, \hyperlink{classPIDBase_a1b40a4e43b87a65c6d501ccf5789acc3}{Right\-Enc} $>$ \hyperlink{classPIDBase_a3adee9b84ba975616f672a7620ac16b8}{odom}
+\item 
+\hyperlink{classPID}{P\-I\-D} \hyperlink{classPIDBase_a7e39df880dd6279479e77febe800a6ba}{l\-P\-I\-D}
+\item 
+\hyperlink{classPID}{P\-I\-D} \hyperlink{classPIDBase_a940d3dae6038a472ea613c03c5be3846}{r\-P\-I\-D}
+\item 
+long \hyperlink{classPIDBase_a9ac4b3515239d988dae8ebc95dc09ed5}{last\-Update}
+\item 
+const long \hyperlink{classPIDBase_a6756b30f25632224de999cb7a4ff2315}{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D} = 200
+\item 
+const int \hyperlink{classPIDBase_a42e66aae0ea7d5a54bffc062cc3ebf2b}{T\-O\-P\-\_\-\-S\-P\-E\-E\-D} = 30
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file P\-I\-D\-Base.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classPIDBase_af7a230a127fe585279e6ed264f504d51}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!Left\-Enc@{Left\-Enc}}
+\index{Left\-Enc@{Left\-Enc}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{Left\-Enc}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Encoder}$<$2,3$>$ {\bf P\-I\-D\-Base\-::\-Left\-Enc}\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_af7a230a127fe585279e6ed264f504d51}
+
+
+Definition at line 27 of file P\-I\-D\-Base.\-hpp.
+
+\hypertarget{classPIDBase_a1b40a4e43b87a65c6d501ccf5789acc3}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!Right\-Enc@{Right\-Enc}}
+\index{Right\-Enc@{Right\-Enc}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{Right\-Enc}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Encoder}$<$18,19$>$ {\bf P\-I\-D\-Base\-::\-Right\-Enc}\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_a1b40a4e43b87a65c6d501ccf5789acc3}
+
+
+Definition at line 28 of file P\-I\-D\-Base.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPIDBase_a3d1adc8f47087f795979fb5596ea3e7d}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!P\-I\-D\-Base@{P\-I\-D\-Base}}
+\index{P\-I\-D\-Base@{P\-I\-D\-Base}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{P\-I\-D\-Base}]{\setlength{\rightskip}{0pt plus 5cm}P\-I\-D\-Base\-::\-P\-I\-D\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPIDBase_a3d1adc8f47087f795979fb5596ea3e7d}
+
+
+Definition at line 5 of file P\-I\-D\-Base.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPIDBase_abde01e16704fe190c8eff5bb9bb5f2ae}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!dir@{dir}}
+\index{dir@{dir}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-Base\-::dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPIDBase_abde01e16704fe190c8eff5bb9bb5f2ae}
+
+
+Definition at line 26 of file P\-I\-D\-Base.\-cpp.
+
+\hypertarget{classPIDBase_af2accfb7aea58dc4e05d07e095785f23}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!run@{run}}
+\index{run@{run}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void P\-I\-D\-Base\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPIDBase_af2accfb7aea58dc4e05d07e095785f23}
+
+
+Definition at line 43 of file P\-I\-D\-Base.\-cpp.
+
+\hypertarget{classPIDBase_acf14092bf5bcbc54e8bb717b37524534}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!scale@{scale}}
+\index{scale@{scale}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}int P\-I\-D\-Base\-::scale (
+\begin{DoxyParamCaption}
+\item[{int}]{speed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_acf14092bf5bcbc54e8bb717b37524534}
+scaled input from (-\/10,10) to (-\/\-T\-O\-P\-\_\-\-S\-P\-E\-E\-D, T\-O\-P\-\_\-\-S\-P\-E\-E\-D) 
+\begin{DoxyParams}{Parameters}
+{\em speed} & the input speed from -\/10 to 10 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file P\-I\-D\-Base.\-cpp.
+
+\hypertarget{classPIDBase_ab078b6c0e03b48efc73def33eb1b03e2}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!set\-Speeds@{set\-Speeds}}
+\index{set\-Speeds@{set\-Speeds}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{set\-Speeds}]{\setlength{\rightskip}{0pt plus 5cm}void P\-I\-D\-Base\-::set\-Speeds (
+\begin{DoxyParamCaption}
+\item[{int}]{left\-Speed, }
+\item[{int}]{right\-Speed}
+\end{DoxyParamCaption}
+)}}\label{classPIDBase_ab078b6c0e03b48efc73def33eb1b03e2}
+
+
+Definition at line 34 of file P\-I\-D\-Base.\-cpp.
+
+\hypertarget{classPIDBase_a326fb682c5a801ed57a98418db7702a4}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!setup@{setup}}
+\index{setup@{setup}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void P\-I\-D\-Base\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPIDBase_a326fb682c5a801ed57a98418db7702a4}
+
+
+Definition at line 10 of file P\-I\-D\-Base.\-cpp.
+
+\hypertarget{classPIDBase_adf5a06686538194d39659ddadc78def6}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!stop@{stop}}
+\index{stop@{stop}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void P\-I\-D\-Base\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPIDBase_adf5a06686538194d39659ddadc78def6}
+
+
+Definition at line 30 of file P\-I\-D\-Base.\-cpp.
+
+\hypertarget{classPIDBase_adcec556fd426590a5b05054614344b89}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!x@{x}}
+\index{x@{x}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-Base\-::x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPIDBase_adcec556fd426590a5b05054614344b89}
+
+
+Definition at line 18 of file P\-I\-D\-Base.\-cpp.
+
+\hypertarget{classPIDBase_a9557526e6f2048616cb84ccf65cfe235}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!y@{y}}
+\index{y@{y}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-Base\-::y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPIDBase_a9557526e6f2048616cb84ccf65cfe235}
+
+
+Definition at line 22 of file P\-I\-D\-Base.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPIDBase_a9ac4b3515239d988dae8ebc95dc09ed5}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!last\-Update@{last\-Update}}
+\index{last\-Update@{last\-Update}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{last\-Update}]{\setlength{\rightskip}{0pt plus 5cm}long P\-I\-D\-Base\-::last\-Update\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_a9ac4b3515239d988dae8ebc95dc09ed5}
+
+
+Definition at line 31 of file P\-I\-D\-Base.\-hpp.
+
+\hypertarget{classPIDBase_a344ca2736e618d42445d568d038be7d9}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!l\-Motor@{l\-Motor}}
+\index{l\-Motor@{l\-Motor}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{l\-Motor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Motor} P\-I\-D\-Base\-::l\-Motor\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_a344ca2736e618d42445d568d038be7d9}
+
+
+Definition at line 26 of file P\-I\-D\-Base.\-hpp.
+
+\hypertarget{classPIDBase_a7e39df880dd6279479e77febe800a6ba}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!l\-P\-I\-D@{l\-P\-I\-D}}
+\index{l\-P\-I\-D@{l\-P\-I\-D}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{l\-P\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-I\-D} P\-I\-D\-Base\-::l\-P\-I\-D\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_a7e39df880dd6279479e77febe800a6ba}
+
+
+Definition at line 30 of file P\-I\-D\-Base.\-hpp.
+
+\hypertarget{classPIDBase_a3adee9b84ba975616f672a7620ac16b8}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!odom@{odom}}
+\index{odom@{odom}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{odom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Odom}$<${\bf Left\-Enc}, {\bf Right\-Enc}$>$ P\-I\-D\-Base\-::odom\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_a3adee9b84ba975616f672a7620ac16b8}
+
+
+Definition at line 29 of file P\-I\-D\-Base.\-hpp.
+
+\hypertarget{classPIDBase_ae52cf8a147c90af4334e1ad14f48aa4a}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!r\-Motor@{r\-Motor}}
+\index{r\-Motor@{r\-Motor}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{r\-Motor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Motor} P\-I\-D\-Base\-::r\-Motor\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_ae52cf8a147c90af4334e1ad14f48aa4a}
+
+
+Definition at line 26 of file P\-I\-D\-Base.\-hpp.
+
+\hypertarget{classPIDBase_a940d3dae6038a472ea613c03c5be3846}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!r\-P\-I\-D@{r\-P\-I\-D}}
+\index{r\-P\-I\-D@{r\-P\-I\-D}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{r\-P\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-I\-D} P\-I\-D\-Base\-::r\-P\-I\-D\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_a940d3dae6038a472ea613c03c5be3846}
+
+
+Definition at line 30 of file P\-I\-D\-Base.\-hpp.
+
+\hypertarget{classPIDBase_a42e66aae0ea7d5a54bffc062cc3ebf2b}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!T\-O\-P\-\_\-\-S\-P\-E\-E\-D@{T\-O\-P\-\_\-\-S\-P\-E\-E\-D}}
+\index{T\-O\-P\-\_\-\-S\-P\-E\-E\-D@{T\-O\-P\-\_\-\-S\-P\-E\-E\-D}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{T\-O\-P\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const int P\-I\-D\-Base\-::\-T\-O\-P\-\_\-\-S\-P\-E\-E\-D = 30\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_a42e66aae0ea7d5a54bffc062cc3ebf2b}
+
+
+Definition at line 33 of file P\-I\-D\-Base.\-hpp.
+
+\hypertarget{classPIDBase_a6756b30f25632224de999cb7a4ff2315}{\index{P\-I\-D\-Base@{P\-I\-D\-Base}!U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D@{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}}
+\index{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D@{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}!PIDBase@{P\-I\-D\-Base}}
+\subsubsection[{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}const long P\-I\-D\-Base\-::\-U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D = 200\hspace{0.3cm}{\ttfamily [private]}}}\label{classPIDBase_a6756b30f25632224de999cb7a4ff2315}
+
+
+Definition at line 32 of file P\-I\-D\-Base.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{PIDBase_8hpp}{P\-I\-D\-Base.\-hpp}\item 
+src/shared/\hyperlink{PIDBase_8cpp}{P\-I\-D\-Base.\-cpp}\end{DoxyCompactItemize}

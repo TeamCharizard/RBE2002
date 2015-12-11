@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debugprint',['debugPrint',['../main_8hpp.html#a791f1dbeefa3cf1a8db769cb5b5f68bc',1,'main.hpp']]]
+  ['avoidinfront',['avoidInFront',['../classDriveUntilCandle.html#a0d72ef9e0ab6b731b36ecfce2b4fa6f2',1,'DriveUntilCandle::avoidInFront()'],['../classTestOdom.html#a27f879657a8c2304e41d5495cf60b809',1,'TestOdom::avoidInFront()']]]
 ];

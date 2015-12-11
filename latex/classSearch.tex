@@ -1,0 +1,171 @@
+\hypertarget{classSearch}{\section{Search Class Reference}
+\label{classSearch}\index{Search@{Search}}
+}
+
+
+{\ttfamily \#include $<$Search.\-hpp$>$}
+
+Inheritance diagram for Search\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSearch}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSearch_ad5de8c844478b7f0903d724236fd12ad}{setup} ()
+\item 
+void \hyperlink{classSearch_a75f9358f4551ee9ed0d750eac8fd479e}{loop} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLidar}{Lidar} \hyperlink{classSearch_ad1209571d5e6cb4c53494549d8ec4ac6}{lidar}
+\item 
+\hyperlink{classDriveMotor}{Drive\-Motor} \hyperlink{classSearch_ad1df1ee1c5afbeb2767a4c1e064e7318}{left}
+\item 
+\hyperlink{classDriveMotor}{Drive\-Motor} \hyperlink{classSearch_a7f0e23cc5c8aa635fbe7f5b4c8e30eb0}{right}
+\item 
+int $\ast$ \hyperlink{classSearch_acae7260fec1cd49350860f94955b1e63}{distances}
+\item 
+bool \hyperlink{classSearch_aef5f5e911426d02067e2ac01e5549f1e}{turning} = false
+\item 
+int \hyperlink{classSearch_a443c7d18e6cfd0d114f7e2c2b1495bec}{d\-Front}
+\item 
+int \hyperlink{classSearch_a376def82b93387197752cc169ddf060e}{d\-Right}
+\item 
+int \hyperlink{classSearch_aeab525e9821cdb2dc5ed996a207d9084}{d\-Left}
+\item 
+long \hyperlink{classSearch_ac5a0e7842cdfec65c8af8fd2dd0d4dcc}{last\-\_\-update}
+\item 
+long \hyperlink{classSearch_af73bd725381f47afa3bf6af64d39f3b6}{last\-Motor\-Loop}
+\item 
+bool \hyperlink{classSearch_a113ce5d7076372bbe5041749f42a7ee3}{full\-Sweep}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Search.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSearch_a75f9358f4551ee9ed0d750eac8fd479e}{\index{Search@{Search}!loop@{loop}}
+\index{loop@{loop}!Search@{Search}}
+\subsubsection[{loop}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSearch_a75f9358f4551ee9ed0d750eac8fd479e}
+
+
+Implements \hyperlink{classMainSketch_acd69845de8c794dce73d309f142a6795}{Main\-Sketch}.
+
+
+
+Definition at line 12 of file Search.\-cpp.
+
+\hypertarget{classSearch_ad5de8c844478b7f0903d724236fd12ad}{\index{Search@{Search}!setup@{setup}}
+\index{setup@{setup}!Search@{Search}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSearch_ad5de8c844478b7f0903d724236fd12ad}
+
+
+Implements \hyperlink{classMainSketch_a0708e1eb0ced1063f600f4111df90bf2}{Main\-Sketch}.
+
+
+
+Definition at line 4 of file Search.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSearch_a443c7d18e6cfd0d114f7e2c2b1495bec}{\index{Search@{Search}!d\-Front@{d\-Front}}
+\index{d\-Front@{d\-Front}!Search@{Search}}
+\subsubsection[{d\-Front}]{\setlength{\rightskip}{0pt plus 5cm}int Search\-::d\-Front\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_a443c7d18e6cfd0d114f7e2c2b1495bec}
+
+
+Definition at line 19 of file Search.\-hpp.
+
+\hypertarget{classSearch_acae7260fec1cd49350860f94955b1e63}{\index{Search@{Search}!distances@{distances}}
+\index{distances@{distances}!Search@{Search}}
+\subsubsection[{distances}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Search\-::distances\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_acae7260fec1cd49350860f94955b1e63}
+
+
+Definition at line 17 of file Search.\-hpp.
+
+\hypertarget{classSearch_aeab525e9821cdb2dc5ed996a207d9084}{\index{Search@{Search}!d\-Left@{d\-Left}}
+\index{d\-Left@{d\-Left}!Search@{Search}}
+\subsubsection[{d\-Left}]{\setlength{\rightskip}{0pt plus 5cm}int Search\-::d\-Left\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_aeab525e9821cdb2dc5ed996a207d9084}
+
+
+Definition at line 19 of file Search.\-hpp.
+
+\hypertarget{classSearch_a376def82b93387197752cc169ddf060e}{\index{Search@{Search}!d\-Right@{d\-Right}}
+\index{d\-Right@{d\-Right}!Search@{Search}}
+\subsubsection[{d\-Right}]{\setlength{\rightskip}{0pt plus 5cm}int Search\-::d\-Right\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_a376def82b93387197752cc169ddf060e}
+
+
+Definition at line 19 of file Search.\-hpp.
+
+\hypertarget{classSearch_a113ce5d7076372bbe5041749f42a7ee3}{\index{Search@{Search}!full\-Sweep@{full\-Sweep}}
+\index{full\-Sweep@{full\-Sweep}!Search@{Search}}
+\subsubsection[{full\-Sweep}]{\setlength{\rightskip}{0pt plus 5cm}bool Search\-::full\-Sweep\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_a113ce5d7076372bbe5041749f42a7ee3}
+
+
+Definition at line 21 of file Search.\-hpp.
+
+\hypertarget{classSearch_ac5a0e7842cdfec65c8af8fd2dd0d4dcc}{\index{Search@{Search}!last\-\_\-update@{last\-\_\-update}}
+\index{last\-\_\-update@{last\-\_\-update}!Search@{Search}}
+\subsubsection[{last\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}long Search\-::last\-\_\-update\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_ac5a0e7842cdfec65c8af8fd2dd0d4dcc}
+
+
+Definition at line 20 of file Search.\-hpp.
+
+\hypertarget{classSearch_af73bd725381f47afa3bf6af64d39f3b6}{\index{Search@{Search}!last\-Motor\-Loop@{last\-Motor\-Loop}}
+\index{last\-Motor\-Loop@{last\-Motor\-Loop}!Search@{Search}}
+\subsubsection[{last\-Motor\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}long Search\-::last\-Motor\-Loop\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_af73bd725381f47afa3bf6af64d39f3b6}
+
+
+Definition at line 20 of file Search.\-hpp.
+
+\hypertarget{classSearch_ad1df1ee1c5afbeb2767a4c1e064e7318}{\index{Search@{Search}!left@{left}}
+\index{left@{left}!Search@{Search}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Motor} Search\-::left\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_ad1df1ee1c5afbeb2767a4c1e064e7318}
+
+
+Definition at line 15 of file Search.\-hpp.
+
+\hypertarget{classSearch_ad1209571d5e6cb4c53494549d8ec4ac6}{\index{Search@{Search}!lidar@{lidar}}
+\index{lidar@{lidar}!Search@{Search}}
+\subsubsection[{lidar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lidar} Search\-::lidar\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_ad1209571d5e6cb4c53494549d8ec4ac6}
+
+
+Definition at line 14 of file Search.\-hpp.
+
+\hypertarget{classSearch_a7f0e23cc5c8aa635fbe7f5b4c8e30eb0}{\index{Search@{Search}!right@{right}}
+\index{right@{right}!Search@{Search}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Motor} Search\-::right\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_a7f0e23cc5c8aa635fbe7f5b4c8e30eb0}
+
+
+Definition at line 16 of file Search.\-hpp.
+
+\hypertarget{classSearch_aef5f5e911426d02067e2ac01e5549f1e}{\index{Search@{Search}!turning@{turning}}
+\index{turning@{turning}!Search@{Search}}
+\subsubsection[{turning}]{\setlength{\rightskip}{0pt plus 5cm}bool Search\-::turning = false\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_aef5f5e911426d02067e2ac01e5549f1e}
+
+
+Definition at line 18 of file Search.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/test/\hyperlink{Search_8hpp}{Search.\-hpp}\item 
+src/test/\hyperlink{Search_8cpp}{Search.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,187 @@
+\hypertarget{classOdom}{\section{Odom$<$ Enc1, Enc2 $>$ Class Template Reference}
+\label{classOdom}\index{Odom$<$ Enc1, Enc2 $>$@{Odom$<$ Enc1, Enc2 $>$}}
+}
+
+
+{\ttfamily \#include $<$Odom.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOdom_ab45cc0ea11f5300b84afe6133859a2c2}{Odom} ()
+\item 
+void \hyperlink{classOdom_a6736e8d83d7276bc7b4a656b9dc8dda5}{setup} ()
+\item 
+void \hyperlink{classOdom_ab8bfe47ce84b923b09abf1cf4428c516}{update\-Differential} ()
+\item 
+int \hyperlink{classOdom_aad18072b90a4f0951165577a014024de}{left\-Displacement} ()
+\item 
+int \hyperlink{classOdom_aee42d44f07335600703f40061a01836e}{right\-Displacement} ()
+\item 
+\hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classOdom_adf58a66718029d08c7bd47d5cebfefb6}{get\-Pos} ()
+\item 
+\hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classOdom_a07f630244bd18439ab5e057dfab0587f}{robot\-To\-World} (\hyperlink{classPoint}{Point}$<$ float $>$ robot\-Point)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classOdom_ad2308d2e662650534d2a85aad6c97349}{dir}
+\item 
+int \hyperlink{classOdom_aa29154456ebb189815df2501cc8eb2fd}{left\-\_\-disp}
+\item 
+int \hyperlink{classOdom_a967a8ce7e6bea53de203e37cf180389a}{right\-\_\-disp}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classOdom_a0e43d9feb433dec91e7a08cee64d732b}{pos}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr float \hyperlink{classOdom_a567d0fcf68e65948aed27f27f35e6973}{wheel\-\_\-radius} = 2.\-75/2
+\item 
+static constexpr float \hyperlink{classOdom_a3d72db210126e10ebcae996e1e707ce5}{rot\-\_\-wheel\-\_\-pos} = 3.\-375
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Enc1, typename Enc2$>$class Odom$<$ Enc1, Enc2 $>$}
+
+
+
+Definition at line 6 of file Odom.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOdom_ab45cc0ea11f5300b84afe6133859a2c2}{\index{Odom@{Odom}!Odom@{Odom}}
+\index{Odom@{Odom}!Odom@{Odom}}
+\subsubsection[{Odom}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ {\bf Odom}$<$ Enc1, Enc2 $>$\-::{\bf Odom} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_ab45cc0ea11f5300b84afe6133859a2c2}
+
+
+Definition at line 13 of file Odom.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classOdom_adf58a66718029d08c7bd47d5cebfefb6}{\index{Odom@{Odom}!get\-Pos@{get\-Pos}}
+\index{get\-Pos@{get\-Pos}!Odom@{Odom}}
+\subsubsection[{get\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ {\bf Point}$<$float$>$ {\bf Odom}$<$ Enc1, Enc2 $>$\-::get\-Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_adf58a66718029d08c7bd47d5cebfefb6}
+
+
+Definition at line 45 of file Odom.\-hpp.
+
+\hypertarget{classOdom_aad18072b90a4f0951165577a014024de}{\index{Odom@{Odom}!left\-Displacement@{left\-Displacement}}
+\index{left\-Displacement@{left\-Displacement}!Odom@{Odom}}
+\subsubsection[{left\-Displacement}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ int {\bf Odom}$<$ Enc1, Enc2 $>$\-::left\-Displacement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_aad18072b90a4f0951165577a014024de}
+
+
+Definition at line 37 of file Odom.\-hpp.
+
+\hypertarget{classOdom_aee42d44f07335600703f40061a01836e}{\index{Odom@{Odom}!right\-Displacement@{right\-Displacement}}
+\index{right\-Displacement@{right\-Displacement}!Odom@{Odom}}
+\subsubsection[{right\-Displacement}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ int {\bf Odom}$<$ Enc1, Enc2 $>$\-::right\-Displacement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_aee42d44f07335600703f40061a01836e}
+
+
+Definition at line 41 of file Odom.\-hpp.
+
+\hypertarget{classOdom_a07f630244bd18439ab5e057dfab0587f}{\index{Odom@{Odom}!robot\-To\-World@{robot\-To\-World}}
+\index{robot\-To\-World@{robot\-To\-World}!Odom@{Odom}}
+\subsubsection[{robot\-To\-World}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ {\bf Point}$<$float$>$ {\bf Odom}$<$ Enc1, Enc2 $>$\-::robot\-To\-World (
+\begin{DoxyParamCaption}
+\item[{{\bf Point}$<$ float $>$}]{robot\-Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_a07f630244bd18439ab5e057dfab0587f}
+
+
+Definition at line 47 of file Odom.\-hpp.
+
+\hypertarget{classOdom_a6736e8d83d7276bc7b4a656b9dc8dda5}{\index{Odom@{Odom}!setup@{setup}}
+\index{setup@{setup}!Odom@{Odom}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ void {\bf Odom}$<$ Enc1, Enc2 $>$\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_a6736e8d83d7276bc7b4a656b9dc8dda5}
+
+
+Definition at line 15 of file Odom.\-hpp.
+
+\hypertarget{classOdom_ab8bfe47ce84b923b09abf1cf4428c516}{\index{Odom@{Odom}!update\-Differential@{update\-Differential}}
+\index{update\-Differential@{update\-Differential}!Odom@{Odom}}
+\subsubsection[{update\-Differential}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ void {\bf Odom}$<$ Enc1, Enc2 $>$\-::update\-Differential (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_ab8bfe47ce84b923b09abf1cf4428c516}
+
+
+Definition at line 24 of file Odom.\-hpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classOdom_ad2308d2e662650534d2a85aad6c97349}{\index{Odom@{Odom}!dir@{dir}}
+\index{dir@{dir}!Odom@{Odom}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ float {\bf Odom}$<$ Enc1, Enc2 $>$\-::dir}}\label{classOdom_ad2308d2e662650534d2a85aad6c97349}
+
+
+Definition at line 20 of file Odom.\-hpp.
+
+\hypertarget{classOdom_aa29154456ebb189815df2501cc8eb2fd}{\index{Odom@{Odom}!left\-\_\-disp@{left\-\_\-disp}}
+\index{left\-\_\-disp@{left\-\_\-disp}!Odom@{Odom}}
+\subsubsection[{left\-\_\-disp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ int {\bf Odom}$<$ Enc1, Enc2 $>$\-::left\-\_\-disp}}\label{classOdom_aa29154456ebb189815df2501cc8eb2fd}
+
+
+Definition at line 21 of file Odom.\-hpp.
+
+\hypertarget{classOdom_a0e43d9feb433dec91e7a08cee64d732b}{\index{Odom@{Odom}!pos@{pos}}
+\index{pos@{pos}!Odom@{Odom}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ {\bf Point}$<$float$>$ {\bf Odom}$<$ Enc1, Enc2 $>$\-::pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classOdom_a0e43d9feb433dec91e7a08cee64d732b}
+
+
+Definition at line 8 of file Odom.\-hpp.
+
+\hypertarget{classOdom_a967a8ce7e6bea53de203e37cf180389a}{\index{Odom@{Odom}!right\-\_\-disp@{right\-\_\-disp}}
+\index{right\-\_\-disp@{right\-\_\-disp}!Odom@{Odom}}
+\subsubsection[{right\-\_\-disp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ int {\bf Odom}$<$ Enc1, Enc2 $>$\-::right\-\_\-disp}}\label{classOdom_a967a8ce7e6bea53de203e37cf180389a}
+
+
+Definition at line 21 of file Odom.\-hpp.
+
+\hypertarget{classOdom_a3d72db210126e10ebcae996e1e707ce5}{\index{Odom@{Odom}!rot\-\_\-wheel\-\_\-pos@{rot\-\_\-wheel\-\_\-pos}}
+\index{rot\-\_\-wheel\-\_\-pos@{rot\-\_\-wheel\-\_\-pos}!Odom@{Odom}}
+\subsubsection[{rot\-\_\-wheel\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ constexpr float {\bf Odom}$<$ Enc1, Enc2 $>$\-::rot\-\_\-wheel\-\_\-pos = 3.\-375\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classOdom_a3d72db210126e10ebcae996e1e707ce5}
+
+
+Definition at line 11 of file Odom.\-hpp.
+
+\hypertarget{classOdom_a567d0fcf68e65948aed27f27f35e6973}{\index{Odom@{Odom}!wheel\-\_\-radius@{wheel\-\_\-radius}}
+\index{wheel\-\_\-radius@{wheel\-\_\-radius}!Odom@{Odom}}
+\subsubsection[{wheel\-\_\-radius}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ constexpr float {\bf Odom}$<$ Enc1, Enc2 $>$\-::wheel\-\_\-radius = 2.\-75/2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classOdom_a567d0fcf68e65948aed27f27f35e6973}
+
+
+Definition at line 10 of file Odom.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{Odom_8hpp}{Odom.\-hpp}\end{DoxyCompactItemize}

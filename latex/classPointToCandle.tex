@@ -1,0 +1,133 @@
+\hypertarget{classPointToCandle}{\section{Point\-To\-Candle Class Reference}
+\label{classPointToCandle}\index{Point\-To\-Candle@{Point\-To\-Candle}}
+}
+
+
+{\ttfamily \#include $<$Point\-To\-Candle.\-hpp$>$}
+
+Inheritance diagram for Point\-To\-Candle\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPointToCandle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPointToCandle_a99ace73720580afda4a41cf01c2418a2}{setup} ()
+\item 
+void \hyperlink{classPointToCandle_a446be96046c19b1eff25cf2fcc92ccec}{loop} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classPointToCandle_a495758f0cc24a3287002d1dd1cdc9698}{turn\-To\-Face} (int angle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCandleDetector}{Candle\-Detector} \hyperlink{classPointToCandle_a832de7f053912ab631c7f224982bde52}{cd}
+\item 
+\hyperlink{classLidar}{Lidar} \hyperlink{classPointToCandle_a74def04bd7985f1ae2dfb83cb4ad7d40}{lidar}
+\item 
+\hyperlink{classDriveMotor}{Drive\-Motor} \hyperlink{classPointToCandle_a8976db9c7a0e1484762bf27c829cb06f}{left}
+\item 
+\hyperlink{classDriveMotor}{Drive\-Motor} \hyperlink{classPointToCandle_ad0913e5dfa04c7205c16cc893ff238c5}{right}
+\item 
+int $\ast$ \hyperlink{classPointToCandle_aa905d6ae2cd3d72225020c87f74e30e0}{distances}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Point\-To\-Candle.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPointToCandle_a446be96046c19b1eff25cf2fcc92ccec}{\index{Point\-To\-Candle@{Point\-To\-Candle}!loop@{loop}}
+\index{loop@{loop}!PointToCandle@{Point\-To\-Candle}}
+\subsubsection[{loop}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-To\-Candle\-::loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPointToCandle_a446be96046c19b1eff25cf2fcc92ccec}
+
+
+Implements \hyperlink{classMainSketch_acd69845de8c794dce73d309f142a6795}{Main\-Sketch}.
+
+
+
+Definition at line 30 of file Point\-To\-Candle.\-cpp.
+
+\hypertarget{classPointToCandle_a99ace73720580afda4a41cf01c2418a2}{\index{Point\-To\-Candle@{Point\-To\-Candle}!setup@{setup}}
+\index{setup@{setup}!PointToCandle@{Point\-To\-Candle}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-To\-Candle\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPointToCandle_a99ace73720580afda4a41cf01c2418a2}
+
+
+Implements \hyperlink{classMainSketch_a0708e1eb0ced1063f600f4111df90bf2}{Main\-Sketch}.
+
+
+
+Definition at line 4 of file Point\-To\-Candle.\-cpp.
+
+\hypertarget{classPointToCandle_a495758f0cc24a3287002d1dd1cdc9698}{\index{Point\-To\-Candle@{Point\-To\-Candle}!turn\-To\-Face@{turn\-To\-Face}}
+\index{turn\-To\-Face@{turn\-To\-Face}!PointToCandle@{Point\-To\-Candle}}
+\subsubsection[{turn\-To\-Face}]{\setlength{\rightskip}{0pt plus 5cm}void Point\-To\-Candle\-::turn\-To\-Face (
+\begin{DoxyParamCaption}
+\item[{int}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointToCandle_a495758f0cc24a3287002d1dd1cdc9698}
+
+
+Definition at line 10 of file Point\-To\-Candle.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPointToCandle_a832de7f053912ab631c7f224982bde52}{\index{Point\-To\-Candle@{Point\-To\-Candle}!cd@{cd}}
+\index{cd@{cd}!PointToCandle@{Point\-To\-Candle}}
+\subsubsection[{cd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Candle\-Detector} Point\-To\-Candle\-::cd\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointToCandle_a832de7f053912ab631c7f224982bde52}
+
+
+Definition at line 17 of file Point\-To\-Candle.\-hpp.
+
+\hypertarget{classPointToCandle_aa905d6ae2cd3d72225020c87f74e30e0}{\index{Point\-To\-Candle@{Point\-To\-Candle}!distances@{distances}}
+\index{distances@{distances}!PointToCandle@{Point\-To\-Candle}}
+\subsubsection[{distances}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Point\-To\-Candle\-::distances\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointToCandle_aa905d6ae2cd3d72225020c87f74e30e0}
+
+
+Definition at line 21 of file Point\-To\-Candle.\-hpp.
+
+\hypertarget{classPointToCandle_a8976db9c7a0e1484762bf27c829cb06f}{\index{Point\-To\-Candle@{Point\-To\-Candle}!left@{left}}
+\index{left@{left}!PointToCandle@{Point\-To\-Candle}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Motor} Point\-To\-Candle\-::left\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointToCandle_a8976db9c7a0e1484762bf27c829cb06f}
+
+
+Definition at line 19 of file Point\-To\-Candle.\-hpp.
+
+\hypertarget{classPointToCandle_a74def04bd7985f1ae2dfb83cb4ad7d40}{\index{Point\-To\-Candle@{Point\-To\-Candle}!lidar@{lidar}}
+\index{lidar@{lidar}!PointToCandle@{Point\-To\-Candle}}
+\subsubsection[{lidar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lidar} Point\-To\-Candle\-::lidar\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointToCandle_a74def04bd7985f1ae2dfb83cb4ad7d40}
+
+
+Definition at line 18 of file Point\-To\-Candle.\-hpp.
+
+\hypertarget{classPointToCandle_ad0913e5dfa04c7205c16cc893ff238c5}{\index{Point\-To\-Candle@{Point\-To\-Candle}!right@{right}}
+\index{right@{right}!PointToCandle@{Point\-To\-Candle}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Motor} Point\-To\-Candle\-::right\hspace{0.3cm}{\ttfamily [private]}}}\label{classPointToCandle_ad0913e5dfa04c7205c16cc893ff238c5}
+
+
+Definition at line 20 of file Point\-To\-Candle.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/test/\hyperlink{PointToCandle_8hpp}{Point\-To\-Candle.\-hpp}\item 
+src/test/\hyperlink{PointToCandle_8cpp}{Point\-To\-Candle.\-cpp}\end{DoxyCompactItemize}

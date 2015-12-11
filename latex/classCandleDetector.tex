@@ -1,0 +1,108 @@
+\hypertarget{classCandleDetector}{\section{Candle\-Detector Class Reference}
+\label{classCandleDetector}\index{Candle\-Detector@{Candle\-Detector}}
+}
+
+
+{\ttfamily \#include $<$Candle\-Detector.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCandleDetector_ad018cfcc4256482dcc093cca4411fea6}{Candle\-Detector} ()
+\item 
+bool \hyperlink{classCandleDetector_ae02492f18d3f1ff4282bebb70bfdd905}{detect} (int $\ast$distance, int $\ast$angle, int $\ast$radii)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classCandleDetector_af4c5d2170cea56fa4263639f20ed13ed}{W\-I\-D\-T\-H} = 130
+\item 
+static const int \hyperlink{classCandleDetector_a1c8f0232491ba37dd10032c1da376145}{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E} = 35
+\item 
+static const int \hyperlink{classCandleDetector_a9062a3c45b98c5d051082dbf4a285fd5}{M\-I\-N\-\_\-\-S\-P\-I\-K\-E} = 300
+\item 
+static const int \hyperlink{classCandleDetector_a3903cd4085162f1fc38ca74cac3b954e}{M\-A\-X\-\_\-\-S\-P\-I\-K\-E} = 3000
+\item 
+static const float \hyperlink{classCandleDetector_ac8aa00d0477ff096c344ec71d8ccdf82}{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 0.\-9
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3 of file Candle\-Detector.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCandleDetector_ad018cfcc4256482dcc093cca4411fea6}{\index{Candle\-Detector@{Candle\-Detector}!Candle\-Detector@{Candle\-Detector}}
+\index{Candle\-Detector@{Candle\-Detector}!CandleDetector@{Candle\-Detector}}
+\subsubsection[{Candle\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}Candle\-Detector\-::\-Candle\-Detector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCandleDetector_ad018cfcc4256482dcc093cca4411fea6}
+
+
+Definition at line 7 of file Candle\-Detector.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCandleDetector_ae02492f18d3f1ff4282bebb70bfdd905}{\index{Candle\-Detector@{Candle\-Detector}!detect@{detect}}
+\index{detect@{detect}!CandleDetector@{Candle\-Detector}}
+\subsubsection[{detect}]{\setlength{\rightskip}{0pt plus 5cm}bool Candle\-Detector\-::detect (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{distance, }
+\item[{int $\ast$}]{angle, }
+\item[{int $\ast$}]{radii}
+\end{DoxyParamCaption}
+)}}\label{classCandleDetector_ae02492f18d3f1ff4282bebb70bfdd905}
+Looks for candle and returns true if found assigns values to given pointers for distance and angle based on input array of distances 
+
+Definition at line 9 of file Candle\-Detector.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCandleDetector_a3903cd4085162f1fc38ca74cac3b954e}{\index{Candle\-Detector@{Candle\-Detector}!M\-A\-X\-\_\-\-S\-P\-I\-K\-E@{M\-A\-X\-\_\-\-S\-P\-I\-K\-E}}
+\index{M\-A\-X\-\_\-\-S\-P\-I\-K\-E@{M\-A\-X\-\_\-\-S\-P\-I\-K\-E}!CandleDetector@{Candle\-Detector}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-P\-I\-K\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-M\-A\-X\-\_\-\-S\-P\-I\-K\-E = 3000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_a3903cd4085162f1fc38ca74cac3b954e}
+
+
+Definition at line 18 of file Candle\-Detector.\-hpp.
+
+\hypertarget{classCandleDetector_a9062a3c45b98c5d051082dbf4a285fd5}{\index{Candle\-Detector@{Candle\-Detector}!M\-I\-N\-\_\-\-S\-P\-I\-K\-E@{M\-I\-N\-\_\-\-S\-P\-I\-K\-E}}
+\index{M\-I\-N\-\_\-\-S\-P\-I\-K\-E@{M\-I\-N\-\_\-\-S\-P\-I\-K\-E}!CandleDetector@{Candle\-Detector}}
+\subsubsection[{M\-I\-N\-\_\-\-S\-P\-I\-K\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-M\-I\-N\-\_\-\-S\-P\-I\-K\-E = 300\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_a9062a3c45b98c5d051082dbf4a285fd5}
+
+
+Definition at line 17 of file Candle\-Detector.\-hpp.
+
+\hypertarget{classCandleDetector_ac8aa00d0477ff096c344ec71d8ccdf82}{\index{Candle\-Detector@{Candle\-Detector}!V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
+\index{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}!CandleDetector@{Candle\-Detector}}
+\subsubsection[{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}const float Candle\-Detector\-::\-V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D = 0.\-9\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_ac8aa00d0477ff096c344ec71d8ccdf82}
+
+
+Definition at line 20 of file Candle\-Detector.\-hpp.
+
+\hypertarget{classCandleDetector_af4c5d2170cea56fa4263639f20ed13ed}{\index{Candle\-Detector@{Candle\-Detector}!W\-I\-D\-T\-H@{W\-I\-D\-T\-H}}
+\index{W\-I\-D\-T\-H@{W\-I\-D\-T\-H}!CandleDetector@{Candle\-Detector}}
+\subsubsection[{W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-W\-I\-D\-T\-H = 130\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_af4c5d2170cea56fa4263639f20ed13ed}
+
+
+Definition at line 15 of file Candle\-Detector.\-hpp.
+
+\hypertarget{classCandleDetector_a1c8f0232491ba37dd10032c1da376145}{\index{Candle\-Detector@{Candle\-Detector}!W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E@{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}}
+\index{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E@{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}!CandleDetector@{Candle\-Detector}}
+\subsubsection[{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E = 35\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_a1c8f0232491ba37dd10032c1da376145}
+
+
+Definition at line 16 of file Candle\-Detector.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{CandleDetector_8hpp}{Candle\-Detector.\-hpp}\item 
+src/shared/\hyperlink{CandleDetector_8cpp}{Candle\-Detector.\-cpp}\end{DoxyCompactItemize}

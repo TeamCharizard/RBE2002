@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['read',['read',['../classEncoder.html#ad4a82c2cb43afce3149e206e42796173',1,'Encoder::read()'],['../classLidar.html#a424a60f6278617333201c5fca115c288',1,'Lidar::read()']]],
+  ['return_5fto_5forigin',['RETURN_TO_ORIGIN',['../classMain.html#a92ef9240246e98c3eb7cc8126982f98ca3ff87a64146af251296a5ce0a05e923d',1,'Main']]],
+  ['returntoorigin',['returnToOrigin',['../classRobot.html#ac1faa7fbfb483c4053dc35f368359c0b',1,'Robot']]],
+  ['right',['right',['../classPointToCandle.html#ad0913e5dfa04c7205c16cc893ff238c5',1,'PointToCandle::right()'],['../classSearch.html#a7f0e23cc5c8aa635fbe7f5b4c8e30eb0',1,'Search::right()'],['../DriveMotor_8hpp.html#a077d9d13989efa3142086ea83cbb1e68aec8379af7490bb9eaaf579cf17876f38',1,'RIGHT():&#160;DriveMotor.hpp']]],
+  ['right_5fdisp',['right_disp',['../classOdom.html#a967a8ce7e6bea53de203e37cf180389a',1,'Odom']]],
+  ['rightdisplacement',['rightDisplacement',['../classOdom.html#aee42d44f07335600703f40061a01836e',1,'Odom']]],
+  ['rightenc',['RightEnc',['../classPIDBase.html#a1b40a4e43b87a65c6d501ccf5789acc3',1,'PIDBase::RightEnc()'],['../classPrintOdom.html#ac090b58cc7388d8f2e26d5b7c912f383',1,'PrintOdom::RightEnc()']]],
+  ['rmotor',['rMotor',['../classPIDBase.html#ae52cf8a147c90af4334e1ad14f48aa4a',1,'PIDBase']]],
+  ['robot',['Robot',['../classRobot.html',1,'Robot'],['../classRobot.html#a4fc7c70ae20623f05e06f2ecb388b6c4',1,'Robot::Robot()']]],
+  ['robot_2ecpp',['Robot.cpp',['../Robot_8cpp.html',1,'']]],
+  ['robot_2ehpp',['Robot.hpp',['../Robot_8hpp.html',1,'']]],
+  ['robotstate',['RobotState',['../classMain.html#a92ef9240246e98c3eb7cc8126982f98c',1,'Main']]],
+  ['robottoworld',['robotToWorld',['../classOdom.html#a07f630244bd18439ab5e057dfab0587f',1,'Odom']]],
+  ['rot_5fwheel_5fpos',['rot_wheel_pos',['../classOdom.html#a3d72db210126e10ebcae996e1e707ce5',1,'Odom']]],
+  ['rotate',['rotate',['../classPoint.html#a21b0a6ce6c6041b23604a27121786902',1,'Point']]],
+  ['rpid',['rPID',['../classPIDBase.html#a940d3dae6038a472ea613c03c5be3846',1,'PIDBase']]],
+  ['run',['run',['../classPID.html#a58191a0c19f6ea9761bf7cb8f1b7137c',1,'PID::run()'],['../classPIDBase.html#af2accfb7aea58dc4e05d07e095785f23',1,'PIDBase::run()']]]
+];

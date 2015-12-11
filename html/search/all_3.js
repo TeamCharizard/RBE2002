@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['debugprint',['debugPrint',['../main_8hpp.html#a791f1dbeefa3cf1a8db769cb5b5f68bc',1,'main.hpp']]],
+  ['detect',['detect',['../classCandleDetector.html#ae02492f18d3f1ff4282bebb70bfdd905',1,'CandleDetector']]],
+  ['detector',['detector',['../classRobot.html#a19cb4c2ee87b595db9275e6b3d9ca30d',1,'Robot']]],
+  ['dfront',['dFront',['../classSearcher.html#ae9ecf25b0705199abad716431659d4b6',1,'Searcher::dFront()'],['../classSearch.html#a443c7d18e6cfd0d114f7e2c2b1495bec',1,'Search::dFront()']]],
+  ['dir',['dir',['../classOdom.html#ad2308d2e662650534d2a85aad6c97349',1,'Odom::dir()'],['../classPIDBase.html#abde01e16704fe190c8eff5bb9bb5f2ae',1,'PIDBase::dir()']]],
+  ['display',['Display',['../main_8hpp.html#af9292167b3aeb9b70e1ea9b2bbbbc8cd',1,'main.hpp']]],
+  ['distanceindex',['distanceIndex',['../classLidar.html#a5d198ec3f5d3de7829dda616ea13d016',1,'Lidar']]],
+  ['distances',['distances',['../classLidar.html#a5f97323ace606c1b4d2f817ebb8ebf7d',1,'Lidar::distances()'],['../classDriveUntilCandle.html#ab1308b79db403f3c35b2d84b8254c349',1,'DriveUntilCandle::distances()'],['../classPointToCandle.html#aa905d6ae2cd3d72225020c87f74e30e0',1,'PointToCandle::distances()'],['../classRobot.html#aba9dccea96aa95bb8fbdd1a5ba72ca73',1,'Robot::distances()'],['../classSearch.html#acae7260fec1cd49350860f94955b1e63',1,'Search::distances()'],['../classTestOdom.html#a235ba0e8870aec23452d6030efaf8c7e',1,'TestOdom::distances()']]],
+  ['distancetocandle',['distanceToCandle',['../classRobot.html#afae387e4e9419530d3217055301ba939',1,'Robot']]],
+  ['dleft',['dLeft',['../classSearcher.html#afa55bd372a5cb9cdebc9720dfe098e4d',1,'Searcher::dLeft()'],['../classSearch.html#aeab525e9821cdb2dc5ed996a207d9084',1,'Search::dLeft()']]],
+  ['docs_2eh',['Docs.h',['../Docs_8h.html',1,'']]],
+  ['dright',['dRight',['../classSearcher.html#a56c7e8eb20ba293376d59dc55ac4a0c5',1,'Searcher::dRight()'],['../classSearch.html#a376def82b93387197752cc169ddf060e',1,'Search::dRight()']]],
+  ['drive',['drive',['../classRobot.html#a8ad37bfa9e1efeaf7b5eb67667513dbe',1,'Robot']]],
+  ['drive_5fto_5fcandle',['DRIVE_TO_CANDLE',['../classMain.html#a92ef9240246e98c3eb7cc8126982f98ca548307ff4dd856e6420422153139c219',1,'Main']]],
+  ['driveandavoid',['driveAndAvoid',['../classRobot.html#ae7a44c77eacc2a9a3d41f7a18cfb401f',1,'Robot']]],
+  ['drivedirection',['driveDirection',['../classRobot.html#af15d2eaa46a9736e5d3d3aa9e8a9751c',1,'Robot::driveDirection()'],['../DriveMotor_8hpp.html#a077d9d13989efa3142086ea83cbb1e68',1,'DriveDirection():&#160;DriveMotor.hpp']]],
+  ['drivemotor',['DriveMotor',['../classDriveMotor.html',1,'']]],
+  ['drivemotor_2ecpp',['DriveMotor.cpp',['../DriveMotor_8cpp.html',1,'']]],
+  ['drivemotor_2ehpp',['DriveMotor.hpp',['../DriveMotor_8hpp.html',1,'']]],
+  ['drivetocandle',['driveToCandle',['../classRobot.html#a6b943dfc58f8e1d49ee063250a2621de',1,'Robot']]],
+  ['driveuntilcandle',['DriveUntilCandle',['../classDriveUntilCandle.html',1,'']]],
+  ['driveuntilcandle_2ecpp',['DriveUntilCandle.cpp',['../DriveUntilCandle_8cpp.html',1,'']]],
+  ['driveuntilcandle_2ehpp',['DriveUntilCandle.hpp',['../DriveUntilCandle_8hpp.html',1,'']]]
+];

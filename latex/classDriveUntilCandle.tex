@@ -1,0 +1,166 @@
+\hypertarget{classDriveUntilCandle}{\section{Drive\-Until\-Candle Class Reference}
+\label{classDriveUntilCandle}\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}}
+}
+
+
+{\ttfamily \#include $<$Drive\-Until\-Candle.\-hpp$>$}
+
+Inheritance diagram for Drive\-Until\-Candle\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDriveUntilCandle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDriveUntilCandle_a520ee2277625ce84b594b0a073d23f84}{setup} ()
+\item 
+void \hyperlink{classDriveUntilCandle_a6c5970d7250b2fd9658bb1a84d2a4ce7}{loop} ()
+\item 
+void \hyperlink{classDriveUntilCandle_a0d72ef9e0ab6b731b36ecfce2b4fa6f2}{avoid\-In\-Front} (int distance)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLidar}{Lidar} \hyperlink{classDriveUntilCandle_a483790cb5a28465c04fd6c42374d85ac}{lidar}
+\item 
+\hyperlink{classPIDBase}{P\-I\-D\-Base} \hyperlink{classDriveUntilCandle_a22ecc867ba274ca665b71a6f762b7873}{base}
+\item 
+int $\ast$ \hyperlink{classDriveUntilCandle_ab1308b79db403f3c35b2d84b8254c349}{distances}
+\item 
+bool \hyperlink{classDriveUntilCandle_a99cfadc7663aebef445e59d721dfe0bc}{found\-Candle}
+\item 
+bool \hyperlink{classDriveUntilCandle_a4a3766796623146b80c0a3fa083136d3}{considering\-Candle}
+\item 
+\hyperlink{classCandleDetector}{Candle\-Detector} \hyperlink{classDriveUntilCandle_af93647db50bc410773c8399642b91450}{cd}
+\item 
+int \hyperlink{classDriveUntilCandle_a786f5c46c30956d8fafdd57f143b4960}{candle\-Angle} = 0
+\item 
+int \hyperlink{classDriveUntilCandle_a36b2ce9badf48a77df0ce3ecd38922ec}{candle\-Distance} = 0
+\item 
+int \hyperlink{classDriveUntilCandle_a518d428f126c93f016e62c8b1ac88c2f}{count} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Drive\-Until\-Candle.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDriveUntilCandle_a0d72ef9e0ab6b731b36ecfce2b4fa6f2}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!avoid\-In\-Front@{avoid\-In\-Front}}
+\index{avoid\-In\-Front@{avoid\-In\-Front}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{avoid\-In\-Front}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-Until\-Candle\-::avoid\-In\-Front (
+\begin{DoxyParamCaption}
+\item[{int}]{distance}
+\end{DoxyParamCaption}
+)}}\label{classDriveUntilCandle_a0d72ef9e0ab6b731b36ecfce2b4fa6f2}
+
+
+Definition at line 11 of file Drive\-Until\-Candle.\-cpp.
+
+\hypertarget{classDriveUntilCandle_a6c5970d7250b2fd9658bb1a84d2a4ce7}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!loop@{loop}}
+\index{loop@{loop}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{loop}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-Until\-Candle\-::loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDriveUntilCandle_a6c5970d7250b2fd9658bb1a84d2a4ce7}
+
+
+Implements \hyperlink{classMainSketch_acd69845de8c794dce73d309f142a6795}{Main\-Sketch}.
+
+
+
+Definition at line 20 of file Drive\-Until\-Candle.\-cpp.
+
+\hypertarget{classDriveUntilCandle_a520ee2277625ce84b594b0a073d23f84}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!setup@{setup}}
+\index{setup@{setup}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-Until\-Candle\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDriveUntilCandle_a520ee2277625ce84b594b0a073d23f84}
+
+
+Implements \hyperlink{classMainSketch_a0708e1eb0ced1063f600f4111df90bf2}{Main\-Sketch}.
+
+
+
+Definition at line 5 of file Drive\-Until\-Candle.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDriveUntilCandle_a22ecc867ba274ca665b71a6f762b7873}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!base@{base}}
+\index{base@{base}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-I\-D\-Base} Drive\-Until\-Candle\-::base\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_a22ecc867ba274ca665b71a6f762b7873}
+
+
+Definition at line 16 of file Drive\-Until\-Candle.\-hpp.
+
+\hypertarget{classDriveUntilCandle_a786f5c46c30956d8fafdd57f143b4960}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!candle\-Angle@{candle\-Angle}}
+\index{candle\-Angle@{candle\-Angle}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{candle\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}int Drive\-Until\-Candle\-::candle\-Angle = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_a786f5c46c30956d8fafdd57f143b4960}
+
+
+Definition at line 21 of file Drive\-Until\-Candle.\-hpp.
+
+\hypertarget{classDriveUntilCandle_a36b2ce9badf48a77df0ce3ecd38922ec}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!candle\-Distance@{candle\-Distance}}
+\index{candle\-Distance@{candle\-Distance}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{candle\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}int Drive\-Until\-Candle\-::candle\-Distance = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_a36b2ce9badf48a77df0ce3ecd38922ec}
+
+
+Definition at line 22 of file Drive\-Until\-Candle.\-hpp.
+
+\hypertarget{classDriveUntilCandle_af93647db50bc410773c8399642b91450}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!cd@{cd}}
+\index{cd@{cd}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{cd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Candle\-Detector} Drive\-Until\-Candle\-::cd\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_af93647db50bc410773c8399642b91450}
+
+
+Definition at line 20 of file Drive\-Until\-Candle.\-hpp.
+
+\hypertarget{classDriveUntilCandle_a4a3766796623146b80c0a3fa083136d3}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!considering\-Candle@{considering\-Candle}}
+\index{considering\-Candle@{considering\-Candle}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{considering\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}bool Drive\-Until\-Candle\-::considering\-Candle\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_a4a3766796623146b80c0a3fa083136d3}
+
+
+Definition at line 18 of file Drive\-Until\-Candle.\-hpp.
+
+\hypertarget{classDriveUntilCandle_a518d428f126c93f016e62c8b1ac88c2f}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!count@{count}}
+\index{count@{count}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}int Drive\-Until\-Candle\-::count = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_a518d428f126c93f016e62c8b1ac88c2f}
+
+
+Definition at line 23 of file Drive\-Until\-Candle.\-hpp.
+
+\hypertarget{classDriveUntilCandle_ab1308b79db403f3c35b2d84b8254c349}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!distances@{distances}}
+\index{distances@{distances}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{distances}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Drive\-Until\-Candle\-::distances\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_ab1308b79db403f3c35b2d84b8254c349}
+
+
+Definition at line 17 of file Drive\-Until\-Candle.\-hpp.
+
+\hypertarget{classDriveUntilCandle_a99cfadc7663aebef445e59d721dfe0bc}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!found\-Candle@{found\-Candle}}
+\index{found\-Candle@{found\-Candle}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{found\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}bool Drive\-Until\-Candle\-::found\-Candle\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_a99cfadc7663aebef445e59d721dfe0bc}
+
+
+Definition at line 18 of file Drive\-Until\-Candle.\-hpp.
+
+\hypertarget{classDriveUntilCandle_a483790cb5a28465c04fd6c42374d85ac}{\index{Drive\-Until\-Candle@{Drive\-Until\-Candle}!lidar@{lidar}}
+\index{lidar@{lidar}!DriveUntilCandle@{Drive\-Until\-Candle}}
+\subsubsection[{lidar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lidar} Drive\-Until\-Candle\-::lidar\hspace{0.3cm}{\ttfamily [private]}}}\label{classDriveUntilCandle_a483790cb5a28465c04fd6c42374d85ac}
+
+
+Definition at line 15 of file Drive\-Until\-Candle.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/test/\hyperlink{DriveUntilCandle_8hpp}{Drive\-Until\-Candle.\-hpp}\item 
+src/test/\hyperlink{DriveUntilCandle_8cpp}{Drive\-Until\-Candle.\-cpp}\end{DoxyCompactItemize}

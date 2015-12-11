@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_2ehpp',['main.hpp',['../main_8hpp.html',1,'']]]
+  ['candledetector_2ecpp',['CandleDetector.cpp',['../CandleDetector_8cpp.html',1,'']]],
+  ['candledetector_2ehpp',['CandleDetector.hpp',['../CandleDetector_8hpp.html',1,'']]]
 ];

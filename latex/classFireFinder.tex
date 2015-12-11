@@ -1,0 +1,209 @@
+\hypertarget{classFireFinder}{\section{Fire\-Finder Class Reference}
+\label{classFireFinder}\index{Fire\-Finder@{Fire\-Finder}}
+}
+
+
+{\ttfamily \#include $<$Fire\-Finder.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classFireFinder_aaa2beb5a87e2d9dbd83c0dee1f4f1ef0}{setup} ()
+\item 
+void \hyperlink{classFireFinder_ab2cddefdf1200e176231a601a3a1ede3}{start\-Scan} ()
+\item 
+int \hyperlink{classFireFinder_a8521d3f518599280ff0c671905c91820}{watch} (int d\-To\-Candle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Servo \hyperlink{classFireFinder_ac6a7b4e986e63cddb3f010e8909c00f8}{head}
+\item 
+int \hyperlink{classFireFinder_a7d3912a911843b60de3468588cfe8579}{min\-Intensity} = 1024
+\item 
+int \hyperlink{classFireFinder_a84926ae7c01b8c03bb87c810136a41ff}{sum} = 0
+\item 
+int \hyperlink{classFireFinder_ad8be0837d88f10d65b6f8a405f29494a}{min\-Position} = 180
+\item 
+int \hyperlink{classFireFinder_a40e204a2807939b3195024f14a9278fc}{position} = 0
+\item 
+bool \hyperlink{classFireFinder_aec1a3ae4b80847a907898601c64386cb}{scanning} = false
+\item 
+long \hyperlink{classFireFinder_a97b1a598ddb7886feb4a96a4931cc103}{time\-To\-Change\-Angle} = 0l
+\item 
+long \hyperlink{classFireFinder_aaa38192d82bc4120129b72fee61f72f1}{sweep\-Time} = 2500l
+\item 
+long \hyperlink{classFireFinder_ad482526cf32997919cbc31f61d12065d}{step} = 5
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classFireFinder_ac29b178da56a9347787371708bb62a20}{M\-O\-T\-O\-R\-\_\-\-P\-I\-N} = 10
+\item 
+static const int \hyperlink{classFireFinder_a5afc5290c8ba58893228414ba5965ed3}{S\-E\-N\-S\-O\-R\-\_\-\-P\-I\-N} = 0
+\item 
+static const int \hyperlink{classFireFinder_ace5a0c6c6435a4d36377dc94a5f785db}{M\-A\-X\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E} = 30
+\item 
+static const int \hyperlink{classFireFinder_ac6743699fd08f97088855dc1e87f8dea}{M\-I\-N\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E} = -\/20
+\item 
+static const int \hyperlink{classFireFinder_a2136ca4e2438b84b0f4f3864697d51b1}{S\-A\-M\-P\-L\-E\-\_\-\-S\-I\-Z\-E} = 10
+\item 
+static const int \hyperlink{classFireFinder_ab145c886fc3edcc215a5673bf4874b13}{S\-E\-N\-S\-O\-R\-\_\-\-H\-E\-I\-G\-H\-T} = 190
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file Fire\-Finder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFireFinder_aaa2beb5a87e2d9dbd83c0dee1f4f1ef0}{\index{Fire\-Finder@{Fire\-Finder}!setup@{setup}}
+\index{setup@{setup}!FireFinder@{Fire\-Finder}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Fire\-Finder\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFireFinder_aaa2beb5a87e2d9dbd83c0dee1f4f1ef0}
+
+
+Definition at line 6 of file Fire\-Finder.\-cpp.
+
+\hypertarget{classFireFinder_ab2cddefdf1200e176231a601a3a1ede3}{\index{Fire\-Finder@{Fire\-Finder}!start\-Scan@{start\-Scan}}
+\index{start\-Scan@{start\-Scan}!FireFinder@{Fire\-Finder}}
+\subsubsection[{start\-Scan}]{\setlength{\rightskip}{0pt plus 5cm}void Fire\-Finder\-::start\-Scan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFireFinder_ab2cddefdf1200e176231a601a3a1ede3}
+
+
+Definition at line 10 of file Fire\-Finder.\-cpp.
+
+\hypertarget{classFireFinder_a8521d3f518599280ff0c671905c91820}{\index{Fire\-Finder@{Fire\-Finder}!watch@{watch}}
+\index{watch@{watch}!FireFinder@{Fire\-Finder}}
+\subsubsection[{watch}]{\setlength{\rightskip}{0pt plus 5cm}int Fire\-Finder\-::watch (
+\begin{DoxyParamCaption}
+\item[{int}]{d\-To\-Candle}
+\end{DoxyParamCaption}
+)}}\label{classFireFinder_a8521d3f518599280ff0c671905c91820}
+
+
+Definition at line 18 of file Fire\-Finder.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classFireFinder_ac6a7b4e986e63cddb3f010e8909c00f8}{\index{Fire\-Finder@{Fire\-Finder}!head@{head}}
+\index{head@{head}!FireFinder@{Fire\-Finder}}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}Servo Fire\-Finder\-::head\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_ac6a7b4e986e63cddb3f010e8909c00f8}
+
+
+Definition at line 17 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_ace5a0c6c6435a4d36377dc94a5f785db}{\index{Fire\-Finder@{Fire\-Finder}!M\-A\-X\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E@{M\-A\-X\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E}}
+\index{M\-A\-X\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E@{M\-A\-X\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E}!FireFinder@{Fire\-Finder}}
+\subsubsection[{M\-A\-X\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Fire\-Finder\-::\-M\-A\-X\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E = 30\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classFireFinder_ace5a0c6c6435a4d36377dc94a5f785db}
+
+
+Definition at line 33 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_ac6743699fd08f97088855dc1e87f8dea}{\index{Fire\-Finder@{Fire\-Finder}!M\-I\-N\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E@{M\-I\-N\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E}}
+\index{M\-I\-N\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E@{M\-I\-N\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E}!FireFinder@{Fire\-Finder}}
+\subsubsection[{M\-I\-N\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Fire\-Finder\-::\-M\-I\-N\-\_\-\-H\-E\-A\-D\-\_\-\-A\-N\-G\-L\-E = -\/20\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classFireFinder_ac6743699fd08f97088855dc1e87f8dea}
+
+
+Definition at line 34 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_a7d3912a911843b60de3468588cfe8579}{\index{Fire\-Finder@{Fire\-Finder}!min\-Intensity@{min\-Intensity}}
+\index{min\-Intensity@{min\-Intensity}!FireFinder@{Fire\-Finder}}
+\subsubsection[{min\-Intensity}]{\setlength{\rightskip}{0pt plus 5cm}int Fire\-Finder\-::min\-Intensity = 1024\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_a7d3912a911843b60de3468588cfe8579}
+
+
+Definition at line 19 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_ad8be0837d88f10d65b6f8a405f29494a}{\index{Fire\-Finder@{Fire\-Finder}!min\-Position@{min\-Position}}
+\index{min\-Position@{min\-Position}!FireFinder@{Fire\-Finder}}
+\subsubsection[{min\-Position}]{\setlength{\rightskip}{0pt plus 5cm}int Fire\-Finder\-::min\-Position = 180\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_ad8be0837d88f10d65b6f8a405f29494a}
+
+
+Definition at line 21 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_ac29b178da56a9347787371708bb62a20}{\index{Fire\-Finder@{Fire\-Finder}!M\-O\-T\-O\-R\-\_\-\-P\-I\-N@{M\-O\-T\-O\-R\-\_\-\-P\-I\-N}}
+\index{M\-O\-T\-O\-R\-\_\-\-P\-I\-N@{M\-O\-T\-O\-R\-\_\-\-P\-I\-N}!FireFinder@{Fire\-Finder}}
+\subsubsection[{M\-O\-T\-O\-R\-\_\-\-P\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int Fire\-Finder\-::\-M\-O\-T\-O\-R\-\_\-\-P\-I\-N = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classFireFinder_ac29b178da56a9347787371708bb62a20}
+
+
+Definition at line 31 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_a40e204a2807939b3195024f14a9278fc}{\index{Fire\-Finder@{Fire\-Finder}!position@{position}}
+\index{position@{position}!FireFinder@{Fire\-Finder}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}int Fire\-Finder\-::position = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_a40e204a2807939b3195024f14a9278fc}
+
+
+Definition at line 22 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_a2136ca4e2438b84b0f4f3864697d51b1}{\index{Fire\-Finder@{Fire\-Finder}!S\-A\-M\-P\-L\-E\-\_\-\-S\-I\-Z\-E@{S\-A\-M\-P\-L\-E\-\_\-\-S\-I\-Z\-E}}
+\index{S\-A\-M\-P\-L\-E\-\_\-\-S\-I\-Z\-E@{S\-A\-M\-P\-L\-E\-\_\-\-S\-I\-Z\-E}!FireFinder@{Fire\-Finder}}
+\subsubsection[{S\-A\-M\-P\-L\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Fire\-Finder\-::\-S\-A\-M\-P\-L\-E\-\_\-\-S\-I\-Z\-E = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classFireFinder_a2136ca4e2438b84b0f4f3864697d51b1}
+
+
+Definition at line 35 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_aec1a3ae4b80847a907898601c64386cb}{\index{Fire\-Finder@{Fire\-Finder}!scanning@{scanning}}
+\index{scanning@{scanning}!FireFinder@{Fire\-Finder}}
+\subsubsection[{scanning}]{\setlength{\rightskip}{0pt plus 5cm}bool Fire\-Finder\-::scanning = false\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_aec1a3ae4b80847a907898601c64386cb}
+
+
+Definition at line 25 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_ab145c886fc3edcc215a5673bf4874b13}{\index{Fire\-Finder@{Fire\-Finder}!S\-E\-N\-S\-O\-R\-\_\-\-H\-E\-I\-G\-H\-T@{S\-E\-N\-S\-O\-R\-\_\-\-H\-E\-I\-G\-H\-T}}
+\index{S\-E\-N\-S\-O\-R\-\_\-\-H\-E\-I\-G\-H\-T@{S\-E\-N\-S\-O\-R\-\_\-\-H\-E\-I\-G\-H\-T}!FireFinder@{Fire\-Finder}}
+\subsubsection[{S\-E\-N\-S\-O\-R\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int Fire\-Finder\-::\-S\-E\-N\-S\-O\-R\-\_\-\-H\-E\-I\-G\-H\-T = 190\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classFireFinder_ab145c886fc3edcc215a5673bf4874b13}
+
+
+Definition at line 36 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_a5afc5290c8ba58893228414ba5965ed3}{\index{Fire\-Finder@{Fire\-Finder}!S\-E\-N\-S\-O\-R\-\_\-\-P\-I\-N@{S\-E\-N\-S\-O\-R\-\_\-\-P\-I\-N}}
+\index{S\-E\-N\-S\-O\-R\-\_\-\-P\-I\-N@{S\-E\-N\-S\-O\-R\-\_\-\-P\-I\-N}!FireFinder@{Fire\-Finder}}
+\subsubsection[{S\-E\-N\-S\-O\-R\-\_\-\-P\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int Fire\-Finder\-::\-S\-E\-N\-S\-O\-R\-\_\-\-P\-I\-N = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classFireFinder_a5afc5290c8ba58893228414ba5965ed3}
+
+
+Definition at line 32 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_ad482526cf32997919cbc31f61d12065d}{\index{Fire\-Finder@{Fire\-Finder}!step@{step}}
+\index{step@{step}!FireFinder@{Fire\-Finder}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}long Fire\-Finder\-::step = 5\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_ad482526cf32997919cbc31f61d12065d}
+
+
+Definition at line 29 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_a84926ae7c01b8c03bb87c810136a41ff}{\index{Fire\-Finder@{Fire\-Finder}!sum@{sum}}
+\index{sum@{sum}!FireFinder@{Fire\-Finder}}
+\subsubsection[{sum}]{\setlength{\rightskip}{0pt plus 5cm}int Fire\-Finder\-::sum = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_a84926ae7c01b8c03bb87c810136a41ff}
+
+
+Definition at line 20 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_aaa38192d82bc4120129b72fee61f72f1}{\index{Fire\-Finder@{Fire\-Finder}!sweep\-Time@{sweep\-Time}}
+\index{sweep\-Time@{sweep\-Time}!FireFinder@{Fire\-Finder}}
+\subsubsection[{sweep\-Time}]{\setlength{\rightskip}{0pt plus 5cm}long Fire\-Finder\-::sweep\-Time = 2500l\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_aaa38192d82bc4120129b72fee61f72f1}
+
+
+Definition at line 28 of file Fire\-Finder.\-hpp.
+
+\hypertarget{classFireFinder_a97b1a598ddb7886feb4a96a4931cc103}{\index{Fire\-Finder@{Fire\-Finder}!time\-To\-Change\-Angle@{time\-To\-Change\-Angle}}
+\index{time\-To\-Change\-Angle@{time\-To\-Change\-Angle}!FireFinder@{Fire\-Finder}}
+\subsubsection[{time\-To\-Change\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}long Fire\-Finder\-::time\-To\-Change\-Angle = 0l\hspace{0.3cm}{\ttfamily [private]}}}\label{classFireFinder_a97b1a598ddb7886feb4a96a4931cc103}
+
+
+Definition at line 27 of file Fire\-Finder.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{FireFinder_8hpp}{Fire\-Finder.\-hpp}\item 
+src/shared/\hyperlink{FireFinder_8cpp}{Fire\-Finder.\-cpp}\end{DoxyCompactItemize}

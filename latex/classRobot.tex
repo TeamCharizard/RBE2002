@@ -1,0 +1,323 @@
+\hypertarget{classRobot}{\section{Robot Class Reference}
+\label{classRobot}\index{Robot@{Robot}}
+}
+
+
+{\ttfamily \#include $<$Robot.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classRobot_a1fc37e3c329d59795f6adf44199d4df9}{setup} ()
+\item 
+void \hyperlink{classRobot_a8ad37bfa9e1efeaf7b5eb67667513dbe}{drive} ()
+\item 
+void \hyperlink{classRobot_a14dfe126ae973d3b9f81fee81a06ac22}{stop} ()
+\item 
+void \hyperlink{classRobot_ade0935cead03791f27fa854df88a3f22}{set\-Drive} (\hyperlink{DriveMotor_8hpp_a077d9d13989efa3142086ea83cbb1e68}{Drive\-Direction} dir)
+\item 
+bool \hyperlink{classRobot_a1f08dec6eea6b51d73cd41a8db3bb893}{search} ()
+\item 
+bool \hyperlink{classRobot_a6b943dfc58f8e1d49ee063250a2621de}{drive\-To\-Candle} ()
+\item 
+bool \hyperlink{classRobot_a17e0de9c529197b3575e11a87470376b}{find\-Candle\-Height} ()
+\item 
+bool \hyperlink{classRobot_a0dfb8f97d6a9448bc6f9ccc5b9efb9fb}{extinguish\-Candle} ()
+\item 
+bool \hyperlink{classRobot_ac1faa7fbfb483c4053dc35f368359c0b}{return\-To\-Origin} ()
+\item 
+bool \hyperlink{classRobot_afa750c4ecf35e5f26992779ac89eb13e}{turn\-To\-Face} (int angle)
+\item 
+void \hyperlink{classRobot_ae7a44c77eacc2a9a3d41f7a18cfb401f}{drive\-And\-Avoid} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRobot}{Robot} $\ast$ \hyperlink{classRobot_ac6f19dc31b435f8a2d43944ba49286d0}{get\-Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLidar}{Lidar} \hyperlink{classRobot_a222e54f477e23f5af80cfa10bcd85e7a}{lidar}
+\item 
+\hyperlink{classPIDBase}{P\-I\-D\-Base} \hyperlink{classRobot_adbf538f97c0f9f98337f5171e715badc}{base}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRobot_a4fc7c70ae20623f05e06f2ecb388b6c4}{Robot} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSearcher}{Searcher} \hyperlink{classRobot_af0ba30c47b84dc976f5bb7bd978f95ef}{searcher}
+\item 
+\hyperlink{DriveMotor_8hpp_a077d9d13989efa3142086ea83cbb1e68}{Drive\-Direction} \hyperlink{classRobot_af15d2eaa46a9736e5d3d3aa9e8a9751c}{drive\-Direction}
+\item 
+\hyperlink{classCandleDetector}{Candle\-Detector} \hyperlink{classRobot_a19cb4c2ee87b595db9275e6b3d9ca30d}{detector}
+\item 
+\hyperlink{classFireFinder}{Fire\-Finder} \hyperlink{classRobot_a342f5f8be2b5641eb3ae8f9c8475ebe6}{ff}
+\item 
+int $\ast$ \hyperlink{classRobot_aba9dccea96aa95bb8fbdd1a5ba72ca73}{distances}
+\item 
+int \hyperlink{classRobot_afae387e4e9419530d3217055301ba939}{distance\-To\-Candle}
+\item 
+int \hyperlink{classRobot_a7c1bd342087a6eedeeb0df07fa9cf3d2}{angle\-To\-Candle}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classRobot}{Robot} $\ast$ \hyperlink{classRobot_aad5c5d6db601aac62393d47ec9385fa3}{instance} = N\-U\-L\-L
+\item 
+static const int \hyperlink{classRobot_afb4449356b3a3f92b2c76c612e8951ee}{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E} = 300
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Robot.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRobot_a4fc7c70ae20623f05e06f2ecb388b6c4}{\index{Robot@{Robot}!Robot@{Robot}}
+\index{Robot@{Robot}!Robot@{Robot}}
+\subsubsection[{Robot}]{\setlength{\rightskip}{0pt plus 5cm}Robot\-::\-Robot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a4fc7c70ae20623f05e06f2ecb388b6c4}
+constructor is private because it's a singleton class 
+
+Definition at line 7 of file Robot.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRobot_a8ad37bfa9e1efeaf7b5eb67667513dbe}{\index{Robot@{Robot}!drive@{drive}}
+\index{drive@{drive}!Robot@{Robot}}
+\subsubsection[{drive}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::drive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a8ad37bfa9e1efeaf7b5eb67667513dbe}
+
+
+Definition at line 23 of file Robot.\-cpp.
+
+\hypertarget{classRobot_ae7a44c77eacc2a9a3d41f7a18cfb401f}{\index{Robot@{Robot}!drive\-And\-Avoid@{drive\-And\-Avoid}}
+\index{drive\-And\-Avoid@{drive\-And\-Avoid}!Robot@{Robot}}
+\subsubsection[{drive\-And\-Avoid}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::drive\-And\-Avoid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_ae7a44c77eacc2a9a3d41f7a18cfb401f}
+
+
+Definition at line 117 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a6b943dfc58f8e1d49ee063250a2621de}{\index{Robot@{Robot}!drive\-To\-Candle@{drive\-To\-Candle}}
+\index{drive\-To\-Candle@{drive\-To\-Candle}!Robot@{Robot}}
+\subsubsection[{drive\-To\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::drive\-To\-Candle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a6b943dfc58f8e1d49ee063250a2621de}
+
+
+Definition at line 69 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a0dfb8f97d6a9448bc6f9ccc5b9efb9fb}{\index{Robot@{Robot}!extinguish\-Candle@{extinguish\-Candle}}
+\index{extinguish\-Candle@{extinguish\-Candle}!Robot@{Robot}}
+\subsubsection[{extinguish\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::extinguish\-Candle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a0dfb8f97d6a9448bc6f9ccc5b9efb9fb}
+
+
+Definition at line 86 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a17e0de9c529197b3575e11a87470376b}{\index{Robot@{Robot}!find\-Candle\-Height@{find\-Candle\-Height}}
+\index{find\-Candle\-Height@{find\-Candle\-Height}!Robot@{Robot}}
+\subsubsection[{find\-Candle\-Height}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::find\-Candle\-Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a17e0de9c529197b3575e11a87470376b}
+
+
+Definition at line 81 of file Robot.\-cpp.
+
+\hypertarget{classRobot_ac6f19dc31b435f8a2d43944ba49286d0}{\index{Robot@{Robot}!get\-Instance@{get\-Instance}}
+\index{get\-Instance@{get\-Instance}!Robot@{Robot}}
+\subsubsection[{get\-Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Robot} $\ast$ Robot\-::get\-Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classRobot_ac6f19dc31b435f8a2d43944ba49286d0}
+
+
+Definition at line 15 of file Robot.\-cpp.
+
+\hypertarget{classRobot_ac1faa7fbfb483c4053dc35f368359c0b}{\index{Robot@{Robot}!return\-To\-Origin@{return\-To\-Origin}}
+\index{return\-To\-Origin@{return\-To\-Origin}!Robot@{Robot}}
+\subsubsection[{return\-To\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::return\-To\-Origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_ac1faa7fbfb483c4053dc35f368359c0b}
+
+
+Definition at line 90 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a1f08dec6eea6b51d73cd41a8db3bb893}{\index{Robot@{Robot}!search@{search}}
+\index{search@{search}!Robot@{Robot}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::search (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a1f08dec6eea6b51d73cd41a8db3bb893}
+search for candle by driving around \begin{DoxyReturn}{Returns}
+true when the candle has been found 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Robot.\-cpp.
+
+\hypertarget{classRobot_ade0935cead03791f27fa854df88a3f22}{\index{Robot@{Robot}!set\-Drive@{set\-Drive}}
+\index{set\-Drive@{set\-Drive}!Robot@{Robot}}
+\subsubsection[{set\-Drive}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::set\-Drive (
+\begin{DoxyParamCaption}
+\item[{{\bf Drive\-Direction}}]{dir}
+\end{DoxyParamCaption}
+)}}\label{classRobot_ade0935cead03791f27fa854df88a3f22}
+given a direction, set the motor P\-I\-Ds accordingly 
+\begin{DoxyParams}{Parameters}
+{\em dir} & the direction you want to go \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a1fc37e3c329d59795f6adf44199d4df9}{\index{Robot@{Robot}!setup@{setup}}
+\index{setup@{setup}!Robot@{Robot}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a1fc37e3c329d59795f6adf44199d4df9}
+
+
+Definition at line 9 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a14dfe126ae973d3b9f81fee81a06ac22}{\index{Robot@{Robot}!stop@{stop}}
+\index{stop@{stop}!Robot@{Robot}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a14dfe126ae973d3b9f81fee81a06ac22}
+
+
+Definition at line 45 of file Robot.\-cpp.
+
+\hypertarget{classRobot_afa750c4ecf35e5f26992779ac89eb13e}{\index{Robot@{Robot}!turn\-To\-Face@{turn\-To\-Face}}
+\index{turn\-To\-Face@{turn\-To\-Face}!Robot@{Robot}}
+\subsubsection[{turn\-To\-Face}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::turn\-To\-Face (
+\begin{DoxyParamCaption}
+\item[{int}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classRobot_afa750c4ecf35e5f26992779ac89eb13e}
+
+
+Definition at line 94 of file Robot.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classRobot_a7c1bd342087a6eedeeb0df07fa9cf3d2}{\index{Robot@{Robot}!angle\-To\-Candle@{angle\-To\-Candle}}
+\index{angle\-To\-Candle@{angle\-To\-Candle}!Robot@{Robot}}
+\subsubsection[{angle\-To\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}int Robot\-::angle\-To\-Candle\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a7c1bd342087a6eedeeb0df07fa9cf3d2}
+
+
+Definition at line 59 of file Robot.\-hpp.
+
+\hypertarget{classRobot_adbf538f97c0f9f98337f5171e715badc}{\index{Robot@{Robot}!base@{base}}
+\index{base@{base}!Robot@{Robot}}
+\subsubsection[{base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-I\-D\-Base} Robot\-::base}}\label{classRobot_adbf538f97c0f9f98337f5171e715badc}
+
+
+Definition at line 44 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a19cb4c2ee87b595db9275e6b3d9ca30d}{\index{Robot@{Robot}!detector@{detector}}
+\index{detector@{detector}!Robot@{Robot}}
+\subsubsection[{detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Candle\-Detector} Robot\-::detector\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a19cb4c2ee87b595db9275e6b3d9ca30d}
+
+
+Definition at line 54 of file Robot.\-hpp.
+
+\hypertarget{classRobot_aba9dccea96aa95bb8fbdd1a5ba72ca73}{\index{Robot@{Robot}!distances@{distances}}
+\index{distances@{distances}!Robot@{Robot}}
+\subsubsection[{distances}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Robot\-::distances\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_aba9dccea96aa95bb8fbdd1a5ba72ca73}
+
+
+Definition at line 57 of file Robot.\-hpp.
+
+\hypertarget{classRobot_afae387e4e9419530d3217055301ba939}{\index{Robot@{Robot}!distance\-To\-Candle@{distance\-To\-Candle}}
+\index{distance\-To\-Candle@{distance\-To\-Candle}!Robot@{Robot}}
+\subsubsection[{distance\-To\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}int Robot\-::distance\-To\-Candle\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_afae387e4e9419530d3217055301ba939}
+
+
+Definition at line 58 of file Robot.\-hpp.
+
+\hypertarget{classRobot_af15d2eaa46a9736e5d3d3aa9e8a9751c}{\index{Robot@{Robot}!drive\-Direction@{drive\-Direction}}
+\index{drive\-Direction@{drive\-Direction}!Robot@{Robot}}
+\subsubsection[{drive\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Direction} Robot\-::drive\-Direction\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_af15d2eaa46a9736e5d3d3aa9e8a9751c}
+
+
+Definition at line 53 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a342f5f8be2b5641eb3ae8f9c8475ebe6}{\index{Robot@{Robot}!ff@{ff}}
+\index{ff@{ff}!Robot@{Robot}}
+\subsubsection[{ff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fire\-Finder} Robot\-::ff\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a342f5f8be2b5641eb3ae8f9c8475ebe6}
+
+
+Definition at line 55 of file Robot.\-hpp.
+
+\hypertarget{classRobot_afb4449356b3a3f92b2c76c612e8951ee}{\index{Robot@{Robot}!G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
+\index{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!Robot@{Robot}}
+\subsubsection[{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Robot\-::\-G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E = 300\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classRobot_afb4449356b3a3f92b2c76c612e8951ee}
+
+
+Definition at line 61 of file Robot.\-hpp.
+
+\hypertarget{classRobot_aad5c5d6db601aac62393d47ec9385fa3}{\index{Robot@{Robot}!instance@{instance}}
+\index{instance@{instance}!Robot@{Robot}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Robot} $\ast$ Robot\-::instance = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classRobot_aad5c5d6db601aac62393d47ec9385fa3}
+
+
+Definition at line 50 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a222e54f477e23f5af80cfa10bcd85e7a}{\index{Robot@{Robot}!lidar@{lidar}}
+\index{lidar@{lidar}!Robot@{Robot}}
+\subsubsection[{lidar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lidar} Robot\-::lidar}}\label{classRobot_a222e54f477e23f5af80cfa10bcd85e7a}
+making these public so other subsystems (candle) 
+
+Definition at line 43 of file Robot.\-hpp.
+
+\hypertarget{classRobot_af0ba30c47b84dc976f5bb7bd978f95ef}{\index{Robot@{Robot}!searcher@{searcher}}
+\index{searcher@{searcher}!Robot@{Robot}}
+\subsubsection[{searcher}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Searcher} Robot\-::searcher\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_af0ba30c47b84dc976f5bb7bd978f95ef}
+
+
+Definition at line 52 of file Robot.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/test/\hyperlink{Robot_8hpp}{Robot.\-hpp}\item 
+src/test/\hyperlink{Robot_8cpp}{Robot.\-cpp}\end{DoxyCompactItemize}

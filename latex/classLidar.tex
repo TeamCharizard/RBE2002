@@ -1,0 +1,159 @@
+\hypertarget{classLidar}{\section{Lidar Class Reference}
+\label{classLidar}\index{Lidar@{Lidar}}
+}
+
+
+{\ttfamily \#include $<$Lidar.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLidar_abbb8e57bb39cb156cd03b9274843b32d}{setup} ()
+\item 
+bool \hyperlink{classLidar_a424a60f6278617333201c5fca115c288}{read} ()
+\item 
+void \hyperlink{classLidar_a64a54013a7ef0612c3c0f9f89dc93024}{process\-End\-Of\-Packet} ()
+\item 
+bool \hyperlink{classLidar_aefa743ccb6305927a312f9579e003f82}{is\-Data\-Index} (int index)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classLidar_a5f97323ace606c1b4d2f817ebb8ebf7d}{distances} \mbox{[}360\mbox{]}
+\item 
+int \hyperlink{classLidar_a8eea2300d585c1b514ac6211a7326aca}{misses} = 0
+\item 
+int \hyperlink{classLidar_a43a0f4c1f8d6b0c9f1b21be32c99890d}{invalids}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{classLidar_a59f93afd1061d31642d1e7755838f2d1}{packet} \mbox{[}22\mbox{]}
+\item 
+bool \hyperlink{classLidar_a69b0909cc44f4e4e155d0ae2aa4ef3b4}{start\-Reading}
+\item 
+int \hyperlink{classLidar_a5e06436eae4b2d150501df175ec04758}{packet\-Index}
+\item 
+int \hyperlink{classLidar_a5d198ec3f5d3de7829dda616ea13d016}{distance\-Index}
+\item 
+int \hyperlink{classLidar_abcca8f7f6c4cff325e6b225ddbe14796}{packet\-Number}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3 of file Lidar.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLidar_aefa743ccb6305927a312f9579e003f82}{\index{Lidar@{Lidar}!is\-Data\-Index@{is\-Data\-Index}}
+\index{is\-Data\-Index@{is\-Data\-Index}!Lidar@{Lidar}}
+\subsubsection[{is\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}bool Lidar\-::is\-Data\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classLidar_aefa743ccb6305927a312f9579e003f82}
+
+
+Definition at line 83 of file Lidar.\-cpp.
+
+\hypertarget{classLidar_a64a54013a7ef0612c3c0f9f89dc93024}{\index{Lidar@{Lidar}!process\-End\-Of\-Packet@{process\-End\-Of\-Packet}}
+\index{process\-End\-Of\-Packet@{process\-End\-Of\-Packet}!Lidar@{Lidar}}
+\subsubsection[{process\-End\-Of\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}void Lidar\-::process\-End\-Of\-Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLidar_a64a54013a7ef0612c3c0f9f89dc93024}
+
+
+Definition at line 46 of file Lidar.\-cpp.
+
+\hypertarget{classLidar_a424a60f6278617333201c5fca115c288}{\index{Lidar@{Lidar}!read@{read}}
+\index{read@{read}!Lidar@{Lidar}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}bool Lidar\-::read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLidar_a424a60f6278617333201c5fca115c288}
+
+
+Definition at line 12 of file Lidar.\-cpp.
+
+\hypertarget{classLidar_abbb8e57bb39cb156cd03b9274843b32d}{\index{Lidar@{Lidar}!setup@{setup}}
+\index{setup@{setup}!Lidar@{Lidar}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Lidar\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLidar_abbb8e57bb39cb156cd03b9274843b32d}
+
+
+Definition at line 4 of file Lidar.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classLidar_a5d198ec3f5d3de7829dda616ea13d016}{\index{Lidar@{Lidar}!distance\-Index@{distance\-Index}}
+\index{distance\-Index@{distance\-Index}!Lidar@{Lidar}}
+\subsubsection[{distance\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Lidar\-::distance\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classLidar_a5d198ec3f5d3de7829dda616ea13d016}
+
+
+Definition at line 27 of file Lidar.\-hpp.
+
+\hypertarget{classLidar_a5f97323ace606c1b4d2f817ebb8ebf7d}{\index{Lidar@{Lidar}!distances@{distances}}
+\index{distances@{distances}!Lidar@{Lidar}}
+\subsubsection[{distances}]{\setlength{\rightskip}{0pt plus 5cm}int Lidar\-::distances\mbox{[}360\mbox{]}}}\label{classLidar_a5f97323ace606c1b4d2f817ebb8ebf7d}
+
+
+Definition at line 6 of file Lidar.\-hpp.
+
+\hypertarget{classLidar_a43a0f4c1f8d6b0c9f1b21be32c99890d}{\index{Lidar@{Lidar}!invalids@{invalids}}
+\index{invalids@{invalids}!Lidar@{Lidar}}
+\subsubsection[{invalids}]{\setlength{\rightskip}{0pt plus 5cm}int Lidar\-::invalids}}\label{classLidar_a43a0f4c1f8d6b0c9f1b21be32c99890d}
+the number of invalids during each sweep 
+
+Definition at line 12 of file Lidar.\-hpp.
+
+\hypertarget{classLidar_a8eea2300d585c1b514ac6211a7326aca}{\index{Lidar@{Lidar}!misses@{misses}}
+\index{misses@{misses}!Lidar@{Lidar}}
+\subsubsection[{misses}]{\setlength{\rightskip}{0pt plus 5cm}int Lidar\-::misses = 0}}\label{classLidar_a8eea2300d585c1b514ac6211a7326aca}
+the number of missed packets during each sweep 
+
+Definition at line 9 of file Lidar.\-hpp.
+
+\hypertarget{classLidar_a59f93afd1061d31642d1e7755838f2d1}{\index{Lidar@{Lidar}!packet@{packet}}
+\index{packet@{packet}!Lidar@{Lidar}}
+\subsubsection[{packet}]{\setlength{\rightskip}{0pt plus 5cm}char Lidar\-::packet\mbox{[}22\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classLidar_a59f93afd1061d31642d1e7755838f2d1}
+
+
+Definition at line 23 of file Lidar.\-hpp.
+
+\hypertarget{classLidar_a5e06436eae4b2d150501df175ec04758}{\index{Lidar@{Lidar}!packet\-Index@{packet\-Index}}
+\index{packet\-Index@{packet\-Index}!Lidar@{Lidar}}
+\subsubsection[{packet\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Lidar\-::packet\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classLidar_a5e06436eae4b2d150501df175ec04758}
+
+
+Definition at line 27 of file Lidar.\-hpp.
+
+\hypertarget{classLidar_abcca8f7f6c4cff325e6b225ddbe14796}{\index{Lidar@{Lidar}!packet\-Number@{packet\-Number}}
+\index{packet\-Number@{packet\-Number}!Lidar@{Lidar}}
+\subsubsection[{packet\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Lidar\-::packet\-Number\hspace{0.3cm}{\ttfamily [private]}}}\label{classLidar_abcca8f7f6c4cff325e6b225ddbe14796}
+
+
+Definition at line 30 of file Lidar.\-hpp.
+
+\hypertarget{classLidar_a69b0909cc44f4e4e155d0ae2aa4ef3b4}{\index{Lidar@{Lidar}!start\-Reading@{start\-Reading}}
+\index{start\-Reading@{start\-Reading}!Lidar@{Lidar}}
+\subsubsection[{start\-Reading}]{\setlength{\rightskip}{0pt plus 5cm}bool Lidar\-::start\-Reading\hspace{0.3cm}{\ttfamily [private]}}}\label{classLidar_a69b0909cc44f4e4e155d0ae2aa4ef3b4}
+
+
+Definition at line 25 of file Lidar.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{Lidar_8hpp}{Lidar.\-hpp}\item 
+src/shared/\hyperlink{Lidar_8cpp}{Lidar.\-cpp}\end{DoxyCompactItemize}
