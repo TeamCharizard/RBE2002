@@ -11,6 +11,7 @@ void Robot::setup(){
   base.setup();
   ff.setup();
   pinMode(29,INPUT_PULLUP);
+  fan.setup();
 }
 
 Robot *Robot::getInstance(){

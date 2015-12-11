@@ -52,6 +52,7 @@ class Robot {
     DriveDirection driveDirection;
     CandleDetector detector;
     FireFinder ff;
+    Fan fan;
 
     int distanceToCandle;
     int angleToCandle;
