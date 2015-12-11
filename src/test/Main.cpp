@@ -12,7 +12,6 @@ void Main::setup(){
 void Main::loop(){
   switch(state){
     case SEARCH_FOR_CANDLE:
-        
       if (charizard->search()){
         state = DRIVE_TO_CANDLE;
         debugPrint(0,stateNames[state]);

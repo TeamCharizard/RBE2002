@@ -41,7 +41,7 @@ void Robot::drive(){
       break;
   }
   if(digitalRead(29)){
-  base.run();
+  //base.run();
   }
   else{
   stop();
@@ -76,7 +76,6 @@ bool Robot::search(){
   bool fullSweep = lidar.read();
 
   if (fullSweep){
-    //debugPrint(1,"full sweep");
     driveAndAvoid();
     bool candleFound = detector.detect(&distanceToCandle, &angleToCandle, distances);
 
@@ -157,19 +156,22 @@ bool  Robot::turnToFace(int angle){
 }
 
 void Robot::driveAndAvoid(){
-  //DriveDirection dir = searcher.getDirection();
    
   if (distances[0]  < 500 && distances[0] > 0){
-    if (distances[350] > distances[10] && driveDirection != DriveDirection::LEFT){
-        setDrive(DriveDirection::LEFT);
+    if (distances[350] > distances[10]){// && driveDirection != DriveDirection::LEFT){
+        //setDrive(DriveDirection::LEFT);
+        base.setSpeeds(-10,10);
     }
-    else if (driveDirection != DriveDirection::RIGHT){
-        setDrive(DriveDirection::RIGHT);
+    else{// if (driveDirection != DriveDirection::RIGHT){
+        //setDrive(DriveDirection::RIGHT);
+        base.setSpeeds(10,-10);
     } 
   }
-  else if(driveDirection != DriveDirection::FORWARD){
-        setDrive(DriveDirection::FORWARD);
+  else{ //if (driveDirection != DriveDirection::FORWARD){
+        //setDrive(DriveDirection::FORWARD);
+        base.setSpeeds(3,3);
   }
-  drive();
+  base.run();
+  //drive();
 }
 
