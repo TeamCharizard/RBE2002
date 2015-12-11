@@ -49,7 +49,6 @@ class Robot {
     Robot();
     static Robot *instance;
 
-    Searcher searcher;
     DriveDirection driveDirection;
     CandleDetector detector;
     FireFinder ff;
