@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>RBE 2002 Group #3: Main Page</title>
+<title>RBE 2002 Group #3: src/main.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,8 +38,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -58,7 +58,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,12 +78,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">RBE 2002 Group #3 Documentation</div>  </div>
+<div class="title">main.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<a href="main_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;LiquidCrystal.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Servo.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> LiquidCrystal <a class="code" href="main_8hpp.html#af9292167b3aeb9b70e1ea9b2bbbbc8cd">Display</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8hpp.html#a791f1dbeefa3cf1a8db769cb5b5f68bc">debugPrint</a>(<span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span> *format, ... );</div>
+<div class="ttc" id="main_8hpp_html_af9292167b3aeb9b70e1ea9b2bbbbc8cd"><div class="ttname"><a href="main_8hpp.html#af9292167b3aeb9b70e1ea9b2bbbbc8cd">Display</a></div><div class="ttdeci">LiquidCrystal Display</div></div>
+<div class="ttc" id="main_8hpp_html_a791f1dbeefa3cf1a8db769cb5b5f68bc"><div class="ttname"><a href="main_8hpp.html#a791f1dbeefa3cf1a8db769cb5b5f68bc">debugPrint</a></div><div class="ttdeci">void debugPrint(int line, const char *format,...)</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Thu Dec 10 2015 22:28:52 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">

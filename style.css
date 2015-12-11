@@ -1,0 +1,37 @@
+body{
+  background-image: url('images/charizard.png');
+  background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif;
+  text-align: right;
+}
+
+h1 {
+  font-variant:small-caps;
+  font-size: 400%;
+}
+
+h2 {
+  font-variant:small-caps;
+  font-size: 200%;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  padding: 10px 15px;
+  margin: 1px 15px;
+  line-height: 32px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  background-color: #000;
+  color: #646464;
+  text-decoration: none;
+}
+
+#title_page{
+  margin-top: 3%;
+  float: right;
+  margin-right: 5%;
+  color: #f2f2f2;
+}
+
