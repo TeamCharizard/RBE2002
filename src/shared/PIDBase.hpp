@@ -24,11 +24,11 @@ class PIDBase {
     int scale(int speed);
 
     DriveMotor lMotor,rMotor;
-    typedef Encoder<2,3> LeftEnc;
-    typedef Encoder<18,19> RightEnc;
+    typedef Encoder<2,3> RightEnc;
+    typedef Encoder<18,19> LeftEnc;
     Odom<LeftEnc, RightEnc> odom;
     PID lPID,rPID;
     long lastUpdate;
     const long UPDATE_PERIOD = 200; //milliseconds
-    const int TOP_SPEED = 30; //ticks per UPDATE_PERIOD
+    const int TOP_SPEED = 35; //ticks per UPDATE_PERIOD
 };
