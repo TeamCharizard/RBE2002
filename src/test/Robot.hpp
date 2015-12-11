@@ -53,10 +53,9 @@ class Robot {
     CandleDetector detector;
     FireFinder ff;
 
-    int *distances;
     int distanceToCandle;
     int angleToCandle;
-    
+
     int candleHeight_mm;
     bool scanning;
     const static int GOAL_DISTANCE = 300;

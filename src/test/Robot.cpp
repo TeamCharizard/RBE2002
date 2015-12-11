@@ -24,27 +24,23 @@ Robot *Robot::getInstance(){
 void Robot::drive(){
   switch (this->driveDirection){
     case DriveDirection::FORWARD:
-      //debugPrint(1,"FORWARD");
       base.setSpeeds(10,10);
       break;
     case DriveDirection::LEFT:
-      //debugPrint(1,"LEFT");
       base.setSpeeds(-10,10);
       break;
     case DriveDirection::RIGHT:
-      //debugPrint(1,"RIGHT");
       base.setSpeeds(10,-10);
       break;
     case DriveDirection::BACKWARD:
-      //debugPrint(1,"BACKWARD");
       base.setSpeeds(-10,-10);
       break;
   }
   if(digitalRead(29)){
-  //base.run();
+    base.run();
   }
   else{
-  stop();
+    stop();
   }
 }
 
@@ -54,19 +50,19 @@ void Robot::stop(){
 
 void Robot::setDrive(DriveDirection dir){
   this->driveDirection = dir;
-  
+
   switch (this->driveDirection){
     case DriveDirection::FORWARD:
-      debugPrint(1,"FORWARD");
+      base.setSpeeds(10,10);
       break;
     case DriveDirection::LEFT:
-      debugPrint(1,"LEFT");
+      base.setSpeeds(-10,10);
       break;
     case DriveDirection::RIGHT:
-      debugPrint(1,"RIGHT");
+      base.setSpeeds(10,-10);
       break;
     case DriveDirection::BACKWARD:
-      debugPrint(1,"BACKWARD");
+      base.setSpeeds(-10,-10);
       break;
 
   }
@@ -77,7 +73,7 @@ bool Robot::search(){
 
   if (fullSweep){
     driveAndAvoid();
-    bool candleFound = detector.detect(&distanceToCandle, &angleToCandle, distances);
+    bool candleFound = detector.detect(&distanceToCandle, &angleToCandle, lidar.distances);
 
     if (candleFound){
       debugPrint(1,"a=%-3d d=%-4d", angleToCandle, distanceToCandle);
@@ -101,14 +97,14 @@ bool Robot::driveToCandle(){
 }
 
 bool Robot::findCandleHeight(){
-    if(!scanning){
-        ff.startScan();
-        scanning = true;
-    }
-    candleHeight_mm = ff.watch(distanceToCandle);
-        if(candleHeight_mm > 0){
-            return true;
-        }
+  if(!scanning){
+    ff.startScan();
+    scanning = true;
+  }
+  candleHeight_mm = ff.watch(distanceToCandle);
+  if(candleHeight_mm > 0){
+    return true;
+  }
   return false;
 }
 
@@ -131,23 +127,9 @@ bool  Robot::turnToFace(int angle){
     return true;
   }
   else if (angle > 180){
-    /*
-    power = (360-angle)*kP;
-    if(power>10){
-        power = 10;
-    }
-    base.setSpeeds(power,-power);
-    */
     setDrive(DriveDirection::LEFT);
   }
   else {
-      /*
-    power = (360-angle)*kP;
-    if(power > 10){
-        power = 10;
-    }
-    base.setSpeeds(-power,power);
-    */
     setDrive(DriveDirection::RIGHT);
   }
   drive();
@@ -156,22 +138,17 @@ bool  Robot::turnToFace(int angle){
 }
 
 void Robot::driveAndAvoid(){
-   
-  if (distances[0]  < 500 && distances[0] > 0){
-    if (distances[350] > distances[10]){// && driveDirection != DriveDirection::LEFT){
-        //setDrive(DriveDirection::LEFT);
-        base.setSpeeds(-10,10);
+  if (lidar.distances[0]  < 500 && lidar.distances[0] > 0){
+    if (lidar.distances[350] > lidar.distances[10]){
+      setDrive(DriveDirection::LEFT);
     }
-    else{// if (driveDirection != DriveDirection::RIGHT){
-        //setDrive(DriveDirection::RIGHT);
-        base.setSpeeds(10,-10);
-    } 
+    else{
+      setDrive(DriveDirection::RIGHT);
+    }
   }
-  else{ //if (driveDirection != DriveDirection::FORWARD){
-        //setDrive(DriveDirection::FORWARD);
-        base.setSpeeds(3,3);
+  else if (lidar.distances[0] > 0){
+    setDrive(DriveDirection::FORWARD);
   }
   base.run();
-  //drive();
 }
 

@@ -9,5 +9,8 @@ p:
 
 pu: p upload
 
+pus: p upload
+	ano serial
+
 clean:
 	ano clean

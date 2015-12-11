@@ -16,13 +16,12 @@ Main sketch;
 
 void debugPrint(int line, const char *format, ...){
   va_list args;
-  va_start(args, args);
+  va_start(args, format);
 
   char msg[16];
-  snprintf(msg, 17, format, args);
+  vsnprintf(msg, sizeof(msg), format, args);
   Serial.println(msg);
   Display.setCursor(0,line);
-  //Display.print("                ");
   Display.print(msg);
 
   va_end(args);
