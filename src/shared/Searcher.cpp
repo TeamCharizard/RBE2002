@@ -9,16 +9,20 @@ bool Searcher::run(){
   switch(state){
     case SEARCHING:
       if (search()){
+        sweeps = 0;
+        candleCount = 0;
         state = CHECKING;
         debugPrint(1,"sstate =%s",stateNames[state]);
       }
       break;
-    case CHECKING:
-      if (check()){
-        dirAtStartOfTurn = Robot::getInstance()->base.dir();
-        state = TURN_TO_CANDLE;
+    case TURNING:
+      if (Robot::getInstance()->turnToFaceAbsolutely(goalDir)){
+        state = SEARCHING;
         debugPrint(1,"sstate =%s",stateNames[state]);
       }
+      break;
+    case CHECKING:
+      check();
       break;
     case TURN_TO_CANDLE:
       if (turnToFaceCandle()){
@@ -36,24 +40,32 @@ bool Searcher::run(){
 }
 
 bool Searcher::check(){
-  //make sure we ain't going anywhere
-  Robot::getInstance()->stop();
-  Robot::getInstance()->drive();
-
   bool fullSweep = Robot::getInstance()->lidar.read();
 
   if (fullSweep){
+    //make sure we ain't going anywhere
+    Robot::getInstance()->stop();
+    Robot::getInstance()->base.drive();
+
+    sweeps++;
     bool candleFound = Robot::getInstance()->detector.detect(
         Robot::getInstance()->lidar.distances);
 
+    //debugPrint(1,"ct= %d swp=%d", candleCount, sweeps);
+
+
     if (candleFound){
       candleCount++;
-      debugPrint(1,"count = %d", candleCount);
-      return candleCount > 10;
+      if (candleCount > 5){
+        dirAtStartOfTurn = Robot::getInstance()->base.dir();
+        state = TURN_TO_CANDLE;
+      }
     }
 
+    if (sweeps > 8){
+      state = SEARCHING;
+    }
   }
-  return false;
 }
 
 bool Searcher::driveToCandle(){
@@ -72,8 +84,8 @@ bool Searcher::turnToFaceCandle(){
   if (now - lastUpdateTime > UPDATE_PERIOD){
     lastUpdateTime = now;
 
-    float goalDir = dirAtStartOfTurn +
-      Robot::getInstance()->detector.distance() * M_PI / 180;
+    goalDir = dirAtStartOfTurn +
+      Robot::getInstance()->detector.angle() * M_PI / 180;
 
     if(Robot::getInstance()->turnToFaceAbsolutely(goalDir)) {
       Robot::getInstance()->stop();
@@ -86,7 +98,21 @@ bool Searcher::search(){
   bool fullSweep = Robot::getInstance()->lidar.read();
 
   if (fullSweep){
-    driveAndAvoid();
+    DriveDirection currentDriveDirection = driveAndAvoid();
+
+    if (currentDriveDirection == LEFT){
+      goalDir = Robot::getInstance()->base.dir() - M_PI/4;
+      state = TURNING;
+      debugPrint(1,"sstate =%s",stateNames[state]);
+      return false;
+    }
+    else if (currentDriveDirection == RIGHT){
+      goalDir = Robot::getInstance()->base.dir() + M_PI/4;
+      state = TURNING;
+      debugPrint(1,"sstate =%s",stateNames[state]);
+      return false;
+    }
+
     bool candleFound = Robot::getInstance()->detector.detect(
         Robot::getInstance()->lidar.distances);
 
@@ -120,7 +146,6 @@ int Searcher::sampleAt(int *distances, int i){
 
 
     if (distances[angle] > 0){
-      debugPrint(1,"%d %d", distances[angle], c);
       s += distances[angle];
       c++;
     }

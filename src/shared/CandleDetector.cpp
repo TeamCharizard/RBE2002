@@ -85,15 +85,15 @@ bool CandleDetector::detect(int radii[]){
           if (validPercent >= VALID_CANDLE_THRESHOLD){
             for (int i=lastSpikeAStart;i<=a;i++){
               int ang = i < 0 ? 360 + i : i;
-              Serial.print(i);
-              Serial.print(" ");
-              Serial.println(radii[ang]);
+              //Serial.print(i);
+              //Serial.print(" ");
+              //Serial.println(radii[ang]);
             }
-            Serial.print("Percent valid: ");
-            Serial.print(validPercent);
-            Serial.print(", a=");
-            Serial.print(midAngle);
-            Serial.print(", r=");
+            //Serial.print("Percent valid: ");
+            //Serial.print(validPercent);
+            //Serial.print(", a=");
+            //Serial.print(midAngle);
+            //Serial.print(", r=");
             candleDistance = midRadius;
             candleAngle = midAngle;
             return true;

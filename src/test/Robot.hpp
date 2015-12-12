@@ -15,8 +15,6 @@ class Robot {
 
     void setup();
 
-    void drive();
-
     void stop();
 
     /** given a direction, set the motor PIDs accordingly

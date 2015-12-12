@@ -22,23 +22,6 @@ Robot *Robot::getInstance(){
 
 }
 
-void Robot::drive(){
-  switch (this->driveDirection){
-    case DriveDirection::FORWARD:
-      base.setSpeeds(100,100);
-      break;
-    case DriveDirection::LEFT:
-      base.setSpeeds(-100,100);
-      break;
-    case DriveDirection::RIGHT:
-      base.setSpeeds(100,-100);
-      break;
-    case DriveDirection::BACKWARD:
-      base.setSpeeds(-100,-100);
-      break;
-  }
-}
-
 void Robot::stop(){
   base.stop();
 }
