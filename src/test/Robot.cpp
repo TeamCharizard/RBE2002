@@ -37,9 +37,6 @@ void Robot::drive(){
       base.setSpeeds(-100,-100);
       break;
   }
-  if(digitalRead(29)){
-    base.drive();
-  }
   else{
     stop();
   }
@@ -65,7 +62,6 @@ void Robot::setDrive(DriveDirection dir){
     case DriveDirection::BACKWARD:
       base.setSpeeds(-100,-100);
       break;
-
   }
 }
 
