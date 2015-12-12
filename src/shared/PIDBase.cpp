@@ -6,7 +6,7 @@
 PIDBase::PIDBase() :
   lPID(-0.7,0,0,true),
   rPID(0.7,0,0,true),
-  dirPID(-17,0.00,0,false){
+  dirPID(-24,0.001,0,false){
   }
 
 void PIDBase::setup(){
@@ -51,7 +51,7 @@ float PIDBase::normalize(float angle) {
 bool PIDBase::turnAbsolutely(float direction){
   float setpoint = normalize(direction);
   float current = normalize(dir());
-  debugPrint(1, "c=%-4d s=%-4d", (int)(current*180/M_PI), (int)(setpoint*180/M_PI));
+  //debugPrint(1, "c=%-4d s=%-4d", (int)(current*180/M_PI), (int)(setpoint*180/M_PI));
   dirPID.set(setpoint);
   odom.updateDifferential();
 

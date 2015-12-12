@@ -22,23 +22,6 @@ Robot *Robot::getInstance(){
 
 }
 
-void Robot::drive(){
-  switch (this->driveDirection){
-    case DriveDirection::FORWARD:
-      base.setSpeeds(100,100);
-      break;
-    case DriveDirection::LEFT:
-      base.setSpeeds(-100,100);
-      break;
-    case DriveDirection::RIGHT:
-      base.setSpeeds(100,-100);
-      break;
-    case DriveDirection::BACKWARD:
-      base.setSpeeds(-100,-100);
-      break;
-  }
-}
-
 void Robot::stop(){
   base.stop();
 }
@@ -63,32 +46,7 @@ void Robot::setDrive(DriveDirection dir){
 }
 
 bool Robot::search(){
-  bool fullSweep = lidar.read();
-
-  if (fullSweep){
-    driveAndAvoid();
-    bool candleFound = detector.detect(&distanceToCandle, &angleToCandle, lidar.distances);
-
-    if (candleFound){
-      old_base_dir = base.dir();
-      debugPrint(1,"a=%-3d d=%-4d", angleToCandle, distanceToCandle);
-      return true;
-    }
-
-  }
-  return false;
-}
-
-bool Robot::driveToCandle(){
-  long now = millis();
-  if (now - lastUpdateTime > UPDATE_PERIOD){
-    lastUpdateTime = now;
-    if(turnToFaceAbsolutely(old_base_dir+angleToCandle * M_PI / 180)) {
-      stop();
-      return false;
-    }
-  }
-  return false;
+  return searcher.run();
 }
 
 bool Robot::findCandleHeight(){
@@ -96,7 +54,7 @@ bool Robot::findCandleHeight(){
     ff.startScan();
     scanning = true;
   }
-  candleHeight_mm = ff.watch(distanceToCandle);
+  candleHeight_mm = ff.watch(detector.distance());
   if(candleHeight_mm > 0){
     return true;
   }
@@ -119,24 +77,3 @@ bool Robot::returnToOrigin(){
 bool Robot::turnToFaceAbsolutely(float angle){
   return base.turnAbsolutely(angle);
 }
-
-DriveDirection Robot::driveAndAvoid(){
-  DriveDirection dir;
-  if (lidar.distances[0]  < 500 && lidar.distances[0] > 0){
-    if (lidar.distances[350] > lidar.distances[100]){
-      dir = DriveDirection::LEFT;
-      setDrive(DriveDirection::LEFT);
-    }
-    else{
-      dir = DriveDirection::RIGHT;
-      setDrive(DriveDirection::RIGHT);
-    }
-  }
-  else if (lidar.distances[0] > 0){
-    dir = DriveDirection::FORWARD;
-    setDrive(DriveDirection::FORWARD);
-  }
-  base.drive();
-  return dir;
-}
-

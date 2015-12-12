@@ -9,9 +9,16 @@ class CandleDetector{
      *  assigns values to given pointers for distance and angle
      *  based on input array of distances
       */
-    bool detect(int *distance, int *angle, int *radii);
+    bool detect(int *radii);
+
+    int distance();
+    int angle();
 
   private:
+
+    int candleDistance = 0,
+        candleAngle = 0;
+
     const static int WIDTH = 130,
           WIDTH_TOLERANCE = 35,
           RADIUS_TOLERANCE = 50,

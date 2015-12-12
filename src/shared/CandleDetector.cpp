@@ -6,7 +6,15 @@ const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.8;
 
 CandleDetector::CandleDetector(){}
 
-bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
+int CandleDetector::angle(){
+  return candleAngle;
+}
+
+int CandleDetector::distance(){
+  return candleDistance;
+}
+
+bool CandleDetector::detect(int radii[]){
   double lastRadius = 0,
          lastA = 0,
       dRadius = 0,
@@ -48,7 +56,7 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
         int midAngle = angle - angleBetweenSpikes/2;
         int midRadius = (lastRadius + lastSpikeRad)/2;
 
-        if (abs(c - WIDTH) < WIDTH_TOLERANCE && 
+        if (abs(c - WIDTH) < WIDTH_TOLERANCE &&
             abs(lastSpikeRad-lastRadius) < RADIUS_TOLERANCE){
 
           int valid = 0;
@@ -77,17 +85,17 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
           if (validPercent >= VALID_CANDLE_THRESHOLD){
             for (int i=lastSpikeAStart;i<=a;i++){
               int ang = i < 0 ? 360 + i : i;
-              Serial.print(i);
-              Serial.print(" ");
-              Serial.println(radii[ang]);
+              //Serial.print(i);
+              //Serial.print(" ");
+              //Serial.println(radii[ang]);
             }
-            Serial.print("Percent valid: ");
-            Serial.print(validPercent);
-            Serial.print(", a=");
-            Serial.print(midAngle);
-            Serial.print(", r=");
-            *distanceOut = midRadius;
-            *angleOut = midAngle;
+            //Serial.print("Percent valid: ");
+            //Serial.print(validPercent);
+            //Serial.print(", a=");
+            //Serial.print(midAngle);
+            //Serial.print(", r=");
+            candleDistance = midRadius;
+            candleAngle = midAngle;
             return true;
           }
         }
