@@ -3,7 +3,6 @@
 #include "Robot.hpp"
 
 class Main{
-
   public:
     void setup();
     void loop();

@@ -36,7 +36,7 @@ class Robot {
 
     bool returnToOrigin();
 
-    bool turnToFace(double angle);
+    bool turnToFaceAbsolutely(float angle);
 
     void driveAndAvoid();
 
@@ -62,4 +62,7 @@ class Robot {
     int candleHeight_mm;
     bool scanning;
     const static int GOAL_DISTANCE = 300;
+
+    long lastUpdateTime = 0;
+    const static long UPDATE_PERIOD = 200;
 };

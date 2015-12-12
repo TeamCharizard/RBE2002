@@ -10,7 +10,6 @@ bool FireFinder::seesCandle(){
   bool seesCandle;
   head.write(90);
   int intensity = analogRead(SENSOR_PIN);
-  Serial.println(intensity);
   seesCandle = (intensity < MIN_INTENSITY);
   return seesCandle;
 }

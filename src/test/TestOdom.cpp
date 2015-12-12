@@ -10,10 +10,10 @@ void TestOdom::setup(){
 
 void TestOdom::avoidInFront(int distance){
   if (distance < 500 && distance > 0){
-    base.setSpeeds(-10,10);
+    base.setSpeeds(-100,100);
   }
   else {
-    base.setSpeeds(10,10);
+    base.setSpeeds(100,100);
   }
 }
 

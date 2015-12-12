@@ -3,6 +3,7 @@
 #include "Fan.hpp"
 
 enum State{
+  INIT,
   TURNING_TO_BLOW,
   TURNING_TO_VERIFY,
   BLOWING,
@@ -19,13 +20,17 @@ class Extinguisher {
     Fan fan;
     State state;
 
-    long startSpinTime = 0l;
+    long startStateTime = 0l;
     float startPosition = 0;
-    const static int SPIN_TIME = 5000;
+    float goalAngle = 0.0f;
+    const static int BLOW_TIME = 6000,
+          VERIFY_TIME = 2000;
 
-    const char *stateNames[4] = {"TURNING_TO_BLOW",
-      "TURNING_TO_VERIFY",
-      "BLOWING",
-      "VERIFYING"};
+    const char *stateNames[5] = {
+      "INIT          ",
+      "TURNING_BLOW  ",
+      "TURNING_VERIFY",
+      "BLOWING       ",
+      "VERIFYING     "};
 
 };

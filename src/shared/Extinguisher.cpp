@@ -4,49 +4,52 @@
 
 void Extinguisher::setup(){
   fan.setup();
-  state = BLOWING;
-  startSpinTime = millis();
+  state = INIT;
 }
 
 bool Extinguisher::run(){
-  //debugPrint(1,"%s",stateNames[state]);
+  debugPrint(1,"%s",stateNames[state]);
   switch(state){
+    case INIT :
+      goalAngle =  Robot::getInstance()->base.dir() + M_PI;
+      state = TURNING_TO_BLOW;
+      break;
     case TURNING_TO_BLOW:
-      {
-        float newAngle = 1.5707 + Robot::getInstance()->base.dir();
-        bool doneTurning = Robot::getInstance()->turnToFace(newAngle);
-        if (doneTurning){
-          state = TURNING_TO_BLOW;
-          startSpinTime = millis();
-        }
+      if (Robot::getInstance()->turnToFaceAbsolutely(goalAngle)){
+        state = BLOWING;
+        startStateTime = millis();
       }
       break;
-
     case TURNING_TO_VERIFY:
-      {
-        //calculate 180 off current angle and turn to that angle
-        float newAngle = 1.5707 + Robot::getInstance()->base.dir();
-        bool doneTurning = Robot::getInstance()->turnToFace(newAngle);
-        if (doneTurning){
-          state = VERIFYING;
-        }
+      if (Robot::getInstance()->turnToFaceAbsolutely(goalAngle)){
+        state = VERIFYING;
+        startStateTime = millis();
       }
       break;
 
     case BLOWING:
+      Robot::getInstance()->stop();
+      Robot::getInstance()->base.drive();
       fan.spin();
-      if (millis() - startSpinTime > SPIN_TIME){
+      if (millis() - startStateTime > BLOW_TIME){
+        goalAngle = M_PI + Robot::getInstance()->base.dir();
         fan.stop();
-        state = VERIFYING;
+        state = TURNING_TO_VERIFY;
       }
       break;
 
     case VERIFYING:
-      bool found = Robot::getInstance()->ff.seesCandle();
-      if (found){
-        return true;
+      Robot::getInstance()->stop();
+      Robot::getInstance()->base.drive();
+      if (millis() - startStateTime > VERIFY_TIME){
+        if (Robot::getInstance()->ff.seesCandle()){
+          return true;
+        }
+        else {
+          state = TURNING_TO_BLOW;
+        }
+        break;
       }
-      break;
   }
   return false;
 }

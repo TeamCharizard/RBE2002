@@ -13,7 +13,7 @@
 
 LiquidCrystal Display(40,41,42,43,44,45);
 
-Turn sketch;
+Main sketch;
 
 void debugPrint(int line, const char *format, ...){
   va_list args;

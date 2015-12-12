@@ -9,7 +9,7 @@ void PID::set(float setPoint){
   this->setPoint = setPoint;
 }
 
-float PID::run(float value){
+int PID::run(float value){
   float error = setPoint - value;
   iTerm += error;
   //the plus equals is because this is a velocity PID
@@ -20,7 +20,6 @@ float PID::run(float value){
     output = (kP * error) + kI*iTerm +(kD * (error - lastError ));
   }
 
-  //debugPrint(1,"%d %d",error,value);
   lastError = error;
   return output;
 }

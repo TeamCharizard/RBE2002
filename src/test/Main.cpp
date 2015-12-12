@@ -31,7 +31,7 @@ void Main::loop(){
       break;
     case EXTINGUISH_CANDLE:
       if (charizard->extinguishCandle()){
-        //state = RETURN_TO_ORIGIN;
+        state = END;
         debugPrint(0,stateNames[state]);
       }
       break;
@@ -40,6 +40,9 @@ void Main::loop(){
         state = END;
         debugPrint(0,stateNames[state]);
       }
+      break;
+    case END:
+      debugPrint(0,"COMPLETE");
       break;
   }
 }

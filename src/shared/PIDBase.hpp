@@ -29,7 +29,5 @@ class PIDBase {
     typedef Encoder<18,19> LeftEnc;
     Odom<LeftEnc, RightEnc> odom;
     PID lPID,rPID,dirPID;
-    long lastUpdate;
-    const long UPDATE_PERIOD = 200; //milliseconds
     const int TOP_SPEED = 35; //ticks per UPDATE_PERIOD
 };

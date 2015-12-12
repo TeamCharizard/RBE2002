@@ -1,11 +1,12 @@
 #include "PIDBase.hpp"
+#include "Arduino.h"
 
 #include "../main.hpp"
 
 PIDBase::PIDBase() :
   lPID(-0.7,0,0,true),
   rPID(0.7,0,0,true),
-  dirPID(1.2,0.001,0,false){
+  dirPID(13,0.0012,0,false){
   }
 
 void PIDBase::setup(){
@@ -13,7 +14,6 @@ void PIDBase::setup(){
   lMotor.setup(9);
   setSpeeds(0,0);
   odom.setup();
-  lastUpdate = millis();
 }
 
 float PIDBase::x(){
@@ -40,7 +40,7 @@ void PIDBase::setSpeeds(int leftSpeed, int rightSpeed){
 }
 
 int PIDBase::scale(int speed){
-  return ((speed + 10) * 2 * TOP_SPEED) / 20 - TOP_SPEED;
+  return ((speed + 100) * 2 * TOP_SPEED) / 200 - TOP_SPEED;
 }
 
 bool PIDBase::turnAbsolutely(float direction){
@@ -48,6 +48,7 @@ bool PIDBase::turnAbsolutely(float direction){
   odom.updateDifferential();
 
   int dirOut = dirPID.run(dir());
+
   setSpeeds(-dirOut,dirOut);
 
   int dl = odom.leftDisplacement();
@@ -56,6 +57,11 @@ bool PIDBase::turnAbsolutely(float direction){
   int dr = odom.rightDisplacement();
   int rOut = rPID.run(dr);
   rMotor.set(rOut);
+
+  if ( dirOut == 0 && (abs(dir() - direction) < M_PI*4.0/180.0)){
+    return true;
+  }
+  return false;
 }
 
 void PIDBase::drive(){

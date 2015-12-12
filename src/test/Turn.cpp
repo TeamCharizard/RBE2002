@@ -10,16 +10,20 @@ void Turn::setup(){
 }
 
 void Turn::loop(){
+  delay(200);
   if (!digitalRead(29) && !turning){
     direction = base.dir() + M_PI/4;
     turning = true;
-    debugPrint(0,"setpoint=%d",(int)(direction*M_PI/180));
   }
 
-
   if (turning){
-    if (base.turnAbsolutely(direction)){
+    bool done = base.turnAbsolutely(direction);
+    if (done){
+      base.stop();
       turning = false;
     }
+  }
+  else {
+    base.drive();
   }
 }

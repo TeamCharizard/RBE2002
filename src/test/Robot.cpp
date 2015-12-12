@@ -25,16 +25,16 @@ Robot *Robot::getInstance(){
 void Robot::drive(){
   switch (this->driveDirection){
     case DriveDirection::FORWARD:
-      base.setSpeeds(10,10);
+      base.setSpeeds(100,100);
       break;
     case DriveDirection::LEFT:
-      base.setSpeeds(-10,10);
+      base.setSpeeds(-100,100);
       break;
     case DriveDirection::RIGHT:
-      base.setSpeeds(10,-10);
+      base.setSpeeds(100,-100);
       break;
     case DriveDirection::BACKWARD:
-      base.setSpeeds(-10,-10);
+      base.setSpeeds(-100,-100);
       break;
   }
   if(digitalRead(29)){
@@ -54,23 +54,22 @@ void Robot::setDrive(DriveDirection dir){
 
   switch (this->driveDirection){
     case DriveDirection::FORWARD:
-      base.setSpeeds(10,10);
+      base.setSpeeds(100,100);
       break;
     case DriveDirection::LEFT:
-      base.setSpeeds(-10,10);
+      base.setSpeeds(-100,100);
       break;
     case DriveDirection::RIGHT:
-      base.setSpeeds(10,-10);
+      base.setSpeeds(100,-100);
       break;
     case DriveDirection::BACKWARD:
-      base.setSpeeds(-10,-10);
+      base.setSpeeds(-100,-100);
       break;
 
   }
 }
 
 bool Robot::search(){
-  Serial.println("FUCK YOU");
   bool fullSweep = lidar.read();
 
   if (fullSweep){
@@ -79,9 +78,6 @@ bool Robot::search(){
 
     if (candleFound){
       debugPrint(1,"a=%-3d d=%-4d", angleToCandle, distanceToCandle);
-      if(angleToCandle > 180) angleToCandle -= 360;
-      startAngle = base.dir();
-      debugPrint(1,"sa=%+3d",(int)(startAngle*180/M_PI));
       return true;
     }
 
@@ -90,9 +86,7 @@ bool Robot::search(){
 }
 
 bool Robot::driveToCandle(){
-  double angleTurned = -(base.dir()-startAngle);
-  debugPrint(1, "at=%+3d, ac=%+3d", (int)(angleTurned*180/M_PI), angleToCandle);
-  if(turnToFace(angleToCandle-angleTurned*180/M_PI)) {
+  if(turnToFaceAbsolutely(angleToCandle * M_PI / 180)) {
     stop();
     return false;
   }
@@ -112,33 +106,25 @@ bool Robot::findCandleHeight(){
 }
 
 bool Robot::extinguishCandle(){
-  return extinguisher.run();
+  long now = millis();
+  if (now - lastUpdateTime > UPDATE_PERIOD){
+    lastUpdateTime = now;
+    return extinguisher.run();
+  }
+  return false;
 }
 
 bool Robot::returnToOrigin(){
   return false;
 }
 
-bool  Robot::turnToFace(double angle){
-  //turn so that angle will become zero
-  //if angle is within 5 degrees, end
-  //this is really dumb and should be fixed
-  double kP = .05;
-  //int power = max(-10, min(10, (int)(kP*angle)));
-  int power = kP*angle;
-  if(power > 10) power = 10;
-  if(power < -10) power = -10;
-  debugPrint(1, "a=%+3d p=%+2d %+2d", (int)angle, power, -power);
-  base.setSpeeds(power,-power);
-  if(digitalRead(29)){
-    base.drive();
-  }
-  return false;
+bool  Robot::turnToFaceAbsolutely(float angle){
+  base.turnAbsolutely(angle);
 }
 
 void Robot::driveAndAvoid(){
   if (lidar.distances[0]  < 500 && lidar.distances[0] > 0){
-    if (lidar.distances[350] > lidar.distances[10]){
+    if (lidar.distances[350] > lidar.distances[100]){
       setDrive(DriveDirection::LEFT);
     }
     else{
