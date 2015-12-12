@@ -16,9 +16,15 @@ bool Searcher::run(){
       }
       break;
     case TURNING:
-      if (Robot::getInstance()->turnToFaceAbsolutely(goalDir)){
-        state = SEARCHING;
-        debugPrint(1,"sstate =%s",stateNames[state]);
+      {
+        long now = millis();
+        if (now - lastUpdateTime > UPDATE_PERIOD){
+          lastUpdateTime = now;
+          if (Robot::getInstance()->turnToFaceAbsolutely(goalDir)){
+            state = SEARCHING;
+            debugPrint(1,"sstate =%s",stateNames[state]);
+          }
+        }
       }
       break;
     case CHECKING:
@@ -101,13 +107,13 @@ bool Searcher::search(){
     DriveDirection currentDriveDirection = driveAndAvoid();
 
     if (currentDriveDirection == LEFT){
-      goalDir = Robot::getInstance()->base.dir() - M_PI/4;
+      goalDir = Robot::getInstance()->base.dir() - M_PI/2;
       state = TURNING;
       debugPrint(1,"sstate =%s",stateNames[state]);
       return false;
     }
     else if (currentDriveDirection == RIGHT){
-      goalDir = Robot::getInstance()->base.dir() + M_PI/4;
+      goalDir = Robot::getInstance()->base.dir() + M_PI/2;
       state = TURNING;
       debugPrint(1,"sstate =%s",stateNames[state]);
       return false;
