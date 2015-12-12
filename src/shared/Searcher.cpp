@@ -53,7 +53,6 @@ bool Searcher::check(){
     Robot::getInstance()->stop();
     Robot::getInstance()->base.drive();
 
-    sweeps++;
     bool candleFound = Robot::getInstance()->detector.detect(
         Robot::getInstance()->lidar.distances);
 
@@ -64,11 +63,15 @@ bool Searcher::check(){
       candleCount++;
       if (candleCount > 5){
         dirAtStartOfTurn = Robot::getInstance()->base.dir();
-        state = TURN_TO_CANDLE;
+        auto dist = Robot::getInstance()->detector.distance();
+        auto angle = Robot::getInstance()->detector.angle();
+        Point<float> relative(dist*cos(angle*M_PI/180)/25.4, dist*sin(angle*M_PI/180)/25.4);
+        auto candle_pos = Robot::getInstance()->base.odom.robotToWorld(relative);
+        // TODO: Do something w/ candle position
       }
     }
 
-    if (sweeps > 8){
+    if (sweeps++ > 8){
       state = SEARCHING;
     }
   }

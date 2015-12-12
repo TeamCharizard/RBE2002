@@ -16,7 +16,9 @@ class PIDBase {
     float y();
     float dir();
     bool turnAbsolutely(float direction);
-
+    typedef Encoder<2,3> RightEnc;
+    typedef Encoder<18,19> LeftEnc;
+    Odom<LeftEnc, RightEnc> odom;
   private:
     // Normalize an angle to 0 to 360
     float normalize(float angle);
@@ -27,9 +29,6 @@ class PIDBase {
     int scale(int speed);
 
     DriveMotor lMotor,rMotor;
-    typedef Encoder<2,3> RightEnc;
-    typedef Encoder<18,19> LeftEnc;
-    Odom<LeftEnc, RightEnc> odom;
     PID lPID,rPID,dirPID;
     const int TOP_SPEED = 35; //ticks per UPDATE_PERIOD
 };

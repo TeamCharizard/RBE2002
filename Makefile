@@ -2,7 +2,7 @@ FLAGS = -O3 -std=c++11 -Wall -Wuninitialized -pedantic
 
 .PHONY: build
 build:
-	ano build -v -m mega --cpu atmega2560 --cxxflags="$(FLAGS)"
+	ano build -m mega --cpu atmega2560 --cxxflags="$(FLAGS)"
 
 debug_lidar:
 	ano build -m mega --cpu atmega2560 --cxxflags="$(FLAGS)"
