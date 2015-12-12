@@ -2,6 +2,7 @@
 
 #include "MainSketch.hpp"
 #include "../shared/Lidar.hpp"
+#include "../shared/Gyro.hpp"
 #include "../shared/CandleDetector.hpp"
 #include "../shared/Extinguisher.hpp"
 #include "../shared/Searcher.hpp"
@@ -54,6 +55,7 @@ class Robot {
     DriveDirection driveDirection;
     CandleDetector detector;
     Extinguisher extinguisher;
+    Gyro gyro;
 
     int distanceToCandle;
     double startAngle;

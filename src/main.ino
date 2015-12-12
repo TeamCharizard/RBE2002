@@ -5,6 +5,7 @@
 #include "test/Search.hpp"
 #include "test/Main.hpp"
 #include "test/TestOdom.hpp"
+#include "test/TestGyro.hpp"
 #include "test/Height.hpp"
 #include "test/PrintOdom.hpp"
 #include "test/Turn.hpp"
@@ -14,7 +15,7 @@
 
 LiquidCrystal Display(40,41,42,43,44,45);
 
-Main sketch;
+TestGyro sketch;
 
 void debugPrint(int line, const char *format, ...){
   va_list args;
