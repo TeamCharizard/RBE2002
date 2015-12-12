@@ -3,7 +3,8 @@
 #include "../main.hpp"
 
 PID::PID(float kP, float kI, float kD, bool feedForward) :
-  kP(kP), kI(kI), kD(kD), feedForward(feedForward), output(1) {}
+  kP(kP),  kI(kI),  kD(kD),
+  feedForward(feedForward), output(1),iTerm(0) {}
 
 void PID::set(float setPoint){
   this->setPoint = setPoint;

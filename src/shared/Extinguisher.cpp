@@ -42,11 +42,12 @@ bool Extinguisher::run(){
       Robot::getInstance()->stop();
       Robot::getInstance()->base.drive();
       if (millis() - startStateTime > VERIFY_TIME){
-        if (Robot::getInstance()->ff.seesCandle()){
+        if (!Robot::getInstance()->ff.seesCandle()){
           return true;
         }
         else {
           state = TURNING_TO_BLOW;
+          goalAngle =  Robot::getInstance()->base.dir() + M_PI;
         }
         break;
       }

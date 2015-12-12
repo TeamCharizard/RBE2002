@@ -30,8 +30,8 @@ class FireFinder {
     bool scanning = false;
 
     long timeToChangeAngle = 0l,
-        sweepTime = 5000l,
-        step = 3;
+         sweepTime = 5000l,
+         step = 3;
 
     const static int MOTOR_PIN = 10,
           SENSOR_PIN = 0,
@@ -40,5 +40,5 @@ class FireFinder {
           SAMPLE_SIZE = 10,
           SENSOR_HEIGHT = 210,
           INTENSITY_THRESHOLD = 35,
-          MIN_INTENSITY = 935;
+          MIN_INTENSITY = 955;
 };

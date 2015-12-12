@@ -64,5 +64,5 @@ class Robot {
     const static int GOAL_DISTANCE = 300;
 
     long lastUpdateTime = 0;
-    const static long UPDATE_PERIOD = 200;
+    const static long UPDATE_PERIOD = 50;
 };

@@ -6,7 +6,7 @@
 PIDBase::PIDBase() :
   lPID(-0.7,0,0,true),
   rPID(0.7,0,0,true),
-  dirPID(13,0.0012,0,false){
+  dirPID(17,0.00,0,false){
   }
 
 void PIDBase::setup(){

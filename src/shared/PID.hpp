@@ -13,7 +13,7 @@ class PID{
            iTerm;
 
     float setPoint;
-    float output;
+    int output;
 
     bool feedForward = false;
 };

@@ -1,4 +1,5 @@
 #include "FireFinder.hpp"
+#include "../main.hpp"
 #include "Arduino.h"
 #include <stdio.h>
 
@@ -8,9 +9,15 @@ void FireFinder::setup() {
 
 bool FireFinder::seesCandle(){
   bool seesCandle;
-  head.write(90);
-  int intensity = analogRead(SENSOR_PIN);
+  head.write(100);
+  long sum = 0;
+  int ss = 20;
+  for (int i = 0; i < ss; i++){
+    sum += analogRead(SENSOR_PIN);
+  }
+  int intensity = sum/ss;
   seesCandle = (intensity < MIN_INTENSITY);
+  debugPrint(1,"intensity=%d",intensity);
   return seesCandle;
 }
 
