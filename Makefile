@@ -1,6 +1,9 @@
 .PHONY: build
 build:
-	ano build -m mega --cpu atmega2560 --cxxflags="-std=c++11"
+	ano build -m mega --cpu atmega2560 --cxxflags="-std=c++11 -Wall -Wuninitialized -pedantic"
+
+debug_lidar:
+	ano build -m mega --cpu atmega2560 --cxxflags="-std=c++11 -Wall -Wuninitialized -pedantic -DDEBUG_LIDAR"
 
 .PHONY: upload
 upload: build

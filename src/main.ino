@@ -10,6 +10,7 @@
 #include "test/Turn.hpp"
 #include "test/DriveUntilCandle.hpp"
 #include "test/LidarBenchmark.hpp"
+#include "test/LidarDump.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
 

@@ -6,7 +6,7 @@ class PID{
     void set(float setPoint);
 
     /** this returns an int because motor speeds can't be more precise than an int after scaling */
-    int run(float value);
+    int run(float value, bool doWrap = false);
 
     float kP, kI, kD;
     float  lastError,

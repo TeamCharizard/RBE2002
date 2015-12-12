@@ -59,6 +59,8 @@ class Robot {
     double startAngle;
     int angleToCandle;
 
+    float old_base_dir;
+
     int candleHeight_mm;
     bool scanning;
     const static int GOAL_DISTANCE = 300;

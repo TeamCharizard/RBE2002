@@ -18,6 +18,8 @@ class PIDBase {
     bool turnAbsolutely(float direction);
 
   private:
+    // Normalize an angle to 0 to 360
+    float normalize(float angle);
 
     /** scaled input from (-10,10) to (-TOP_SPEED, TOP_SPEED)
      * @param speed the input speed from -10 to 10

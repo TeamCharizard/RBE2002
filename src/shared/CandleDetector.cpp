@@ -48,32 +48,44 @@ bool CandleDetector::detect(int *distanceOut, int *angleOut, int radii[]){
         int midAngle = angle - angleBetweenSpikes/2;
         int midRadius = (lastRadius + lastSpikeRad)/2;
 
-        if (abs(c - WIDTH) < WIDTH_TOLERANCE){
+        if (abs(c - WIDTH) < WIDTH_TOLERANCE && 
+            abs(lastSpikeRad-lastRadius) < RADIUS_TOLERANCE){
 
           int valid = 0;
           for (int i=lastSpikeAStart;i<=a;i++){
             int ang = i < 0 ? 360 + i : i;
-            /*
+#if defined(DEBUG_LIDAR)
             Serial.print(i);
             Serial.print(" ");
             Serial.println(radii[ang]);
-            */
+#endif
             if(radii[ang] > 0) {
                 valid++;
             }
           }
 
           float validPercent = (float)valid/(a-lastSpikeAStart+1);
-          /*
+#if defined(DEBUG_LIDAR)
           Serial.print("Percent valid: ");
           Serial.print(validPercent);
           Serial.print(", a=");
           Serial.print(midAngle);
           Serial.print(", r=");
           Serial.println(midRadius);
-          */
+#endif
 
           if (validPercent >= VALID_CANDLE_THRESHOLD){
+            for (int i=lastSpikeAStart;i<=a;i++){
+              int ang = i < 0 ? 360 + i : i;
+              Serial.print(i);
+              Serial.print(" ");
+              Serial.println(radii[ang]);
+            }
+            Serial.print("Percent valid: ");
+            Serial.print(validPercent);
+            Serial.print(", a=");
+            Serial.print(midAngle);
+            Serial.print(", r=");
             *distanceOut = midRadius;
             *angleOut = midAngle;
             return true;

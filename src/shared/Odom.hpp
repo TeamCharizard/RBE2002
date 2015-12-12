@@ -28,7 +28,7 @@ public:
         float rot_disp = (right_disp - left_disp)*M_PI*wheel_radius/(360*7.5/2);
         float disp = (left_disp + right_disp)*M_PI*wheel_radius/360;
 
-        dir += rot_disp;
+        dir -= rot_disp;
 
         pos.x() += disp*cos(dir);
         pos.y() += disp*sin(dir);

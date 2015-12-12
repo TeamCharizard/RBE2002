@@ -14,6 +14,7 @@ class CandleDetector{
   private:
     const static int WIDTH = 130,
           WIDTH_TOLERANCE = 35,
+          RADIUS_TOLERANCE = 50,
           MIN_SPIKE = 300,
           MAX_SPIKE = 3000;
 

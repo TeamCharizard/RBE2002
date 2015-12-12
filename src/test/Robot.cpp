@@ -77,6 +77,7 @@ bool Robot::search(){
     bool candleFound = detector.detect(&distanceToCandle, &angleToCandle, lidar.distances);
 
     if (candleFound){
+      old_base_dir = base.dir();
       debugPrint(1,"a=%-3d d=%-4d", angleToCandle, distanceToCandle);
       return true;
     }
@@ -86,9 +87,13 @@ bool Robot::search(){
 }
 
 bool Robot::driveToCandle(){
-  if(turnToFaceAbsolutely(angleToCandle * M_PI / 180)) {
-    stop();
-    return false;
+  long now = millis();
+  if (now - lastUpdateTime > UPDATE_PERIOD){
+    lastUpdateTime = now;
+    if(turnToFaceAbsolutely(old_base_dir+angleToCandle * M_PI / 180)) {
+      stop();
+      return false;
+    }
   }
   return false;
 }
@@ -118,8 +123,8 @@ bool Robot::returnToOrigin(){
   return false;
 }
 
-bool  Robot::turnToFaceAbsolutely(float angle){
-  base.turnAbsolutely(angle);
+bool Robot::turnToFaceAbsolutely(float angle){
+  return base.turnAbsolutely(angle);
 }
 
 void Robot::driveAndAvoid(){

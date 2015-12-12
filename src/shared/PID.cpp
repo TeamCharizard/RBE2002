@@ -10,8 +10,11 @@ void PID::set(float setPoint){
   this->setPoint = setPoint;
 }
 
-int PID::run(float value){
+int PID::run(float value, bool doWrap){
   float error = setPoint - value;
+  if (doWrap && error > M_PI) {
+      error -= 2*M_PI;
+  }
   iTerm += error;
   //the plus equals is because this is a velocity PID
   if (feedForward){
