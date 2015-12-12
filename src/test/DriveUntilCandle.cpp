@@ -37,7 +37,7 @@ void DriveUntilCandle::loop(){
       base.stop();
     }
 
-    if (cd.detect(&candleDistance, &candleAngle, distances)){
+    if (cd.detect(distances)){
       count++;
 
       // Only stop and report that a candle is found once
@@ -45,7 +45,7 @@ void DriveUntilCandle::loop(){
       // (otherwise sometimes I think the robot will detect it,
       // stop, jerk back a bit and no longer detect the candle)
       char msg[16];
-      snprintf(msg,16,"a=%-3d d=%-4d", candleAngle, candleDistance);
+      snprintf(msg,16,"a=%-3d d=%-4d", cd.angle(), cd.distance());
       Display.setCursor(0,0);
       Display.print(msg);
       Serial.println(msg);

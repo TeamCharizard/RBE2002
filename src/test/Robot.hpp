@@ -29,8 +29,6 @@ class Robot {
      */
     bool search();
 
-    bool driveToCandle();
-
     bool findCandleHeight();
 
     bool extinguishCandle();
@@ -39,12 +37,11 @@ class Robot {
 
     bool turnToFaceAbsolutely(float angle);
 
-    DriveDirection driveAndAvoid();
-
     /** making these public so other subsystems (candle) */
     Lidar lidar;
     PIDBase base;
     FireFinder ff;
+    CandleDetector detector;
 
   private:
 
@@ -53,13 +50,11 @@ class Robot {
     static Robot *instance;
 
     DriveDirection driveDirection;
-    CandleDetector detector;
     Extinguisher extinguisher;
+    Searcher searcher;
     Gyro gyro;
 
-    int distanceToCandle;
     double startAngle;
-    int angleToCandle;
 
     float old_base_dir;
 
