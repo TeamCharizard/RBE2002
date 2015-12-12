@@ -39,7 +39,7 @@ class Robot {
 
     bool turnToFaceAbsolutely(float angle);
 
-    void driveAndAvoid();
+    DriveDirection driveAndAvoid();
 
     /** making these public so other subsystems (candle) */
     Lidar lidar;

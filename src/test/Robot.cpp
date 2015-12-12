@@ -120,18 +120,23 @@ bool Robot::turnToFaceAbsolutely(float angle){
   return base.turnAbsolutely(angle);
 }
 
-void Robot::driveAndAvoid(){
+DriveDirection Robot::driveAndAvoid(){
+  DriveDirection dir;
   if (lidar.distances[0]  < 500 && lidar.distances[0] > 0){
     if (lidar.distances[350] > lidar.distances[100]){
+      dir = DriveDirection::LEFT;
       setDrive(DriveDirection::LEFT);
     }
     else{
+      dir = DriveDirection::RIGHT;
       setDrive(DriveDirection::RIGHT);
     }
   }
   else if (lidar.distances[0] > 0){
+    dir = DriveDirection::FORWARD;
     setDrive(DriveDirection::FORWARD);
   }
   base.drive();
+  return dir;
 }
 
