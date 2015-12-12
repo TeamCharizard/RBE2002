@@ -1,9 +1,11 @@
+FLAGS = -O3 -std=c++11 -Wall -Wuninitialized -pedantic
+
 .PHONY: build
 build:
-	ano build -m mega --cpu atmega2560 --cxxflags="-std=c++11 -Wall -Wuninitialized -pedantic"
+	ano build -v -m mega --cpu atmega2560 --cxxflags="$(FLAGS)"
 
 debug_lidar:
-	ano build -m mega --cpu atmega2560 --cxxflags="-std=c++11 -Wall -Wuninitialized -pedantic -DDEBUG_LIDAR"
+	ano build -m mega --cpu atmega2560 --cxxflags="$(FLAGS)"
 
 .PHONY: upload
 upload: build
@@ -21,7 +23,7 @@ s: upload
 
 .PHONY: p
 p:
-	ano build -m mega --cpu atmega2560 --cxxflags="-std=c++11" --arduino-dist="/opt/arduino-1.6.6"
+	ano build -m mega --cpu atmega2560 --cxxflags="$(FLAGS)" --arduino-dist="/opt/arduino-1.6.6"
 
 .PHONY: pu
 pu: p upload
