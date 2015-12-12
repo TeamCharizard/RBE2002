@@ -27,9 +27,16 @@ class Searcher {
       DRIVE_TO_CANDLE,
     };
 
+    const char *stateNames[4] = {
+        "SEARCH   ",
+        "CHECKING ",
+        "TURNING  ",
+        "DRV_2_CNDL"};
+
     State state;
     long lastUpdateTime = 0;
     float dirAtStartOfTurn = 0;
+    int candleCount = 0;
 
     const static long UPDATE_PERIOD = 50;
 };
