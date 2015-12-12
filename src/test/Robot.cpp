@@ -37,9 +37,6 @@ void Robot::drive(){
       base.setSpeeds(-100,-100);
       break;
   }
-  else{
-    stop();
-  }
 }
 
 void Robot::stop(){
