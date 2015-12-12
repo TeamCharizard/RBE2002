@@ -7,6 +7,10 @@ void Lidar::setup() {
     packetIndex = 0;
     distanceIndex = 0;
     startReading = false;
+    memset(distances, -1, 360*sizeof(int));
+    // Make sure we've tried to read a full sweep
+    // before doing anything
+    while(!read());
 }
 
 bool Lidar::read(){
@@ -31,6 +35,13 @@ bool Lidar::read(){
 
     if (!startReading && (b == (char) 0xfa)){
       if (distanceIndex >= 357){
+        memset(distances, -1, 360*sizeof(int));
+        /*
+        Serial.print("misses: ");
+        Serial.print(misses);
+        Serial.print(" inv: ");
+        Serial.println(invalids);
+        */
         misses = 0;
         invalids = 0;
       }
@@ -54,6 +65,7 @@ void Lidar::processEndOfPacket(){
         if ((distanceIndex >= 0) && (distanceIndex < 360)){
           if ((packet[i+1] & (char)0x80) >> 7){
             distances[distanceIndex] = -1;
+            invalids++;
           }
           else {
             int d = (unsigned char)packet[i] | (packet[i+1] << 8);
