@@ -38,7 +38,7 @@ void Robot::drive(){
       break;
   }
   if(digitalRead(29)){
-    base.run();
+    base.drive();
   }
   else{
     stop();
@@ -131,29 +131,9 @@ bool  Robot::turnToFace(double angle){
   debugPrint(1, "a=%+3d p=%+2d %+2d", (int)angle, power, -power);
   base.setSpeeds(power,-power);
   if(digitalRead(29)){
-    base.run();
+    base.drive();
   }
-  /*
-  if(angle < 2) {
-      stop();
-      return true;
-  }
-  */
-  /*
-  if (abs(angle < 5)){
-    stop();
-    return true;
-  }
-  else if (angle > 180){
-    setDrive(DriveDirection::LEFT);
-  }
-  else {
-    setDrive(DriveDirection::RIGHT);
-  }
-  */
-  //drive();
   return false;
-
 }
 
 void Robot::driveAndAvoid(){
@@ -168,6 +148,6 @@ void Robot::driveAndAvoid(){
   else if (lidar.distances[0] > 0){
     setDrive(DriveDirection::FORWARD);
   }
-  base.run();
+  base.drive();
 }
 

@@ -23,7 +23,7 @@ void DriveUntilCandle::loop(){
 
   if (fullSweep){
     debugPrint(1,"full sweep");
-    base.run();
+    base.drive();
     distances = lidar.distances;
 
     if (digitalRead(29)){

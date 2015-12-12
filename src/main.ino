@@ -7,12 +7,13 @@
 #include "test/TestOdom.hpp"
 #include "test/Height.hpp"
 #include "test/PrintOdom.hpp"
+#include "test/Turn.hpp"
 #include "test/DriveUntilCandle.hpp"
 #include "test/LidarBenchmark.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
 
-Main sketch;
+Turn sketch;
 
 void debugPrint(int line, const char *format, ...){
   va_list args;

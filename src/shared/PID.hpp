@@ -3,15 +3,15 @@
 class PID{
   public:
     PID(float kP, float  kI, float kD, bool feedForward);
-    void set(int setPoint);
-    int run(int value);
+    void set(float setPoint);
+    float run(float value);
 
     float kP, kI, kD;
-    int  lastError,
+    float  lastError,
            iTerm;
 
-    int setPoint;
-    int output;
+    float setPoint;
+    float output;
 
     bool feedForward = false;
 };

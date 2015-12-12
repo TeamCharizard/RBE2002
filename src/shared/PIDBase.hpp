@@ -9,12 +9,13 @@ class PIDBase {
   public:
     PIDBase();
     void setup();
-    void run();
+    void drive();
     void setSpeeds(int leftSpeed, int rightSpeed);
     void stop();
     float x();
     float y();
     float dir();
+    bool turnAbsolutely(float direction);
 
   private:
 
@@ -27,7 +28,7 @@ class PIDBase {
     typedef Encoder<2,3> RightEnc;
     typedef Encoder<18,19> LeftEnc;
     Odom<LeftEnc, RightEnc> odom;
-    PID lPID,rPID;
+    PID lPID,rPID,dirPID;
     long lastUpdate;
     const long UPDATE_PERIOD = 200; //milliseconds
     const int TOP_SPEED = 35; //ticks per UPDATE_PERIOD

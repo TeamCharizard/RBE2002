@@ -23,7 +23,7 @@ void TestOdom::loop(){
 
   if (fullSweep){
     Serial.println(freeMemory());
-    base.run();
+    base.drive();
     distances = lidar.distances;
 
     avoidInFront(distances[0]);
