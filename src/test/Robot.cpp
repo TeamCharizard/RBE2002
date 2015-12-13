@@ -50,6 +50,15 @@ void Robot::pushPos(){
   path.push(Point<float>(base.x(),base.y()));
 }
 
+void Robot::setGoalInRobotFrame(Point<float> delta){
+  float ang = detector.angle()*M_PI/180;
+  delta = delta.rotate(ang);
+
+  debugPrint(1, "dX=%4d dY=%4d", (int)delta.x(), (int)delta.y());
+  Point<float> goalPoint = base.odom.robotToWorld(delta);
+  navigator.setGoal(goalPoint);
+}
+
 bool Robot::search(){
   return searcher.run();
 }

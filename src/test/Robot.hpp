@@ -31,6 +31,8 @@ class Robot {
 
     void pushPos();
 
+    void setGoalInRobotFrame(Point<float> delta);
+
     bool findCandleHeight();
 
     bool extinguishCandle();

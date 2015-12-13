@@ -48,7 +48,7 @@ bool Searcher::run(){
         if (now - lastUpdateTime > UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
-            state = CHECK_AFTER_SCOOT;
+            //state = CHECK_AFTER_SCOOT;
             debugPrint(0,"sstate =%s",stateNames[state]);
           }
         }
@@ -75,22 +75,22 @@ bool Searcher::run(){
         int amountToScoot = checkPath();
 
         //convert to inches
-        float amountToScootIn = amountToScoot/25.4;
+        float amountToScootInches = amountToScoot/25.4;
         if (amountToScoot != 0) {
+          debugPrint(0,"SCOOTING!");
 
           //figure out where to go
-          Point<float> delta(0, amountToScootIn);
-          float ang = Robot::getInstance()->detector.angle()*M_PI/180;
-          delta = delta.rotate(ang);
-
-          debugPrint(1, "dX=%4d dY=%4d", (int)delta.x(), (int)delta.y());
-          goalPoint = Robot::getInstance()->base.odom.robotToWorld(delta);
-          debugPrint(1, "X=%4d Y=%4d", (int)goalPoint.x(), (int)goalPoint.y());
-          Robot::getInstance()->navigator.setGoal(goalPoint);
+          Point<float> delta(0, amountToScootInches);
+          Robot::getInstance()->setGoalInRobotFrame(delta);
           state = SCOOT;
         }
         else {
-          state = TURN_TO_CANDLE;
+          debugPrint(0,"CLEAR PATH!");
+          int distanceToCandleInches = Robot::getInstance()->detector.distance() / 25.4;
+          int oneMeterBeforeCandle = distanceToCandleInches - 1000;
+          Point<float> delta(oneMeterBeforeCandle, 0);
+          Robot::getInstance()->setGoalInRobotFrame(delta);
+          state = GO_TO_CANDLE;
         }
       }
       break;
@@ -111,21 +111,23 @@ bool Searcher::run(){
           break;
       }
       break;
-    case TURN_TO_CANDLE:
-      if (turnToFaceCandle()){
-        state = DRIVE_TO_CANDLE;
-        debugPrint(0,"sstate =%s",stateNames[state]);
-      }
       break;
-    case DRIVE_TO_CANDLE:
-      if (driveToCandle()){
-        state = CHECK_FINAL;
+    case GO_TO_CANDLE:
+      {
+        long now = millis();
+        if (now - lastUpdateTime > UPDATE_PERIOD){
+          lastUpdateTime = now;
+          if (Robot::getInstance()->navigator.run()){
+            state = CHECK_FINAL;
+            debugPrint(0,"sstate =%s",stateNames[state]);
+          }
+        }
       }
       break;
     case CHECK_FINAL:
       switch (check()){
         case FOUND:
-          state = TURN_TO_CANDLE_FINAL;
+          state = TURN_TO_CANDLE;
           candleCount = 0;
           sweeps = 0;
           break;
@@ -138,7 +140,7 @@ bool Searcher::run(){
           break;
       }
       break;
-    case TURN_TO_CANDLE_FINAL:
+    case TURN_TO_CANDLE:
       if (turnToFaceCandle()){
         return true;
         debugPrint(0,"sstate =%s",stateNames[state]);
@@ -261,47 +263,6 @@ bool Searcher::turnToFaceCandle(){
     if(Robot::getInstance()->turnToFaceAbsolutely(goalDir)) {
       Robot::getInstance()->stop();
       return true;
-    }
-  }
-
-  return false;
-}
-
-bool Searcher::driveToCandle(){
-  bool fullSweep = Robot::getInstance()->lidar.read();
-
-  if (fullSweep){
-    DriveDirection currentDriveDirection = driveAndAvoid();
-
-    if (currentDriveDirection == LEFT){
-      goalDir = Robot::getInstance()->base.dir() - M_PI/2;
-      Robot::getInstance()->pushPos();
-      state = TURNING;
-      debugPrint(0,"sstate =%s",stateNames[state]);
-      return false;
-    }
-    else if (currentDriveDirection == RIGHT){
-      goalDir = Robot::getInstance()->base.dir() + M_PI/2;
-      Robot::getInstance()->pushPos();
-      state = TURNING;
-      debugPrint(0,"sstate =%s",stateNames[state]);
-      return false;
-    }
-
-    int dFront = sampleAt(0,30); //search with wide sample
-
-    debugPrint(1,"dFront=%d", dFront);
-
-    if (dFront < 1000) {
-      //we're done if we're 50cm away
-      return true;
-    }
-
-    DriveDirection dir = driveAndAvoid();
-
-    if (dir != FORWARD){
-      debugPrint(0,"sstate =%s",stateNames[state]);
-      state = SEARCHING;
     }
   }
 

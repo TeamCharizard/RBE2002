@@ -41,23 +41,21 @@ class Searcher {
       SCOOT,
       CHECKING,
       CHECK_AFTER_SCOOT,
-      TURN_TO_CANDLE,
-      DRIVE_TO_CANDLE,
+      GO_TO_CANDLE,
       CHECK_FINAL,
-      TURN_TO_CANDLE_FINAL
+      TURN_TO_CANDLE
     };
 
-    const char *stateNames[10] = {
+    const char *stateNames[9] = {
       "SEARCHING",
       "TURNING",
       "CHECK_PATH",
       "SCOOT",
       "CHECKING",
       "CHECK_AFTER_SCOOT",
-      "TURN_TO_CANDLE",
-      "DRIVE_TO_CANDLE",
+      "GO_TO_CANDLE",
       "CHECK_FINAL",
-      "TURN_TO_CANDLE_FINAL"
+      "TURN_TO_CANDLE"
     };
 
     State state;
