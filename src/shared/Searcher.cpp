@@ -23,9 +23,6 @@ bool Searcher::run(){
   switch(state){
     case SEARCHING:
       if (search()){
-        sweeps = 0;
-        candleCount = 0;
-
         state = CHECKING;
         debugPrint(0,"ST:%s",stateNames[state]);
       }
@@ -35,14 +32,14 @@ bool Searcher::run(){
         long now = millis();
         if (now - lastUpdateTime > UPDATE_PERIOD){
           lastUpdateTime = now;
-          if (Robot::getInstance()->turnToFaceAbsolutely(goalDir)){
+          if (Robot::getInstance()->turnToFaceAbsolutely(absoluteTurnGoalAngle)){
             state = SEARCHING;
             debugPrint(0,"ST:%s",stateNames[state]);
           }
         }
       }
       break;
-    case SCOOT: //drive blindly for 200mm
+    case SCOOT:
       {
         long now = millis();
         if (now - lastUpdateTime > UPDATE_PERIOD){
@@ -61,14 +58,10 @@ bool Searcher::run(){
         case FOUND:
           state = CHECK_PATH;
           debugPrint(0,"ST:%s",stateNames[state]);
-          candleCount = 0;
-          sweeps = 0;
           break;
         case MISTAKEN:
           state = SEARCHING;
           debugPrint(0,"ST:%s",stateNames[state]);
-          candleCount = 0;
-          sweeps = 0;
           break;
       }
       break;
@@ -83,7 +76,7 @@ bool Searcher::run(){
 
           //figure out where to go
           Point<float> delta(0, amountToScootInches);
-          Robot::getInstance()->setGoalInRobotFrame(delta);
+          Robot::getInstance()->setGoalInCandleFrame(delta);
           state = SCOOT;
         }
         else {
@@ -98,17 +91,13 @@ bool Searcher::run(){
         case THINKING:
           break;
         case FOUND:
-          Serial.println("FOUND AND CLEAR! GO!");
           Robot::getInstance()->setGoalToCandle();
           state = GO_TO_CANDLE;
-          candleCount = 0;
-          sweeps = 0;
+          debugPrint(0,"ST:%s",stateNames[state]);
           break;
         case MISTAKEN:
-          //state = SEARCHING;
-          Serial.println("NO CANDLE AFTER SCOOT");
-          candleCount = 0;
-          sweeps = 0;
+          state = CHECKING;
+          debugPrint(0,"ST:%s",stateNames[state]);
           break;
       }
       break;
@@ -128,13 +117,10 @@ bool Searcher::run(){
       switch (check()){
         case FOUND:
           state = TURN_TO_CANDLE;
-          candleCount = 0;
-          sweeps = 0;
+          debugPrint(0,"ST:%s",stateNames[state]);
           break;
         case MISTAKEN:
           state = SEARCHING;
-          candleCount = 0;
-          sweeps = 0;
           break;
         case THINKING:
           break;
@@ -157,14 +143,14 @@ bool Searcher::search(){
     DriveDirection currentDriveDirection = driveAndAvoid();
 
     if (currentDriveDirection == LEFT){
-      goalDir = Robot::getInstance()->base.dir() - M_PI/2;
+      absoluteTurnGoalAngle = Robot::getInstance()->base.dir() - M_PI/2;
       Robot::getInstance()->pushPos();
       state = TURNING;
       debugPrint(0,"ST:%s",stateNames[state]);
       return false;
     }
     else if (currentDriveDirection == RIGHT){
-      goalDir = Robot::getInstance()->base.dir() + M_PI/2;
+      absoluteTurnGoalAngle = Robot::getInstance()->base.dir() + M_PI/2;
       Robot::getInstance()->pushPos();
       state = TURNING;
       debugPrint(0,"ST:%s",stateNames[state]);
@@ -239,13 +225,17 @@ Searcher::CheckState Searcher::check(){
 
         debugPrint(1,"cX= %d cY=%d", (int)candle_pos.x(), (int)candle_pos.y());
 
-        dirAtStartOfTurn = Robot::getInstance()->base.dir();
+        absoluteCandleAngle = Robot::getInstance()->absoluteCandleAngle();
 
+        sweeps = 0;
+        candleCount = 0;
         return FOUND;
       }
     }
 
     if (sweeps++ > 12){
+      sweeps = 0;
+      candleCount = 0;
       return MISTAKEN;
     }
   }
@@ -258,10 +248,8 @@ bool Searcher::turnToFaceCandle(){
   if (now - lastUpdateTime > UPDATE_PERIOD){
     lastUpdateTime = now;
 
-    goalDir = dirAtStartOfTurn +
-      Robot::getInstance()->detector.angle() * M_PI / 180;
 
-    if(Robot::getInstance()->turnToFaceAbsolutely(goalDir)) {
+    if(Robot::getInstance()->turnToFaceAbsolutely(absoluteCandleAngle)) {
       Robot::getInstance()->stop();
       return true;
     }

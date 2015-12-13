@@ -51,19 +51,14 @@ void Robot::pushPos(){
 }
 
 void Robot::setGoalToCandle(){
-  int distanceToCandleInches = Robot::getInstance()->detector.distance() / 25.4;
+  int distanceToCandleInches = detector.distance() / 25.4;
   int oneMeterBeforeCandleInches = distanceToCandleInches - 40;
   Point<float> delta(oneMeterBeforeCandleInches, 0);
 
-  float ang = base.dir()*M_PI/180;
-  delta = delta.rotate(ang);
-
-  debugPrint(1, "dX=%4d dY=%4d", (int)delta.x(), (int)delta.y());
-  Point<float> goalPoint = base.odom.robotToWorld(delta);
-  navigator.setGoal(goalPoint);
+  setGoalInCandleFrame(delta);
 }
 
-void Robot::setGoalInRobotFrame(Point<float> delta){
+void Robot::setGoalInCandleFrame(Point<float> delta){
   float ang = detector.angle()*M_PI/180;
   delta = delta.rotate(ang);
 
@@ -71,6 +66,11 @@ void Robot::setGoalInRobotFrame(Point<float> delta){
   Point<float> goalPoint = base.odom.robotToWorld(delta);
   navigator.setGoal(goalPoint);
 }
+
+float Robot::absoluteCandleAngle(){
+  return base.dir() + detector.angle() * M_PI / 180;
+}
+
 
 bool Robot::search(){
   return searcher.run();

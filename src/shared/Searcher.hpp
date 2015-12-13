@@ -60,9 +60,9 @@ class Searcher {
 
     State state;
     long lastUpdateTime = 0;
-    float dirAtStartOfTurn = 0;
     Point<float> goalPoint;
-    float goalDir;
+    float absoluteTurnGoalAngle,
+          absoluteCandleAngle;
     int candleCount = 0,
         sweeps = 0;
 

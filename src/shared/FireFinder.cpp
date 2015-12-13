@@ -56,7 +56,6 @@ int FireFinder::watch(int dToCandle){
           sum += analogRead(SENSOR_PIN);
         }
         int intensity = sum / SAMPLE_SIZE;
-        Serial.println(intensity);
         if (intensity <  minIntensity){
           minIntensity = intensity;
           minPosition = position;

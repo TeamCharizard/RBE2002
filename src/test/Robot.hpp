@@ -31,13 +31,19 @@ class Robot {
 
     void pushPos();
 
-    void setGoalInRobotFrame(Point<float> delta);
+    /** \brief set the goal for navigator to a delta in the candle frame
+     * candle frame is centered at the robot, but with x towards the candle
+     * \param delta the x and y displacement in candle frame
+     */
+    void setGoalInCandleFrame(Point<float> delta);
 
     void setGoalToCandle();
 
     bool findCandleHeight();
 
     bool extinguishCandle();
+
+    float absoluteCandleAngle();
 
     bool returnToOrigin();
 
