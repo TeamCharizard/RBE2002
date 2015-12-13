@@ -24,6 +24,10 @@ float PIDBase::y(){
   return odom.getPos().y();
 }
 
+Point<float> PIDBase::pos() {
+  return odom.getPos();
+}
+
 float PIDBase::dir(){
   return odom.dir;
 }

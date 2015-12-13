@@ -14,6 +14,7 @@ class PIDBase {
     void stop();
     float x();
     float y();
+    Point<float> pos();
     float dir();
     bool turnAbsolutely(float direction);
     typedef Encoder<2,3> RightEnc;
