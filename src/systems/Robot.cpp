@@ -3,15 +3,14 @@
 long Robot::lastUpdateTime = 0ul;
 Robot::Mode Robot::mode = NOTHING;
 Lidar Robot::lidar;
+PIDBase Robot::base;
 
 void Robot::setup(){
-  /*
-   * lidar.setup()
-   * base.setup()
-   * ff.setup()
-   * extinguisher.setup()
-   * gyro.setup()
-   */
+   lidar.setup();
+   base.setup();
+   //ff.setup();
+   //extinguisher.setup();
+   //gyro.setup();
 }
 
 Robot::Mode Robot::getMode(){

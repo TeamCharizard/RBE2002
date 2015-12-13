@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Lidar.hpp"
+#include "PIDBase.hpp"
 
 class Robot {
 
@@ -31,7 +32,7 @@ class Robot {
     static void setMode(Mode mode);
 
     static Lidar lidar;
-    //static PIDBase base;
+    static PIDBase base;
     //static FireFinder ff;
     //static DriveDirection driveDirection;
     //static Extinguisher extinguisher;

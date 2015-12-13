@@ -28,6 +28,8 @@ void setup(){
   cmd = new IChooseYou();
   Robot::setup();
   Robot::lastUpdateTime = millis();
+
+  cmd->start();
 }
 
 void loop(){
