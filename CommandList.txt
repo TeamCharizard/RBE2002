@@ -1,0 +1,65 @@
+Command Groups:
+    
+    Search()
+    CheckCandle()
+    TurnToCandle()
+    DriveToCandle()
+    FindCandleHeight()
+    ExtinguishCandle()
+    Avoid()
+    DriveToPoint(Point point)
+    ReturnToOrigin()
+
+
+Basic Commands:
+    Turn(int angle)
+    Scoot(int distance)
+    SetFan(bool blowing)
+    DriveForward()
+    Detect()
+    Wait(int millis)
+
+
+
+
+Structure:
+    FireFighter
+        SearchForCandle (init() sets first command of DriveAndDetect)
+            DriveAndDetect
+                DriveForward && Detect
+            if (obstacle?)
+                Avoid
+                    if(left<right)
+                        Turn(90)
+                    else
+                        Turn(-90)
+            if (sees Candle)
+                CheckCandle()
+                if(definitely a candle)
+                    TurnToCandle()
+                    DriveToCandle()
+                    CheckCandle()
+                    if(definitely definitely a candle)
+                        FindCandeleHeight
+                else
+                    DriveAndDetect
+
+        FindCandleHeight
+
+        ExtinguishCandle
+            Turn(180)
+            SetFan(true)
+            Wait(4000)
+            SetFan(false)
+            Turn(180)
+            if(FindCandleHeight finds candle)
+                ExtinguishCandle
+            else
+                ReturnToOrigin
+
+        ReturnToOrigin
+            For (Every Point on the Stack)
+                DriveToPoint(point)
+
+        End
+
