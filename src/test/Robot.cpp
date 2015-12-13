@@ -10,6 +10,7 @@ void Robot::setup(){
   lidar.setup();
   base.setup();
   ff.setup();
+  searcher.setup();
   extinguisher.setup();
   pinMode(29,INPUT_PULLUP);
 }

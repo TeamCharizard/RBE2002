@@ -21,7 +21,7 @@ public:
     int left_disp,
         right_disp;
 
-    void updateDifferential() {
+    float updateDifferential() {
         left_disp = Enc1::read(true);
         right_disp = Enc2::read(true);
 
@@ -32,6 +32,7 @@ public:
 
         pos.x() += disp*cos(dir);
         pos.y() += disp*sin(dir);
+        return disp;
     }
 
     int leftDisplacement() {

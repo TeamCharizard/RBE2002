@@ -78,8 +78,8 @@ bool PIDBase::turnAbsolutely(float direction){
   return false;
 }
 
-void PIDBase::drive(){
-  odom.updateDifferential();
+float PIDBase::drive(){
+  float dist = odom.updateDifferential()*25.4;
 
   int dl = odom.leftDisplacement();
   int lOut = lPID.run(dl);
@@ -87,4 +87,6 @@ void PIDBase::drive(){
   int dr = odom.rightDisplacement();
   int rOut = rPID.run(dr);
   rMotor.set(rOut);
+
+  return dist;
 }

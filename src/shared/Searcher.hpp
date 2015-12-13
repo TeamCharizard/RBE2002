@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Point.hpp"
 #include "DriveMotor.hpp"
 #include "Lidar.hpp"
 
@@ -14,11 +15,15 @@ class Searcher {
   public:
     Searcher();
 
+    void setup();
+
     DriveDirection getDirection();
     DriveDirection driveAndAvoid();
 
     CheckState check();
     bool search();
+    bool scoot();
+    int checkPath();
     bool turnToFaceCandle();
     bool driveToCandle();
 
@@ -27,28 +32,36 @@ class Searcher {
 
   private:
 
+    int R_TH[360];
+
     enum State {
       SEARCHING,
       TURNING,
+      CHECK_PATH,
+      SCOOT,
       CHECKING,
       TURN_TO_CANDLE,
       DRIVE_TO_CANDLE,
       CHECK_FINAL,
-      TURN_TO_CANDLE_FINAL,
+      TURN_TO_CANDLE_FINAL
     };
 
-    const char *stateNames[7] = {
-        "SEARCH    ",
-        "TURNING   ",
-        "CHECKING  ",
-        "TURNING   ",
-        "DRV_2_CNDL",
-        "CHK_FINAL ",
-        "TURN_FINAL"};
+    const char *stateNames[9] = {
+      "SEARCHING",
+      "TURNING",
+      "CHECK_PATH     ",
+      "SCOOT          ",
+      "CHECKING",
+      "TURN_TO_CANDLE    ",
+      "DRIVE_TO_CANDLE",
+      "CHECK_FINAL",
+      "TURN_TO_CANDLE_FINAL"
+    };
 
     State state;
     long lastUpdateTime = 0;
     float dirAtStartOfTurn = 0;
+    Point<float> goalPoint;
     float goalDir;
     int candleCount = 0,
         sweeps = 0;

@@ -9,7 +9,7 @@ class PIDBase {
   public:
     PIDBase();
     void setup();
-    void drive();
+    float drive();
     void setSpeeds(int leftSpeed, int rightSpeed);
     void stop();
     float x();

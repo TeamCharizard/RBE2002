@@ -41,6 +41,8 @@ class Robot {
     FireFinder ff;
     CandleDetector detector;
 
+    const static int WIDTH = 190;
+
   private:
 
     /** constructor is private because it's a singleton class */
