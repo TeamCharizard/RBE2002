@@ -15,11 +15,12 @@ class Main{
       RETURN_TO_ORIGIN,
       END
     };
-    char* stateNames[6] = {"SEARCH_FOR_CANDLE",
-      "CANDLE_HEIGHT",
-      "EXTNGISH_CANDLE",
-      "RETURN_TO_ORGIN",
-      "END"};
+    char* stateNames[5] = {
+      "SEARCH_4_CANDLE",
+      "CANDLE_HEIGHT ",
+      "EXNGISH_CANDLE",
+      "RETRN_TO_ORGIN",
+      "END           "};
 
     RobotState state = SEARCH_FOR_CANDLE;
     Robot *charizard;

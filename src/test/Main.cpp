@@ -36,7 +36,6 @@ void Main::loop(){
       }
       break;
     case END:
-      debugPrint(0,"COMPLETE");
       break;
   }
 }

@@ -33,6 +33,8 @@ class Robot {
 
     void setGoalInRobotFrame(Point<float> delta);
 
+    void setGoalToCandle();
+
     bool findCandleHeight();
 
     bool extinguishCandle();
@@ -49,7 +51,7 @@ class Robot {
     Navigator navigator;
     Stack<Point<float>, 256> path;
 
-    const static int WIDTH = 190;
+    const static int WIDTH = 220;
 
   private:
 

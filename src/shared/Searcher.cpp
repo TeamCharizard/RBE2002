@@ -27,7 +27,7 @@ bool Searcher::run(){
         candleCount = 0;
 
         state = CHECKING;
-        debugPrint(0,"sstate =%s",stateNames[state]);
+        debugPrint(0,"ST:%s",stateNames[state]);
       }
       break;
     case TURNING:
@@ -37,7 +37,7 @@ bool Searcher::run(){
           lastUpdateTime = now;
           if (Robot::getInstance()->turnToFaceAbsolutely(goalDir)){
             state = SEARCHING;
-            debugPrint(0,"sstate =%s",stateNames[state]);
+            debugPrint(0,"ST:%s",stateNames[state]);
           }
         }
       }
@@ -48,8 +48,8 @@ bool Searcher::run(){
         if (now - lastUpdateTime > UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
-            //state = CHECK_AFTER_SCOOT;
-            debugPrint(0,"sstate =%s",stateNames[state]);
+            state = CHECK_AFTER_SCOOT;
+            debugPrint(0,"ST:%s",stateNames[state]);
           }
         }
       }
@@ -60,11 +60,13 @@ bool Searcher::run(){
           break;
         case FOUND:
           state = CHECK_PATH;
+          debugPrint(0,"ST:%s",stateNames[state]);
           candleCount = 0;
           sweeps = 0;
           break;
         case MISTAKEN:
           state = SEARCHING;
+          debugPrint(0,"ST:%s",stateNames[state]);
           candleCount = 0;
           sweeps = 0;
           break;
@@ -86,10 +88,7 @@ bool Searcher::run(){
         }
         else {
           debugPrint(0,"CLEAR PATH!");
-          int distanceToCandleInches = Robot::getInstance()->detector.distance() / 25.4;
-          int oneMeterBeforeCandle = distanceToCandleInches - 1000;
-          Point<float> delta(oneMeterBeforeCandle, 0);
-          Robot::getInstance()->setGoalInRobotFrame(delta);
+          Robot::getInstance()->setGoalToCandle();
           state = GO_TO_CANDLE;
         }
       }
@@ -99,7 +98,9 @@ bool Searcher::run(){
         case THINKING:
           break;
         case FOUND:
-          state = TURN_TO_CANDLE; //call this if you want scoot and stuff
+          Serial.println("FOUND AND CLEAR! GO!");
+          Robot::getInstance()->setGoalToCandle();
+          state = GO_TO_CANDLE;
           candleCount = 0;
           sweeps = 0;
           break;
@@ -111,7 +112,6 @@ bool Searcher::run(){
           break;
       }
       break;
-      break;
     case GO_TO_CANDLE:
       {
         long now = millis();
@@ -119,7 +119,7 @@ bool Searcher::run(){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
             state = CHECK_FINAL;
-            debugPrint(0,"sstate =%s",stateNames[state]);
+            debugPrint(0,"ST:%s",stateNames[state]);
           }
         }
       }
@@ -143,7 +143,7 @@ bool Searcher::run(){
     case TURN_TO_CANDLE:
       if (turnToFaceCandle()){
         return true;
-        debugPrint(0,"sstate =%s",stateNames[state]);
+        debugPrint(0,"ST:%s",stateNames[state]);
       }
       break;
   }
@@ -160,14 +160,14 @@ bool Searcher::search(){
       goalDir = Robot::getInstance()->base.dir() - M_PI/2;
       Robot::getInstance()->pushPos();
       state = TURNING;
-      debugPrint(0,"sstate =%s",stateNames[state]);
+      debugPrint(0,"ST:%s",stateNames[state]);
       return false;
     }
     else if (currentDriveDirection == RIGHT){
       goalDir = Robot::getInstance()->base.dir() + M_PI/2;
       Robot::getInstance()->pushPos();
       state = TURNING;
-      debugPrint(0,"sstate =%s",stateNames[state]);
+      debugPrint(0,"ST:%s",stateNames[state]);
       return false;
     }
 
@@ -226,7 +226,6 @@ Searcher::CheckState Searcher::check(){
     bool candleFound = Robot::getInstance()->detector.detect(
         Robot::getInstance()->lidar.distances);
 
-    debugPrint(1,"ct= %d swp=%d", candleCount, sweeps);
 
     //start after 1 full sweep, wait for 12
     if (candleFound && sweeps > 1){
@@ -237,6 +236,8 @@ Searcher::CheckState Searcher::check(){
         auto angle = Robot::getInstance()->detector.angle();
         Point<float> relative(dist*cos(angle*M_PI/180)/25.4, dist*sin(angle*M_PI/180)/25.4);
         auto candle_pos = Robot::getInstance()->base.odom.robotToWorld(relative);
+
+        debugPrint(1,"cX= %d cY=%d", (int)candle_pos.x(), (int)candle_pos.y());
 
         dirAtStartOfTurn = Robot::getInstance()->base.dir();
 

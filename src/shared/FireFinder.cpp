@@ -17,7 +17,6 @@ bool FireFinder::seesCandle(){
   }
   int intensity = sum/ss;
   seesCandle = (intensity < MIN_INTENSITY);
-  debugPrint(1,"intensity=%d",intensity);
   return seesCandle;
 }
 
