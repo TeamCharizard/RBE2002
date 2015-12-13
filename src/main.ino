@@ -1,21 +1,13 @@
 #include "main.hpp"
 
-#include <MemoryFree.h>
-#include "test/PointToCandle.hpp"
-#include "test/Search.hpp"
-#include "test/Main.hpp"
-#include "test/TestOdom.hpp"
-#include "test/TestGyro.hpp"
-#include "test/Height.hpp"
-#include "test/PrintOdom.hpp"
-#include "test/Turn.hpp"
-#include "test/DriveUntilCandle.hpp"
-#include "test/LidarBenchmark.hpp"
-#include "test/LidarDump.hpp"
+//#include "systems/Robot.hpp"
+#include <Arduino.h>
+#include <CommanDuino.h>
+//#include "commands/IChooseYou.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
 
-Main sketch;
+Command *cmd;
 
 void debugPrint(int line, const char *format, ...){
   va_list args;
@@ -33,9 +25,22 @@ void debugPrint(int line, const char *format, ...){
 void setup(){
   Display.begin(16,2);
   Serial.begin(9600);
-  sketch.setup();
+  //robot.setup();
 }
 
 void loop(){
-  sketch.loop();
+  /*
+   *if (Robot::MODE == LIDAR){
+   *  bool fullSweep = lidar.read():
+   *  if (fullSweep){
+   *    Scheduler::getInstance()->run();
+   *  }
+   *}
+   *else if (Robot::MODE == ODOM){
+   *  long now = millis();
+   *  if (now - lastUpdateTime > ODOM_FREQ){
+   *    Scheduler::getInstance()->run();
+   *  }
+   *}
+   */
 }
