@@ -1,9 +1,9 @@
 #include "main.hpp"
 
-//#include "systems/Robot.hpp"
+#include "systems/Robot.hpp"
 #include <Arduino.h>
 #include <CommanDuino.h>
-//#include "commands/IChooseYou.hpp"
+#include "commands/IChooseYou.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
 
@@ -25,22 +25,25 @@ void debugPrint(int line, const char *format, ...){
 void setup(){
   Display.begin(16,2);
   Serial.begin(9600);
-  //robot.setup();
+  cmd = new IChooseYou();
+  Robot::setup();
+  Robot::lastUpdateTime = millis();
 }
 
 void loop(){
-  /*
-   *if (Robot::MODE == LIDAR){
-   *  bool fullSweep = lidar.read():
-   *  if (fullSweep){
-   *    Scheduler::getInstance()->run();
-   *  }
-   *}
-   *else if (Robot::MODE == ODOM){
-   *  long now = millis();
-   *  if (now - lastUpdateTime > ODOM_FREQ){
-   *    Scheduler::getInstance()->run();
-   *  }
-   *}
-   */
+  if (Robot::getMode() == Robot::LIDAR){
+    bool fullSweep = Robot::lidar.read();
+    if (fullSweep){
+      Scheduler::getInstance()->run();
+    }
+  }
+  else if (Robot::getMode() == Robot::ODOM){
+    long now = millis();
+    if (now - Robot::lastUpdateTime > Robot::ODOM_FREQ){
+      Scheduler::getInstance()->run();
+    }
+  }
+  else {
+    //nothing here yet
+  }
 }
