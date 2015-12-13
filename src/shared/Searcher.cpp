@@ -111,12 +111,20 @@ bool Searcher::search(){
 
     if (currentDriveDirection == LEFT){
       goalDir = Robot::getInstance()->base.dir() - M_PI/2;
+      Robot::getInstance()->path.push(Point<float>(
+          Robot::getInstance()->base.x(),
+          Robot::getInstance()->base.y()
+      ));
       state = TURNING;
       debugPrint(1,"sstate =%s",stateNames[state]);
       return false;
     }
     else if (currentDriveDirection == RIGHT){
       goalDir = Robot::getInstance()->base.dir() + M_PI/2;
+      Robot::getInstance()->path.push(Point<float>(
+          Robot::getInstance()->base.x(),
+          Robot::getInstance()->base.y()
+      ));
       state = TURNING;
       debugPrint(1,"sstate =%s",stateNames[state]);
       return false;
