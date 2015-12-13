@@ -29,6 +29,8 @@ class Robot {
      */
     bool search();
 
+    void pushPos();
+
     bool findCandleHeight();
 
     bool extinguishCandle();

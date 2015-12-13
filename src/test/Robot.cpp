@@ -46,6 +46,10 @@ void Robot::setDrive(DriveDirection dir){
   }
 }
 
+void Robot::pushPos(){
+  path.push(Point<float>(base.x(),base.y()));
+}
+
 bool Robot::search(){
   return searcher.run();
 }

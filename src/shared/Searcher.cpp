@@ -27,7 +27,7 @@ bool Searcher::run(){
         candleCount = 0;
 
         state = CHECKING;
-        debugPrint(1,"sstate =%s",stateNames[state]);
+        debugPrint(0,"sstate =%s",stateNames[state]);
       }
       break;
     case TURNING:
@@ -37,7 +37,7 @@ bool Searcher::run(){
           lastUpdateTime = now;
           if (Robot::getInstance()->turnToFaceAbsolutely(goalDir)){
             state = SEARCHING;
-            debugPrint(1,"sstate =%s",stateNames[state]);
+            debugPrint(0,"sstate =%s",stateNames[state]);
           }
         }
       }
@@ -49,7 +49,7 @@ bool Searcher::run(){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
             state = CHECK_AFTER_SCOOT;
-            debugPrint(1,"sstate =%s",stateNames[state]);
+            debugPrint(0,"sstate =%s",stateNames[state]);
           }
         }
       }
@@ -59,10 +59,9 @@ bool Searcher::run(){
         case THINKING:
           break;
         case FOUND:
-          state = CHECK_PATH; //call this if you want scoot and stuff
+          state = CHECK_PATH;
           candleCount = 0;
           sweeps = 0;
-          //state = TURN_TO_CANDLE;
           break;
         case MISTAKEN:
           state = SEARCHING;
@@ -74,12 +73,16 @@ bool Searcher::run(){
     case CHECK_PATH:
       {
         int amountToScoot = checkPath();
+
+        //convert to inches
         float amountToScootIn = amountToScoot/25.4;
         if (amountToScoot != 0) {
+
           //figure out where to go
           Point<float> delta(0, amountToScootIn);
           float ang = Robot::getInstance()->detector.angle()*M_PI/180;
           delta = delta.rotate(ang);
+
           debugPrint(1, "dX=%4d dY=%4d", (int)delta.x(), (int)delta.y());
           goalPoint = Robot::getInstance()->base.odom.robotToWorld(delta);
           debugPrint(1, "X=%4d Y=%4d", (int)goalPoint.x(), (int)goalPoint.y());
@@ -96,28 +99,22 @@ bool Searcher::run(){
         case THINKING:
           break;
         case FOUND:
-          state = TURN_AFTER_SCOOT; //call this if you want scoot and stuff
+          state = TURN_TO_CANDLE; //call this if you want scoot and stuff
           candleCount = 0;
           sweeps = 0;
-          //state = TURN_TO_CANDLE;
           break;
         case MISTAKEN:
-          state = SEARCHING;
+          //state = SEARCHING;
+          Serial.println("NO CANDLE AFTER SCOOT");
           candleCount = 0;
           sweeps = 0;
           break;
-      }
-      break;
-    case TURN_AFTER_SCOOT:
-      if (turnToFaceCandle()){
-        state = DRIVE_TO_CANDLE;
-        debugPrint(1,"sstate =%s",stateNames[state]);
       }
       break;
     case TURN_TO_CANDLE:
       if (turnToFaceCandle()){
         state = DRIVE_TO_CANDLE;
-        debugPrint(1,"sstate =%s",stateNames[state]);
+        debugPrint(0,"sstate =%s",stateNames[state]);
       }
       break;
     case DRIVE_TO_CANDLE:
@@ -144,7 +141,7 @@ bool Searcher::run(){
     case TURN_TO_CANDLE_FINAL:
       if (turnToFaceCandle()){
         return true;
-        debugPrint(1,"sstate =%s",stateNames[state]);
+        debugPrint(0,"sstate =%s",stateNames[state]);
       }
       break;
   }
@@ -159,14 +156,16 @@ bool Searcher::search(){
 
     if (currentDriveDirection == LEFT){
       goalDir = Robot::getInstance()->base.dir() - M_PI/2;
+      Robot::getInstance()->pushPos();
       state = TURNING;
-      debugPrint(1,"sstate =%s",stateNames[state]);
+      debugPrint(0,"sstate =%s",stateNames[state]);
       return false;
     }
     else if (currentDriveDirection == RIGHT){
       goalDir = Robot::getInstance()->base.dir() + M_PI/2;
+      Robot::getInstance()->pushPos();
       state = TURNING;
-      debugPrint(1,"sstate =%s",stateNames[state]);
+      debugPrint(0,"sstate =%s",stateNames[state]);
       return false;
     }
 
@@ -174,9 +173,6 @@ bool Searcher::search(){
         Robot::getInstance()->lidar.distances);
 
     if (candleFound){
-      debugPrint(1,"a=%-3d d=%-4d",
-          Robot::getInstance()->detector.angle(),
-          Robot::getInstance()->detector.angle());
       return true;
     }
 
@@ -230,8 +226,8 @@ Searcher::CheckState Searcher::check(){
 
     debugPrint(1,"ct= %d swp=%d", candleCount, sweeps);
 
-
-    if (candleFound && sweeps > 3){
+    //start after 1 full sweep, wait for 12
+    if (candleFound && sweeps > 1){
       candleCount++;
       if (candleCount > 5){
 
@@ -241,7 +237,6 @@ Searcher::CheckState Searcher::check(){
         auto candle_pos = Robot::getInstance()->base.odom.robotToWorld(relative);
 
         dirAtStartOfTurn = Robot::getInstance()->base.dir();
-        //debugPrint(0,"x=%d y=%d", (int)candle_pos.x(), (int)candle_pos.y());
 
         return FOUND;
       }
@@ -280,26 +275,20 @@ bool Searcher::driveToCandle(){
 
     if (currentDriveDirection == LEFT){
       goalDir = Robot::getInstance()->base.dir() - M_PI/2;
-      Robot::getInstance()->path.push(Point<float>(
-          Robot::getInstance()->base.x(),
-          Robot::getInstance()->base.y()
-      ));
+      Robot::getInstance()->pushPos();
       state = TURNING;
-      debugPrint(1,"sstate =%s",stateNames[state]);
+      debugPrint(0,"sstate =%s",stateNames[state]);
       return false;
     }
     else if (currentDriveDirection == RIGHT){
       goalDir = Robot::getInstance()->base.dir() + M_PI/2;
-      Robot::getInstance()->path.push(Point<float>(
-          Robot::getInstance()->base.x(),
-          Robot::getInstance()->base.y()
-      ));
+      Robot::getInstance()->pushPos();
       state = TURNING;
-      debugPrint(1,"sstate =%s",stateNames[state]);
+      debugPrint(0,"sstate =%s",stateNames[state]);
       return false;
     }
 
-    int dFront = sampleAt(0);
+    int dFront = sampleAt(0,30); //search with wide sample
 
     debugPrint(1,"dFront=%d", dFront);
 
@@ -311,7 +300,7 @@ bool Searcher::driveToCandle(){
     DriveDirection dir = driveAndAvoid();
 
     if (dir != FORWARD){
-      debugPrint(1,"sstate =%s",stateNames[state]);
+      debugPrint(0,"sstate =%s",stateNames[state]);
       state = SEARCHING;
     }
   }
@@ -351,8 +340,6 @@ DriveDirection Searcher::driveAndAvoid(){
   int dFront = sampleAt(0);
   int dLeft = sampleAt(360-diff);
   int dRight = sampleAt(diff, 0);
-
-  debugPrint(1,"%d %d %d", dLeft, dFront, dRight);
 
   if (dFront < AVOID_DISTANCE && dFront > 0){
     if ( dLeft > dRight ){
