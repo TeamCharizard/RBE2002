@@ -6,6 +6,7 @@ void Main::setup(){
   charizard = Robot::getInstance();
   charizard->setup();
   debugPrint(0,stateNames[state]);
+  state = SEARCH_FOR_CANDLE;
 }
 
 void Main::loop(){

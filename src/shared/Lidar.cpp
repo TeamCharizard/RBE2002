@@ -36,12 +36,6 @@ bool Lidar::read(){
     if (!startReading && (b == (char) 0xfa)){
       if (distanceIndex >= 357){
         memset(distances, -1, 360*sizeof(int));
-        /*
-        Serial.print("misses: ");
-        Serial.print(misses);
-        Serial.print(" inv: ");
-        Serial.println(invalids);
-        */
         misses = 0;
         invalids = 0;
       }

@@ -8,10 +8,11 @@ void Extinguisher::setup(){
 }
 
 bool Extinguisher::run(){
-  debugPrint(1,"%s",stateNames[state]);
+  //debugPrint(0,"%s",stateNames[state]);
+
   switch(state){
     case INIT :
-      goalAngle =  Robot::getInstance()->base.dir() + M_PI;
+      goalAngle =  Robot::getInstance()->base.dir() - M_PI;
       state = TURNING_TO_BLOW;
       break;
     case TURNING_TO_BLOW:
@@ -32,7 +33,7 @@ bool Extinguisher::run(){
       Robot::getInstance()->base.drive();
       fan.spin();
       if (millis() - startStateTime > BLOW_TIME){
-        goalAngle = M_PI + Robot::getInstance()->base.dir();
+        goalAngle = Robot::getInstance()->base.dir() - M_PI;
         fan.stop();
         state = TURNING_TO_VERIFY;
       }

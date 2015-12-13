@@ -36,10 +36,13 @@ int FireFinder::watch(int dToCandle){
 
       scanning = false;
       position = 0;
+
+      if (minIntensity > 1000){
+        return -1;
+      }
+
       float angle = (minPosition * (MAX_HEAD_ANGLE - MIN_HEAD_ANGLE) / 180) + MIN_HEAD_ANGLE;
-      Serial.println(angle);
       int height = SENSOR_HEIGHT + tan(angle*3.14159265/180.0) * dToCandle;
-      Serial.println(height);
       return height;
     }
     else {

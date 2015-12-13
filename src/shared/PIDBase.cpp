@@ -6,7 +6,7 @@
 PIDBase::PIDBase() :
   lPID(-0.7,0,0,true),
   rPID(0.7,0,0,true),
-  dirPID(-24,0.001,0,false){
+  dirPID(-24,0.000,0,false){
   }
 
 void PIDBase::setup(){
@@ -44,14 +44,17 @@ int PIDBase::scale(int speed){
 }
 
 float PIDBase::normalize(float angle) {
-    float tmp = fmod(angle, 2*M_PI);
-    return tmp < 0 ? tmp + 2*M_PI : tmp;
+    float tmp = fmod(angle, 2 * M_PI);
+    return tmp < 0 ? tmp + 2 * M_PI : tmp;
 }
 
 bool PIDBase::turnAbsolutely(float direction){
+
+
   float setpoint = normalize(direction);
   float current = normalize(dir());
-  //debugPrint(1, "c=%-4d s=%-4d", (int)(current*180/M_PI), (int)(setpoint*180/M_PI));
+
+
   dirPID.set(setpoint);
   odom.updateDifferential();
 
@@ -66,7 +69,10 @@ bool PIDBase::turnAbsolutely(float direction){
   int rOut = rPID.run(dr);
   rMotor.set(rOut);
 
-  if ( dirOut == 0 && (abs(dir() - direction) < M_PI*4.0/180.0)){
+  int angleError = abs(current - setpoint);
+
+  if ( rPID.stopped() && lPID.stopped() &&
+      (angleError < M_PI*4.0/180.0)){
     return true;
   }
   return false;

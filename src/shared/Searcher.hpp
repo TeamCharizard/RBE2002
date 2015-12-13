@@ -4,19 +4,26 @@
 #include "Lidar.hpp"
 
 class Searcher {
+  private:
+    enum CheckState {
+      THINKING,
+      FOUND,
+      MISTAKEN,
+    };
+
   public:
     Searcher();
 
     DriveDirection getDirection();
     DriveDirection driveAndAvoid();
 
-    bool check();
+    CheckState check();
     bool search();
     bool turnToFaceCandle();
     bool driveToCandle();
 
     bool run();
-    int sampleAt(int *distances, int i);
+    int sampleAt(int i, int ss = 10);
 
   private:
 
@@ -26,14 +33,18 @@ class Searcher {
       CHECKING,
       TURN_TO_CANDLE,
       DRIVE_TO_CANDLE,
+      CHECK_FINAL,
+      TURN_TO_CANDLE_FINAL,
     };
 
-    const char *stateNames[5] = {
+    const char *stateNames[7] = {
         "SEARCH    ",
         "TURNING   ",
         "CHECKING  ",
         "TURNING   ",
-        "DRV_2_CNDL"};
+        "DRV_2_CNDL",
+        "CHK_FINAL ",
+        "TURN_FINAL"};
 
     State state;
     long lastUpdateTime = 0;
@@ -43,4 +54,5 @@ class Searcher {
         sweeps = 0;
 
     const static long UPDATE_PERIOD = 50;
+    const static int AVOID_DISTANCE = 400;
 };

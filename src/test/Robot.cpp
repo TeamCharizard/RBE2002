@@ -50,15 +50,31 @@ bool Robot::search(){
 }
 
 bool Robot::findCandleHeight(){
+
+  long now = millis();
+  if (now - lastUpdateTime > UPDATE_PERIOD){
+    lastUpdateTime = now;
+    stop();
+    base.drive();
+  }
+
   if(!scanning){
     ff.startScan();
     scanning = true;
   }
-  candleHeight_mm = ff.watch(detector.distance());
+
+  int candleHeight_mm = ff.watch(detector.distance());
+
   if(candleHeight_mm > 0){
     return true;
   }
-  return false;
+  else if (candleHeight_mm == 0){
+    return false;
+  }
+  else { // on candle at all
+    scanning = false;
+    return false;
+  }
 }
 
 bool Robot::extinguishCandle(){

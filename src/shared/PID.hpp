@@ -8,6 +8,8 @@ class PID{
     /** this returns an int because motor speeds can't be more precise than an int after scaling */
     int run(float value, bool doWrap = false);
 
+    bool stopped();
+
     float kP, kI, kD;
     float  lastError,
            iTerm;
