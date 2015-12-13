@@ -9,7 +9,7 @@ void FireFinder::setup() {
 
 bool FireFinder::seesCandle(){
   bool seesCandle;
-  head.write(100);
+  head.write(minPosition);
   long sum = 0;
   int ss = 20;
   for (int i = 0; i < ss; i++){
@@ -25,7 +25,7 @@ void FireFinder::startScan(){
   scanning = true;
   position = 0;
   minIntensity = 1024;
-  minPosition = 0;
+  minPosition = 100;
   head.write(0);
 }
 
