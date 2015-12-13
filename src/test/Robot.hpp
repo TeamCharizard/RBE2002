@@ -8,6 +8,7 @@
 #include "../shared/Searcher.hpp"
 #include "../shared/PIDBase.hpp"
 #include "../shared/FireFinder.hpp"
+#include "../shared/Stack.hpp"
 
 class Robot {
   public:
@@ -40,6 +41,7 @@ class Robot {
     PIDBase base;
     FireFinder ff;
     CandleDetector detector;
+    Stack<Point<float>, 256> path;
 
     const static int WIDTH = 190;
 

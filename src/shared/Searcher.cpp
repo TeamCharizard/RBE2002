@@ -225,7 +225,28 @@ bool Searcher::driveToCandle(){
   bool fullSweep = Robot::getInstance()->lidar.read();
 
   if (fullSweep){
-    int dFront = sampleAt(0, 3);
+    DriveDirection currentDriveDirection = driveAndAvoid();
+
+    if (currentDriveDirection == LEFT){
+      goalDir = Robot::getInstance()->base.dir() - M_PI/2;
+      Robot::getInstance()->path.push(Point<float>(
+          Robot::getInstance()->base.x(),
+          Robot::getInstance()->base.y()
+      ));
+      state = TURNING;
+      debugPrint(1,"sstate =%s",stateNames[state]);
+      return false;
+    }
+    else if (currentDriveDirection == RIGHT){
+      goalDir = Robot::getInstance()->base.dir() + M_PI/2;
+      Robot::getInstance()->path.push(Point<float>(
+          Robot::getInstance()->base.x(),
+          Robot::getInstance()->base.y()
+      ));
+      state = TURNING;
+      debugPrint(1,"sstate =%s",stateNames[state]);
+      return false;
+    }
 
     debugPrint(1,"dFront=%d", dFront);
 

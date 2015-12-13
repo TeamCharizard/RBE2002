@@ -23,7 +23,7 @@ class FireFinder {
 
     int minIntensity = 1024,
         sum = 0,
-        minPosition = 180,
+        minPosition = 100,
         position = 0;
 
 
