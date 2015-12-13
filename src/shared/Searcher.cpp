@@ -248,6 +248,8 @@ bool Searcher::driveToCandle(){
       return false;
     }
 
+    int dFront = sampleAt(0);
+
     debugPrint(1,"dFront=%d", dFront);
 
     if (dFront < 1000) {
