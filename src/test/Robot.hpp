@@ -54,12 +54,7 @@ class Robot {
     Searcher searcher;
     Gyro gyro;
 
-    double startAngle;
-
-    float old_base_dir;
-
-    int candleHeight_mm;
-    bool scanning;
+    bool scanning = false;
     const static int GOAL_DISTANCE = 300;
 
     long lastUpdateTime = 0;

@@ -30,5 +30,5 @@ class PIDBase {
 
     DriveMotor lMotor,rMotor;
     PID lPID,rPID,dirPID;
-    const int TOP_SPEED = 35; //ticks per UPDATE_PERIOD
+    const int TOP_SPEED = 32; //ticks per UPDATE_PERIOD
 };

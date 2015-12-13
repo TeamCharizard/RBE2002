@@ -28,7 +28,15 @@ bool Searcher::run(){
       }
       break;
     case CHECKING:
-      check();
+      switch(check()){
+        case THINKING:
+          break;
+        case FOUND:
+          state = TURN_TO_CANDLE;
+          break;
+        case MISTAKEN:
+          state = SEARCHING;
+      }
       break;
     case TURN_TO_CANDLE:
       if (turnToFaceCandle()){
@@ -38,14 +46,32 @@ bool Searcher::run(){
       break;
     case DRIVE_TO_CANDLE:
       if (driveToCandle()){
+        state = CHECK_FINAL;
+      }
+      break;
+    case CHECK_FINAL:
+      switch (check()){
+        case FOUND:
+          state = TURN_TO_CANDLE_FINAL;
+          break;
+        case MISTAKEN:
+          state = SEARCHING;
+          break;
+        case THINKING:
+          break;
+      }
+      break;
+    case TURN_TO_CANDLE_FINAL:
+      if (turnToFaceCandle()){
         return true;
+        debugPrint(1,"sstate =%s",stateNames[state]);
       }
       break;
   }
   return false;
 }
 
-bool Searcher::check(){
+Searcher::CheckState Searcher::check(){
   bool fullSweep = Robot::getInstance()->lidar.read();
 
   if (fullSweep){
@@ -56,7 +82,7 @@ bool Searcher::check(){
     bool candleFound = Robot::getInstance()->detector.detect(
         Robot::getInstance()->lidar.distances);
 
-    //debugPrint(1,"ct= %d swp=%d", candleCount, sweeps);
+    debugPrint(1,"ct= %d swp=%d", candleCount, sweeps);
 
 
     if (candleFound){
@@ -67,25 +93,43 @@ bool Searcher::check(){
         auto angle = Robot::getInstance()->detector.angle();
         Point<float> relative(dist*cos(angle*M_PI/180)/25.4, dist*sin(angle*M_PI/180)/25.4);
         auto candle_pos = Robot::getInstance()->base.odom.robotToWorld(relative);
-        // TODO: Do something w/ candle position
+
+        debugPrint(0,"x=%d y=%d", (int)candle_pos.x(), (int)candle_pos.y());
+        return FOUND;
+        state = TURN_TO_CANDLE;
       }
     }
 
     if (sweeps++ > 8){
-      state = SEARCHING;
+      return MISTAKEN;
     }
   }
+
+  return THINKING;
 }
 
 bool Searcher::driveToCandle(){
-  DriveDirection dir = driveAndAvoid();
-  if (dir != FORWARD){
-    state = SEARCHING;
+  bool fullSweep = Robot::getInstance()->lidar.read();
+
+  if (fullSweep){
+    int dFront = sampleAt(0, 3);
+
+    debugPrint(1,"dFront=%d", dFront);
+
+    if (dFront < 1000) {
+      //we're done if we're 50cm away
+      return true;
+    }
+
+    DriveDirection dir = driveAndAvoid();
+
+    if (dir != FORWARD){
+      debugPrint(1,"sstate =%s",stateNames[state]);
+      state = SEARCHING;
+    }
   }
 
-  int dFront = sampleAt(Robot::getInstance()->lidar.distances, 0);
-
-  return dFront < 500; //we're done if we're 50cm away
+  return false;
 }
 
 bool Searcher::turnToFaceCandle(){
@@ -98,9 +142,11 @@ bool Searcher::turnToFaceCandle(){
 
     if(Robot::getInstance()->turnToFaceAbsolutely(goalDir)) {
       Robot::getInstance()->stop();
-      return false;
+      return true;
     }
   }
+
+  return false;
 }
 
 bool Searcher::search(){
@@ -144,14 +190,13 @@ bool Searcher::search(){
   return false;
 }
 
-int Searcher::sampleAt(int *distances, int i){
-  long s = 0;
-  int ss = 10,
-      start = i - ss,
+int Searcher::sampleAt(int i, int ss){
+  long sum = 0;
+  int start = i - ss,
       end = i + ss;
 
   int angle;
-  int c = 0;
+  int count = 0;
   for (int j=start;j<end;j++){
     angle = j;
     if (j<0){
@@ -161,38 +206,47 @@ int Searcher::sampleAt(int *distances, int i){
       angle = i - 360;
     }
 
-
-    if (distances[angle] > 0){
-      s += distances[angle];
-      c++;
+    int d = Robot::getInstance()->lidar.distances[angle];
+    if ( d> 0){
+      sum += d;
+      count++;
     }
   }
-
-
-  return s/c;
+  Serial.print(sum);
+  Serial.print(" ");
+  Serial.println(count);
+  return sum/count;
 }
 
 DriveDirection Searcher::driveAndAvoid(){
   DriveDirection dir;
 
-  int dFront = sampleAt(Robot::getInstance()->lidar.distances, 0);
-  int dLeft = sampleAt(Robot::getInstance()->lidar.distances, 345);
-  int dRight = sampleAt(Robot::getInstance()->lidar.distances, 15);
+  int diff = 45;
+  int dFront = sampleAt(0);
+  int dLeft = sampleAt(360-diff, 25);
+  int dRight = sampleAt(diff, 25);
 
-  if (dFront  < 500 && dFront > 0){
+  debugPrint(1,"%d %d %d", dLeft, dFront, dRight);
+
+  if (dFront < AVOID_DISTANCE){
     if ( dLeft > dRight ){
-      dir = DriveDirection::LEFT;
-      Robot::getInstance()->setDrive(DriveDirection::LEFT);
+      dir = LEFT;
     }
     else{
-      dir = DriveDirection::RIGHT;
-      Robot::getInstance()->setDrive(DriveDirection::RIGHT);
+      dir = RIGHT;
     }
   }
-  else if ( dFront > 0){
-    dir = DriveDirection::FORWARD;
-    Robot::getInstance()->setDrive(DriveDirection::FORWARD);
+  else if ( dLeft < AVOID_DISTANCE) {
+    dir = RIGHT;
   }
-  Robot::getInstance()->base.drive();
+  else if ( dRight < AVOID_DISTANCE) {
+    dir = LEFT;
+  }
+  else {
+    dir = FORWARD;
+    Robot::getInstance()->setDrive(FORWARD);
+    Robot::getInstance()->base.drive();
+  }
+
   return dir;
 }
