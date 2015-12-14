@@ -1,5 +1,4 @@
 #include "FireFinder.hpp"
-#include "../main.hpp"
 #include "Arduino.h"
 #include <stdio.h>
 

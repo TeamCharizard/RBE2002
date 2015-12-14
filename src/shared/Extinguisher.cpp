@@ -1,6 +1,6 @@
 #include "Extinguisher.hpp"
 #include "../main.hpp"
-#include "../test/Robot.hpp"
+#include "../Robot.hpp"
 
 void Extinguisher::setup(){
   fan.setup();

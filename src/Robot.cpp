@@ -1,5 +1,5 @@
 #include "Robot.hpp"
-#include "../main.hpp"
+#include "main.hpp"
 #include "Arduino.h"
 
 Robot *Robot::instance = NULL;

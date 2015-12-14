@@ -1,15 +1,15 @@
 #pragma once
 
 #include "MainSketch.hpp"
-#include "../shared/Lidar.hpp"
-#include "../shared/Gyro.hpp"
-#include "../shared/CandleDetector.hpp"
-#include "../shared/Extinguisher.hpp"
-#include "../shared/Searcher.hpp"
-#include "../shared/PIDBase.hpp"
-#include "../shared/FireFinder.hpp"
-#include "../shared/Stack.hpp"
-#include "../shared/Navigator.hpp"
+#include "shared/Lidar.hpp"
+#include "shared/Gyro.hpp"
+#include "shared/CandleDetector.hpp"
+#include "shared/Extinguisher.hpp"
+#include "shared/Searcher.hpp"
+#include "shared/PIDBase.hpp"
+#include "shared/FireFinder.hpp"
+#include "shared/Stack.hpp"
+#include "shared/Navigator.hpp"
 
 class Robot {
   public:

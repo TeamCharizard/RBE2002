@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MainSketch.hpp"
+#include "../MainSketch.hpp"
 #include "../shared/FireFinder.hpp"
 #include "../shared/Lidar.hpp"
 

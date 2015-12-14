@@ -2,7 +2,7 @@
 
 #include "../shared/Lidar.hpp"
 #include "../main.hpp"
-#include "MainSketch.hpp"
+#include "../MainSketch.hpp"
 
 class LidarBenchmark : public MainSketch {
   public:

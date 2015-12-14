@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MainSketch.hpp"
+#include "../MainSketch.hpp"
 
 class Turn : public MainSketch {
   public:

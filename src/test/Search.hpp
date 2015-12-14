@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MainSketch.hpp"
+#include "../MainSketch.hpp"
 #include "../main.hpp"
 #include "../shared/DriveMotor.hpp"
 #include "../shared/Lidar.hpp"

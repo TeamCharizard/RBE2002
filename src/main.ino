@@ -1,8 +1,6 @@
 #include "main.hpp"
 
-#include "test/Main.hpp"
-#include "test/TestGyro.hpp"
-#include "test/Turn.hpp"
+#include "Main.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
 

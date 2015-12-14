@@ -1,5 +1,5 @@
 #pragma once
-#include "MainSketch.hpp"
+#include "../MainSketch.hpp"
 #include "../shared/Lidar.hpp"
 #include "../shared/CandleDetector.hpp"
 #include "../shared/PIDBase.hpp"

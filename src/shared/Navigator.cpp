@@ -1,5 +1,5 @@
 #include "Navigator.hpp"
-#include "../test/Robot.hpp"
+#include "../Robot.hpp"
 
 Navigator::Navigator() : distPid(-3.8, 0, 525/*15*50*/, false) {}
 

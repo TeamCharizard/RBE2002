@@ -1,8 +1,9 @@
-#include "Searcher.hpp"
-#include "../main.hpp"
-#include "Arduino.h"
-#include "../test/Robot.hpp"
+#include <Arduino.h>
 #include <limits.h>
+
+#include "../main.hpp"
+#include "../Robot.hpp"
+#include "Searcher.hpp"
 
 Searcher::Searcher() : state(SEARCHING) {}
 

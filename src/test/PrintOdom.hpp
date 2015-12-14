@@ -1,6 +1,6 @@
 #pragma once
 
-#include "MainSketch.hpp"
+#include "../MainSketch.hpp"
 #include "../shared/Odom.hpp"
 #include "../shared/Point.hpp"
 
