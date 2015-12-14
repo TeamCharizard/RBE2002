@@ -13,6 +13,12 @@ void Robot::setup(){
   searcher.setup();
   extinguisher.setup();
   pinMode(29,INPUT_PULLUP);
+
+  path.push(Point<float>(20,0));
+  //path.push(Point<float>(0,20));
+  //path.push(Point<float>(20,20));
+
+  popWaypoint();
 }
 
 Robot *Robot::getInstance(){
@@ -20,7 +26,6 @@ Robot *Robot::getInstance(){
     instance = new Robot();
   }
   return instance;
-
 }
 
 void Robot::stop(){
@@ -76,7 +81,6 @@ bool Robot::search(){
 }
 
 bool Robot::findCandleHeight(){
-
   long now = millis();
   if (now - lastUpdateTime > UPDATE_PERIOD){
     lastUpdateTime = now;
@@ -112,7 +116,27 @@ bool Robot::extinguishCandle(){
   return false;
 }
 
+void Robot::popWaypoint(){
+  waypoint = path.pop();
+  navigator.setGoal(waypoint);
+  Serial.println(waypoint.x());
+  Serial.println(waypoint.y());
+}
+
 bool Robot::returnToOrigin(){
+  long now = millis();
+  if (now - lastUpdateTime > UPDATE_PERIOD){
+    lastUpdateTime = now;
+
+    if (navigator.run()){
+      if (path.empty()){
+        return true;
+      }
+      else {
+        popWaypoint();
+      }
+    }
+  }
   return false;
 }
 
@@ -125,7 +149,10 @@ bool Robot::turnToFaceAbsolutely(float angle){
 }
 
 void Robot::end(){
+  stop();
+  base.drive();
   Point<float> candle_pos = absoluteCandlePosition();
-  debugPrint(0, "Pose=(%-3d,%-3d)", (int)(0.5 + candle_pos.x()), (int)(0.5 + candle_pos.y()));
-  debugPrint(1, "Height=%-3d     ", (int)ff.heightInInches);
+  debugPrint(0,"COMPLETE");
+  //debugPrint(0, "Pose=(%-3d,%-3d)", (int)(0.5 + candle_pos.x()), (int)(0.5 + candle_pos.y()));
+  //debugPrint(1, "Height=%-3d     ", (int)ff.heightInInches);
 }

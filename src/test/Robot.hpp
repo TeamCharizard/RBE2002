@@ -49,6 +49,8 @@ class Robot {
 
     Point<float> absoluteCandlePosition();
 
+    void popWaypoint();
+
     bool turnToFaceAbsolutely(float angle);
 
     void end();
@@ -75,6 +77,7 @@ class Robot {
     Gyro gyro;
 
     bool scanning = false;
+    Point<float> waypoint;
     const static int CANDLE_APPROACH_DISTANCE_INCHES = 20;
 
     long lastUpdateTime = 0;

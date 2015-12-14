@@ -6,13 +6,13 @@ class Stack {
 public:
     Stack() : size(0) {}
     bool empty() {
-        return size > 0;
+        return size <= 0;
     }
 
     void push(T t) {
+        values[size] = t;
         if(size < SIZE) { size++; }
         else { Serial.println("STACK FULL!!!"); }
-        values[size] = t;
     }
 
     T pop() {

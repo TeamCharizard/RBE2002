@@ -5,7 +5,11 @@ void Navigator::setGoal(Point<float> goal) {
   state = TURNING;
   auto robotPos = Robot::getInstance()->base.pos();
   distance = robotPos.distanceTo(goal);
-  angle = atan2(goal.y()-robotPos.y(), goal.x()-robotPos.x());
+  float dX = goal.x()-robotPos.x();
+  float dY = goal.y()-robotPos.y();
+  Serial.print("dist=");
+  Serial.println(distance);
+  angle = atan2(dY, dX);
 }
 
 bool Navigator::run() {

@@ -87,7 +87,7 @@ bool PIDBase::turnAbsolutely(float direction){
 }
 
 float PIDBase::drive(){
-  float dist = odom.updateDifferential()*25.4;
+  float dist = odom.updateDifferential();
 
   int dl = odom.leftDisplacement();
   int lOut = lPID.run(dl);

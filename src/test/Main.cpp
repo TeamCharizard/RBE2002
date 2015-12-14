@@ -5,8 +5,8 @@
 void Main::setup(){
   charizard = Robot::getInstance();
   charizard->setup();
+  state = RETURN_TO_ORIGIN;
   debugPrint(0,stateNames[state]);
-  state = SEARCH_FOR_CANDLE;
 }
 
 void Main::loop(){
@@ -24,8 +24,10 @@ void Main::loop(){
       }
       break;
     case EXTINGUISH_CANDLE:
+      Robot::getInstance()->popWaypoint();
+
       if (charizard->extinguishCandle()){
-        state = END;
+        state = RETURN_TO_ORIGIN;
         debugPrint(0,stateNames[state]);
       }
       break;
