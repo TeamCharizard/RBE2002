@@ -21,6 +21,7 @@ class PIDBase {
     typedef Encoder<2,3> RightEnc;
     typedef Encoder<18,19> LeftEnc;
     Odom<LeftEnc, RightEnc> odom;
+    bool stopped();
   private:
     // Normalize an angle to 0 to 360
     float normalize(float angle);

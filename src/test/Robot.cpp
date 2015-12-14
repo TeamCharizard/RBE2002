@@ -13,12 +13,6 @@ void Robot::setup(){
   searcher.setup();
   extinguisher.setup();
   pinMode(29,INPUT_PULLUP);
-
-  path.push(Point<float>(20,0));
-  //path.push(Point<float>(0,20));
-  //path.push(Point<float>(20,20));
-
-  popWaypoint();
 }
 
 Robot *Robot::getInstance(){
@@ -122,6 +116,7 @@ bool Robot::extinguishCandle(){
 }
 
 void Robot::popWaypoint(){
+  debugPrint(1, "cur=(%d,%d)", (int)base.pos().x(), (int)base.pos().y());
   waypoint = path.pop();
   navigator.setGoal(waypoint);
   Serial.println(waypoint.x());
@@ -155,6 +150,8 @@ bool Robot::turnToFaceAbsolutely(float angle){
 
 void Robot::end(){
   Point<float> candle_pos = absoluteCandlePosition();
+  stop();
+  base.drive();
   debugPrint(0,"COMPLETE");
   //debugPrint(0, "Pose=(%-3d,%-3d)", (int)(0.5 + candle_pos.x()), (int)(0.5 + candle_pos.y()));
   //debugPrint(1, "Height=%-3d     ", (int)ff.heightInInches);

@@ -4,8 +4,8 @@
 #include "../main.hpp"
 
 PIDBase::PIDBase() :
-  lPID(-0.7,0,0,true),
-  rPID(0.7,0,0,true),
+  lPID(-1.0,0,0,true),
+  rPID(1.0,0,0,true),
   dirPID(-18,0.000,0.000,false){
   }
 
@@ -22,6 +22,10 @@ float PIDBase::x(){
 
 float PIDBase::y(){
   return odom.getPos().y();
+}
+
+bool PIDBase::stopped() {
+  return lPID.stopped() && rPID.stopped();
 }
 
 Point<float> PIDBase::pos() {

@@ -13,6 +13,7 @@ class PID{
     float kP, kI, kD;
     float  lastError,
            iTerm;
+    long lastUpdateTime;
 
     float setPoint;
     int output;

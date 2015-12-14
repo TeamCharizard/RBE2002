@@ -77,6 +77,7 @@ bool Searcher::run(){
           //figure out where to go
           Point<float> delta(0, amountToScootInches);
           Robot::getInstance()->setGoalInCandleFrame(delta);
+          Robot::getInstance()->pushPos();
           state = SCOOT;
         }
         else {
@@ -92,6 +93,7 @@ bool Searcher::run(){
           break;
         case FOUND:
           Robot::getInstance()->setGoalToCandle();
+          Robot::getInstance()->pushPos();
           state = GO_TO_CANDLE;
           debugPrint(0,"ST:%s",stateNames[state]);
           break;
@@ -116,6 +118,7 @@ bool Searcher::run(){
     case CHECK_FINAL:
       switch (check()){
         case FOUND:
+          Robot::getInstance()->pushPos();
           state = TURN_TO_CANDLE;
           debugPrint(0,"ST:%s",stateNames[state]);
           break;

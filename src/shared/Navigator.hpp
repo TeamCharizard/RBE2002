@@ -1,8 +1,10 @@
 #pragma once
 #include "Point.hpp"
+#include "PID.hpp"
 
 class Navigator {
 public:
+  Navigator();
   /**
    * \brief set the goal to drive to 
    * This also resets the internal state
@@ -16,6 +18,7 @@ public:
    */
   bool run();
 private:
+  PID distPid;
   float angle, distance;
   enum State { TURNING, DRIVING } state;
 };
