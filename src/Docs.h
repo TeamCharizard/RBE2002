@@ -8,10 +8,10 @@
  *
  * Pictures and Videos are <a href="https://photos.google.com/album/AF1QipMH7TU09SdCnFJVnUSU03R5djZ0XUy_WJTzKOHU" >here</a>
  *
- * \section Introduction
+ * \section Introduction Introduction
  * Sometimes figuring out how a robot works is hard, so we made this nice documentation.
  *
- * \section Program Flow
+ * \section Flow Program Flow
  * Our overall structure is nested state machines. The overall states are as follow:
  *
  *  - Search For Candle
@@ -19,7 +19,7 @@
  *  - Extinguish Candle
  *  - Return to Origin
  *
- * \section Code Organization
+ * \section Organiztion Code Organization
  * The main code file is Main.cpp, and the main robot code is Robot.cpp
  * Subsystems and Sub-state machines can be found in shared
  * Other test main code can be found in shared

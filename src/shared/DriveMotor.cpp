@@ -7,7 +7,6 @@ void DriveMotor::setup(int port) {
 }
 
 void DriveMotor::stop(){
-  Serial.println("STOPPPP");
   motor.write(90);
 }
 

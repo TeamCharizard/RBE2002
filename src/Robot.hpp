@@ -13,11 +13,23 @@
 
 class Robot {
   public:
+    /** \brief singleton accessor for robot instance.
+     * Using a singleton makes sense because only one robot exists,
+     * and everyone can access it statically
+     */
     static Robot *getInstance();
 
+    /** \brief calls setups for all subsystems */
     void setup();
 
+    /** \brief sets the velocity of PIDBase to 0.
+     * This won't nessecarily stop the robot unless you're calling base.drive
+     */
     void stop();
+
+    /** \brief genuinely stops the motors. It simply writes 90 to both motors.
+     * Don't use this if you can avoid it, it can jerk the robot around.
+     */
     void hardStop();
 
     /** given a direction, set the motor PIDs accordingly
@@ -25,11 +37,15 @@ class Robot {
      */
     void setDrive(DriveDirection dir);
 
-    /** search for candle by driving around
-     * @return true when the candle has been found
+    /** \brief search for candle by driving around
+     * \return true when the candle has been found
      */
     bool search();
 
+    /** \brief pushes the current position of the robot on to the stack.
+     * This allows us to reverse out path to the candle.
+     * Call this every time the robot has significantly changed it's position
+     */
     void pushPos();
 
     /** \brief set the goal for navigator to a delta in the candle frame
@@ -38,32 +54,70 @@ class Robot {
      */
     void setGoalInCandleFrame(Point<float> delta);
 
+    /** \brief set the goal for navigator to the current position of the candle,
+     * minus a constant CANDLE_APPROACH_DISTANCE_INCHES.
+     * This is based on the last known location of the candle in the world frame.
+     */
     void setGoalToCandle();
 
+    /** \brief calls out to FireFinder to determine the height of the candle
+     * \return whether the height of the candle has been determinued
+     */
     bool findCandleHeight();
 
+    /** \brief calls the sub-state machine to extinguish the candl
+     * \return whether the candle is extinguished yet
+     */
     bool extinguishCandle();
 
+    /** \brief gets the last known angle to the candle in absolute world frame
+     * \return last known angle to candle in absolute world frame
+     */
     float absoluteCandleAngle();
 
+    /** \brief Returns robot to origin. Pops all the Points pushed on to the stack and traverses them.
+     * \return whether the robot has returned to origin yet
+     */
     bool returnToOrigin();
 
+    /** \brief gets the last known absolute position of the candle
+     * \return the last known absolute position of the candle
+     */
     Point<float> absoluteCandlePosition();
 
+    /** \brief pops a waypoint off the stack and sets it as the current goal in navigator */
     void popWaypoint();
 
+    /** \brief uses PIDBase to turn to face an angle in the world frame
+     * \return whether the robot has reached it's goal angle
+     */
     bool turnToFaceAbsolutely(float angle);
 
+    /** \brief The end routine. Stops the robot and prints final info */
     void end();
 
-    /** making these public so other subsystems (candle) */
+    // making these public so other subsystems
+
+    /** \brief lidar subsystem */
     Lidar lidar;
+
+    /** \brief PID drive base subsystem */
     PIDBase base;
+
+    /** \brief fire finder subsystem */
     FireFinder ff;
+
+    /** \brief cande detector subsystem */
     CandleDetector detector;
+
+    /** \brief navigator subsystem */
     Navigator navigator;
+
+    /** \brief Stack for the navigation waypoints */
     Stack<Point<float>, 256> path;
 
+
+    /** \brief WIDTH of half the robot plus a little bit to give some */
     const static int WIDTH = 185;
 
   private:
