@@ -52,7 +52,7 @@ void Robot::pushPos(){
 
 void Robot::setGoalToCandle(){
   int distanceToCandleInches = detector.distance() / 25.4;
-  int oneMeterBeforeCandleInches = distanceToCandleInches - 40;
+  int oneMeterBeforeCandleInches = distanceToCandleInches - CANDLE_APPROACH_DISTANCE_INCHES;
   Point<float> delta(oneMeterBeforeCandleInches, 0);
 
   setGoalInCandleFrame(delta);
@@ -62,7 +62,6 @@ void Robot::setGoalInCandleFrame(Point<float> delta){
   float ang = detector.angle()*M_PI/180;
   delta = delta.rotate(ang);
 
-  debugPrint(1, "dX=%4d dY=%4d", (int)delta.x(), (int)delta.y());
   Point<float> goalPoint = base.odom.robotToWorld(delta);
   navigator.setGoal(goalPoint);
 }
@@ -90,12 +89,12 @@ bool Robot::findCandleHeight(){
     scanning = true;
   }
 
-  int candleHeight_mm = ff.watch(detector.distance());
+  int candleHeight = ff.watch(detector.distance());
 
-  if(candleHeight_mm > 0){
+  if(candleHeight > 0){
     return true;
   }
-  else if (candleHeight_mm == 0){
+  else if (candleHeight == 0){
     return false;
   }
   else { // on candle at all
@@ -117,6 +116,16 @@ bool Robot::returnToOrigin(){
   return false;
 }
 
+Point<float> Robot::absoluteCandlePosition(){
+  return base.odom.robotToWorld(detector.position());
+}
+
 bool Robot::turnToFaceAbsolutely(float angle){
   return base.turnAbsolutely(angle);
+}
+
+void Robot::end(){
+  Point<float> candle_pos = absoluteCandlePosition();
+  debugPrint(0, "Pose=(%-3d,%-3d)", (int)(0.5 + candle_pos.x()), (int)(0.5 + candle_pos.y()));
+  debugPrint(1, "Height=%-3d     ", (int)ff.heightInInches);
 }

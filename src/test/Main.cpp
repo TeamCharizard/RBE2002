@@ -36,8 +36,7 @@ void Main::loop(){
       }
       break;
     case END:
+      charizard->end();
       break;
   }
 }
-
-

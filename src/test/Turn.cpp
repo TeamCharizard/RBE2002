@@ -1,29 +1,26 @@
 #include "Turn.hpp"
 #include "Arduino.h"
 #include "../main.hpp"
+#include "Robot.hpp"
 
 void Turn::setup(){
   pinMode(29,INPUT_PULLUP);
-  base.setup();
-  turning = false;
+  Robot::getInstance()->setup();
   direction = 0;
 }
 
 void Turn::loop(){
-  delay(200);
-  if (!digitalRead(29) && !turning){
-    direction = base.dir() + M_PI/4;
-    turning = true;
+  if (!digitalRead(29)){
+    direction = random(360) * M_PI / 180;
+    debugPrint(0,"setpoint=%d",(int)(direction * 180 / M_PI));
+    debugPrint(1,"turn.");
   }
 
-  if (turning){
-    bool done = base.turnAbsolutely(direction);
-    if (done){
-      base.stop();
-      turning = false;
+  long now = millis();
+  if (now - lastUpdateTime > 50){
+    lastUpdateTime = now;
+    if (Robot::getInstance()->turnToFaceAbsolutely(direction)){
+      debugPrint(1,"done!");
     }
-  }
-  else {
-    base.drive();
   }
 }

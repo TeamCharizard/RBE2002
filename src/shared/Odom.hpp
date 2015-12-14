@@ -1,6 +1,7 @@
 #pragma once
 #include "Point.hpp"
 #include "Encoder.hpp"
+#include "../main.hpp"
 
 template<typename Enc1, typename Enc2>
 class Odom {
@@ -32,6 +33,11 @@ public:
 
         pos.x() += disp*cos(dir);
         pos.y() += disp*sin(dir);
+
+        debugPrint(1, "Pose=(%-3d,%-3d)",
+            (int)(0.5 + pos.x()),
+            (int)(0.5 + pos.y()));
+
         return disp;
     }
 

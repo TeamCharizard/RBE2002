@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Point.hpp"
+
 class CandleDetector{
 
   public:
@@ -13,6 +15,7 @@ class CandleDetector{
 
     int distance();
     int angle();
+    Point<float> position();
 
   private:
 

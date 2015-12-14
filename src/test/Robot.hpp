@@ -47,7 +47,11 @@ class Robot {
 
     bool returnToOrigin();
 
+    Point<float> absoluteCandlePosition();
+
     bool turnToFaceAbsolutely(float angle);
+
+    void end();
 
     /** making these public so other subsystems (candle) */
     Lidar lidar;
@@ -71,7 +75,7 @@ class Robot {
     Gyro gyro;
 
     bool scanning = false;
-    const static int GOAL_DISTANCE = 300;
+    const static int CANDLE_APPROACH_DISTANCE_INCHES = 20;
 
     long lastUpdateTime = 0;
     const static long UPDATE_PERIOD = 50;

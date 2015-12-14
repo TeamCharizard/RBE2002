@@ -14,6 +14,13 @@ int CandleDetector::distance(){
   return candleDistance;
 }
 
+Point<float> CandleDetector::position(){
+  float relativeXInches = distance()*cos(angle()*M_PI/180)/25.4;
+  float relativeYInches = distance()*sin(angle()*M_PI/180)/25.4;
+  Point<float> relative(relativeXInches, relativeYInches);
+  return relative;
+}
+
 bool CandleDetector::detect(int radii[]){
   double lastRadius = 0,
          lastA = 0,

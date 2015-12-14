@@ -218,12 +218,8 @@ Searcher::CheckState Searcher::check(){
       candleCount++;
       if (candleCount > 5){
 
-        auto dist = Robot::getInstance()->detector.distance();
-        auto angle = Robot::getInstance()->detector.angle();
-        Point<float> relative(dist*cos(angle*M_PI/180)/25.4, dist*sin(angle*M_PI/180)/25.4);
-        auto candle_pos = Robot::getInstance()->base.odom.robotToWorld(relative);
-
-        debugPrint(1,"cX= %d cY=%d", (int)candle_pos.x(), (int)candle_pos.y());
+        Point<float> candle_pos = Robot::getInstance()->absoluteCandlePosition();
+        //debugPrint(1,"cX= %d cY=%d", (int)candle_pos.x(), (int)candle_pos.y());
 
         absoluteCandleAngle = Robot::getInstance()->absoluteCandleAngle();
 

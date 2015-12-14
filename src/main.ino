@@ -1,17 +1,8 @@
 #include "main.hpp"
 
-#include <MemoryFree.h>
-#include "test/PointToCandle.hpp"
-#include "test/Search.hpp"
 #include "test/Main.hpp"
-#include "test/TestOdom.hpp"
 #include "test/TestGyro.hpp"
-#include "test/Height.hpp"
-#include "test/PrintOdom.hpp"
 #include "test/Turn.hpp"
-#include "test/DriveUntilCandle.hpp"
-#include "test/LidarBenchmark.hpp"
-#include "test/LidarDump.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
 

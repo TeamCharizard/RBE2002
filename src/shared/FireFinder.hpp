@@ -17,6 +17,8 @@ class FireFinder {
 
     int watch(int dToCandle);
 
+    int heightInInches = 0;
+
   private:
 
     Servo head;
