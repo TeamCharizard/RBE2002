@@ -193,10 +193,11 @@ int Searcher::checkPath(){
     int r = Robot::getInstance()->lidar.distances[angle];
 
     if(r < 0) continue;
-    if(r > Robot::getInstance()->detector.distance()-110) continue;
+    if(r > Robot::getInstance()->detector.distance()-12*25.4) continue;
 
     int interferrence = R_TH[lookup_angle] - r;
     if (interferrence > 0){
+      debugPrint(1, "inf a=%3d r=%4d", angle, r);
       return i > 0 ? -Robot::WIDTH : Robot::WIDTH;
     }
   }

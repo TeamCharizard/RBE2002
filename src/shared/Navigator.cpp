@@ -27,7 +27,6 @@ bool Navigator::run() {
     //debugPrint(1, "dist_err=%-4d", (int)(distance+0.5));
     float power = distPid.run(distance);
     power = min(100, max(-100, power));
-    debugPrint(1, "power=%-4d", (int)(power+0.5));
     Robot::getInstance()->base.setSpeeds(power, power);
 
     if(Robot::getInstance()->base.stopped() && abs(distance) < 1.0) {

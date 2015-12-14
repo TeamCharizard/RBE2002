@@ -25,10 +25,10 @@ void Main::loop(){
       }
       break;
     case EXTINGUISH_CANDLE:
-      Robot::getInstance()->popWaypoint();
 
       if (charizard->extinguishCandle()){
         state = RETURN_TO_ORIGIN;
+        Robot::getInstance()->popWaypoint();
         debugPrint(0,stateNames[state]);
       }
       break;
