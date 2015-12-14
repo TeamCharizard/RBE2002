@@ -133,7 +133,7 @@ class Robot {
 
     bool scanning = false;
     Point<float> waypoint;
-    const static int CANDLE_APPROACH_DISTANCE_INCHES = 20;
+    const static int CANDLE_APPROACH_DISTANCE_INCHES = 40;
 
     long lastUpdateTime = 0;
     const static long UPDATE_PERIOD = 50;
