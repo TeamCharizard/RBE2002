@@ -32,6 +32,11 @@ void Robot::stop(){
   base.stop();
 }
 
+void Robot::hardStop(){
+  base.stop();
+  base.hardStop();
+}
+
 void Robot::setDrive(DriveDirection dir){
   this->driveDirection = dir;
 
@@ -149,8 +154,6 @@ bool Robot::turnToFaceAbsolutely(float angle){
 }
 
 void Robot::end(){
-  stop();
-  base.drive();
   Point<float> candle_pos = absoluteCandlePosition();
   debugPrint(0,"COMPLETE");
   //debugPrint(0, "Pose=(%-3d,%-3d)", (int)(0.5 + candle_pos.x()), (int)(0.5 + candle_pos.y()));

@@ -23,6 +23,8 @@ bool Navigator::run() {
     Robot::getInstance()->setDrive(FORWARD);
     distance -= Robot::getInstance()->base.drive();
     if(distance <= 0) {
+      Robot::getInstance()->hardStop();
+      delay(100);
       return true;
     }
     break;

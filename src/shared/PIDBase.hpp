@@ -12,6 +12,7 @@ class PIDBase {
     float drive();
     void setSpeeds(int leftSpeed, int rightSpeed);
     void stop();
+    void hardStop();
     float x();
     float y();
     Point<float> pos();

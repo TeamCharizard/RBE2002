@@ -18,6 +18,7 @@ class Robot {
     void setup();
 
     void stop();
+    void hardStop();
 
     /** given a direction, set the motor PIDs accordingly
      * @param dir the direction you want to go

@@ -36,6 +36,11 @@ void PIDBase::stop(){
   setSpeeds(0,0);
 }
 
+void PIDBase::hardStop(){
+  lMotor.stop();
+  rMotor.stop();
+}
+
 void PIDBase::setSpeeds(int leftSpeed, int rightSpeed){
   int l = scale(leftSpeed);
   int r = scale(rightSpeed);

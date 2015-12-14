@@ -6,6 +6,11 @@ void DriveMotor::setup(int port) {
   motor.attach(port, 1000, 2000);
 }
 
+void DriveMotor::stop(){
+  Serial.println("STOPPPP");
+  motor.write(90);
+}
+
 // for -100 to 100
 void DriveMotor::set(int power){
   long scaledUp = (power + 100l) * 180l;

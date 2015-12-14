@@ -18,6 +18,9 @@ class DriveMotor {
      */
     void set(int power);
 
+    /** \brief stops */
+    void stop();
+
   private:
     Servo motor;
 };
