@@ -1,28 +1,36 @@
 #pragma once
 #include "Point.hpp"
 #include "Encoder.hpp"
+#include "Gyro.hpp"
 #include "../main.hpp"
 
 template<typename Enc1, typename Enc2>
 class Odom {
   private:
     Point<float> pos;
+    Gyro gyro;
 
     constexpr static float wheel_radius = 2.75/2; // inches
     constexpr static float rot_wheel_pos = 3.375; // inches
+
   public:
     Odom() : dir(0.0) {}
 
     void setup() {
       Enc1::setup();
       Enc2::setup();
+      gyro.setup();
     }
 
-    float dir;
+    float dir, gyroAngle;
     int left_disp,
         right_disp;
 
     float updateDifferential() {
+      gyroAngle = gyro.read();
+
+      debugPrint(1,"gyroAngle=%-3d",(int)(gyroAngle * 180 / M_PI));
+
       left_disp = Enc1::read(true);
       right_disp = Enc2::read(true);
 
@@ -33,10 +41,6 @@ class Odom {
 
       pos.x() += disp*cos(dir);
       pos.y() += disp*sin(dir);
-
-      //debugPrint(1, "Pose=(%-3d,%-3d)",
-          //(int)(0.5 + pos.x()),
-          //(int)(0.5 + pos.y()));
 
       return disp;
     }

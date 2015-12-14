@@ -8,8 +8,6 @@ void Extinguisher::setup(){
 }
 
 bool Extinguisher::run(){
-  //debugPrint(0,"%s",stateNames[state]);
-
   switch(state){
     case INIT :
       goalAngle =  Robot::getInstance()->base.dir() - M_PI;

@@ -52,7 +52,7 @@ void Robot::setDrive(DriveDirection dir){
 }
 
 void Robot::pushPos(){
-  debugPrint(1, "p X=%3d Y=%3d", (int)base.x(), (int)base.y());
+  debugPrint(1, "X=%-3d Y=%-3d     ", (int)base.x(), (int)base.y());
   path.push(Point<float>(base.x(),base.y()));
 }
 
@@ -157,7 +157,6 @@ void Robot::end(){
   Point<float> candle_pos = absoluteCandlePosition();
   stop();
   base.drive();
-  debugPrint(0,"COMPLETE");
-  //debugPrint(0, "Pose=(%-3d,%-3d)", (int)(0.5 + candle_pos.x()), (int)(0.5 + candle_pos.y()));
-  //debugPrint(1, "Height=%-3d     ", (int)ff.heightInInches);
+  debugPrint(0, "Pose=(%-3d,%-3d)", (int)(0.5 + candle_pos.x()), (int)(0.5 + candle_pos.y()));
+  debugPrint(1, "Height=%-3d     ", (int)ff.heightInInches);
 }

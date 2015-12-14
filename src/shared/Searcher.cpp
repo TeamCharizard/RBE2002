@@ -72,7 +72,6 @@ bool Searcher::run(){
         //convert to inches
         float amountToScootInches = amountToScoot/25.4;
         if (amountToScoot != 0) {
-          debugPrint(0,"SCOOTING!");
 
           //figure out where to go
           Point<float> delta(0, amountToScootInches);
@@ -81,7 +80,6 @@ bool Searcher::run(){
           state = SCOOT;
         }
         else {
-          debugPrint(0,"CLEAR PATH!");
           Robot::getInstance()->setGoalToCandle();
           state = GO_TO_CANDLE;
         }
@@ -223,7 +221,6 @@ Searcher::CheckState Searcher::check(){
       if (candleCount > 5){
 
         Point<float> candle_pos = Robot::getInstance()->absoluteCandlePosition();
-        //debugPrint(1,"cX= %d cY=%d", (int)candle_pos.x(), (int)candle_pos.y());
 
         absoluteCandleAngle = Robot::getInstance()->absoluteCandleAngle();
 

@@ -24,7 +24,6 @@ bool Navigator::run() {
 
     float traveled = Robot::getInstance()->base.drive();
     distance -= traveled;
-    //debugPrint(1, "dist_err=%-4d", (int)(distance+0.5));
     float power = distPid.run(distance);
     power = min(100, max(-100, power));
     Robot::getInstance()->base.setSpeeds(power, power);
