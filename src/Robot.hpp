@@ -122,16 +122,28 @@ class Robot {
 
   private:
 
-    /** constructor is private because it's a singleton class */
+    /** \brief constructor is private because it's a singleton class */
     Robot();
+
+    /** \brief static instance of robot */
     static Robot *instance;
 
+    /** \brief drive direction enum */
     DriveDirection driveDirection;
+
+    /** \brief extinguisher instance. Controls the extinguish routine */
     Extinguisher extinguisher;
+
+    /** \brief searcher instance. Controls the search routine */
     Searcher searcher;
+
+    /** \brief gyro for getting points */
     Gyro gyro;
 
+    /** \brief variable for determining when we're scanning for candle height */
     bool scanning = false;
+
+    /** \brief the current waypoint we're
     Point<float> waypoint;
     const static int CANDLE_APPROACH_DISTANCE_INCHES = 40;
 
