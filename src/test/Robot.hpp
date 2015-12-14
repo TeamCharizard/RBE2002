@@ -64,7 +64,7 @@ class Robot {
     Navigator navigator;
     Stack<Point<float>, 256> path;
 
-    const static int WIDTH = 220;
+    const static int WIDTH = 185;
 
   private:
 
