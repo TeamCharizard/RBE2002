@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include "PID.hpp"
-#include "../main.hpp"
+#include "../charizard.hpp"
 
 PID::PID(float kP, float kI, float kD, bool feedForward) :
   kP(kP),  kI(kI),  kD(kD), lastUpdateTime(-1),

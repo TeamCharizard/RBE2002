@@ -1,7 +1,7 @@
 #include "PIDBase.hpp"
 #include "Arduino.h"
 
-#include "../main.hpp"
+#include "../charizard.hpp"
 
 PIDBase::PIDBase() :
   lPID(-1.0,0,0,true),

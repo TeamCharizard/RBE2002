@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../MainSketch.hpp"
-#include "../main.hpp"
+#include "../charizard.hpp"
 #include "../shared/DriveMotor.hpp"
 #include "../shared/Lidar.hpp"
 

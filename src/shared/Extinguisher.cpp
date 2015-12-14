@@ -1,5 +1,5 @@
 #include "Extinguisher.hpp"
-#include "../main.hpp"
+#include "../charizard.hpp"
 #include "../Robot.hpp"
 
 void Extinguisher::setup(){

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../shared/Lidar.hpp"
-#include "../main.hpp"
+#include "../charizard.hpp"
 #include "../MainSketch.hpp"
 
 class LidarBenchmark : public MainSketch {

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../main.hpp"
+#include "../charizard.hpp"
 #include "../MainSketch.hpp"
 #include "../shared/CandleDetector.hpp"
 #include "../shared/Lidar.hpp"

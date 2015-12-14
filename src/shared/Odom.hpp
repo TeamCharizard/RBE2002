@@ -2,7 +2,7 @@
 #include "Point.hpp"
 #include "Encoder.hpp"
 #include "Gyro.hpp"
-#include "../main.hpp"
+#include "../charizard.hpp"
 
 template<typename Enc1, typename Enc2>
 class Odom {
