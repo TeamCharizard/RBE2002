@@ -5,17 +5,17 @@
 
 template<typename Enc1, typename Enc2>
 class Odom {
-private:
+  private:
     Point<float> pos;
 
     constexpr static float wheel_radius = 2.75/2; // inches
     constexpr static float rot_wheel_pos = 3.375; // inches
-public:
+  public:
     Odom() : dir(0.0) {}
 
     void setup() {
-        Enc1::setup();
-        Enc2::setup();
+      Enc1::setup();
+      Enc2::setup();
     }
 
     float dir;
@@ -23,22 +23,22 @@ public:
         right_disp;
 
     float updateDifferential() {
-        left_disp = Enc1::read(true);
-        right_disp = Enc2::read(true);
+      left_disp = Enc1::read(true);
+      right_disp = Enc2::read(true);
 
-        float rot_disp = (right_disp - left_disp)*M_PI*wheel_radius/(360*7.5/2);
-        float disp = (left_disp + right_disp)*M_PI*wheel_radius/360;
+      float rot_disp = (right_disp - left_disp)*M_PI*wheel_radius/(360*7.5/2);
+      float disp = (left_disp + right_disp)*M_PI*wheel_radius/360;
 
-        dir -= rot_disp;
+      dir -= rot_disp;
 
-        pos.x() += disp*cos(dir);
-        pos.y() += disp*sin(dir);
+      pos.x() += disp*cos(dir);
+      pos.y() += disp*sin(dir);
 
-        debugPrint(1, "Pose=(%-3d,%-3d)",
-            (int)(0.5 + pos.x()),
-            (int)(0.5 + pos.y()));
+      //debugPrint(1, "Pose=(%-3d,%-3d)",
+          //(int)(0.5 + pos.x()),
+          //(int)(0.5 + pos.y()));
 
-        return disp;
+      return disp;
     }
 
     int leftDisplacement() {
@@ -52,7 +52,7 @@ public:
     inline Point<float> getPos() { return pos; }
 
     Point<float> robotToWorld(Point<float> robotPoint) {
-        return robotPoint.rotate(dir).translate(pos);
+      return robotPoint.rotate(dir).translate(pos);
     }
 };
 
