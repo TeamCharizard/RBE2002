@@ -268,7 +268,7 @@ int Searcher::sampleAt(int i, int ss){
     if (j<0){
       angle = 360 + j;
     }
-    if (j > 360){
+    if (j > 359){
       angle = i - 360;
     }
 
