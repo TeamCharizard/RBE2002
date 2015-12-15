@@ -25,12 +25,12 @@ bool Extinguisher::run(){
       }
       break;
     case TURNING_TO_VERIFY:
+      Robot::getInstance()->ff.levelHead();
       if (Robot::getInstance()->turnToFaceAbsolutely(goalAngle)){
         state = VERIFYING;
         startStateTime = millis();
       }
       break;
-
     case BLOWING:
       Robot::getInstance()->stop();
       Robot::getInstance()->base.drive();

@@ -6,6 +6,10 @@ void FireFinder::setup() {
   head.attach(MOTOR_PIN);
 }
 
+void FireFinder::levelHead(){
+  head.write(90);
+}
+
 bool FireFinder::seesCandle(){
   bool seesCandle;
   head.write(minPosition);
@@ -27,7 +31,7 @@ void FireFinder::startScan(){
   head.write(0);
 }
 
-int FireFinder::watch(int dToCandle){
+float FireFinder::watch(int dToCandle){
   if (scanning){
     if (position > 180){
       head.write(0);
@@ -40,8 +44,8 @@ int FireFinder::watch(int dToCandle){
       }
 
       float angle = (minPosition * (MAX_HEAD_ANGLE - MIN_HEAD_ANGLE) / 180) + MIN_HEAD_ANGLE;
-      int height = SENSOR_HEIGHT + tan(angle * M_PI / 180.0) * dToCandle;
-      heightInInches = (height / 25.4 + 0.5);
+      float height = SENSOR_HEIGHT + tan(angle * M_PI / 180.0) * dToCandle;
+      float heightInInches = (height / 25.4 + 0.5);
       return heightInInches;
     }
     else {
