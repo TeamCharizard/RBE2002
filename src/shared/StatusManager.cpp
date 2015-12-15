@@ -34,15 +34,18 @@ void StatusManager::printState(const char* stateString){
 }
 
 void StatusManager::printPose(){
+  //candle Y is negative in order to make it right handed
+  //same with angle
   debugPrint(1,format[1],
-      robotAngle,robotX,robotY);
+      -robotAngle,robotX,-robotY);
   Display.setCursor(0,1);
   Display.write(byte(0)); //write custom angle char
 }
 
 void StatusManager::finalUpdate(){
+  //candle Y is negative in order to make it right handed
   debugPrint(0,format[0],
-      candleX,candleY);
+      candleX,-candleY);
   debugPrint(1,format[2],
       candleHeight,candleHeightFrac);
 }
