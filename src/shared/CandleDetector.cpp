@@ -5,8 +5,6 @@
 
 const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.8;
 
-CandleDetector::CandleDetector(){}
-
 int CandleDetector::angle(){
   return candleAngle;
 }

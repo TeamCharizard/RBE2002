@@ -37,7 +37,7 @@ bool Searcher::run(){
     case TURNING:
       {
         long now = millis();
-        if (now - lastUpdateTime > UPDATE_PERIOD){
+        if (now - lastUpdateTime > Robot::UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->turnToFaceAbsolutely(absoluteTurnGoalAngle)){
             changeState(SEARCHING);
@@ -48,7 +48,7 @@ bool Searcher::run(){
     case SCOOT:
       {
         long now = millis();
-        if (now - lastUpdateTime > UPDATE_PERIOD){
+        if (now - lastUpdateTime > Robot::UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
             changeState(CHECK_AFTER_SCOOT);
@@ -124,7 +124,7 @@ bool Searcher::run(){
     case GO_TO_CANDLE:
       {
         long now = millis();
-        if (now - lastUpdateTime > UPDATE_PERIOD){
+        if (now - lastUpdateTime > Robot::UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
             //changeState(CHECK_FINAL);
@@ -252,7 +252,7 @@ Searcher::CheckState Searcher::check(){
 
 bool Searcher::turnToFaceCandle(){
   long now = millis();
-  if (now - lastUpdateTime > UPDATE_PERIOD){
+  if (now - lastUpdateTime > Robot::UPDATE_PERIOD){
     lastUpdateTime = now;
 
     if(Robot::getInstance()->turnToFaceAbsolutely(absoluteCandleAngle)) {

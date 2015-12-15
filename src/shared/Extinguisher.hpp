@@ -1,12 +1,13 @@
 #pragma once
 /** \brief
- *  houses the state machine for extinguishing the candle
+ *  Houses the state machine for extinguishing the candle.
  *  Fan is included
  * */
 #include "Fan.hpp"
 
 class Extinguisher {
   private:
+    /** \brief The different states for the extinguisher routine */
     enum State{
       INIT,
       TURNING_TO_BLOW,
@@ -17,11 +18,13 @@ class Extinguisher {
 
 
   public:
-    /** \brief setup fan and state machine. Called my main setup */
+    /** \brief Setup fan and state machine. Called by main setup */
     void setup();
+
+    /** \brief Change and print the state */
     void changeState(State state);
 
-    /** \brief state machine method. States liste in *stateNames */
+    /** \brief state machine method. States listed in stateNames */
     bool run();
 
   private:

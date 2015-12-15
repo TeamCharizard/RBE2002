@@ -2,7 +2,6 @@
 
 #include "shared/StatusManager.hpp"
 #include "Main.hpp"
-#include "test/TestGyro.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
 

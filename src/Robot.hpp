@@ -122,6 +122,9 @@ class Robot {
     /** \brief WIDTH of half the robot plus a little bit to give some */
     const static int WIDTH = 205;
 
+    /** \brief the period at which we update odometry */
+    const static long UPDATE_PERIOD = 270;
+
   private:
 
     /** \brief constructor is private because it's a singleton class */
@@ -148,6 +151,6 @@ class Robot {
     /** \brief the current waypoint we're navigating to */
     Point<float> waypoint;
 
+    /** \brief stores the last time for the odometry loop */
     long lastUpdateTime = 0;
-    const static long UPDATE_PERIOD = 50;
 };

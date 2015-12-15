@@ -2,6 +2,7 @@
 
 #include <Servo.h>
 
+/** \brief The basic directions to drive */
 enum DriveDirection{
   FORWARD,
   BACKWARD,
@@ -11,16 +12,19 @@ enum DriveDirection{
 
 class DriveMotor {
   public:
+    /** \brief setup motor */
     void setup(int port);
 
-    /** set the setpoint for the motor PID
-     * @param setpoint the setpoint for the motor setpoint from -100 to 100
+    /** \brief Set the setpoint for the motor PID
+     * \param setpoint the setpoint for the motor setpoint from -100 to 100
      */
     void set(int power);
 
-    /** \brief stops */
+    /** \brief stops super hard */
     void stop();
 
   private:
+
+    /** \brief internal motor object */
     Servo motor;
 };
