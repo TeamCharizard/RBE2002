@@ -3,6 +3,11 @@
 }
 
 
+Represents a point in 2 dimensional space.  
+
+
+
+
 {\ttfamily \#include $<$Point.\-hpp$>$}
 
 \subsection*{Public Member Functions}
@@ -11,17 +16,17 @@
 \hyperlink{classPoint_aea76b1130f1a203722d8f2254ced8e66}{Point} ()
 \item 
 \hyperlink{classPoint_a4236452aa9c9f4cffc58b04180fea343}{Point} (T \hyperlink{classPoint_a97a274fff44375b5d60e209f26d7382f}{x}, T \hyperlink{classPoint_a71672fd35753d43129ff157127dba575}{y})
-\item 
+\begin{DoxyCompactList}\small\item\em Construct with specified x and y values. \end{DoxyCompactList}\item 
 \hyperlink{classPoint}{Point}$<$ T $>$ \hyperlink{classPoint_a21b0a6ce6c6041b23604a27121786902}{rotate} (float angle)
-\item 
+\begin{DoxyCompactList}\small\item\em return a new point rotated about the origin by the given angle. \end{DoxyCompactList}\item 
 \hyperlink{classPoint}{Point}$<$ T $>$ \hyperlink{classPoint_a5b03fdd5ae61621155265d59502a1beb}{translate} (\hyperlink{classPoint}{Point} p)
-\item 
+\begin{DoxyCompactList}\small\item\em return a new point translated by the given point \end{DoxyCompactList}\item 
 float \hyperlink{classPoint_a02969e7eccf9468f0b1d9572ae0800c9}{distance\-To} (\hyperlink{classPoint}{Point} p)
-\item 
+\begin{DoxyCompactList}\small\item\em Find the distance between two points. \end{DoxyCompactList}\item 
 T \& \hyperlink{classPoint_a97a274fff44375b5d60e209f26d7382f}{x} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Accessor for x. \end{DoxyCompactList}\item 
 T \& \hyperlink{classPoint_a71672fd35753d43129ff157127dba575}{y} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Accessor for y. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,9 +39,9 @@ T \hyperlink{classPoint_a54b6f0a7faf44dd0263d57e332d266ad}{y\-\_\-}
 \subsection{Detailed Description}
 \subsubsection*{template$<$typename T$>$class Point$<$ T $>$}
 
+Represents a point in 2 dimensional space. 
 
-
-Definition at line 5 of file Point.\-hpp.
+Definition at line 8 of file Point.\-hpp.
 
 
 
@@ -48,9 +53,9 @@ Definition at line 5 of file Point.\-hpp.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPoint_aea76b1130f1a203722d8f2254ced8e66}
+Default construct with x and y = 0 
 
-
-Definition at line 9 of file Point.\-hpp.
+Definition at line 15 of file Point.\-hpp.
 
 \hypertarget{classPoint_a4236452aa9c9f4cffc58b04180fea343}{\index{Point@{Point}!Point@{Point}}
 \index{Point@{Point}!Point@{Point}}
@@ -62,7 +67,11 @@ Definition at line 9 of file Point.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPoint_a4236452aa9c9f4cffc58b04180fea343}
 
 
-Definition at line 12 of file Point.\-hpp.
+Construct with specified x and y values. 
+
+
+
+Definition at line 21 of file Point.\-hpp.
 
 
 
@@ -76,7 +85,19 @@ Definition at line 12 of file Point.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPoint_a02969e7eccf9468f0b1d9572ae0800c9}
 
 
-Definition at line 17 of file Point.\-hpp.
+Find the distance between two points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the other point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between this point and p 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file Point.\-hpp.
 
 \hypertarget{classPoint_a21b0a6ce6c6041b23604a27121786902}{\index{Point@{Point}!rotate@{rotate}}
 \index{rotate@{rotate}!Point@{Point}}
@@ -87,7 +108,19 @@ Definition at line 17 of file Point.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPoint_a21b0a6ce6c6041b23604a27121786902}
 
 
-Definition at line 15 of file Point.\-hpp.
+return a new point rotated about the origin by the given angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & the angle to rotate by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rotated point 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Point.\-hpp.
 
 \hypertarget{classPoint_a5b03fdd5ae61621155265d59502a1beb}{\index{Point@{Point}!translate@{translate}}
 \index{translate@{translate}!Point@{Point}}
@@ -98,7 +131,19 @@ Definition at line 15 of file Point.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPoint_a5b03fdd5ae61621155265d59502a1beb}
 
 
-Definition at line 16 of file Point.\-hpp.
+return a new point translated by the given point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the point to translate by \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the translated point 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Point.\-hpp.
 
 \hypertarget{classPoint_a97a274fff44375b5d60e209f26d7382f}{\index{Point@{Point}!x@{x}}
 \index{x@{x}!Point@{Point}}
@@ -109,7 +154,11 @@ Definition at line 16 of file Point.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPoint_a97a274fff44375b5d60e209f26d7382f}
 
 
-Definition at line 21 of file Point.\-hpp.
+Accessor for x. 
+
+
+
+Definition at line 50 of file Point.\-hpp.
 
 \hypertarget{classPoint_a71672fd35753d43129ff157127dba575}{\index{Point@{Point}!y@{y}}
 \index{y@{y}!Point@{Point}}
@@ -120,7 +169,11 @@ Definition at line 21 of file Point.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPoint_a71672fd35753d43129ff157127dba575}
 
 
-Definition at line 22 of file Point.\-hpp.
+Accessor for y. 
+
+
+
+Definition at line 55 of file Point.\-hpp.
 
 
 
@@ -130,14 +183,14 @@ Definition at line 22 of file Point.\-hpp.
 \subsubsection[{x\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Point}$<$ T $>$\-::x\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classPoint_a24a41ccfbe19d2318d94966128af271a}
 
 
-Definition at line 7 of file Point.\-hpp.
+Definition at line 10 of file Point.\-hpp.
 
 \hypertarget{classPoint_a54b6f0a7faf44dd0263d57e332d266ad}{\index{Point@{Point}!y\-\_\-@{y\-\_\-}}
 \index{y\-\_\-@{y\-\_\-}!Point@{Point}}
 \subsubsection[{y\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf Point}$<$ T $>$\-::y\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classPoint_a54b6f0a7faf44dd0263d57e332d266ad}
 
 
-Definition at line 7 of file Point.\-hpp.
+Definition at line 10 of file Point.\-hpp.
 
 
 

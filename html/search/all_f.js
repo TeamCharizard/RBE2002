@@ -2,7 +2,7 @@ var searchData=
 [
   ['r_5fth',['R_TH',['../classSearcher.html#ab21f940dc1ed76c01611be56b95961e1',1,'Searcher']]],
   ['radius_5ftolerance',['RADIUS_TOLERANCE',['../classCandleDetector.html#ab3c96353ba6d64163cf5e44b1ce2aa9e',1,'CandleDetector']]],
-  ['read',['read',['../classEncoder.html#ad4a82c2cb43afce3149e206e42796173',1,'Encoder::read()'],['../classGyro.html#a8bf35077e5f6237629e093c67a0bb1d9',1,'Gyro::read()'],['../classLidar.html#a424a60f6278617333201c5fca115c288',1,'Lidar::read()']]],
+  ['read',['read',['../classEncoder.html#ad4a82c2cb43afce3149e206e42796173',1,'Encoder::read()'],['../classGyro.html#a8bf35077e5f6237629e093c67a0bb1d9',1,'Gyro::read()']]],
   ['relativeposition',['relativePosition',['../classCandleDetector.html#a773abb6491519a0d1b7111e2973c7199',1,'CandleDetector']]],
   ['return_5fto_5forigin',['RETURN_TO_ORIGIN',['../classMain.html#a551231243a758b95cf29d8ed2b7508daa3ff87a64146af251296a5ce0a05e923d',1,'Main']]],
   ['returntoorigin',['returnToOrigin',['../classRobot.html#ac1faa7fbfb483c4053dc35f368359c0b',1,'Robot']]],

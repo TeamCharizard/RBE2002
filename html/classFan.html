@@ -101,13 +101,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afa6c28ec10c0f00270e04abc8344e220"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#afa6c28ec10c0f00270e04abc8344e220">setup</a> ()</td></tr>
-<tr class="memdesc:afa6c28ec10c0f00270e04abc8344e220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup for the servo object. Also handles arming of the ESC.  <a href="#afa6c28ec10c0f00270e04abc8344e220">More...</a><br/></td></tr>
+<tr class="memdesc:afa6c28ec10c0f00270e04abc8344e220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the fan's motor controller. Waits for button to be released before initializing.  <a href="#afa6c28ec10c0f00270e04abc8344e220">More...</a><br/></td></tr>
 <tr class="separator:afa6c28ec10c0f00270e04abc8344e220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0574452a1e4ad34f668b4792be6021c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#ab0574452a1e4ad34f668b4792be6021c">spin</a> ()</td></tr>
-<tr class="memdesc:ab0574452a1e4ad34f668b4792be6021c"><td class="mdescLeft">&#160;</td><td class="mdescRight">spin the motor at FULL POWER!  <a href="#ab0574452a1e4ad34f668b4792be6021c">More...</a><br/></td></tr>
+<tr class="memdesc:ab0574452a1e4ad34f668b4792be6021c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the fan on.  <a href="#ab0574452a1e4ad34f668b4792be6021c">More...</a><br/></td></tr>
 <tr class="separator:ab0574452a1e4ad34f668b4792be6021c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a96b6fd535b30f933a8bf8d1af50ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff">stop</a> ()</td></tr>
-<tr class="memdesc:af4a96b6fd535b30f933a8bf8d1af50ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop the motor. speed controller will ramp it down for us  <a href="#af4a96b6fd535b30f933a8bf8d1af50ff">More...</a><br/></td></tr>
+<tr class="memdesc:af4a96b6fd535b30f933a8bf8d1af50ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the fan off.  <a href="#af4a96b6fd535b30f933a8bf8d1af50ff">More...</a><br/></td></tr>
 <tr class="separator:af4a96b6fd535b30f933a8bf8d1af50ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -118,8 +118,11 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
+<tr class="memitem:a6d80c95f35fe663ac45052c74f54d609"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#a6d80c95f35fe663ac45052c74f54d609">BUTTON_PIN</a> = 29</td></tr>
+<tr class="memdesc:a6d80c95f35fe663ac45052c74f54d609"><td class="mdescLeft">&#160;</td><td class="mdescRight">the pause time between ESC arming sequences  <a href="#a6d80c95f35fe663ac45052c74f54d609">More...</a><br/></td></tr>
+<tr class="separator:a6d80c95f35fe663ac45052c74f54d609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d7eb0f5de190ffc2f5d0ae1c5c10e29"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">INIT_PAUSE</a> = 3000</td></tr>
-<tr class="memdesc:a8d7eb0f5de190ffc2f5d0ae1c5c10e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">the pause time between ESC arming sequences  <a href="#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">More...</a><br/></td></tr>
+<tr class="memdesc:a8d7eb0f5de190ffc2f5d0ae1c5c10e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time for initial pause during initialization of the motor controller.  <a href="#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">More...</a><br/></td></tr>
 <tr class="separator:a8d7eb0f5de190ffc2f5d0ae1c5c10e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -140,7 +143,7 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Setup for the servo object. Also handles arming of the ESC. </p>
+<p>Initialize the fan's motor controller. Waits for button to be released before initializing. </p>
 
 <p>Definition at line <a class="el" href="Fan_8cpp_source.html#l00004">4</a> of file <a class="el" href="Fan_8cpp_source.html">Fan.cpp</a>.</p>
 
@@ -159,9 +162,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>spin the motor at FULL POWER! </p>
+<p>Turn the fan on. </p>
 
-<p>Definition at line <a class="el" href="Fan_8cpp_source.html#l00012">12</a> of file <a class="el" href="Fan_8cpp_source.html">Fan.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fan_8cpp_source.html#l00016">16</a> of file <a class="el" href="Fan_8cpp_source.html">Fan.cpp</a>.</p>
 
 </div>
 </div>
@@ -178,13 +181,37 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>stop the motor. speed controller will ramp it down for us </p>
+<p>Turn the fan off. </p>
 
-<p>Definition at line <a class="el" href="Fan_8cpp_source.html#l00016">16</a> of file <a class="el" href="Fan_8cpp_source.html">Fan.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Fan_8cpp_source.html#l00020">20</a> of file <a class="el" href="Fan_8cpp_source.html">Fan.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6d80c95f35fe663ac45052c74f54d609"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Fan::BUTTON_PIN = 29</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the pause time between ESC arming sequences </p>
+
+<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00032">32</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a8d7eb0f5de190ffc2f5d0ae1c5c10e29"></a>
 <div class="memitem">
 <div class="memproto">
@@ -203,9 +230,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>the pause time between ESC arming sequences </p>
+<p>Time for initial pause during initialization of the motor controller. </p>
 
-<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00026">26</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00037">37</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
 
 </div>
 </div>
@@ -229,7 +256,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>internal motor object </p>
 
-<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00023">23</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00029">29</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
 
 </div>
 </div>
@@ -240,7 +267,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 18:02:47 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

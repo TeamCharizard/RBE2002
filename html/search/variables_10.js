@@ -7,7 +7,6 @@ var searchData=
   ['sensor_5fpin',['SENSOR_PIN',['../classFireFinder.html#a5afc5290c8ba58893228414ba5965ed3',1,'FireFinder']]],
   ['setpoint',['setPoint',['../classPID.html#aab66dffb3291ee486568e8b73cb71831',1,'PID']]],
   ['size',['size',['../classStack.html#a2bf4c06162c7356ca41792de93a68f49',1,'Stack']]],
-  ['startreading',['startReading',['../classLidar.html#a69b0909cc44f4e4e155d0ae2aa4ef3b4',1,'Lidar']]],
   ['startstatetime',['startStateTime',['../classExtinguisher.html#a75020779b6ba6fcd9ac11148a378d441',1,'Extinguisher']]],
   ['state',['state',['../classMain.html#a8b4ada43c3c3720b177018191ac6ee90',1,'Main::state()'],['../classExtinguisher.html#aa67c13dc091e5dc2c054d53f7fcae69b',1,'Extinguisher::state()'],['../classNavigator.html#a15263fe64d0ea29a1bbfe9e5ef849c4c',1,'Navigator::state()'],['../classSearcher.html#aadc83ce2d77610d6572f98ecd8b4d6e4',1,'Searcher::state()'],['../classStatusManager.html#a6f3c0467116c3bfbf9d7507cb04b7d5a',1,'StatusManager::state()']]],
   ['statenames',['stateNames',['../classMain.html#a10090d1fa7fa606c1bf7c5bdf23d7eda',1,'Main::stateNames()'],['../classExtinguisher.html#a91cd54af9125620a68939ccdc5796c66',1,'Extinguisher::stateNames()'],['../classSearcher.html#a2403bbf24da371ea9a31eeaec1f98b96',1,'Searcher::stateNames()']]],

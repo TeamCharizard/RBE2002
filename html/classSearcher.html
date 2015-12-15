@@ -95,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Houses state machine for searching for the candle. Functions like check, driveAndAvoid, and others are used to control the states up until the robot is at the candle and ready to extiguish.  
+ <a href="classSearcher.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -141,9 +144,7 @@ Private Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classSearcher.html#ae8599d557b97324ac716e105dc044c57a79cee82e851194da5965420a078ec4ff">CHECKING</a>, 
 <a class="el" href="classSearcher.html#ae8599d557b97324ac716e105dc044c57aa966ccae58e54ef312b8a63e81135543">CHECK_AFTER_SCOOT</a>, 
 <a class="el" href="classSearcher.html#ae8599d557b97324ac716e105dc044c57a7343adc6b3d00f640fc450a98d10a6d6">GO_TO_CANDLE</a>, 
-<a class="el" href="classSearcher.html#ae8599d557b97324ac716e105dc044c57a71a9cfaae80d57de38b7b7009387202b">CHECK_FINAL</a>, 
-<br/>
-&#160;&#160;<a class="el" href="classSearcher.html#ae8599d557b97324ac716e105dc044c57a9acc62c7adaafa496e626fffad278a2f">TURN_TO_CANDLE</a>
+<a class="el" href="classSearcher.html#ae8599d557b97324ac716e105dc044c57a9acc62c7adaafa496e626fffad278a2f">TURN_TO_CANDLE</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:ae8599d557b97324ac716e105dc044c57"><td class="mdescLeft">&#160;</td><td class="mdescRight">The states of the state machine.  <a href="classSearcher.html#ae8599d557b97324ac716e105dc044c57">More...</a><br/></td></tr>
@@ -168,7 +169,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a91de3c7ecdda8d3a6d231c35fbf363c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">timer variable  <a href="#a91de3c7ecdda8d3a6d231c35fbf363c5">More...</a><br/></td></tr>
 <tr class="separator:a91de3c7ecdda8d3a6d231c35fbf363c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2eb4f5be779517a4e3264b0223459e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearcher.html#ae2eb4f5be779517a4e3264b0223459e2">goalPoint</a></td></tr>
-<tr class="memdesc:ae2eb4f5be779517a4e3264b0223459e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classPoint.html">Point</a> the robot is going toward.  <a href="#ae2eb4f5be779517a4e3264b0223459e2">More...</a><br/></td></tr>
+<tr class="memdesc:ae2eb4f5be779517a4e3264b0223459e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classPoint.html" title="Represents a point in 2 dimensional space. ">Point</a> the robot is going toward.  <a href="#ae2eb4f5be779517a4e3264b0223459e2">More...</a><br/></td></tr>
 <tr class="separator:ae2eb4f5be779517a4e3264b0223459e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed8b034d6faa5556330af017c56f3a53"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearcher.html#aed8b034d6faa5556330af017c56f3a53">absoluteTurnGoalAngle</a></td></tr>
 <tr class="memdesc:aed8b034d6faa5556330af017c56f3a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turning angles.  <a href="#aed8b034d6faa5556330af017c56f3a53">More...</a><br/></td></tr>
@@ -183,18 +184,16 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:af4dd5850dbe46a9a76605ad4ba454066"><td class="memItemLeft" align="right" valign="top">static const long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearcher.html#af4dd5850dbe46a9a76605ad4ba454066">UPDATE_PERIOD</a> = 270</td></tr>
-<tr class="memdesc:af4dd5850dbe46a9a76605ad4ba454066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer lengths.  <a href="#af4dd5850dbe46a9a76605ad4ba454066">More...</a><br/></td></tr>
-<tr class="separator:af4dd5850dbe46a9a76605ad4ba454066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0cc94f0e90c705ee21da7abf58fcc22"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearcher.html#ae0cc94f0e90c705ee21da7abf58fcc22">AVOID_DISTANCE</a> = 400</td></tr>
+<tr class="memdesc:ae0cc94f0e90c705ee21da7abf58fcc22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer lengths.  <a href="#ae0cc94f0e90c705ee21da7abf58fcc22">More...</a><br/></td></tr>
 <tr class="separator:ae0cc94f0e90c705ee21da7abf58fcc22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbe5b3bf208f18f77a3dcdb0aa86a96c"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearcher.html#afbe5b3bf208f18f77a3dcdb0aa86a96c">AVOID_TURN_ANGLE</a> = 1*M_PI/4</td></tr>
 <tr class="separator:afbe5b3bf208f18f77a3dcdb0aa86a96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Houses state machine for searching for the candle </p>
+<div class="textblock"><p>Houses state machine for searching for the candle. Functions like check, driveAndAvoid, and others are used to control the states up until the robot is at the candle and ready to extiguish. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00009">9</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00012">12</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a2c16b7eb56e090a7b832da7f2c9d5e9c"></a>
 <div class="memitem">
@@ -222,7 +221,7 @@ Static Private Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00011">11</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00014">14</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -260,13 +259,11 @@ Static Private Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ae8599d557b97324ac716e105dc044c57a7343adc6b3d00f640fc450a98d10a6d6"></a>GO_TO_CANDLE</em>&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ae8599d557b97324ac716e105dc044c57a71a9cfaae80d57de38b7b7009387202b"></a>CHECK_FINAL</em>&#160;</td><td class="fielddoc">
-</td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ae8599d557b97324ac716e105dc044c57a9acc62c7adaafa496e626fffad278a2f"></a>TURN_TO_CANDLE</em>&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00080">80</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00083">83</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -330,7 +327,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Stops driving and double checks candle. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00221">221</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00210">210</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
 
 </div>
 </div>
@@ -347,7 +344,7 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00188">188</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00177">177</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
 
 </div>
 </div>
@@ -366,7 +363,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Drives around the field and avoids obstacles in front Always turns 90 degrees away from obstacles. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00295">295</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00284">284</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
 
 </div>
 </div>
@@ -396,7 +393,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Samples lidar data at a given angle over a certain window default window is +/-15 degrees. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00266">266</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00255">255</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
 
 </div>
 </div>
@@ -434,7 +431,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Searches for candle If the robot needs to turn, pushes the location onto the stack for returning Returns true when it sees a candle. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00159">159</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00148">148</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
 
 </div>
 </div>
@@ -472,7 +469,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Turns the angle to the found candle. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00253">253</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8cpp_source.html#l00242">242</a> of file <a class="el" href="Searcher_8cpp_source.html">Searcher.cpp</a>.</p>
 
 </div>
 </div>
@@ -495,7 +492,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00123">123</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00124">124</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -519,7 +516,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Turning angles. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00123">123</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00124">124</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -540,6 +537,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Timer lengths. </p>
 
 <p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00134">134</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
@@ -587,7 +586,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Counts of sweeps and candles. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00128">128</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00129">129</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -609,9 +608,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The <a class="el" href="classPoint.html">Point</a> the robot is going toward. </p>
+<p>The <a class="el" href="classPoint.html" title="Represents a point in 2 dimensional space. ">Point</a> the robot is going toward. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00119">119</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00120">120</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -635,7 +634,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>timer variable </p>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00115">115</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00116">116</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -657,7 +656,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00075">75</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00078">78</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -681,7 +680,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>state variable </p>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00111">111</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00112">112</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -710,13 +709,12 @@ Static Private Attributes</h2></td></tr>
 <div class="line">      <span class="stringliteral">&quot;CHECKNG         &quot;</span>,</div>
 <div class="line">      <span class="stringliteral">&quot;CHECK_AFTR_SCOOT&quot;</span>,</div>
 <div class="line">      <span class="stringliteral">&quot;GO_TO_CANDLE    &quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;CHECK_FINAL     &quot;</span>,</div>
 <div class="line">      <span class="stringliteral">&quot;TURN_TO_CANDLE  &quot;</span></div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p>Names of States to display on LCD. </p>
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00095">95</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00097">97</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -738,31 +736,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00129">129</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af4dd5850dbe46a9a76605ad4ba454066"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const long Searcher::UPDATE_PERIOD = 270</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Timer lengths. </p>
-
-<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00133">133</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Searcher_8hpp_source.html#l00130">130</a> of file <a class="el" href="Searcher_8hpp_source.html">Searcher.hpp</a>.</p>
 
 </div>
 </div>
@@ -773,7 +747,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 18:02:47 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

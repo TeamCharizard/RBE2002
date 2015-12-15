@@ -9,7 +9,7 @@ var searchData=
   ['leftdisplacement',['leftDisplacement',['../classOdom.html#aad18072b90a4f0951165577a014024de',1,'Odom']]],
   ['leftenc',['LeftEnc',['../classPIDBase.html#a7f9720adebb7763418d066d4fc4f8e25',1,'PIDBase']]],
   ['levelhead',['levelHead',['../classFireFinder.html#ad0ce95ec7a5858be9b80a3c103120008',1,'FireFinder']]],
-  ['lidar',['Lidar',['../classLidar.html',1,'Lidar'],['../classRobot.html#a222e54f477e23f5af80cfa10bcd85e7a',1,'Robot::lidar()']]],
+  ['lidar',['lidar',['../classRobot.html#a222e54f477e23f5af80cfa10bcd85e7a',1,'Robot']]],
   ['lidar_2ecpp',['Lidar.cpp',['../Lidar_8cpp.html',1,'']]],
   ['lidar_2ehpp',['Lidar.hpp',['../Lidar_8hpp.html',1,'']]],
   ['lmotor',['lMotor',['../classPIDBase.html#a344ca2736e618d42445d568d038be7d9',1,'PIDBase']]],

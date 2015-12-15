@@ -97,6 +97,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Contains functions like setting drive PIDs, and functions corresponding to states in the <a class="el" href="classMain.html" title="Main is the highest level state machine for the robot. ">Main</a> state machine.  
+ <a href="classRobot.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -105,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1fc37e3c329d59795f6adf44199d4df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls setups for all subsystems  <a href="#a1fc37e3c329d59795f6adf44199d4df9">More...</a><br/></td></tr>
 <tr class="separator:a1fc37e3c329d59795f6adf44199d4df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14dfe126ae973d3b9f81fee81a06ac22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a14dfe126ae973d3b9f81fee81a06ac22">stop</a> ()</td></tr>
-<tr class="memdesc:a14dfe126ae973d3b9f81fee81a06ac22"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the velocity of <a class="el" href="classPIDBase.html">PIDBase</a> to 0. This won't nessecarily stop the robot unless you're calling base.drive  <a href="#a14dfe126ae973d3b9f81fee81a06ac22">More...</a><br/></td></tr>
+<tr class="memdesc:a14dfe126ae973d3b9f81fee81a06ac22"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the velocity of <a class="el" href="classPIDBase.html" title="contains PIDs for controlling the turning and driving of the robot. You can turn to a specific angle...">PIDBase</a> to 0. This won't nessecarily stop the robot unless you're calling base.drive  <a href="#a14dfe126ae973d3b9f81fee81a06ac22">More...</a><br/></td></tr>
 <tr class="separator:a14dfe126ae973d3b9f81fee81a06ac22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d21e8314db61586ed66637baac6063a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a5d21e8314db61586ed66637baac6063a">hardStop</a> ()</td></tr>
 <tr class="memdesc:a5d21e8314db61586ed66637baac6063a"><td class="mdescLeft">&#160;</td><td class="mdescRight">genuinely stops the motors. It simply writes 90 to both motors. Don't use this if you can avoid it, it can jerk the robot around.  <a href="#a5d21e8314db61586ed66637baac6063a">More...</a><br/></td></tr>
@@ -116,7 +119,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1f08dec6eea6b51d73cd41a8db3bb893"><td class="mdescLeft">&#160;</td><td class="mdescRight">search for candle by driving around  <a href="#a1f08dec6eea6b51d73cd41a8db3bb893">More...</a><br/></td></tr>
 <tr class="separator:a1f08dec6eea6b51d73cd41a8db3bb893"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17e0de9c529197b3575e11a87470376b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a17e0de9c529197b3575e11a87470376b">findCandleHeight</a> ()</td></tr>
-<tr class="memdesc:a17e0de9c529197b3575e11a87470376b"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls out to <a class="el" href="classFireFinder.html">FireFinder</a> to determine the height of the candle  <a href="#a17e0de9c529197b3575e11a87470376b">More...</a><br/></td></tr>
+<tr class="memdesc:a17e0de9c529197b3575e11a87470376b"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls out to <a class="el" href="classFireFinder.html" title="Wrapper around head servo, and contains functions for scanning for fire and reporting candle height...">FireFinder</a> to determine the height of the candle  <a href="#a17e0de9c529197b3575e11a87470376b">More...</a><br/></td></tr>
 <tr class="separator:a17e0de9c529197b3575e11a87470376b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dfb8f97d6a9448bc6f9ccc5b9efb9fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a0dfb8f97d6a9448bc6f9ccc5b9efb9fb">extinguishCandle</a> ()</td></tr>
 <tr class="memdesc:a0dfb8f97d6a9448bc6f9ccc5b9efb9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls the sub-state machine to extinguish the candl  <a href="#a0dfb8f97d6a9448bc6f9ccc5b9efb9fb">More...</a><br/></td></tr>
@@ -146,8 +149,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7e05e17417f58dd3b9d3d02b365a5df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">pops a waypoint off the stack and sets it as the current goal in navigator  <a href="#a7e05e17417f58dd3b9d3d02b365a5df1">More...</a><br/></td></tr>
 <tr class="separator:a7e05e17417f58dd3b9d3d02b365a5df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a485de0486179cbbdc32561fd87bfe1c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a485de0486179cbbdc32561fd87bfe1c2">turnToFaceAbsolutely</a> (float angle)</td></tr>
-<tr class="memdesc:a485de0486179cbbdc32561fd87bfe1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">uses <a class="el" href="classPIDBase.html">PIDBase</a> to turn to face an angle in the world frame  <a href="#a485de0486179cbbdc32561fd87bfe1c2">More...</a><br/></td></tr>
+<tr class="memdesc:a485de0486179cbbdc32561fd87bfe1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">uses <a class="el" href="classPIDBase.html" title="contains PIDs for controlling the turning and driving of the robot. You can turn to a specific angle...">PIDBase</a> to turn to face an angle in the world frame  <a href="#a485de0486179cbbdc32561fd87bfe1c2">More...</a><br/></td></tr>
 <tr class="separator:a485de0486179cbbdc32561fd87bfe1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b097fc694c1ce0fc7f847339050afa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a25b097fc694c1ce0fc7f847339050afa">blink</a> ()</td></tr>
+<tr class="memdesc:a25b097fc694c1ce0fc7f847339050afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">blink LED eyes for 1 second  <a href="#a25b097fc694c1ce0fc7f847339050afa">More...</a><br/></td></tr>
+<tr class="separator:a25b097fc694c1ce0fc7f847339050afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -157,11 +163,11 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a222e54f477e23f5af80cfa10bcd85e7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLidar.html">Lidar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a222e54f477e23f5af80cfa10bcd85e7a">lidar</a></td></tr>
+<tr class="memitem:a222e54f477e23f5af80cfa10bcd85e7a"><td class="memItemLeft" align="right" valign="top">Lidar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a222e54f477e23f5af80cfa10bcd85e7a">lidar</a></td></tr>
 <tr class="memdesc:a222e54f477e23f5af80cfa10bcd85e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">lidar subsystem  <a href="#a222e54f477e23f5af80cfa10bcd85e7a">More...</a><br/></td></tr>
 <tr class="separator:a222e54f477e23f5af80cfa10bcd85e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbf538f97c0f9f98337f5171e715badc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPIDBase.html">PIDBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#adbf538f97c0f9f98337f5171e715badc">base</a></td></tr>
-<tr class="memdesc:adbf538f97c0f9f98337f5171e715badc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPID.html">PID</a> drive base subsystem.  <a href="#adbf538f97c0f9f98337f5171e715badc">More...</a><br/></td></tr>
+<tr class="memdesc:adbf538f97c0f9f98337f5171e715badc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPID.html" title="A simple PID controller. ">PID</a> drive base subsystem.  <a href="#adbf538f97c0f9f98337f5171e715badc">More...</a><br/></td></tr>
 <tr class="separator:adbf538f97c0f9f98337f5171e715badc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a342f5f8be2b5641eb3ae8f9c8475ebe6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFireFinder.html">FireFinder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a342f5f8be2b5641eb3ae8f9c8475ebe6">ff</a></td></tr>
 <tr class="memdesc:a342f5f8be2b5641eb3ae8f9c8475ebe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">fire finder subsystem  <a href="#a342f5f8be2b5641eb3ae8f9c8475ebe6">More...</a><br/></td></tr>
@@ -173,7 +179,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a71e296a4f32c3a81b5a9fabeac12747b"><td class="mdescLeft">&#160;</td><td class="mdescRight">navigator subsystem  <a href="#a71e296a4f32c3a81b5a9fabeac12747b">More...</a><br/></td></tr>
 <tr class="separator:a71e296a4f32c3a81b5a9fabeac12747b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36d071e82aea40470cea9559477e5115"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStack.html">Stack</a>&lt; <a class="el" href="classPoint.html">Point</a>&lt; float &gt;, 256 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a36d071e82aea40470cea9559477e5115">path</a></td></tr>
-<tr class="memdesc:a36d071e82aea40470cea9559477e5115"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classStack.html">Stack</a> for the navigation waypoints.  <a href="#a36d071e82aea40470cea9559477e5115">More...</a><br/></td></tr>
+<tr class="memdesc:a36d071e82aea40470cea9559477e5115"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classStack.html" title="A simple fixed size stack. ">Stack</a> for the navigation waypoints.  <a href="#a36d071e82aea40470cea9559477e5115">More...</a><br/></td></tr>
 <tr class="separator:a36d071e82aea40470cea9559477e5115"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -184,6 +190,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:aeefc61d76e6ba024e4af9c844715a84d"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#aeefc61d76e6ba024e4af9c844715a84d">WIDTH</a> = 205</td></tr>
 <tr class="memdesc:aeefc61d76e6ba024e4af9c844715a84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">WIDTH of half the robot plus a little bit to give some.  <a href="#aeefc61d76e6ba024e4af9c844715a84d">More...</a><br/></td></tr>
 <tr class="separator:aeefc61d76e6ba024e4af9c844715a84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a76c7da686c2cec0cba2877e0c914dc"><td class="memItemLeft" align="right" valign="top">static const long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a6a76c7da686c2cec0cba2877e0c914dc">UPDATE_PERIOD</a> = 270</td></tr>
+<tr class="memdesc:a6a76c7da686c2cec0cba2877e0c914dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">the period at which we update odometry  <a href="#a6a76c7da686c2cec0cba2877e0c914dc">More...</a><br/></td></tr>
+<tr class="separator:a6a76c7da686c2cec0cba2877e0c914dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -220,13 +229,11 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:aad5c5d6db601aac62393d47ec9385fa3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classRobot.html">Robot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#aad5c5d6db601aac62393d47ec9385fa3">instance</a> = NULL</td></tr>
 <tr class="memdesc:aad5c5d6db601aac62393d47ec9385fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">static instance of robot  <a href="#aad5c5d6db601aac62393d47ec9385fa3">More...</a><br/></td></tr>
 <tr class="separator:aad5c5d6db601aac62393d47ec9385fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a76c7da686c2cec0cba2877e0c914dc"><td class="memItemLeft" align="right" valign="top">static const long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRobot.html#a6a76c7da686c2cec0cba2877e0c914dc">UPDATE_PERIOD</a> = 50</td></tr>
-<tr class="memdesc:a6a76c7da686c2cec0cba2877e0c914dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">the period at which we update odometry  <a href="#a6a76c7da686c2cec0cba2877e0c914dc">More...</a><br/></td></tr>
-<tr class="separator:a6a76c7da686c2cec0cba2877e0c914dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00014">14</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<div class="textblock"><p>Contains functions like setting drive PIDs, and functions corresponding to states in the <a class="el" href="classMain.html" title="Main is the highest level state machine for the robot. ">Main</a> state machine. </p>
+
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00016">16</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a4fc7c70ae20623f05e06f2ecb388b6c4"></a>
 <div class="memitem">
@@ -272,7 +279,26 @@ Static Private Attributes</h2></td></tr>
 <p>gets the last known angle to the candle in current robot frame </p>
 <dl class="section return"><dt>Returns</dt><dd>last known angle to candle in current robot frame </dd></dl>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00075">75</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00084">84</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a25b097fc694c1ce0fc7f847339050afa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Robot::blink </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>blink LED eyes for 1 second </p>
+
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00055">55</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -291,7 +317,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>The end routine. Stops the robot and prints final info. </p>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00165">165</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00174">174</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -311,7 +337,7 @@ Static Private Attributes</h2></td></tr>
 <p>calls the sub-state machine to extinguish the candl </p>
 <dl class="section return"><dt>Returns</dt><dd>whether the candle is extinguished yet </dd></dl>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00119">119</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00128">128</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -328,10 +354,10 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>calls out to <a class="el" href="classFireFinder.html">FireFinder</a> to determine the height of the candle </p>
+<p>calls out to <a class="el" href="classFireFinder.html" title="Wrapper around head servo, and contains functions for scanning for fire and reporting candle height...">FireFinder</a> to determine the height of the candle </p>
 <dl class="section return"><dt>Returns</dt><dd>whether the height of the candle has been determinued </dd></dl>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00083">83</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00092">92</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -396,7 +422,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>pops a waypoint off the stack and sets it as the current goal in navigator </p>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00128">128</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00137">137</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -415,7 +441,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>pushes the current position of the robot on to the stack. This allows us to reverse out path to the candle. Call this every time the robot has significantly changed it's position </p>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00055">55</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00064">64</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +461,7 @@ Static Private Attributes</h2></td></tr>
 <p>Returns robot to origin. Pops all the Points pushed on to the stack and traverses them. </p>
 <dl class="section return"><dt>Returns</dt><dd>whether the robot has returned to origin yet </dd></dl>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00138">138</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00147">147</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -455,7 +481,7 @@ Static Private Attributes</h2></td></tr>
 <p>search for candle by driving around </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the candle has been found </dd></dl>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00079">79</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00088">88</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -499,7 +525,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>gets the last known absolute position of the candle and sets it as final in status manager </p>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00155">155</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00164">164</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -525,7 +551,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00067">67</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00076">76</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -544,7 +570,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>set the goal for navigator to the current position of the candle, minus a constant CANDLE_APPROACH_DISTANCE_INCHES. This is based on the last known location of the candle in the world frame. </p>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00059">59</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00068">68</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -580,7 +606,7 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>sets the velocity of <a class="el" href="classPIDBase.html">PIDBase</a> to 0. This won't nessecarily stop the robot unless you're calling base.drive </p>
+<p>sets the velocity of <a class="el" href="classPIDBase.html" title="contains PIDs for controlling the turning and driving of the robot. You can turn to a specific angle...">PIDBase</a> to 0. This won't nessecarily stop the robot unless you're calling base.drive </p>
 
 <p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00027">27</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
@@ -600,10 +626,10 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>uses <a class="el" href="classPIDBase.html">PIDBase</a> to turn to face an angle in the world frame </p>
+<p>uses <a class="el" href="classPIDBase.html" title="contains PIDs for controlling the turning and driving of the robot. You can turn to a specific angle...">PIDBase</a> to turn to face an angle in the world frame </p>
 <dl class="section return"><dt>Returns</dt><dd>whether the robot has reached it's goal angle </dd></dl>
 
-<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00161">161</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8cpp_source.html#l00170">170</a> of file <a class="el" href="Robot_8cpp_source.html">Robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -618,9 +644,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classPID.html">PID</a> drive base subsystem. </p>
+<p><a class="el" href="classPID.html" title="A simple PID controller. ">PID</a> drive base subsystem. </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00105">105</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00109">109</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -644,7 +670,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>distance at which we blow out candle </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00120">120</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00124">124</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -660,7 +686,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>cande detector subsystem </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00111">111</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00115">115</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -684,7 +710,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>drive direction enum </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00134">134</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00141">141</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -708,7 +734,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>extinguisher instance. Controls the extinguish routine </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00137">137</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00144">144</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -724,7 +750,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>fire finder subsystem </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00108">108</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00112">112</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -748,7 +774,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>gyro for getting points </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00143">143</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00150">150</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -772,7 +798,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>static instance of robot </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00131">131</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00138">138</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -796,7 +822,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>stores the last time for the odometry loop </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00152">152</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00159">159</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -805,14 +831,14 @@ Static Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classLidar.html">Lidar</a> Robot::lidar</td>
+          <td class="memname">Lidar Robot::lidar</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>lidar subsystem </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00102">102</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00106">106</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -828,7 +854,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>navigator subsystem </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00114">114</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00118">118</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -842,9 +868,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classStack.html">Stack</a> for the navigation waypoints. </p>
+<p><a class="el" href="classStack.html" title="A simple fixed size stack. ">Stack</a> for the navigation waypoints. </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00117">117</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00121">121</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -868,7 +894,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>variable for determining when we're scanning for candle height </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00146">146</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00153">153</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -892,7 +918,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>searcher instance. Controls the search routine </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00140">140</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00147">147</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -904,19 +930,19 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const long Robot::UPDATE_PERIOD = 50</td>
+          <td class="memname">const long Robot::UPDATE_PERIOD = 270</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>the period at which we update odometry </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00155">155</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00130">130</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -940,7 +966,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>the current waypoint we're navigating to </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00149">149</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00156">156</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -964,7 +990,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>WIDTH of half the robot plus a little bit to give some. </p>
 
-<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00123">123</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Robot_8hpp_source.html#l00127">127</a> of file <a class="el" href="Robot_8hpp_source.html">Robot.hpp</a>.</p>
 
 </div>
 </div>
@@ -975,7 +1001,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 18:02:47 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

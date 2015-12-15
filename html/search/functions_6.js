@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['hardstop',['hardStop',['../classRobot.html#a5d21e8314db61586ed66637baac6063a',1,'Robot::hardStop()'],['../classPIDBase.html#aa010fa26cf28d05554efe0a0ce4fa74d',1,'PIDBase::hardStop()']]]
+  ['getinstance',['getInstance',['../classRobot.html#ac6f19dc31b435f8a2d43944ba49286d0',1,'Robot']]],
+  ['getpos',['getPos',['../classOdom.html#adf58a66718029d08c7bd47d5cebfefb6',1,'Odom']]],
+  ['gyro',['Gyro',['../classGyro.html#a8ff2fdb2417c677f4694fa23fc0ce6da',1,'Gyro']]]
 ];

@@ -92,17 +92,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>A simple <a class="el" href="classPID.html" title="A simple PID controller. ">PID</a> controller.  
+ <a href="classPID.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="PID_8hpp_source.html">PID.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acf0310be28ae782627e1671f4a663543"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#acf0310be28ae782627e1671f4a663543">PID</a> (float <a class="el" href="classPID.html#ac4815cca85109a6e13b10c2415104328">kP</a>, float <a class="el" href="classPID.html#ac686925341bcab06b11df109533b6807">kI</a>, float <a class="el" href="classPID.html#a5a07dca1e267a62af08ebd07781f1e9e">kD</a>, bool <a class="el" href="classPID.html#aaad110febd9150a54528b9cb6ff145e8">feedForward</a>)</td></tr>
+<tr class="memdesc:acf0310be28ae782627e1671f4a663543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the <a class="el" href="classPID.html" title="A simple PID controller. ">PID</a> object with the given constants.  <a href="#acf0310be28ae782627e1671f4a663543">More...</a><br/></td></tr>
 <tr class="separator:acf0310be28ae782627e1671f4a663543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac42a9b324383cc5ba0fec0f3ff41913e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#ac42a9b324383cc5ba0fec0f3ff41913e">set</a> (float <a class="el" href="classPID.html#aab66dffb3291ee486568e8b73cb71831">setPoint</a>)</td></tr>
+<tr class="memdesc:ac42a9b324383cc5ba0fec0f3ff41913e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the setpoint of the controller.  <a href="#ac42a9b324383cc5ba0fec0f3ff41913e">More...</a><br/></td></tr>
 <tr class="separator:ac42a9b324383cc5ba0fec0f3ff41913e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a787c74101b0fed1eba2df4d82000028e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a787c74101b0fed1eba2df4d82000028e">run</a> (float value, bool doWrap=false)</td></tr>
 <tr class="separator:a787c74101b0fed1eba2df4d82000028e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a443ba218324fabf44754b1bab2be5fd6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a443ba218324fabf44754b1bab2be5fd6">stopped</a> ()</td></tr>
+<tr class="memdesc:a443ba218324fabf44754b1bab2be5fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">determine whether or not the controlled value is 'stopped' This is checked by determining if the current error and the setpoint are both small  <a href="#a443ba218324fabf44754b1bab2be5fd6">More...</a><br/></td></tr>
 <tr class="separator:a443ba218324fabf44754b1bab2be5fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -127,8 +133,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aaad110febd9150a54528b9cb6ff145e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00003">3</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<div class="textblock"><p>A simple <a class="el" href="classPID.html" title="A simple PID controller. ">PID</a> controller. </p>
+
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00006">6</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="acf0310be28ae782627e1671f4a663543"></a>
 <div class="memitem">
@@ -165,6 +172,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct the <a class="el" href="classPID.html" title="A simple PID controller. ">PID</a> object with the given constants. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kP</td><td>proportional gain constant </td></tr>
+    <tr><td class="paramname">kI</td><td>integral gain constant </td></tr>
+    <tr><td class="paramname">kD</td><td>derivative gain constant </td></tr>
+    <tr><td class="paramname">feedForward</td><td>true if the <a class="el" href="classPID.html" title="A simple PID controller. ">PID</a> controller should be feed-forward </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Definition at line <a class="el" href="PID_8cpp_source.html#l00005">5</a> of file <a class="el" href="PID_8cpp_source.html">PID.cpp</a>.</p>
 
@@ -214,6 +232,15 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Set the setpoint of the controller. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value to set the setpoint to </td></tr>
+    <tr><td class="paramname">doWrap</td><td>This should probably go somewhere else, but if true, then the controller will do normalize error to the range (-180, 180], used for controlling angle </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Definition at line <a class="el" href="PID_8cpp_source.html#l00009">9</a> of file <a class="el" href="PID_8cpp_source.html">PID.cpp</a>.</p>
 
 </div>
@@ -231,6 +258,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>determine whether or not the controlled value is 'stopped' This is checked by determining if the current error and the setpoint are both small </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the controlled value is 'stopped', false otherwise </dd></dl>
+
 <p>Definition at line <a class="el" href="PID_8cpp_source.html#l00013">13</a> of file <a class="el" href="PID_8cpp_source.html">PID.cpp</a>.</p>
 
 </div>
@@ -246,7 +276,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00021">21</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00042">42</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -260,7 +290,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00014">14</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00035">35</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -274,7 +304,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00013">13</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00034">34</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -288,7 +318,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00013">13</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00034">34</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -302,7 +332,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00013">13</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00034">34</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -316,7 +346,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00014">14</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00035">35</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -330,7 +360,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00016">16</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00037">37</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -344,7 +374,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00019">19</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00040">40</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +388,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00018">18</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00039">39</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -369,7 +399,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 18:02:47 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

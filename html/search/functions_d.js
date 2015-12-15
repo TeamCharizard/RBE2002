@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['read',['read',['../classEncoder.html#ad4a82c2cb43afce3149e206e42796173',1,'Encoder::read()'],['../classGyro.html#a8bf35077e5f6237629e093c67a0bb1d9',1,'Gyro::read()'],['../classLidar.html#a424a60f6278617333201c5fca115c288',1,'Lidar::read()']]],
-  ['relativeposition',['relativePosition',['../classCandleDetector.html#a773abb6491519a0d1b7111e2973c7199',1,'CandleDetector']]],
-  ['returntoorigin',['returnToOrigin',['../classRobot.html#ac1faa7fbfb483c4053dc35f368359c0b',1,'Robot']]],
-  ['rightdisplacement',['rightDisplacement',['../classOdom.html#aee42d44f07335600703f40061a01836e',1,'Odom']]],
-  ['robot',['Robot',['../classRobot.html#a4fc7c70ae20623f05e06f2ecb388b6c4',1,'Robot']]],
-  ['robottoworld',['robotToWorld',['../classOdom.html#a07f630244bd18439ab5e057dfab0587f',1,'Odom']]],
-  ['rotate',['rotate',['../classPoint.html#a21b0a6ce6c6041b23604a27121786902',1,'Point']]],
-  ['run',['run',['../classExtinguisher.html#ab11afd0f55af4485a1a4f369c7743a40',1,'Extinguisher::run()'],['../classNavigator.html#a8841b985afa17a86112b8522ee6913e6',1,'Navigator::run()'],['../classPID.html#a787c74101b0fed1eba2df4d82000028e',1,'PID::run()'],['../classSearcher.html#aaea092416ef215eb96f46ef3d6f1b581',1,'Searcher::run()']]]
+  ['pid',['PID',['../classPID.html#acf0310be28ae782627e1671f4a663543',1,'PID']]],
+  ['pidbase',['PIDBase',['../classPIDBase.html#a3d1adc8f47087f795979fb5596ea3e7d',1,'PIDBase']]],
+  ['point',['Point',['../classPoint.html#aea76b1130f1a203722d8f2254ced8e66',1,'Point::Point()'],['../classPoint.html#a4236452aa9c9f4cffc58b04180fea343',1,'Point::Point(T x, T y)']]],
+  ['pop',['pop',['../classStack.html#a0ec82a1e0e291e07f3fd5ef616b09423',1,'Stack']]],
+  ['popwaypoint',['popWaypoint',['../classRobot.html#a7e05e17417f58dd3b9d3d02b365a5df1',1,'Robot']]],
+  ['pos',['pos',['../classPIDBase.html#aaaa94fd117259cec77f6127244b36d6a',1,'PIDBase']]],
+  ['printpose',['printPose',['../classStatusManager.html#a9931fbceb4e172cb68ad0e23db6f0a8c',1,'StatusManager']]],
+  ['printstate',['printState',['../classStatusManager.html#a384e6af33f26993bd070f40fc601eeef',1,'StatusManager']]],
+  ['push',['push',['../classStack.html#a57cb3e28d1b7349dfea8e42c95186abc',1,'Stack']]],
+  ['pushpos',['pushPos',['../classRobot.html#abec1c3c25468c64565a4e1c934f32d62',1,'Robot']]]
 ];

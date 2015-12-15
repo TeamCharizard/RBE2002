@@ -94,30 +94,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classFan.html#afa6c28ec10c0f00270e04abc8344e220">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classFan.html#afa6c28ec10c0f00270e04abc8344e220">Fan::setup</a>(){</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.attach(11,1000,2000);</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.write(180);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  delay(<a class="code" href="classFan.html#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">INIT_PAUSE</a>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.write(0);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  delay(<a class="code" href="classFan.html#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">INIT_PAUSE</a>);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classFan.html#ab0574452a1e4ad34f668b4792be6021c">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classFan.html#ab0574452a1e4ad34f668b4792be6021c">Fan::spin</a>(){</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.write(180);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  pinMode(<a class="code" href="classFan.html#a6d80c95f35fe663ac45052c74f54d609">BUTTON_PIN</a>,INPUT_PULLUP);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.attach(11,1000,2000);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.write(180);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">while</span>(digitalRead(<a class="code" href="classFan.html#a6d80c95f35fe663ac45052c74f54d609">BUTTON_PIN</a>));</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">while</span>(!digitalRead(<a class="code" href="classFan.html#a6d80c95f35fe663ac45052c74f54d609">BUTTON_PIN</a>));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">//wait for button press and release</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.write(0);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff">Fan::stop</a>(){</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.write(0);</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classFan.html#ab0574452a1e4ad34f668b4792be6021c">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classFan.html#ab0574452a1e4ad34f668b4792be6021c">Fan::spin</a>(){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.write(180);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="ttc" id="classFan_html_ab0574452a1e4ad34f668b4792be6021c"><div class="ttname"><a href="classFan.html#ab0574452a1e4ad34f668b4792be6021c">Fan::spin</a></div><div class="ttdeci">void spin()</div><div class="ttdoc">spin the motor at FULL POWER! </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8cpp_source.html#l00012">Fan.cpp:12</a></div></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff">Fan::stop</a>(){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a>.write(0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="ttc" id="classFan_html_ab0574452a1e4ad34f668b4792be6021c"><div class="ttname"><a href="classFan.html#ab0574452a1e4ad34f668b4792be6021c">Fan::spin</a></div><div class="ttdeci">void spin()</div><div class="ttdoc">Turn the fan on. </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8cpp_source.html#l00016">Fan.cpp:16</a></div></div>
 <div class="ttc" id="Fan_8hpp_html"><div class="ttname"><a href="Fan_8hpp.html">Fan.hpp</a></div></div>
-<div class="ttc" id="classFan_html_af4a96b6fd535b30f933a8bf8d1af50ff"><div class="ttname"><a href="classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff">Fan::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">stop the motor. speed controller will ramp it down for us </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8cpp_source.html#l00016">Fan.cpp:16</a></div></div>
-<div class="ttc" id="classFan_html_a8d7eb0f5de190ffc2f5d0ae1c5c10e29"><div class="ttname"><a href="classFan.html#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">Fan::INIT_PAUSE</a></div><div class="ttdeci">static const int INIT_PAUSE</div><div class="ttdoc">the pause time between ESC arming sequences </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8hpp_source.html#l00026">Fan.hpp:26</a></div></div>
-<div class="ttc" id="classFan_html_aff9de16d110a96ff5788f7d6ad6ef715"><div class="ttname"><a href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">Fan::motor</a></div><div class="ttdeci">Servo motor</div><div class="ttdoc">internal motor object </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8hpp_source.html#l00023">Fan.hpp:23</a></div></div>
-<div class="ttc" id="classFan_html_afa6c28ec10c0f00270e04abc8344e220"><div class="ttname"><a href="classFan.html#afa6c28ec10c0f00270e04abc8344e220">Fan::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">Setup for the servo object. Also handles arming of the ESC. </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8cpp_source.html#l00004">Fan.cpp:4</a></div></div>
+<div class="ttc" id="classFan_html_a6d80c95f35fe663ac45052c74f54d609"><div class="ttname"><a href="classFan.html#a6d80c95f35fe663ac45052c74f54d609">Fan::BUTTON_PIN</a></div><div class="ttdeci">static const int BUTTON_PIN</div><div class="ttdoc">the pause time between ESC arming sequences </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8hpp_source.html#l00032">Fan.hpp:32</a></div></div>
+<div class="ttc" id="classFan_html_af4a96b6fd535b30f933a8bf8d1af50ff"><div class="ttname"><a href="classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff">Fan::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Turn the fan off. </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8cpp_source.html#l00020">Fan.cpp:20</a></div></div>
+<div class="ttc" id="classFan_html_aff9de16d110a96ff5788f7d6ad6ef715"><div class="ttname"><a href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">Fan::motor</a></div><div class="ttdeci">Servo motor</div><div class="ttdoc">internal motor object </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8hpp_source.html#l00029">Fan.hpp:29</a></div></div>
+<div class="ttc" id="classFan_html_afa6c28ec10c0f00270e04abc8344e220"><div class="ttname"><a href="classFan.html#afa6c28ec10c0f00270e04abc8344e220">Fan::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">Initialize the fan&#39;s motor controller. Waits for button to be released before initializing. </div><div class="ttdef"><b>Definition:</b> <a href="Fan_8cpp_source.html#l00004">Fan.cpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 18:02:47 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

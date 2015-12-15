@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['finalupdate',['finalUpdate',['../classStatusManager.html#a7ff2d1d408a9a295a7e7815ce23347c4',1,'StatusManager']]],
-  ['findcandleheight',['findCandleHeight',['../classRobot.html#a17e0de9c529197b3575e11a87470376b',1,'Robot']]]
+  ['empty',['empty',['../classStack.html#a505bf640900c9ddd08a7666e85c7d53c',1,'Stack']]],
+  ['end',['end',['../classRobot.html#a9dab3fb1d3619cbc9b8b1e19f6320c6f',1,'Robot']]],
+  ['extinguishcandle',['extinguishCandle',['../classRobot.html#a0dfb8f97d6a9448bc6f9ccc5b9efb9fb',1,'Robot']]]
 ];

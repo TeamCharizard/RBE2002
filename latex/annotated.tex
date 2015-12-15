@@ -1,22 +1,21 @@
 \section{Class List}
 Here are the classes, structs, unions and interfaces with brief descriptions\-:\begin{DoxyCompactList}
-\item\contentsline{section}{\hyperlink{classCandleDetector}{Candle\-Detector} }{\pageref{classCandleDetector}}{}
-\item\contentsline{section}{\hyperlink{classDriveMotor}{Drive\-Motor} }{\pageref{classDriveMotor}}{}
-\item\contentsline{section}{\hyperlink{classEncoder}{Encoder$<$ port1, port2 $>$} }{\pageref{classEncoder}}{}
+\item\contentsline{section}{\hyperlink{classCandleDetector}{Candle\-Detector} \\*Contains methods for detecting candle and storing its location }{\pageref{classCandleDetector}}{}
+\item\contentsline{section}{\hyperlink{classDriveMotor}{Drive\-Motor} \\*Basic wrapper around servo that allows -\/100 to 100 speeds instead of 0 to 180 }{\pageref{classDriveMotor}}{}
+\item\contentsline{section}{\hyperlink{classEncoder}{Encoder$<$ port1, port2 $>$} \\*Template class for encoder counting. It takes the two ports as template arguments and uses simple quadrature counting }{\pageref{classEncoder}}{}
 \item\contentsline{section}{\hyperlink{classExtinguisher}{Extinguisher} \\*Houses the state machine for extinguishing the candle. \hyperlink{classFan}{Fan} is included }{\pageref{classExtinguisher}}{}
 \item\contentsline{section}{\hyperlink{classFan}{Fan} \\*Wrapper around Servo the control 1000\-K\-V Outrunner }{\pageref{classFan}}{}
-\item\contentsline{section}{\hyperlink{classFireFinder}{Fire\-Finder} }{\pageref{classFireFinder}}{}
-\item\contentsline{section}{\hyperlink{classGyro}{Gyro} }{\pageref{classGyro}}{}
-\item\contentsline{section}{\hyperlink{classLidar}{Lidar} }{\pageref{classLidar}}{}
-\item\contentsline{section}{\hyperlink{classMain}{Main} }{\pageref{classMain}}{}
-\item\contentsline{section}{\hyperlink{classMainSketch}{Main\-Sketch} }{\pageref{classMainSketch}}{}
-\item\contentsline{section}{\hyperlink{classNavigator}{Navigator} }{\pageref{classNavigator}}{}
-\item\contentsline{section}{\hyperlink{classOdom}{Odom$<$ Enc1, Enc2 $>$} }{\pageref{classOdom}}{}
-\item\contentsline{section}{\hyperlink{classPID}{P\-I\-D} }{\pageref{classPID}}{}
-\item\contentsline{section}{\hyperlink{classPIDBase}{P\-I\-D\-Base} }{\pageref{classPIDBase}}{}
-\item\contentsline{section}{\hyperlink{classPoint}{Point$<$ T $>$} }{\pageref{classPoint}}{}
-\item\contentsline{section}{\hyperlink{classRobot}{Robot} }{\pageref{classRobot}}{}
-\item\contentsline{section}{\hyperlink{classSearcher}{Searcher} }{\pageref{classSearcher}}{}
-\item\contentsline{section}{\hyperlink{classStack}{Stack$<$ T, S\-I\-Z\-E $>$} }{\pageref{classStack}}{}
-\item\contentsline{section}{\hyperlink{classStatusManager}{Status\-Manager} }{\pageref{classStatusManager}}{}
+\item\contentsline{section}{\hyperlink{classFireFinder}{Fire\-Finder} \\*Wrapper around head servo, and contains functions for scanning for fire and reporting candle height }{\pageref{classFireFinder}}{}
+\item\contentsline{section}{\hyperlink{classGyro}{Gyro} \\*Simple wrapper around L3\-G gyro to do the integration }{\pageref{classGyro}}{}
+\item\contentsline{section}{\hyperlink{classMain}{Main} \\*\hyperlink{classMain}{Main} is the highest level state machine for the robot }{\pageref{classMain}}{}
+\item\contentsline{section}{\hyperlink{classMainSketch}{Main\-Sketch} \\*This class is used by charizard. \hyperlink{classMain}{Main} and other test sketches should extend this class and implement setup and loop }{\pageref{classMainSketch}}{}
+\item\contentsline{section}{\hyperlink{classNavigator}{Navigator} \\*Contains methods for navigating to absolute points on the field }{\pageref{classNavigator}}{}
+\item\contentsline{section}{\hyperlink{classOdom}{Odom$<$ Enc1, Enc2 $>$} \\*Tracks the robot's position via encoders }{\pageref{classOdom}}{}
+\item\contentsline{section}{\hyperlink{classPID}{P\-I\-D} \\*A simple \hyperlink{classPID}{P\-I\-D} controller }{\pageref{classPID}}{}
+\item\contentsline{section}{\hyperlink{classPIDBase}{P\-I\-D\-Base} \\*P\-I\-Ds for controlling the turning and driving of the robot. You can turn to a specific angle, drive straight with a speed, or turn at a speed }{\pageref{classPIDBase}}{}
+\item\contentsline{section}{\hyperlink{classPoint}{Point$<$ T $>$} \\*Represents a point in 2 dimensional space }{\pageref{classPoint}}{}
+\item\contentsline{section}{\hyperlink{classRobot}{Robot} \\*Contains functions like setting drive P\-I\-Ds, and functions corresponding to states in the \hyperlink{classMain}{Main} state machine }{\pageref{classRobot}}{}
+\item\contentsline{section}{\hyperlink{classSearcher}{Searcher} \\*Houses state machine for searching for the candle. Functions like check, drive\-And\-Avoid, and others are used to control the states up until the robot is at the candle and ready to extiguish }{\pageref{classSearcher}}{}
+\item\contentsline{section}{\hyperlink{classStack}{Stack$<$ T, S\-I\-Z\-E $>$} \\*A simple fixed size stack }{\pageref{classStack}}{}
+\item\contentsline{section}{\hyperlink{classStatusManager}{Status\-Manager} \\*Wrapper class around the Display in charizard. Allows for clean printing and custom characters }{\pageref{classStatusManager}}{}
 \end{DoxyCompactList}

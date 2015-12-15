@@ -3,6 +3,11 @@
 }
 
 
+Tracks the robot's position via encoders.  
+
+
+
+
 {\ttfamily \#include $<$Odom.\-hpp$>$}
 
 \subsection*{Public Member Functions}
@@ -13,20 +18,20 @@
 void \hyperlink{classOdom_a6736e8d83d7276bc7b4a656b9dc8dda5}{setup} ()
 \item 
 float \hyperlink{classOdom_ab1627e2cf01e2d9869d24027a1a98469}{update\-Differential} ()
-\item 
+\begin{DoxyCompactList}\small\item\em update the robots position based on encoder ticks since last update \end{DoxyCompactList}\item 
 int \hyperlink{classOdom_aad18072b90a4f0951165577a014024de}{left\-Displacement} ()
 \item 
 int \hyperlink{classOdom_aee42d44f07335600703f40061a01836e}{right\-Displacement} ()
 \item 
 \hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classOdom_adf58a66718029d08c7bd47d5cebfefb6}{get\-Pos} ()
-\item 
+\begin{DoxyCompactList}\small\item\em get the lastest robot position \end{DoxyCompactList}\item 
 \hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classOdom_a07f630244bd18439ab5e057dfab0587f}{robot\-To\-World} (\hyperlink{classPoint}{Point}$<$ float $>$ robot\-Point)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em transform a point from robot frame to world frame \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 float \hyperlink{classOdom_ad2308d2e662650534d2a85aad6c97349}{dir}
-\item 
+\begin{DoxyCompactList}\small\item\em Direction the robot is facing. \end{DoxyCompactList}\item 
 float \hyperlink{classOdom_a4c4c2d005150e15fef0db14e923bfca3}{gyro\-Angle}
 \item 
 int \hyperlink{classOdom_aa29154456ebb189815df2501cc8eb2fd}{left\-\_\-disp}
@@ -37,7 +42,7 @@ int \hyperlink{classOdom_a967a8ce7e6bea53de203e37cf180389a}{right\-\_\-disp}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classOdom_a0e43d9feb433dec91e7a08cee64d732b}{pos}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classRobot}{Robot}'s current position in world frame. \end{DoxyCompactList}\item 
 \hyperlink{classGyro}{Gyro} \hyperlink{classOdom_a52380c80a1c7072904a766a59e09d3b5}{gyro}
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
@@ -52,9 +57,9 @@ static constexpr float \hyperlink{classOdom_a3d72db210126e10ebcae996e1e707ce5}{r
 \subsection{Detailed Description}
 \subsubsection*{template$<$typename Enc1, typename Enc2$>$class Odom$<$ Enc1, Enc2 $>$}
 
+Tracks the robot's position via encoders. 
 
-
-Definition at line 9 of file Odom.\-hpp.
+Definition at line 12 of file Odom.\-hpp.
 
 
 
@@ -68,7 +73,7 @@ Definition at line 9 of file Odom.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_ab45cc0ea11f5300b84afe6133859a2c2}
 
 
-Definition at line 18 of file Odom.\-hpp.
+Definition at line 24 of file Odom.\-hpp.
 
 
 
@@ -82,7 +87,14 @@ Definition at line 18 of file Odom.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_adf58a66718029d08c7bd47d5cebfefb6}
 
 
-Definition at line 61 of file Odom.\-hpp.
+get the lastest robot position 
+
+\begin{DoxyReturn}{Returns}
+the lastest robot position 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file Odom.\-hpp.
 
 \hypertarget{classOdom_aad18072b90a4f0951165577a014024de}{\index{Odom@{Odom}!left\-Displacement@{left\-Displacement}}
 \index{left\-Displacement@{left\-Displacement}!Odom@{Odom}}
@@ -91,9 +103,12 @@ Definition at line 61 of file Odom.\-hpp.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_aad18072b90a4f0951165577a014024de}
+\begin{DoxyReturn}{Returns}
+get the number of ticks seen by the left encoder from the last update 
+\end{DoxyReturn}
 
 
-Definition at line 53 of file Odom.\-hpp.
+Definition at line 68 of file Odom.\-hpp.
 
 \hypertarget{classOdom_aee42d44f07335600703f40061a01836e}{\index{Odom@{Odom}!right\-Displacement@{right\-Displacement}}
 \index{right\-Displacement@{right\-Displacement}!Odom@{Odom}}
@@ -102,9 +117,12 @@ Definition at line 53 of file Odom.\-hpp.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_aee42d44f07335600703f40061a01836e}
+\begin{DoxyReturn}{Returns}
+get the number of ticks seen by the right encoder from the last update 
+\end{DoxyReturn}
 
 
-Definition at line 57 of file Odom.\-hpp.
+Definition at line 75 of file Odom.\-hpp.
 
 \hypertarget{classOdom_a07f630244bd18439ab5e057dfab0587f}{\index{Odom@{Odom}!robot\-To\-World@{robot\-To\-World}}
 \index{robot\-To\-World@{robot\-To\-World}!Odom@{Odom}}
@@ -115,7 +133,19 @@ Definition at line 57 of file Odom.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_a07f630244bd18439ab5e057dfab0587f}
 
 
-Definition at line 63 of file Odom.\-hpp.
+transform a point from robot frame to world frame 
+
+
+\begin{DoxyParams}{Parameters}
+{\em robot\-Point} & a point the the frame of the robot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input point trasnformed to world frame 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file Odom.\-hpp.
 
 \hypertarget{classOdom_a6736e8d83d7276bc7b4a656b9dc8dda5}{\index{Odom@{Odom}!setup@{setup}}
 \index{setup@{setup}!Odom@{Odom}}
@@ -126,7 +156,7 @@ Definition at line 63 of file Odom.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_a6736e8d83d7276bc7b4a656b9dc8dda5}
 
 
-Definition at line 20 of file Odom.\-hpp.
+Definition at line 26 of file Odom.\-hpp.
 
 \hypertarget{classOdom_ab1627e2cf01e2d9869d24027a1a98469}{\index{Odom@{Odom}!update\-Differential@{update\-Differential}}
 \index{update\-Differential@{update\-Differential}!Odom@{Odom}}
@@ -137,7 +167,14 @@ Definition at line 20 of file Odom.\-hpp.
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOdom_ab1627e2cf01e2d9869d24027a1a98469}
 
 
-Definition at line 32 of file Odom.\-hpp.
+update the robots position based on encoder ticks since last update 
+
+\begin{DoxyReturn}{Returns}
+distance the robot has traveled forward (since the last update) 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Odom.\-hpp.
 
 
 
@@ -147,56 +184,64 @@ Definition at line 32 of file Odom.\-hpp.
 \subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ float {\bf Odom}$<$ Enc1, Enc2 $>$\-::dir}}\label{classOdom_ad2308d2e662650534d2a85aad6c97349}
 
 
-Definition at line 28 of file Odom.\-hpp.
+Direction the robot is facing. 
+
+
+
+Definition at line 35 of file Odom.\-hpp.
 
 \hypertarget{classOdom_a52380c80a1c7072904a766a59e09d3b5}{\index{Odom@{Odom}!gyro@{gyro}}
 \index{gyro@{gyro}!Odom@{Odom}}
 \subsubsection[{gyro}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ {\bf Gyro} {\bf Odom}$<$ Enc1, Enc2 $>$\-::gyro\hspace{0.3cm}{\ttfamily [private]}}}\label{classOdom_a52380c80a1c7072904a766a59e09d3b5}
 
 
-Definition at line 12 of file Odom.\-hpp.
+Definition at line 18 of file Odom.\-hpp.
 
 \hypertarget{classOdom_a4c4c2d005150e15fef0db14e923bfca3}{\index{Odom@{Odom}!gyro\-Angle@{gyro\-Angle}}
 \index{gyro\-Angle@{gyro\-Angle}!Odom@{Odom}}
 \subsubsection[{gyro\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ float {\bf Odom}$<$ Enc1, Enc2 $>$\-::gyro\-Angle}}\label{classOdom_a4c4c2d005150e15fef0db14e923bfca3}
 
 
-Definition at line 28 of file Odom.\-hpp.
+Definition at line 35 of file Odom.\-hpp.
 
 \hypertarget{classOdom_aa29154456ebb189815df2501cc8eb2fd}{\index{Odom@{Odom}!left\-\_\-disp@{left\-\_\-disp}}
 \index{left\-\_\-disp@{left\-\_\-disp}!Odom@{Odom}}
 \subsubsection[{left\-\_\-disp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ int {\bf Odom}$<$ Enc1, Enc2 $>$\-::left\-\_\-disp}}\label{classOdom_aa29154456ebb189815df2501cc8eb2fd}
 
 
-Definition at line 29 of file Odom.\-hpp.
+Definition at line 37 of file Odom.\-hpp.
 
 \hypertarget{classOdom_a0e43d9feb433dec91e7a08cee64d732b}{\index{Odom@{Odom}!pos@{pos}}
 \index{pos@{pos}!Odom@{Odom}}
 \subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ {\bf Point}$<$float$>$ {\bf Odom}$<$ Enc1, Enc2 $>$\-::pos\hspace{0.3cm}{\ttfamily [private]}}}\label{classOdom_a0e43d9feb433dec91e7a08cee64d732b}
 
 
-Definition at line 11 of file Odom.\-hpp.
+\hyperlink{classRobot}{Robot}'s current position in world frame. 
+
+
+
+Definition at line 17 of file Odom.\-hpp.
 
 \hypertarget{classOdom_a967a8ce7e6bea53de203e37cf180389a}{\index{Odom@{Odom}!right\-\_\-disp@{right\-\_\-disp}}
 \index{right\-\_\-disp@{right\-\_\-disp}!Odom@{Odom}}
 \subsubsection[{right\-\_\-disp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ int {\bf Odom}$<$ Enc1, Enc2 $>$\-::right\-\_\-disp}}\label{classOdom_a967a8ce7e6bea53de203e37cf180389a}
 
 
-Definition at line 29 of file Odom.\-hpp.
+Definition at line 37 of file Odom.\-hpp.
 
 \hypertarget{classOdom_a3d72db210126e10ebcae996e1e707ce5}{\index{Odom@{Odom}!rot\-\_\-wheel\-\_\-pos@{rot\-\_\-wheel\-\_\-pos}}
 \index{rot\-\_\-wheel\-\_\-pos@{rot\-\_\-wheel\-\_\-pos}!Odom@{Odom}}
 \subsubsection[{rot\-\_\-wheel\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ constexpr float {\bf Odom}$<$ Enc1, Enc2 $>$\-::rot\-\_\-wheel\-\_\-pos = 3.\-375\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classOdom_a3d72db210126e10ebcae996e1e707ce5}
 
 
-Definition at line 15 of file Odom.\-hpp.
+Definition at line 21 of file Odom.\-hpp.
 
 \hypertarget{classOdom_a567d0fcf68e65948aed27f27f35e6973}{\index{Odom@{Odom}!wheel\-\_\-radius@{wheel\-\_\-radius}}
 \index{wheel\-\_\-radius@{wheel\-\_\-radius}!Odom@{Odom}}
 \subsubsection[{wheel\-\_\-radius}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Enc1, typename Enc2$>$ constexpr float {\bf Odom}$<$ Enc1, Enc2 $>$\-::wheel\-\_\-radius = 2.\-75/2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classOdom_a567d0fcf68e65948aed27f27f35e6973}
 
 
-Definition at line 14 of file Odom.\-hpp.
+Definition at line 20 of file Odom.\-hpp.
 
 
 

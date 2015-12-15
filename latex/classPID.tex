@@ -3,19 +3,24 @@
 }
 
 
+A simple \hyperlink{classPID}{P\-I\-D} controller.  
+
+
+
+
 {\ttfamily \#include $<$P\-I\-D.\-hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classPID_acf0310be28ae782627e1671f4a663543}{P\-I\-D} (float \hyperlink{classPID_ac4815cca85109a6e13b10c2415104328}{k\-P}, float \hyperlink{classPID_ac686925341bcab06b11df109533b6807}{k\-I}, float \hyperlink{classPID_a5a07dca1e267a62af08ebd07781f1e9e}{k\-D}, bool \hyperlink{classPID_aaad110febd9150a54528b9cb6ff145e8}{feed\-Forward})
-\item 
+\begin{DoxyCompactList}\small\item\em Construct the \hyperlink{classPID}{P\-I\-D} object with the given constants. \end{DoxyCompactList}\item 
 void \hyperlink{classPID_ac42a9b324383cc5ba0fec0f3ff41913e}{set} (float \hyperlink{classPID_aab66dffb3291ee486568e8b73cb71831}{set\-Point})
-\item 
+\begin{DoxyCompactList}\small\item\em Set the setpoint of the controller. \end{DoxyCompactList}\item 
 int \hyperlink{classPID_a787c74101b0fed1eba2df4d82000028e}{run} (float value, bool do\-Wrap=false)
 \item 
 bool \hyperlink{classPID_a443ba218324fabf44754b1bab2be5fd6}{stopped} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em determine whether or not the controlled value is 'stopped' This is checked by determining if the current error and the setpoint are both small \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,9 +45,9 @@ bool \hyperlink{classPID_aaad110febd9150a54528b9cb6ff145e8}{feed\-Forward} = fal
 
 
 \subsection{Detailed Description}
+A simple \hyperlink{classPID}{P\-I\-D} controller. 
 
-
-Definition at line 3 of file P\-I\-D.\-hpp.
+Definition at line 6 of file P\-I\-D.\-hpp.
 
 
 
@@ -57,6 +62,21 @@ Definition at line 3 of file P\-I\-D.\-hpp.
 \item[{bool}]{feed\-Forward}
 \end{DoxyParamCaption}
 )}}\label{classPID_acf0310be28ae782627e1671f4a663543}
+
+
+Construct the \hyperlink{classPID}{P\-I\-D} object with the given constants. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k\-P} & proportional gain constant \\
+\hline
+{\em k\-I} & integral gain constant \\
+\hline
+{\em k\-D} & derivative gain constant \\
+\hline
+{\em feed\-Forward} & true if the \hyperlink{classPID}{P\-I\-D} controller should be feed-\/forward \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 5 of file P\-I\-D.\-cpp.
@@ -85,6 +105,17 @@ Definition at line 20 of file P\-I\-D.\-cpp.
 )}}\label{classPID_ac42a9b324383cc5ba0fec0f3ff41913e}
 
 
+Set the setpoint of the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set the setpoint to \\
+\hline
+{\em do\-Wrap} & This should probably go somewhere else, but if true, then the controller will do normalize error to the range (-\/180, 180\mbox{]}, used for controlling angle \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line 9 of file P\-I\-D.\-cpp.
 
 \hypertarget{classPID_a443ba218324fabf44754b1bab2be5fd6}{\index{P\-I\-D@{P\-I\-D}!stopped@{stopped}}
@@ -94,6 +125,13 @@ Definition at line 9 of file P\-I\-D.\-cpp.
 {}
 \end{DoxyParamCaption}
 )}}\label{classPID_a443ba218324fabf44754b1bab2be5fd6}
+
+
+determine whether or not the controlled value is 'stopped' This is checked by determining if the current error and the setpoint are both small 
+
+\begin{DoxyReturn}{Returns}
+true if the controlled value is 'stopped', false otherwise 
+\end{DoxyReturn}
 
 
 Definition at line 13 of file P\-I\-D.\-cpp.
@@ -106,63 +144,63 @@ Definition at line 13 of file P\-I\-D.\-cpp.
 \subsubsection[{feed\-Forward}]{\setlength{\rightskip}{0pt plus 5cm}bool P\-I\-D\-::feed\-Forward = false}}\label{classPID_aaad110febd9150a54528b9cb6ff145e8}
 
 
-Definition at line 21 of file P\-I\-D.\-hpp.
+Definition at line 42 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_a940a94095581f2d32d1ed3426a2cdf4b}{\index{P\-I\-D@{P\-I\-D}!i\-Term@{i\-Term}}
 \index{i\-Term@{i\-Term}!PID@{P\-I\-D}}
 \subsubsection[{i\-Term}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::i\-Term}}\label{classPID_a940a94095581f2d32d1ed3426a2cdf4b}
 
 
-Definition at line 14 of file P\-I\-D.\-hpp.
+Definition at line 35 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_a5a07dca1e267a62af08ebd07781f1e9e}{\index{P\-I\-D@{P\-I\-D}!k\-D@{k\-D}}
 \index{k\-D@{k\-D}!PID@{P\-I\-D}}
 \subsubsection[{k\-D}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::k\-D}}\label{classPID_a5a07dca1e267a62af08ebd07781f1e9e}
 
 
-Definition at line 13 of file P\-I\-D.\-hpp.
+Definition at line 34 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_ac686925341bcab06b11df109533b6807}{\index{P\-I\-D@{P\-I\-D}!k\-I@{k\-I}}
 \index{k\-I@{k\-I}!PID@{P\-I\-D}}
 \subsubsection[{k\-I}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::k\-I}}\label{classPID_ac686925341bcab06b11df109533b6807}
 
 
-Definition at line 13 of file P\-I\-D.\-hpp.
+Definition at line 34 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_ac4815cca85109a6e13b10c2415104328}{\index{P\-I\-D@{P\-I\-D}!k\-P@{k\-P}}
 \index{k\-P@{k\-P}!PID@{P\-I\-D}}
 \subsubsection[{k\-P}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::k\-P}}\label{classPID_ac4815cca85109a6e13b10c2415104328}
 
 
-Definition at line 13 of file P\-I\-D.\-hpp.
+Definition at line 34 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_abf0cc22331707048925c27a242be7d3e}{\index{P\-I\-D@{P\-I\-D}!last\-Error@{last\-Error}}
 \index{last\-Error@{last\-Error}!PID@{P\-I\-D}}
 \subsubsection[{last\-Error}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::last\-Error}}\label{classPID_abf0cc22331707048925c27a242be7d3e}
 
 
-Definition at line 14 of file P\-I\-D.\-hpp.
+Definition at line 35 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_ac544c553fc46b395600413117df8a1f8}{\index{P\-I\-D@{P\-I\-D}!last\-Update\-Time@{last\-Update\-Time}}
 \index{last\-Update\-Time@{last\-Update\-Time}!PID@{P\-I\-D}}
 \subsubsection[{last\-Update\-Time}]{\setlength{\rightskip}{0pt plus 5cm}long P\-I\-D\-::last\-Update\-Time}}\label{classPID_ac544c553fc46b395600413117df8a1f8}
 
 
-Definition at line 16 of file P\-I\-D.\-hpp.
+Definition at line 37 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_a34f2887b625d8d49e546b4e2fb389d04}{\index{P\-I\-D@{P\-I\-D}!output@{output}}
 \index{output@{output}!PID@{P\-I\-D}}
 \subsubsection[{output}]{\setlength{\rightskip}{0pt plus 5cm}int P\-I\-D\-::output}}\label{classPID_a34f2887b625d8d49e546b4e2fb389d04}
 
 
-Definition at line 19 of file P\-I\-D.\-hpp.
+Definition at line 40 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_aab66dffb3291ee486568e8b73cb71831}{\index{P\-I\-D@{P\-I\-D}!set\-Point@{set\-Point}}
 \index{set\-Point@{set\-Point}!PID@{P\-I\-D}}
 \subsubsection[{set\-Point}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::set\-Point}}\label{classPID_aab66dffb3291ee486568e8b73cb71831}
 
 
-Definition at line 18 of file P\-I\-D.\-hpp.
+Definition at line 39 of file P\-I\-D.\-hpp.
 
 
 

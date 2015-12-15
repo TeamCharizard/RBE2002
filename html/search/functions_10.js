@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['update',['update',['../classStatusManager.html#a1e349aaaaaafe34873aa39e9dee621b0',1,'StatusManager']]],
-  ['updatedifferential',['updateDifferential',['../classOdom.html#ab1627e2cf01e2d9869d24027a1a98469',1,'Odom']]]
+  ['translate',['translate',['../classPoint.html#a5b03fdd5ae61621155265d59502a1beb',1,'Point']]],
+  ['turnabsolutely',['turnAbsolutely',['../classPIDBase.html#a92c97e24856e2812e0b6d027ab99ee63',1,'PIDBase']]],
+  ['turntofaceabsolutely',['turnToFaceAbsolutely',['../classRobot.html#a485de0486179cbbdc32561fd87bfe1c2',1,'Robot']]],
+  ['turntofacecandle',['turnToFaceCandle',['../classSearcher.html#a557322c3deb361501d199b541ca7fdd3',1,'Searcher']]]
 ];

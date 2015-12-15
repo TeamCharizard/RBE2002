@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['packet',['packet',['../classLidar.html#a59f93afd1061d31642d1e7755838f2d1',1,'Lidar']]],
-  ['packetindex',['packetIndex',['../classLidar.html#a5e06436eae4b2d150501df175ec04758',1,'Lidar']]],
-  ['packetnumber',['packetNumber',['../classLidar.html#abcca8f7f6c4cff325e6b225ddbe14796',1,'Lidar']]],
   ['path',['path',['../classRobot.html#a36d071e82aea40470cea9559477e5115',1,'Robot']]],
   ['pid',['PID',['../classPID.html',1,'PID'],['../classPID.html#acf0310be28ae782627e1671f4a663543',1,'PID::PID()']]],
   ['pid_2ecpp',['PID.cpp',['../PID_8cpp.html',1,'']]],
@@ -19,7 +16,6 @@ var searchData=
   ['position',['position',['../classFireFinder.html#a40e204a2807939b3195024f14a9278fc',1,'FireFinder']]],
   ['printpose',['printPose',['../classStatusManager.html#a9931fbceb4e172cb68ad0e23db6f0a8c',1,'StatusManager']]],
   ['printstate',['printState',['../classStatusManager.html#a384e6af33f26993bd070f40fc601eeef',1,'StatusManager']]],
-  ['processendofpacket',['processEndOfPacket',['../classLidar.html#a64a54013a7ef0612c3c0f9f89dc93024',1,'Lidar']]],
   ['push',['push',['../classStack.html#a57cb3e28d1b7349dfea8e42c95186abc',1,'Stack']]],
   ['pushpos',['pushPos',['../classRobot.html#abec1c3c25468c64565a4e1c934f32d62',1,'Robot']]]
 ];

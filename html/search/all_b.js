@@ -13,7 +13,6 @@ var searchData=
   ['mininsample',['minInSample',['../classSearcher.html#a72f0af23bc595eaa70e4fb017eac8d79',1,'Searcher']]],
   ['minintensity',['minIntensity',['../classFireFinder.html#a7d3912a911843b60de3468588cfe8579',1,'FireFinder']]],
   ['minposition',['minPosition',['../classFireFinder.html#ad8be0837d88f10d65b6f8a405f29494a',1,'FireFinder']]],
-  ['misses',['misses',['../classLidar.html#a8eea2300d585c1b514ac6211a7326aca',1,'Lidar']]],
   ['mistaken',['MISTAKEN',['../classSearcher.html#a2c16b7eb56e090a7b832da7f2c9d5e9ca2e776f179e07bdd02764f1b78aeda8b9',1,'Searcher']]],
   ['motor',['motor',['../classDriveMotor.html#a27de76439b7bd1035b17faf78be59478',1,'DriveMotor::motor()'],['../classFan.html#aff9de16d110a96ff5788f7d6ad6ef715',1,'Fan::motor()']]],
   ['motor_5fpin',['MOTOR_PIN',['../classFireFinder.html#ac29b178da56a9347787371708bb62a20',1,'FireFinder']]]

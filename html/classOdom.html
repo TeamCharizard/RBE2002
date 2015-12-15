@@ -94,6 +94,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Tracks the robot's position via encoders.  
+ <a href="classOdom.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -103,19 +106,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6736e8d83d7276bc7b4a656b9dc8dda5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a6736e8d83d7276bc7b4a656b9dc8dda5">setup</a> ()</td></tr>
 <tr class="separator:a6736e8d83d7276bc7b4a656b9dc8dda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1627e2cf01e2d9869d24027a1a98469"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#ab1627e2cf01e2d9869d24027a1a98469">updateDifferential</a> ()</td></tr>
+<tr class="memdesc:ab1627e2cf01e2d9869d24027a1a98469"><td class="mdescLeft">&#160;</td><td class="mdescRight">update the robots position based on encoder ticks since last update  <a href="#ab1627e2cf01e2d9869d24027a1a98469">More...</a><br/></td></tr>
 <tr class="separator:ab1627e2cf01e2d9869d24027a1a98469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad18072b90a4f0951165577a014024de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#aad18072b90a4f0951165577a014024de">leftDisplacement</a> ()</td></tr>
 <tr class="separator:aad18072b90a4f0951165577a014024de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee42d44f07335600703f40061a01836e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#aee42d44f07335600703f40061a01836e">rightDisplacement</a> ()</td></tr>
 <tr class="separator:aee42d44f07335600703f40061a01836e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf58a66718029d08c7bd47d5cebfefb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#adf58a66718029d08c7bd47d5cebfefb6">getPos</a> ()</td></tr>
+<tr class="memdesc:adf58a66718029d08c7bd47d5cebfefb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the lastest robot position  <a href="#adf58a66718029d08c7bd47d5cebfefb6">More...</a><br/></td></tr>
 <tr class="separator:adf58a66718029d08c7bd47d5cebfefb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07f630244bd18439ab5e057dfab0587f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a07f630244bd18439ab5e057dfab0587f">robotToWorld</a> (<a class="el" href="classPoint.html">Point</a>&lt; float &gt; robotPoint)</td></tr>
+<tr class="memdesc:a07f630244bd18439ab5e057dfab0587f"><td class="mdescLeft">&#160;</td><td class="mdescRight">transform a point from robot frame to world frame  <a href="#a07f630244bd18439ab5e057dfab0587f">More...</a><br/></td></tr>
 <tr class="separator:a07f630244bd18439ab5e057dfab0587f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad2308d2e662650534d2a85aad6c97349"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#ad2308d2e662650534d2a85aad6c97349">dir</a></td></tr>
+<tr class="memdesc:ad2308d2e662650534d2a85aad6c97349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direction the robot is facing.  <a href="#ad2308d2e662650534d2a85aad6c97349">More...</a><br/></td></tr>
 <tr class="separator:ad2308d2e662650534d2a85aad6c97349"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c4c2d005150e15fef0db14e923bfca3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a4c4c2d005150e15fef0db14e923bfca3">gyroAngle</a></td></tr>
 <tr class="separator:a4c4c2d005150e15fef0db14e923bfca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,6 +134,7 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0e43d9feb433dec91e7a08cee64d732b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a0e43d9feb433dec91e7a08cee64d732b">pos</a></td></tr>
+<tr class="memdesc:a0e43d9feb433dec91e7a08cee64d732b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRobot.html" title="Contains functions like setting drive PIDs, and functions corresponding to states in the Main state m...">Robot</a>'s current position in world frame.  <a href="#a0e43d9feb433dec91e7a08cee64d732b">More...</a><br/></td></tr>
 <tr class="separator:a0e43d9feb433dec91e7a08cee64d732b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52380c80a1c7072904a766a59e09d3b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGyro.html">Gyro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a52380c80a1c7072904a766a59e09d3b5">gyro</a></td></tr>
 <tr class="separator:a52380c80a1c7072904a766a59e09d3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,8 +150,9 @@ Static Private Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename Enc1, typename Enc2&gt;<br/>
 class Odom&lt; Enc1, Enc2 &gt;</h3>
 
+<p>Tracks the robot's position via encoders. </p>
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00009">9</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00012">12</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab45cc0ea11f5300b84afe6133859a2c2"></a>
 <div class="memitem">
@@ -168,7 +177,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00018">18</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00024">24</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -196,7 +205,10 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00061">61</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>get the lastest robot position </p>
+<dl class="section return"><dt>Returns</dt><dd>the lastest robot position </dd></dl>
+
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00083">83</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -222,8 +234,9 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>get the number of ticks seen by the left encoder from the last update </dd></dl>
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00053">53</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00068">68</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -249,8 +262,9 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>get the number of ticks seen by the right encoder from the last update </dd></dl>
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00057">57</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00075">75</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -278,7 +292,16 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00063">63</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>transform a point from robot frame to world frame </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">robotPoint</td><td>a point the the frame of the robot </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the input point trasnformed to world frame </dd></dl>
+
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00090">90</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -305,7 +328,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00020">20</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00026">26</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -332,7 +355,10 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00032">32</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>update the robots position based on encoder ticks since last update </p>
+<dl class="section return"><dt>Returns</dt><dd>distance the robot has traveled forward (since the last update) </dd></dl>
+
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00044">44</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -349,7 +375,9 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00028">28</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Direction the robot is facing. </p>
+
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00035">35</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -373,7 +401,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00012">12</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00018">18</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -389,7 +417,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00028">28</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00035">35</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -405,7 +433,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00029">29</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00037">37</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -429,7 +457,9 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00011">11</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p><a class="el" href="classRobot.html" title="Contains functions like setting drive PIDs, and functions corresponding to states in the Main state m...">Robot</a>'s current position in world frame. </p>
+
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00017">17</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -445,7 +475,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00029">29</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00037">37</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -469,7 +499,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00015">15</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00021">21</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -493,7 +523,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00014">14</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00020">20</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -503,7 +533,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 18:02:47 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

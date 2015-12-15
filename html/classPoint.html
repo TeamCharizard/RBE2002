@@ -92,6 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a point in 2 dimensional space.  
+ <a href="classPoint.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Point_8hpp_source.html">Point.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -99,16 +102,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea76b1130f1a203722d8f2254ced8e66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#aea76b1130f1a203722d8f2254ced8e66">Point</a> ()</td></tr>
 <tr class="separator:aea76b1130f1a203722d8f2254ced8e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4236452aa9c9f4cffc58b04180fea343"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a4236452aa9c9f4cffc58b04180fea343">Point</a> (T <a class="el" href="classPoint.html#a97a274fff44375b5d60e209f26d7382f">x</a>, T <a class="el" href="classPoint.html#a71672fd35753d43129ff157127dba575">y</a>)</td></tr>
+<tr class="memdesc:a4236452aa9c9f4cffc58b04180fea343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with specified x and y values.  <a href="#a4236452aa9c9f4cffc58b04180fea343">More...</a><br/></td></tr>
 <tr class="separator:a4236452aa9c9f4cffc58b04180fea343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21b0a6ce6c6041b23604a27121786902"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a21b0a6ce6c6041b23604a27121786902">rotate</a> (float angle)</td></tr>
+<tr class="memdesc:a21b0a6ce6c6041b23604a27121786902"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a new point rotated about the origin by the given angle.  <a href="#a21b0a6ce6c6041b23604a27121786902">More...</a><br/></td></tr>
 <tr class="separator:a21b0a6ce6c6041b23604a27121786902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b03fdd5ae61621155265d59502a1beb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a5b03fdd5ae61621155265d59502a1beb">translate</a> (<a class="el" href="classPoint.html">Point</a> p)</td></tr>
+<tr class="memdesc:a5b03fdd5ae61621155265d59502a1beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a new point translated by the given point  <a href="#a5b03fdd5ae61621155265d59502a1beb">More...</a><br/></td></tr>
 <tr class="separator:a5b03fdd5ae61621155265d59502a1beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02969e7eccf9468f0b1d9572ae0800c9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a02969e7eccf9468f0b1d9572ae0800c9">distanceTo</a> (<a class="el" href="classPoint.html">Point</a> p)</td></tr>
+<tr class="memdesc:a02969e7eccf9468f0b1d9572ae0800c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the distance between two points.  <a href="#a02969e7eccf9468f0b1d9572ae0800c9">More...</a><br/></td></tr>
 <tr class="separator:a02969e7eccf9468f0b1d9572ae0800c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97a274fff44375b5d60e209f26d7382f"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a97a274fff44375b5d60e209f26d7382f">x</a> ()</td></tr>
+<tr class="memdesc:a97a274fff44375b5d60e209f26d7382f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for x.  <a href="#a97a274fff44375b5d60e209f26d7382f">More...</a><br/></td></tr>
 <tr class="separator:a97a274fff44375b5d60e209f26d7382f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71672fd35753d43129ff157127dba575"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPoint.html#a71672fd35753d43129ff157127dba575">y</a> ()</td></tr>
+<tr class="memdesc:a71672fd35753d43129ff157127dba575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for y.  <a href="#a71672fd35753d43129ff157127dba575">More...</a><br/></td></tr>
 <tr class="separator:a71672fd35753d43129ff157127dba575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -122,8 +131,9 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename T&gt;<br/>
 class Point&lt; T &gt;</h3>
 
+<p>Represents a point in 2 dimensional space. </p>
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00005">5</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00008">8</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aea76b1130f1a203722d8f2254ced8e66"></a>
 <div class="memitem">
@@ -147,8 +157,9 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Default construct with x and y = 0 </p>
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00009">9</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00015">15</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +197,9 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00012">12</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>Construct with specified x and y values. </p>
+
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00021">21</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -215,7 +228,16 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00017">17</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>Find the distance between two points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>the other point </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the distance between this point and p </dd></dl>
+
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00043">43</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -243,7 +265,16 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00015">15</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>return a new point rotated about the origin by the given angle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>the angle to rotate by. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the rotated point </dd></dl>
+
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00029">29</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -271,7 +302,16 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00016">16</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>return a new point translated by the given point </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>the point to translate by </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the translated point </dd></dl>
+
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00036">36</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -298,7 +338,9 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00021">21</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>Accessor for x. </p>
+
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00050">50</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +367,9 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00022">22</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>Accessor for y. </p>
+
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00055">55</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -350,7 +394,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00007">7</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00010">10</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -374,7 +418,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00007">7</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Point_8hpp_source.html#l00010">10</a> of file <a class="el" href="Point_8hpp_source.html">Point.hpp</a>.</p>
 
 </div>
 </div>
@@ -384,7 +428,7 @@ template&lt;typename T&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 18:02:47 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

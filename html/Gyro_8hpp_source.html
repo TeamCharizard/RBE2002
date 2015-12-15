@@ -95,40 +95,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;L3G.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classGyro.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGyro.html">Gyro</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="classGyro.html#a8ff2fdb2417c677f4694fa23fc0ce6da">Gyro</a>();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGyro.html#aab09f758425de1758f284853712cb18b">setup</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classGyro.html#a8bf35077e5f6237629e093c67a0bb1d9">read</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">   17</a></span>&#160;    L3G <a class="code" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">gyro</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classGyro.html#a307e59e89fb61d10526ffee339248324">   20</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#a307e59e89fb61d10526ffee339248324">G_Dt</a>=0.005;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classGyro.html#a47a4402067b812740622d729478ec1be">   24</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#a47a4402067b812740622d729478ec1be">G_gain</a>=.00875;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classGyro.html#af158408e03992ce3d5fc020d22a0f2a9">   27</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#af158408e03992ce3d5fc020d22a0f2a9">gyro_z</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classGyro.html#a50fdddd60b9220d2f61645653dd6053d">   30</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#a50fdddd60b9220d2f61645653dd6053d">gyro_zold</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classGyro.html#aa725b8e8f7f7ae066c28ae67bcb310d6">   33</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#aa725b8e8f7f7ae066c28ae67bcb310d6">gerrz</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="ttc" id="classGyro_html_a47a4402067b812740622d729478ec1be"><div class="ttname"><a href="classGyro.html#a47a4402067b812740622d729478ec1be">Gyro::G_gain</a></div><div class="ttdeci">float G_gain</div><div class="ttdoc">gyros gain factor for 250deg/sec </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00024">Gyro.hpp:24</a></div></div>
-<div class="ttc" id="classGyro_html_af158408e03992ce3d5fc020d22a0f2a9"><div class="ttname"><a href="classGyro.html#af158408e03992ce3d5fc020d22a0f2a9">Gyro::gyro_z</a></div><div class="ttdeci">float gyro_z</div><div class="ttdoc">gyro x val </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00027">Gyro.hpp:27</a></div></div>
-<div class="ttc" id="classGyro_html_aa725b8e8f7f7ae066c28ae67bcb310d6"><div class="ttname"><a href="classGyro.html#aa725b8e8f7f7ae066c28ae67bcb310d6">Gyro::gerrz</a></div><div class="ttdeci">float gerrz</div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00033">Gyro.hpp:33</a></div></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classGyro.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGyro.html">Gyro</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classGyro.html#a8ff2fdb2417c677f4694fa23fc0ce6da">Gyro</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGyro.html#aab09f758425de1758f284853712cb18b">setup</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classGyro.html#a8bf35077e5f6237629e093c67a0bb1d9">read</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">   18</a></span>&#160;    L3G <a class="code" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">gyro</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classGyro.html#a307e59e89fb61d10526ffee339248324">   21</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#a307e59e89fb61d10526ffee339248324">G_Dt</a>=0.005;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classGyro.html#a47a4402067b812740622d729478ec1be">   25</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#a47a4402067b812740622d729478ec1be">G_gain</a>=.00875;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classGyro.html#af158408e03992ce3d5fc020d22a0f2a9">   28</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#af158408e03992ce3d5fc020d22a0f2a9">gyro_z</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classGyro.html#a50fdddd60b9220d2f61645653dd6053d">   31</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#a50fdddd60b9220d2f61645653dd6053d">gyro_zold</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classGyro.html#aa725b8e8f7f7ae066c28ae67bcb310d6">   34</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classGyro.html#aa725b8e8f7f7ae066c28ae67bcb310d6">gerrz</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="ttc" id="classGyro_html_a47a4402067b812740622d729478ec1be"><div class="ttname"><a href="classGyro.html#a47a4402067b812740622d729478ec1be">Gyro::G_gain</a></div><div class="ttdeci">float G_gain</div><div class="ttdoc">gyros gain factor for 250deg/sec </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00025">Gyro.hpp:25</a></div></div>
+<div class="ttc" id="classGyro_html_af158408e03992ce3d5fc020d22a0f2a9"><div class="ttname"><a href="classGyro.html#af158408e03992ce3d5fc020d22a0f2a9">Gyro::gyro_z</a></div><div class="ttdeci">float gyro_z</div><div class="ttdoc">gyro x val </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00028">Gyro.hpp:28</a></div></div>
+<div class="ttc" id="classGyro_html_aa725b8e8f7f7ae066c28ae67bcb310d6"><div class="ttname"><a href="classGyro.html#aa725b8e8f7f7ae066c28ae67bcb310d6">Gyro::gerrz</a></div><div class="ttdeci">float gerrz</div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00034">Gyro.hpp:34</a></div></div>
 <div class="ttc" id="classGyro_html_a8bf35077e5f6237629e093c67a0bb1d9"><div class="ttname"><a href="classGyro.html#a8bf35077e5f6237629e093c67a0bb1d9">Gyro::read</a></div><div class="ttdeci">int read()</div><div class="ttdoc">angle of robot </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8cpp_source.html#l00023">Gyro.cpp:23</a></div></div>
 <div class="ttc" id="classGyro_html_a8ff2fdb2417c677f4694fa23fc0ce6da"><div class="ttname"><a href="classGyro.html#a8ff2fdb2417c677f4694fa23fc0ce6da">Gyro::Gyro</a></div><div class="ttdeci">Gyro()</div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8cpp_source.html#l00003">Gyro.cpp:3</a></div></div>
-<div class="ttc" id="classGyro_html_ab449066006f8cdd13efcefc3542c6130"><div class="ttname"><a href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">Gyro::gyro</a></div><div class="ttdeci">L3G gyro</div><div class="ttdoc">the gyro duh </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00017">Gyro.hpp:17</a></div></div>
-<div class="ttc" id="classGyro_html"><div class="ttname"><a href="classGyro.html">Gyro</a></div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00006">Gyro.hpp:6</a></div></div>
-<div class="ttc" id="classGyro_html_a307e59e89fb61d10526ffee339248324"><div class="ttname"><a href="classGyro.html#a307e59e89fb61d10526ffee339248324">Gyro::G_Dt</a></div><div class="ttdeci">float G_Dt</div><div class="ttdoc">Integration time (DCM algorithm) We will run the integration loop at 50Hz if possible. </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00020">Gyro.hpp:20</a></div></div>
-<div class="ttc" id="classGyro_html_a50fdddd60b9220d2f61645653dd6053d"><div class="ttname"><a href="classGyro.html#a50fdddd60b9220d2f61645653dd6053d">Gyro::gyro_zold</a></div><div class="ttdeci">float gyro_zold</div><div class="ttdoc">gyro cummulative z value </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00030">Gyro.hpp:30</a></div></div>
+<div class="ttc" id="classGyro_html_ab449066006f8cdd13efcefc3542c6130"><div class="ttname"><a href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">Gyro::gyro</a></div><div class="ttdeci">L3G gyro</div><div class="ttdoc">the gyro duh </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00018">Gyro.hpp:18</a></div></div>
+<div class="ttc" id="classGyro_html"><div class="ttname"><a href="classGyro.html">Gyro</a></div><div class="ttdoc">simple wrapper around L3G gyro to do the integration </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00007">Gyro.hpp:7</a></div></div>
+<div class="ttc" id="classGyro_html_a307e59e89fb61d10526ffee339248324"><div class="ttname"><a href="classGyro.html#a307e59e89fb61d10526ffee339248324">Gyro::G_Dt</a></div><div class="ttdeci">float G_Dt</div><div class="ttdoc">Integration time (DCM algorithm) We will run the integration loop at 50Hz if possible. </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00021">Gyro.hpp:21</a></div></div>
+<div class="ttc" id="classGyro_html_a50fdddd60b9220d2f61645653dd6053d"><div class="ttname"><a href="classGyro.html#a50fdddd60b9220d2f61645653dd6053d">Gyro::gyro_zold</a></div><div class="ttdeci">float gyro_zold</div><div class="ttdoc">gyro cummulative z value </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00031">Gyro.hpp:31</a></div></div>
 <div class="ttc" id="classGyro_html_aab09f758425de1758f284853712cb18b"><div class="ttname"><a href="classGyro.html#aab09f758425de1758f284853712cb18b">Gyro::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8cpp_source.html#l00008">Gyro.cpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 18:02:47 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
