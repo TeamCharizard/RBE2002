@@ -5,7 +5,7 @@
 #include "../Robot.hpp"
 #include "Searcher.hpp"
 
-const float Searcher::AVOID_TURN_ANGLE = 2*M_PI/3;
+const float Searcher::AVOID_TURN_ANGLE = 1*M_PI/4;
 
 Searcher::Searcher() : state(SEARCHING) {}
 
@@ -109,7 +109,8 @@ bool Searcher::run(){
         if (now - lastUpdateTime > UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
-            changeState(CHECK_FINAL);
+            //changeState(CHECK_FINAL);
+            changeState(TURN_TO_CANDLE);
           }
         }
       }
@@ -157,8 +158,7 @@ bool Searcher::search(){
       return false;
     }
 
-    bool candleFound = Robot::getInstance()->detector.detect(
-        Robot::getInstance()->lidar.distances);
+    bool candleFound = Robot::getInstance()->detector.detect();
 
     if (candleFound){
       return true;
@@ -209,17 +209,16 @@ Searcher::CheckState Searcher::check(){
     Robot::getInstance()->stop();
     Robot::getInstance()->base.drive();
 
-    bool candleFound = Robot::getInstance()->detector.detect(
-        Robot::getInstance()->lidar.distances);
+    bool candleFound = Robot::getInstance()->detector.detect();
 
 
     //start after 1 full sweep, wait for 12
     if (candleFound && sweeps > 1){
       candleCount++;
       if (candleCount > 5){
-        absoluteCandleAngle = Robot::getInstance()->lastestAbsoluteCandleAngle();;
         sweeps = 0;
         candleCount = 0;
+        absoluteCandleAngle = Robot::getInstance()->absoluteCandleAngleFromCurrentPosition();
         return FOUND;
       }
     }
@@ -239,9 +238,7 @@ bool Searcher::turnToFaceCandle(){
   if (now - lastUpdateTime > UPDATE_PERIOD){
     lastUpdateTime = now;
 
-
     if(Robot::getInstance()->turnToFaceAbsolutely(absoluteCandleAngle)) {
-      Robot::getInstance()->stop();
       return true;
     }
   }

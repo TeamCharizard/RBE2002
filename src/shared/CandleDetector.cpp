@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "CandleDetector.hpp"
 #include "StatusManager.hpp"
-#include <stdio.h>
+#include "../Robot.hpp"
 
 const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.8;
 
@@ -21,7 +21,8 @@ Point<float> CandleDetector::relativePosition(){
   return Point<float>(relativeXInches, relativeYInches);
 }
 
-bool CandleDetector::detect(int radii[]){
+bool CandleDetector::detect(){
+  int *radii = Robot::getInstance()->lidar.distances;
   double lastRadius = 0,
          lastA = 0,
       dRadius = 0,

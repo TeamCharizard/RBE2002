@@ -72,7 +72,7 @@ void Robot::setGoalInCandleFrame(Point<float> delta){
   navigator.setGoal(goalPoint);
 }
 
-float Robot::lastestAbsoluteCandleAngle(){
+float Robot::absoluteCandleAngleFromCurrentPosition(){
   return base.dir() + detector.angle() * M_PI / 180;
 }
 

@@ -11,7 +11,7 @@ class CandleDetector{
      *  assigns values to given pointers for distance and angle
      *  based on input array of distances
       */
-    bool detect(int *radii);
+    bool detect();
 
     int distance();
     int angle();

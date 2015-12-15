@@ -28,11 +28,11 @@ class Main{
     /** \brief English state names allows us to easily print what state the
      * robot is in */
     char* stateNames[5] = {
-      "SEARCH_4_CANDLE",
-      "CANDLE_HEIGHT  ",
+      "SEARCH_4_CANDLE ",
+      "CANDLE_HEIGHT   ",
       "EXNTIGISH_CANDLE",
-      "RETRN_TO_ORGIN ",
-      "END            "};
+      "RETRN_TO_ORGIN  ",
+      "END             "};
 
     /** \brief variable for the current state of the robot. */
     State state = SEARCH_FOR_CANDLE;

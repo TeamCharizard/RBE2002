@@ -33,7 +33,7 @@ void PointToCandle::loop(){
   if (fullSweep){
     distances = lidar.distances;
 
-    if(cd.detect(distances)) {
+    if(cd.detect()) {
       //turn to face that angle
       turnToFace(cd.angle());
     }

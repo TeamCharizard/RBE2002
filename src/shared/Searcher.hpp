@@ -93,15 +93,15 @@ class Searcher {
      * Names of States to display on LCD
      * */
     const char *stateNames[9] = {
-      "SERCHNG      ",
-      "TURNNG       ",
-      "CHCK_PATH    ",
-      "SCOOT        ",
-      "CHCKNG       ",
-      "CHCK_AFTR_SCT",
-      "GO_2_CANDLE  ",
-      "CHECK_FINAL  ",
-      "TURN_2_CANDLE"
+      "SEARCHNG        ",
+      "TURNNG          ",
+      "CHECK_PATH      ",
+      "SCOOT           ",
+      "CHECKNG         ",
+      "CHECK_AFTR_SCOOT",
+      "GO_TO_CANDLE    ",
+      "CHECK_FINAL     ",
+      "TURN_TO_CANDLE  "
     };
 
     void changeState(State state);

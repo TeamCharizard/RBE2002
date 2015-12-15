@@ -37,7 +37,7 @@ void DriveUntilCandle::loop(){
       base.stop();
     }
 
-    if (cd.detect(distances)){
+    if (cd.detect()){
       count++;
 
       // Only stop and report that a candle is found once

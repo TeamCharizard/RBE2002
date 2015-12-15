@@ -72,10 +72,10 @@ class Robot {
      */
     void setGoalToCandle();
 
-    /** \brief gets the last known angle to the candle in absolute world frame
-     * \return last known angle to candle in absolute world frame
+    /** \brief gets the last known angle to the candle in current robot frame
+     * \return last known angle to candle in current robot frame
      */
-    float lastestAbsoluteCandleAngle();
+    float absoluteCandleAngleFromCurrentPosition();
 
     /** \brief gets the last known absolute position of the candle
      * and sets it as final in status manager
