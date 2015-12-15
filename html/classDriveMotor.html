@@ -64,7 +64,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -98,21 +97,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aac017793d1fc4a5b0c75d6f1bc507230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDriveMotor.html#aac017793d1fc4a5b0c75d6f1bc507230">setup</a> (int port)</td></tr>
+<tr class="memdesc:aac017793d1fc4a5b0c75d6f1bc507230"><td class="mdescLeft">&#160;</td><td class="mdescRight">setup motor  <a href="#aac017793d1fc4a5b0c75d6f1bc507230">More...</a><br/></td></tr>
 <tr class="separator:aac017793d1fc4a5b0c75d6f1bc507230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a616b2eb611ddc4862d2d52103bb7aadc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDriveMotor.html#a616b2eb611ddc4862d2d52103bb7aadc">set</a> (int power)</td></tr>
+<tr class="memdesc:a616b2eb611ddc4862d2d52103bb7aadc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the setpoint for the motor <a class="el" href="classPID.html">PID</a>.  <a href="#a616b2eb611ddc4862d2d52103bb7aadc">More...</a><br/></td></tr>
 <tr class="separator:a616b2eb611ddc4862d2d52103bb7aadc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af40ee6f659e9512e2af2c8e7df07218e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDriveMotor.html#af40ee6f659e9512e2af2c8e7df07218e">stop</a> ()</td></tr>
-<tr class="memdesc:af40ee6f659e9512e2af2c8e7df07218e"><td class="mdescLeft">&#160;</td><td class="mdescRight">stops  <a href="#af40ee6f659e9512e2af2c8e7df07218e">More...</a><br/></td></tr>
+<tr class="memdesc:af40ee6f659e9512e2af2c8e7df07218e"><td class="mdescLeft">&#160;</td><td class="mdescRight">stops super hard  <a href="#af40ee6f659e9512e2af2c8e7df07218e">More...</a><br/></td></tr>
 <tr class="separator:af40ee6f659e9512e2af2c8e7df07218e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a27de76439b7bd1035b17faf78be59478"><td class="memItemLeft" align="right" valign="top">Servo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDriveMotor.html#a27de76439b7bd1035b17faf78be59478">motor</a></td></tr>
+<tr class="memdesc:a27de76439b7bd1035b17faf78be59478"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal motor object  <a href="#a27de76439b7bd1035b17faf78be59478">More...</a><br/></td></tr>
 <tr class="separator:a27de76439b7bd1035b17faf78be59478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="DriveMotor_8hpp_source.html#l00012">12</a> of file <a class="el" href="DriveMotor_8hpp_source.html">DriveMotor.hpp</a>.</p>
+<p>Definition at line <a class="el" href="DriveMotor_8hpp_source.html#l00013">13</a> of file <a class="el" href="DriveMotor_8hpp_source.html">DriveMotor.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a616b2eb611ddc4862d2d52103bb7aadc"></a>
 <div class="memitem">
@@ -127,7 +129,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>set the setpoint for the motor <a class="el" href="classPID.html">PID</a> </p>
+
+<p>Set the setpoint for the motor <a class="el" href="classPID.html">PID</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">setpoint</td><td>the setpoint for the motor setpoint from -100 to 100 </td></tr>
@@ -153,6 +156,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>setup motor </p>
+
 <p>Definition at line <a class="el" href="DriveMotor_8cpp_source.html#l00005">5</a> of file <a class="el" href="DriveMotor_8cpp_source.html">DriveMotor.cpp</a>.</p>
 
 </div>
@@ -170,7 +175,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>stops </p>
+<p>stops super hard </p>
 
 <p>Definition at line <a class="el" href="DriveMotor_8cpp_source.html#l00009">9</a> of file <a class="el" href="DriveMotor_8cpp_source.html">DriveMotor.cpp</a>.</p>
 
@@ -195,7 +200,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="DriveMotor_8hpp_source.html#l00025">25</a> of file <a class="el" href="DriveMotor_8hpp_source.html">DriveMotor.hpp</a>.</p>
+<p>internal motor object </p>
+
+<p>Definition at line <a class="el" href="DriveMotor_8hpp_source.html#l00029">29</a> of file <a class="el" href="DriveMotor_8hpp_source.html">DriveMotor.hpp</a>.</p>
 
 </div>
 </div>
@@ -206,7 +213,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 00:01:31 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

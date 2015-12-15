@@ -64,7 +64,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -99,31 +98,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa2beb5a87e2d9dbd83c0dee1f4f1ef0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#aaa2beb5a87e2d9dbd83c0dee1f4f1ef0">setup</a> ()</td></tr>
+<tr class="memdesc:aaa2beb5a87e2d9dbd83c0dee1f4f1ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">setup the head servo  <a href="#aaa2beb5a87e2d9dbd83c0dee1f4f1ef0">More...</a><br/></td></tr>
 <tr class="separator:aaa2beb5a87e2d9dbd83c0dee1f4f1ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2cddefdf1200e176231a601a3a1ede3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#ab2cddefdf1200e176231a601a3a1ede3">startScan</a> ()</td></tr>
+<tr class="memdesc:ab2cddefdf1200e176231a601a3a1ede3"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets some flags to start scanning for candle. This doesn't actually do any scanning, you have to be callling watch  <a href="#ab2cddefdf1200e176231a601a3a1ede3">More...</a><br/></td></tr>
 <tr class="separator:ab2cddefdf1200e176231a601a3a1ede3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa2879ee6ace8a6b5e298c4186df6178"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#afa2879ee6ace8a6b5e298c4186df6178">seesCandle</a> ()</td></tr>
+<tr class="memdesc:afa2879ee6ace8a6b5e298c4186df6178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks directly in front for a candle by sampling IR.  <a href="#afa2879ee6ace8a6b5e298c4186df6178">More...</a><br/></td></tr>
 <tr class="separator:afa2879ee6ace8a6b5e298c4186df6178"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbdb8a5938750d5091becec74fc1f907"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#afbdb8a5938750d5091becec74fc1f907">watch</a> (int dToCandle)</td></tr>
+<tr class="memdesc:afbdb8a5938750d5091becec74fc1f907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this continuously to check candle height.  <a href="#afbdb8a5938750d5091becec74fc1f907">More...</a><br/></td></tr>
 <tr class="separator:afbdb8a5938750d5091becec74fc1f907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0ce95ec7a5858be9b80a3c103120008"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#ad0ce95ec7a5858be9b80a3c103120008">levelHead</a> ()</td></tr>
+<tr class="memdesc:ad0ce95ec7a5858be9b80a3c103120008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simply set the head to 90 degrees.  <a href="#ad0ce95ec7a5858be9b80a3c103120008">More...</a><br/></td></tr>
 <tr class="separator:ad0ce95ec7a5858be9b80a3c103120008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac6a7b4e986e63cddb3f010e8909c00f8"><td class="memItemLeft" align="right" valign="top">Servo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#ac6a7b4e986e63cddb3f010e8909c00f8">head</a></td></tr>
+<tr class="memdesc:ac6a7b4e986e63cddb3f010e8909c00f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The motor object.  <a href="#ac6a7b4e986e63cddb3f010e8909c00f8">More...</a><br/></td></tr>
 <tr class="separator:ac6a7b4e986e63cddb3f010e8909c00f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d3912a911843b60de3468588cfe8579"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#a7d3912a911843b60de3468588cfe8579">minIntensity</a> = 1024</td></tr>
+<tr class="memdesc:a7d3912a911843b60de3468588cfe8579"><td class="mdescLeft">&#160;</td><td class="mdescRight">min intensity during scan  <a href="#a7d3912a911843b60de3468588cfe8579">More...</a><br/></td></tr>
 <tr class="separator:a7d3912a911843b60de3468588cfe8579"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84926ae7c01b8c03bb87c810136a41ff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#a84926ae7c01b8c03bb87c810136a41ff">sum</a> = 0</td></tr>
-<tr class="separator:a84926ae7c01b8c03bb87c810136a41ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8be0837d88f10d65b6f8a405f29494a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#ad8be0837d88f10d65b6f8a405f29494a">minPosition</a> = 100</td></tr>
+<tr class="memdesc:ad8be0837d88f10d65b6f8a405f29494a"><td class="mdescLeft">&#160;</td><td class="mdescRight">min position during scan  <a href="#ad8be0837d88f10d65b6f8a405f29494a">More...</a><br/></td></tr>
 <tr class="separator:ad8be0837d88f10d65b6f8a405f29494a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40e204a2807939b3195024f14a9278fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#a40e204a2807939b3195024f14a9278fc">position</a> = 0</td></tr>
+<tr class="memdesc:a40e204a2807939b3195024f14a9278fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current position of head during scan.  <a href="#a40e204a2807939b3195024f14a9278fc">More...</a><br/></td></tr>
 <tr class="separator:a40e204a2807939b3195024f14a9278fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec1a3ae4b80847a907898601c64386cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#aec1a3ae4b80847a907898601c64386cb">scanning</a> = false</td></tr>
+<tr class="memdesc:aec1a3ae4b80847a907898601c64386cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current state of the scanning routine.  <a href="#aec1a3ae4b80847a907898601c64386cb">More...</a><br/></td></tr>
 <tr class="separator:aec1a3ae4b80847a907898601c64386cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97b1a598ddb7886feb4a96a4931cc103"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#a97b1a598ddb7886feb4a96a4931cc103">timeToChangeAngle</a> = 0l</td></tr>
+<tr class="memdesc:a97b1a598ddb7886feb4a96a4931cc103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls the speed of sweeping.  <a href="#a97b1a598ddb7886feb4a96a4931cc103">More...</a><br/></td></tr>
 <tr class="separator:a97b1a598ddb7886feb4a96a4931cc103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa38192d82bc4120129b72fee61f72f1"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFireFinder.html#aaa38192d82bc4120129b72fee61f72f1">sweepTime</a> = 5000l</td></tr>
 <tr class="separator:aaa38192d82bc4120129b72fee61f72f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,6 +174,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Simply set the head to 90 degrees. </p>
+
 <p>Definition at line <a class="el" href="FireFinder_8cpp_source.html#l00009">9</a> of file <a class="el" href="FireFinder_8cpp_source.html">FireFinder.cpp</a>.</p>
 
 </div>
@@ -182,7 +192,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>looks directly in front for a candle THIS METHOD IS BLOCKING! </p>
+
+<p>Looks directly in front for a candle by sampling IR. </p>
 
 <p>Definition at line <a class="el" href="FireFinder_8cpp_source.html#l00013">13</a> of file <a class="el" href="FireFinder_8cpp_source.html">FireFinder.cpp</a>.</p>
 
@@ -201,6 +212,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>setup the head servo </p>
+
 <p>Definition at line <a class="el" href="FireFinder_8cpp_source.html#l00005">5</a> of file <a class="el" href="FireFinder_8cpp_source.html">FireFinder.cpp</a>.</p>
 
 </div>
@@ -217,6 +230,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>sets some flags to start scanning for candle. This doesn't actually do any scanning, you have to be callling watch </p>
 
 <p>Definition at line <a class="el" href="FireFinder_8cpp_source.html#l00026">26</a> of file <a class="el" href="FireFinder_8cpp_source.html">FireFinder.cpp</a>.</p>
 
@@ -235,6 +250,9 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Call this continuously to check candle height. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 for not finish, -1 for no candle, and positive for the candle height </dd></dl>
 
 <p>Definition at line <a class="el" href="FireFinder_8cpp_source.html#l00034">34</a> of file <a class="el" href="FireFinder_8cpp_source.html">FireFinder.cpp</a>.</p>
 
@@ -259,7 +277,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00024">24</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>The motor object. </p>
+
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00031">31</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +301,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00044">44</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00056">56</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -303,7 +323,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00040">40</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00052">52</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +345,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00041">41</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00053">53</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -347,7 +367,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00045">45</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00057">57</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -369,7 +389,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00026">26</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>min intensity during scan </p>
+
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00034">34</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -391,7 +413,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00028">28</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>min position during scan </p>
+
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00037">37</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -413,7 +437,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00038">38</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00050">50</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +459,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00029">29</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Current position of head during scan. </p>
+
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00040">40</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -457,7 +483,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00042">42</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00054">54</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -479,7 +505,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00032">32</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>The current state of the scanning routine. </p>
+
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00043">43</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -501,7 +529,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00043">43</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00055">55</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -523,7 +551,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00039">39</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00051">51</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -545,29 +573,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00036">36</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a84926ae7c01b8c03bb87c810136a41ff"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int FireFinder::sum = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00027">27</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00048">48</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -589,7 +595,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00035">35</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00047">47</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -611,7 +617,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00034">34</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
+<p>Controls the speed of sweeping. </p>
+
+<p>Definition at line <a class="el" href="FireFinder_8hpp_source.html#l00046">46</a> of file <a class="el" href="FireFinder_8hpp_source.html">FireFinder.hpp</a>.</p>
 
 </div>
 </div>
@@ -622,7 +630,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 00:01:32 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

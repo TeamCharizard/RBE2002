@@ -3,7 +3,7 @@
 }
 
 
-houses the state machine for extinguishing the candle \hyperlink{classFan}{Fan} is included  
+Houses the state machine for extinguishing the candle. \hyperlink{classFan}{Fan} is included.  
 
 
 
@@ -14,11 +14,11 @@ houses the state machine for extinguishing the candle \hyperlink{classFan}{Fan} 
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classExtinguisher_a5a6f4652de68d87d3c94a5133770036f}{setup} ()
-\begin{DoxyCompactList}\small\item\em setup fan and state machine. Called my main setup \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Setup fan and state machine. Called by main setup. \end{DoxyCompactList}\item 
 void \hyperlink{classExtinguisher_add162f2794a81915e50bdde84f582ab9}{change\-State} (\hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}{State} \hyperlink{classExtinguisher_aa67c13dc091e5dc2c054d53f7fcae69b}{state})
-\item 
+\begin{DoxyCompactList}\small\item\em Change and print the state. \end{DoxyCompactList}\item 
 bool \hyperlink{classExtinguisher_ab11afd0f55af4485a1a4f369c7743a40}{run} ()
-\begin{DoxyCompactList}\small\item\em state machine method. States liste in $\ast$state\-Names \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em state machine method. States listed in state\-Names \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,7 +30,7 @@ enum \hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}{State} \{ \
 \\*
 \hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba5152bb2f7b6f5f9f8b53204d0ae61ddd}{V\-E\-R\-I\-F\-Y\-I\-N\-G}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The different states for the extinguisher routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,7 +54,7 @@ static const int \hyperlink{classExtinguisher_a1f4f2c248d5fcf98a62eab8019ab79f9}
 
 
 \subsection{Detailed Description}
-houses the state machine for extinguishing the candle \hyperlink{classFan}{Fan} is included 
+Houses the state machine for extinguishing the candle. \hyperlink{classFan}{Fan} is included. 
 
 Definition at line 8 of file Extinguisher.\-hpp.
 
@@ -64,6 +64,10 @@ Definition at line 8 of file Extinguisher.\-hpp.
 \hypertarget{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}{\index{Extinguisher@{Extinguisher}!State@{State}}
 \index{State@{State}!Extinguisher@{Extinguisher}}
 \subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Extinguisher\-::\-State}\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}
+
+
+The different states for the extinguisher routine. 
+
 \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
@@ -81,7 +85,7 @@ Definition at line 8 of file Extinguisher.\-hpp.
 \end{Desc}
 
 
-Definition at line 10 of file Extinguisher.\-hpp.
+Definition at line 11 of file Extinguisher.\-hpp.
 
 
 
@@ -95,6 +99,10 @@ Definition at line 10 of file Extinguisher.\-hpp.
 )}}\label{classExtinguisher_add162f2794a81915e50bdde84f582ab9}
 
 
+Change and print the state. 
+
+
+
 Definition at line 10 of file Extinguisher.\-cpp.
 
 \hypertarget{classExtinguisher_ab11afd0f55af4485a1a4f369c7743a40}{\index{Extinguisher@{Extinguisher}!run@{run}}
@@ -106,7 +114,7 @@ Definition at line 10 of file Extinguisher.\-cpp.
 )}}\label{classExtinguisher_ab11afd0f55af4485a1a4f369c7743a40}
 
 
-state machine method. States liste in $\ast$state\-Names 
+state machine method. States listed in state\-Names 
 
 
 
@@ -121,7 +129,7 @@ Definition at line 15 of file Extinguisher.\-cpp.
 )}}\label{classExtinguisher_a5a6f4652de68d87d3c94a5133770036f}
 
 
-setup fan and state machine. Called my main setup 
+Setup fan and state machine. Called by main setup. 
 
 
 
@@ -139,7 +147,7 @@ Length of timers.
 
 
 
-Definition at line 41 of file Extinguisher.\-hpp.
+Definition at line 44 of file Extinguisher.\-hpp.
 
 \hypertarget{classExtinguisher_a47ec6f79ddc26b18bbc1a0ac9741ae24}{\index{Extinguisher@{Extinguisher}!fan@{fan}}
 \index{fan@{fan}!Extinguisher@{Extinguisher}}
@@ -150,7 +158,7 @@ Extinguishing fan.
 
 
 
-Definition at line 29 of file Extinguisher.\-hpp.
+Definition at line 32 of file Extinguisher.\-hpp.
 
 \hypertarget{classExtinguisher_af7b156761cc23a5bee07f3cecd50213a}{\index{Extinguisher@{Extinguisher}!goal\-Angle@{goal\-Angle}}
 \index{goal\-Angle@{goal\-Angle}!Extinguisher@{Extinguisher}}
@@ -161,7 +169,7 @@ Goal Angle to face after turns.
 
 
 
-Definition at line 38 of file Extinguisher.\-hpp.
+Definition at line 41 of file Extinguisher.\-hpp.
 
 \hypertarget{classExtinguisher_a75020779b6ba6fcd9ac11148a378d441}{\index{Extinguisher@{Extinguisher}!start\-State\-Time@{start\-State\-Time}}
 \index{start\-State\-Time@{start\-State\-Time}!Extinguisher@{Extinguisher}}
@@ -172,7 +180,7 @@ Timer variable for time based states.
 
 
 
-Definition at line 35 of file Extinguisher.\-hpp.
+Definition at line 38 of file Extinguisher.\-hpp.
 
 \hypertarget{classExtinguisher_aa67c13dc091e5dc2c054d53f7fcae69b}{\index{Extinguisher@{Extinguisher}!state@{state}}
 \index{state@{state}!Extinguisher@{Extinguisher}}
@@ -183,7 +191,7 @@ State Machine control variable.
 
 
 
-Definition at line 32 of file Extinguisher.\-hpp.
+Definition at line 35 of file Extinguisher.\-hpp.
 
 \hypertarget{classExtinguisher_a91cd54af9125620a68939ccdc5796c66}{\index{Extinguisher@{Extinguisher}!state\-Names@{state\-Names}}
 \index{state\-Names@{state\-Names}!Extinguisher@{Extinguisher}}
@@ -203,14 +211,14 @@ Names of States.
 
 
 
-Definition at line 45 of file Extinguisher.\-hpp.
+Definition at line 48 of file Extinguisher.\-hpp.
 
 \hypertarget{classExtinguisher_a1f4f2c248d5fcf98a62eab8019ab79f9}{\index{Extinguisher@{Extinguisher}!V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E@{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E}}
 \index{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E@{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E}!Extinguisher@{Extinguisher}}
 \subsubsection[{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Extinguisher\-::\-V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E = 2000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classExtinguisher_a1f4f2c248d5fcf98a62eab8019ab79f9}
 
 
-Definition at line 42 of file Extinguisher.\-hpp.
+Definition at line 45 of file Extinguisher.\-hpp.
 
 
 

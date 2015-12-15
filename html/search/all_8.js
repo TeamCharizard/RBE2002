@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['i',['i',['../LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392',1,'LidarBenchmark.cpp']]],
   ['init',['INIT',['../classExtinguisher.html#a969a7cce3382fc5d67f687540896e3aba25f6661e71a4e779393f9e1d0afdb9cd',1,'Extinguisher']]],
   ['init_5fpause',['INIT_PAUSE',['../classFan.html#a8d7eb0f5de190ffc2f5d0ae1c5c10e29',1,'Fan']]],
   ['instance',['instance',['../classRobot.html#aad5c5d6db601aac62393d47ec9385fa3',1,'Robot']]],

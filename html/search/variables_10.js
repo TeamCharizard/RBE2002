@@ -12,7 +12,6 @@ var searchData=
   ['state',['state',['../classMain.html#a8b4ada43c3c3720b177018191ac6ee90',1,'Main::state()'],['../classExtinguisher.html#aa67c13dc091e5dc2c054d53f7fcae69b',1,'Extinguisher::state()'],['../classNavigator.html#a15263fe64d0ea29a1bbfe9e5ef849c4c',1,'Navigator::state()'],['../classSearcher.html#aadc83ce2d77610d6572f98ecd8b4d6e4',1,'Searcher::state()'],['../classStatusManager.html#a6f3c0467116c3bfbf9d7507cb04b7d5a',1,'StatusManager::state()']]],
   ['statenames',['stateNames',['../classMain.html#a10090d1fa7fa606c1bf7c5bdf23d7eda',1,'Main::stateNames()'],['../classExtinguisher.html#a91cd54af9125620a68939ccdc5796c66',1,'Extinguisher::stateNames()'],['../classSearcher.html#a2403bbf24da371ea9a31eeaec1f98b96',1,'Searcher::stateNames()']]],
   ['step',['step',['../classFireFinder.html#ad482526cf32997919cbc31f61d12065d',1,'FireFinder']]],
-  ['sum',['sum',['../classFireFinder.html#a84926ae7c01b8c03bb87c810136a41ff',1,'FireFinder']]],
   ['sweeps',['sweeps',['../classSearcher.html#af8a7e7ddce46577fca506e2f31aead60',1,'Searcher']]],
   ['sweeptime',['sweepTime',['../classFireFinder.html#aaa38192d82bc4120129b72fee61f72f1',1,'FireFinder']]]
 ];

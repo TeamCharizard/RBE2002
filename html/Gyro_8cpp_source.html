@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">gyro</a>.init();</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">gyro</a>.enableDefault(); <span class="comment">// gyro init. default 250/deg/s</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  delay(1000); <span class="comment">// allow time for gyro to settle</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a> =0;<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>&lt;100;<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>++){  <span class="comment">// takes 100 samples of the gyro</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i =0;i&lt;100;i++){  <span class="comment">// takes 100 samples of the gyro</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">gyro</a>.read();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classGyro.html#aa725b8e8f7f7ae066c28ae67bcb310d6">gerrz</a>+=<a class="code" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">gyro</a>.g.z;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    delay(25);</div>
@@ -129,7 +129,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span> angleInDegress;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="ttc" id="LidarBenchmark_8cpp_html_acb559820d9ca11295b4500f179ef6392"><div class="ttname"><a href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="LidarBenchmark_8cpp_source.html#l00004">LidarBenchmark.cpp:4</a></div></div>
 <div class="ttc" id="classGyro_html_a47a4402067b812740622d729478ec1be"><div class="ttname"><a href="classGyro.html#a47a4402067b812740622d729478ec1be">Gyro::G_gain</a></div><div class="ttdeci">float G_gain</div><div class="ttdoc">gyros gain factor for 250deg/sec </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00024">Gyro.hpp:24</a></div></div>
 <div class="ttc" id="classGyro_html_af158408e03992ce3d5fc020d22a0f2a9"><div class="ttname"><a href="classGyro.html#af158408e03992ce3d5fc020d22a0f2a9">Gyro::gyro_z</a></div><div class="ttdeci">float gyro_z</div><div class="ttdoc">gyro x val </div><div class="ttdef"><b>Definition:</b> <a href="Gyro_8hpp_source.html#l00027">Gyro.hpp:27</a></div></div>
 <div class="ttc" id="Gyro_8hpp_html"><div class="ttname"><a href="Gyro_8hpp.html">Gyro.hpp</a></div></div>
@@ -143,7 +142,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 00:01:31 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

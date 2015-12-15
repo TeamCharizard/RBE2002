@@ -88,14 +88,14 @@ bool \hyperlink{classRobot_adcfb83201cfb8c8a7588d83aae0fc5be}{scanning} = false
 \hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classRobot_a4e7ca1c81831d252aa1545f549bff3f4}{waypoint}
 \begin{DoxyCompactList}\small\item\em the current waypoint we're navigating to \end{DoxyCompactList}\item 
 long \hyperlink{classRobot_a82a33c66efce935d2cac37c9f11c6efd}{last\-Update\-Time} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em stores the last time for the odometry loop \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classRobot}{Robot} $\ast$ \hyperlink{classRobot_aad5c5d6db601aac62393d47ec9385fa3}{instance} = N\-U\-L\-L
 \begin{DoxyCompactList}\small\item\em static instance of robot \end{DoxyCompactList}\item 
 static const long \hyperlink{classRobot_a6a76c7da686c2cec0cba2877e0c914dc}{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D} = 50
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the period at which we update odometry \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -499,7 +499,11 @@ Definition at line 131 of file Robot.\-hpp.
 \subsubsection[{last\-Update\-Time}]{\setlength{\rightskip}{0pt plus 5cm}long Robot\-::last\-Update\-Time = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a82a33c66efce935d2cac37c9f11c6efd}
 
 
-Definition at line 151 of file Robot.\-hpp.
+stores the last time for the odometry loop 
+
+
+
+Definition at line 152 of file Robot.\-hpp.
 
 \hypertarget{classRobot_a222e54f477e23f5af80cfa10bcd85e7a}{\index{Robot@{Robot}!lidar@{lidar}}
 \index{lidar@{lidar}!Robot@{Robot}}
@@ -561,7 +565,11 @@ Definition at line 140 of file Robot.\-hpp.
 \subsubsection[{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}const long Robot\-::\-U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D = 50\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classRobot_a6a76c7da686c2cec0cba2877e0c914dc}
 
 
-Definition at line 152 of file Robot.\-hpp.
+the period at which we update odometry 
+
+
+
+Definition at line 155 of file Robot.\-hpp.
 
 \hypertarget{classRobot_a4e7ca1c81831d252aa1545f549bff3f4}{\index{Robot@{Robot}!waypoint@{waypoint}}
 \index{waypoint@{waypoint}!Robot@{Robot}}

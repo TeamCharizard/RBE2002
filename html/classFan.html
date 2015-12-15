@@ -64,7 +64,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -94,30 +93,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Wrapper around Servo the control 1000KV Outrunner.  
+ <a href="classFan.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afa6c28ec10c0f00270e04abc8344e220"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#afa6c28ec10c0f00270e04abc8344e220">setup</a> ()</td></tr>
+<tr class="memdesc:afa6c28ec10c0f00270e04abc8344e220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup for the servo object. Also handles arming of the ESC.  <a href="#afa6c28ec10c0f00270e04abc8344e220">More...</a><br/></td></tr>
 <tr class="separator:afa6c28ec10c0f00270e04abc8344e220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0574452a1e4ad34f668b4792be6021c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#ab0574452a1e4ad34f668b4792be6021c">spin</a> ()</td></tr>
+<tr class="memdesc:ab0574452a1e4ad34f668b4792be6021c"><td class="mdescLeft">&#160;</td><td class="mdescRight">spin the motor at FULL POWER!  <a href="#ab0574452a1e4ad34f668b4792be6021c">More...</a><br/></td></tr>
 <tr class="separator:ab0574452a1e4ad34f668b4792be6021c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a96b6fd535b30f933a8bf8d1af50ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff">stop</a> ()</td></tr>
+<tr class="memdesc:af4a96b6fd535b30f933a8bf8d1af50ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop the motor. speed controller will ramp it down for us  <a href="#af4a96b6fd535b30f933a8bf8d1af50ff">More...</a><br/></td></tr>
 <tr class="separator:af4a96b6fd535b30f933a8bf8d1af50ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aff9de16d110a96ff5788f7d6ad6ef715"><td class="memItemLeft" align="right" valign="top">Servo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">motor</a></td></tr>
+<tr class="memdesc:aff9de16d110a96ff5788f7d6ad6ef715"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal motor object  <a href="#aff9de16d110a96ff5788f7d6ad6ef715">More...</a><br/></td></tr>
 <tr class="separator:aff9de16d110a96ff5788f7d6ad6ef715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a8d7eb0f5de190ffc2f5d0ae1c5c10e29"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFan.html#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">INIT_PAUSE</a> = 3000</td></tr>
+<tr class="memdesc:a8d7eb0f5de190ffc2f5d0ae1c5c10e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">the pause time between ESC arming sequences  <a href="#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">More...</a><br/></td></tr>
 <tr class="separator:a8d7eb0f5de190ffc2f5d0ae1c5c10e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00005">5</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
+<div class="textblock"><p>Wrapper around Servo the control 1000KV Outrunner. </p>
+
+<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00008">8</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="afa6c28ec10c0f00270e04abc8344e220"></a>
 <div class="memitem">
@@ -131,6 +139,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Setup for the servo object. Also handles arming of the ESC. </p>
 
 <p>Definition at line <a class="el" href="Fan_8cpp_source.html#l00004">4</a> of file <a class="el" href="Fan_8cpp_source.html">Fan.cpp</a>.</p>
 
@@ -149,6 +159,8 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>spin the motor at FULL POWER! </p>
+
 <p>Definition at line <a class="el" href="Fan_8cpp_source.html#l00012">12</a> of file <a class="el" href="Fan_8cpp_source.html">Fan.cpp</a>.</p>
 
 </div>
@@ -165,6 +177,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>stop the motor. speed controller will ramp it down for us </p>
 
 <p>Definition at line <a class="el" href="Fan_8cpp_source.html#l00016">16</a> of file <a class="el" href="Fan_8cpp_source.html">Fan.cpp</a>.</p>
 
@@ -189,7 +203,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00013">13</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
+<p>the pause time between ESC arming sequences </p>
+
+<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00026">26</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
 
 </div>
 </div>
@@ -211,7 +227,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00012">12</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
+<p>internal motor object </p>
+
+<p>Definition at line <a class="el" href="Fan_8hpp_source.html#l00023">23</a> of file <a class="el" href="Fan_8hpp_source.html">Fan.hpp</a>.</p>
 
 </div>
 </div>
@@ -222,7 +240,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 00:01:32 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -144,17 +144,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">int</span> newPacketNumber = <a class="code" href="classLidar.html#a59f93afd1061d31642d1e7755838f2d1">packet</a>[1];</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> ((newPacketNumber - <a class="code" href="classLidar.html#abcca8f7f6c4cff325e6b225ddbe14796">packetNumber</a>) == 1){</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>=0; <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a> &lt; 22; <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>++){</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classLidar.html#aefa743ccb6305927a312f9579e003f82">isDataIndex</a>(<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>)){</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classLidar.html#a5d198ec3f5d3de7829dda616ea13d016">distanceIndex</a> = (newPacketNumber - (char)0xA0) * 4 + <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>/4 - 1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; 22; i++){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classLidar.html#aefa743ccb6305927a312f9579e003f82">isDataIndex</a>(i)){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classLidar.html#a5d198ec3f5d3de7829dda616ea13d016">distanceIndex</a> = (newPacketNumber - (char)0xA0) * 4 + i/4 - 1;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="classLidar.html#a5d198ec3f5d3de7829dda616ea13d016">distanceIndex</a> &gt;= 0) &amp;&amp; (<a class="code" href="classLidar.html#a5d198ec3f5d3de7829dda616ea13d016">distanceIndex</a> &lt; 360)){</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          <span class="keywordflow">if</span> ((<a class="code" href="classLidar.html#a59f93afd1061d31642d1e7755838f2d1">packet</a>[<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>+1] &amp; (<span class="keywordtype">char</span>)0x80) &gt;&gt; 7){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          <span class="keywordflow">if</span> ((<a class="code" href="classLidar.html#a59f93afd1061d31642d1e7755838f2d1">packet</a>[i+1] &amp; (<span class="keywordtype">char</span>)0x80) &gt;&gt; 7){</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="classLidar.html#a5f97323ace606c1b4d2f817ebb8ebf7d">distances</a>[<a class="code" href="classLidar.html#a5d198ec3f5d3de7829dda616ea13d016">distanceIndex</a>] = -1;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classLidar.html#a43a0f4c1f8d6b0c9f1b21be32c99890d">invalids</a>++;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;          }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">int</span> d = (<span class="keywordtype">unsigned</span> char)<a class="code" href="classLidar.html#a59f93afd1061d31642d1e7755838f2d1">packet</a>[<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>] | (<a class="code" href="classLidar.html#a59f93afd1061d31642d1e7755838f2d1">packet</a>[<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>+1] &lt;&lt; 8);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">int</span> d = (<span class="keywordtype">unsigned</span> char)<a class="code" href="classLidar.html#a59f93afd1061d31642d1e7755838f2d1">packet</a>[i] | (<a class="code" href="classLidar.html#a59f93afd1061d31642d1e7755838f2d1">packet</a>[i+1] &lt;&lt; 8);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (d &lt;= 140 || d &gt; 6000){</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;              <a class="code" href="classLidar.html#a43a0f4c1f8d6b0c9f1b21be32c99890d">invalids</a>++;</div>
@@ -182,7 +182,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">return</span> index == 4 || index == 8 || index == 12 || index == 16;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="ttc" id="LidarBenchmark_8cpp_html_acb559820d9ca11295b4500f179ef6392"><div class="ttname"><a href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="LidarBenchmark_8cpp_source.html#l00004">LidarBenchmark.cpp:4</a></div></div>
 <div class="ttc" id="classLidar_html_a5f97323ace606c1b4d2f817ebb8ebf7d"><div class="ttname"><a href="classLidar.html#a5f97323ace606c1b4d2f817ebb8ebf7d">Lidar::distances</a></div><div class="ttdeci">int distances[360]</div><div class="ttdef"><b>Definition:</b> <a href="Lidar_8hpp_source.html#l00006">Lidar.hpp:6</a></div></div>
 <div class="ttc" id="classLidar_html_a424a60f6278617333201c5fca115c288"><div class="ttname"><a href="classLidar.html#a424a60f6278617333201c5fca115c288">Lidar::read</a></div><div class="ttdeci">bool read()</div><div class="ttdef"><b>Definition:</b> <a href="Lidar_8cpp_source.html#l00016">Lidar.cpp:16</a></div></div>
 <div class="ttc" id="classLidar_html_a64a54013a7ef0612c3c0f9f89dc93024"><div class="ttname"><a href="classLidar.html#a64a54013a7ef0612c3c0f9f89dc93024">Lidar::processEndOfPacket</a></div><div class="ttdeci">void processEndOfPacket()</div><div class="ttdef"><b>Definition:</b> <a href="Lidar_8cpp_source.html#l00051">Lidar.cpp:51</a></div></div>
@@ -199,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 00:01:31 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

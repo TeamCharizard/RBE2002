@@ -3,33 +3,38 @@
 }
 
 
+Wrapper around Servo the control 1000\-K\-V Outrunner.  
+
+
+
+
 {\ttfamily \#include $<$Fan.\-hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classFan_afa6c28ec10c0f00270e04abc8344e220}{setup} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Setup for the servo object. Also handles arming of the E\-S\-C. \end{DoxyCompactList}\item 
 void \hyperlink{classFan_ab0574452a1e4ad34f668b4792be6021c}{spin} ()
-\item 
+\begin{DoxyCompactList}\small\item\em spin the motor at F\-U\-L\-L P\-O\-W\-E\-R! \end{DoxyCompactList}\item 
 void \hyperlink{classFan_af4a96b6fd535b30f933a8bf8d1af50ff}{stop} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em stop the motor. speed controller will ramp it down for us \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Servo \hyperlink{classFan_aff9de16d110a96ff5788f7d6ad6ef715}{motor}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em internal motor object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static const int \hyperlink{classFan_a8d7eb0f5de190ffc2f5d0ae1c5c10e29}{I\-N\-I\-T\-\_\-\-P\-A\-U\-S\-E} = 3000
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the pause time between E\-S\-C arming sequences \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+Wrapper around Servo the control 1000\-K\-V Outrunner. 
 
-
-Definition at line 5 of file Fan.\-hpp.
+Definition at line 8 of file Fan.\-hpp.
 
 
 
@@ -43,6 +48,10 @@ Definition at line 5 of file Fan.\-hpp.
 )}}\label{classFan_afa6c28ec10c0f00270e04abc8344e220}
 
 
+Setup for the servo object. Also handles arming of the E\-S\-C. 
+
+
+
 Definition at line 4 of file Fan.\-cpp.
 
 \hypertarget{classFan_ab0574452a1e4ad34f668b4792be6021c}{\index{Fan@{Fan}!spin@{spin}}
@@ -52,6 +61,10 @@ Definition at line 4 of file Fan.\-cpp.
 {}
 \end{DoxyParamCaption}
 )}}\label{classFan_ab0574452a1e4ad34f668b4792be6021c}
+
+
+spin the motor at F\-U\-L\-L P\-O\-W\-E\-R! 
+
 
 
 Definition at line 12 of file Fan.\-cpp.
@@ -65,6 +78,10 @@ Definition at line 12 of file Fan.\-cpp.
 )}}\label{classFan_af4a96b6fd535b30f933a8bf8d1af50ff}
 
 
+stop the motor. speed controller will ramp it down for us 
+
+
+
 Definition at line 16 of file Fan.\-cpp.
 
 
@@ -75,14 +92,22 @@ Definition at line 16 of file Fan.\-cpp.
 \subsubsection[{I\-N\-I\-T\-\_\-\-P\-A\-U\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Fan\-::\-I\-N\-I\-T\-\_\-\-P\-A\-U\-S\-E = 3000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classFan_a8d7eb0f5de190ffc2f5d0ae1c5c10e29}
 
 
-Definition at line 13 of file Fan.\-hpp.
+the pause time between E\-S\-C arming sequences 
+
+
+
+Definition at line 26 of file Fan.\-hpp.
 
 \hypertarget{classFan_aff9de16d110a96ff5788f7d6ad6ef715}{\index{Fan@{Fan}!motor@{motor}}
 \index{motor@{motor}!Fan@{Fan}}
 \subsubsection[{motor}]{\setlength{\rightskip}{0pt plus 5cm}Servo Fan\-::motor\hspace{0.3cm}{\ttfamily [private]}}}\label{classFan_aff9de16d110a96ff5788f7d6ad6ef715}
 
 
-Definition at line 12 of file Fan.\-hpp.
+internal motor object 
+
+
+
+Definition at line 23 of file Fan.\-hpp.
 
 
 

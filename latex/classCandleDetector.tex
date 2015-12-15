@@ -8,60 +8,44 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCandleDetector_ad018cfcc4256482dcc093cca4411fea6}{Candle\-Detector} ()
-\item 
 bool \hyperlink{classCandleDetector_a8b9d654f3be7f3ae44d4e1fc07d08b51}{detect} ()
 \item 
 int \hyperlink{classCandleDetector_a01619df190ca44d8171055b49e81444f}{distance} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return the relative distance in mm of the last candle found. \end{DoxyCompactList}\item 
 int \hyperlink{classCandleDetector_a69d5ea11e04eaa51214c3a786eec7455}{angle} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return the relative angle in degrees of the last candle found. \end{DoxyCompactList}\item 
 \hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classCandleDetector_a773abb6491519a0d1b7111e2973c7199}{relative\-Position} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Return the point (x,y) of the candle relative to the robot when it was found. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 const int \hyperlink{classCandleDetector_a9920f067f44f9dc8aab6747699a244f7}{C\-A\-N\-D\-L\-E\-\_\-\-C\-E\-N\-T\-E\-R\-\_\-\-O\-F\-F\-S\-E\-T} = 40
 \item 
 int \hyperlink{classCandleDetector_a3d4f2c951c77838bfc5c068b58cf9fda}{candle\-Distance} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Internal variables for candle location. \end{DoxyCompactList}\item 
 int \hyperlink{classCandleDetector_a043c3f35890b36e187734a492f96f84c}{candle\-Angle} = 0
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static const int \hyperlink{classCandleDetector_af4c5d2170cea56fa4263639f20ed13ed}{W\-I\-D\-T\-H} = 130
-\item 
+\begin{DoxyCompactList}\small\item\em The width of the candle block in mm. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCandleDetector_a1c8f0232491ba37dd10032c1da376145}{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E} = 35
-\item 
+\begin{DoxyCompactList}\small\item\em Tolerance for the with of the candle block in mm. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCandleDetector_ab3c96353ba6d64163cf5e44b1ce2aa9e}{R\-A\-D\-I\-U\-S\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E} = 50
-\item 
+\begin{DoxyCompactList}\small\item\em The max difference between the distance of two edge of the candle block in mm. \end{DoxyCompactList}\item 
 static const int \hyperlink{classCandleDetector_a9062a3c45b98c5d051082dbf4a285fd5}{M\-I\-N\-\_\-\-S\-P\-I\-K\-E} = 300
-\item 
+\begin{DoxyCompactList}\small\item\em the minimum difference between candle block and a wall in mm \end{DoxyCompactList}\item 
 static const int \hyperlink{classCandleDetector_a3903cd4085162f1fc38ca74cac3b954e}{M\-A\-X\-\_\-\-S\-P\-I\-K\-E} = 3000
-\item 
+\begin{DoxyCompactList}\small\item\em the maximum distanc between a candle block and a wall in mm \end{DoxyCompactList}\item 
 static const float \hyperlink{classCandleDetector_ac8aa00d0477ff096c344ec71d8ccdf82}{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 0.\-8
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em the percentage of valid data required between two spikes to consider it a candle \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
 Definition at line 5 of file Candle\-Detector.\-hpp.
-
-
-
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCandleDetector_ad018cfcc4256482dcc093cca4411fea6}{\index{Candle\-Detector@{Candle\-Detector}!Candle\-Detector@{Candle\-Detector}}
-\index{Candle\-Detector@{Candle\-Detector}!CandleDetector@{Candle\-Detector}}
-\subsubsection[{Candle\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}Candle\-Detector\-::\-Candle\-Detector (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classCandleDetector_ad018cfcc4256482dcc093cca4411fea6}
-
-
-Definition at line 8 of file Candle\-Detector.\-cpp.
 
 
 
@@ -75,7 +59,11 @@ Definition at line 8 of file Candle\-Detector.\-cpp.
 )}}\label{classCandleDetector_a69d5ea11e04eaa51214c3a786eec7455}
 
 
-Definition at line 10 of file Candle\-Detector.\-cpp.
+Return the relative angle in degrees of the last candle found. 
+
+
+
+Definition at line 8 of file Candle\-Detector.\-cpp.
 
 \hypertarget{classCandleDetector_a8b9d654f3be7f3ae44d4e1fc07d08b51}{\index{Candle\-Detector@{Candle\-Detector}!detect@{detect}}
 \index{detect@{detect}!CandleDetector@{Candle\-Detector}}
@@ -84,9 +72,12 @@ Definition at line 10 of file Candle\-Detector.\-cpp.
 {}
 \end{DoxyParamCaption}
 )}}\label{classCandleDetector_a8b9d654f3be7f3ae44d4e1fc07d08b51}
-Looks for candle and returns true if found assigns values to given pointers for distance and angle based on input array of distances 
+Looks for candle and returns true if found. Gets lidar data from \hyperlink{classRobot}{Robot}. Iterates over data and if two spikes in data are found and they are right distance apart, return true \begin{DoxyReturn}{Returns}
+whether a candle has been found. It's location is then available in \hyperlink{classCandleDetector_a01619df190ca44d8171055b49e81444f}{distance()} and \hyperlink{classCandleDetector_a69d5ea11e04eaa51214c3a786eec7455}{angle()} 
+\end{DoxyReturn}
 
-Definition at line 24 of file Candle\-Detector.\-cpp.
+
+Definition at line 22 of file Candle\-Detector.\-cpp.
 
 \hypertarget{classCandleDetector_a01619df190ca44d8171055b49e81444f}{\index{Candle\-Detector@{Candle\-Detector}!distance@{distance}}
 \index{distance@{distance}!CandleDetector@{Candle\-Detector}}
@@ -97,7 +88,11 @@ Definition at line 24 of file Candle\-Detector.\-cpp.
 )}}\label{classCandleDetector_a01619df190ca44d8171055b49e81444f}
 
 
-Definition at line 14 of file Candle\-Detector.\-cpp.
+Return the relative distance in mm of the last candle found. 
+
+
+
+Definition at line 12 of file Candle\-Detector.\-cpp.
 
 \hypertarget{classCandleDetector_a773abb6491519a0d1b7111e2973c7199}{\index{Candle\-Detector@{Candle\-Detector}!relative\-Position@{relative\-Position}}
 \index{relative\-Position@{relative\-Position}!CandleDetector@{Candle\-Detector}}
@@ -108,7 +103,11 @@ Definition at line 14 of file Candle\-Detector.\-cpp.
 )}}\label{classCandleDetector_a773abb6491519a0d1b7111e2973c7199}
 
 
-Definition at line 18 of file Candle\-Detector.\-cpp.
+Return the point (x,y) of the candle relative to the robot when it was found. 
+
+
+
+Definition at line 16 of file Candle\-Detector.\-cpp.
 
 
 
@@ -118,63 +117,91 @@ Definition at line 18 of file Candle\-Detector.\-cpp.
 \subsubsection[{C\-A\-N\-D\-L\-E\-\_\-\-C\-E\-N\-T\-E\-R\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-C\-A\-N\-D\-L\-E\-\_\-\-C\-E\-N\-T\-E\-R\-\_\-\-O\-F\-F\-S\-E\-T = 40\hspace{0.3cm}{\ttfamily [private]}}}\label{classCandleDetector_a9920f067f44f9dc8aab6747699a244f7}
 
 
-Definition at line 22 of file Candle\-Detector.\-hpp.
+Definition at line 28 of file Candle\-Detector.\-hpp.
 
 \hypertarget{classCandleDetector_a043c3f35890b36e187734a492f96f84c}{\index{Candle\-Detector@{Candle\-Detector}!candle\-Angle@{candle\-Angle}}
 \index{candle\-Angle@{candle\-Angle}!CandleDetector@{Candle\-Detector}}
 \subsubsection[{candle\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}int Candle\-Detector\-::candle\-Angle = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCandleDetector_a043c3f35890b36e187734a492f96f84c}
 
 
-Definition at line 25 of file Candle\-Detector.\-hpp.
+Definition at line 32 of file Candle\-Detector.\-hpp.
 
 \hypertarget{classCandleDetector_a3d4f2c951c77838bfc5c068b58cf9fda}{\index{Candle\-Detector@{Candle\-Detector}!candle\-Distance@{candle\-Distance}}
 \index{candle\-Distance@{candle\-Distance}!CandleDetector@{Candle\-Detector}}
 \subsubsection[{candle\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}int Candle\-Detector\-::candle\-Distance = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classCandleDetector_a3d4f2c951c77838bfc5c068b58cf9fda}
 
 
-Definition at line 24 of file Candle\-Detector.\-hpp.
+Internal variables for candle location. 
+
+
+
+Definition at line 31 of file Candle\-Detector.\-hpp.
 
 \hypertarget{classCandleDetector_a3903cd4085162f1fc38ca74cac3b954e}{\index{Candle\-Detector@{Candle\-Detector}!M\-A\-X\-\_\-\-S\-P\-I\-K\-E@{M\-A\-X\-\_\-\-S\-P\-I\-K\-E}}
 \index{M\-A\-X\-\_\-\-S\-P\-I\-K\-E@{M\-A\-X\-\_\-\-S\-P\-I\-K\-E}!CandleDetector@{Candle\-Detector}}
 \subsubsection[{M\-A\-X\-\_\-\-S\-P\-I\-K\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-M\-A\-X\-\_\-\-S\-P\-I\-K\-E = 3000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_a3903cd4085162f1fc38ca74cac3b954e}
 
 
-Definition at line 31 of file Candle\-Detector.\-hpp.
+the maximum distanc between a candle block and a wall in mm 
+
+
+
+Definition at line 47 of file Candle\-Detector.\-hpp.
 
 \hypertarget{classCandleDetector_a9062a3c45b98c5d051082dbf4a285fd5}{\index{Candle\-Detector@{Candle\-Detector}!M\-I\-N\-\_\-\-S\-P\-I\-K\-E@{M\-I\-N\-\_\-\-S\-P\-I\-K\-E}}
 \index{M\-I\-N\-\_\-\-S\-P\-I\-K\-E@{M\-I\-N\-\_\-\-S\-P\-I\-K\-E}!CandleDetector@{Candle\-Detector}}
 \subsubsection[{M\-I\-N\-\_\-\-S\-P\-I\-K\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-M\-I\-N\-\_\-\-S\-P\-I\-K\-E = 300\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_a9062a3c45b98c5d051082dbf4a285fd5}
 
 
-Definition at line 30 of file Candle\-Detector.\-hpp.
+the minimum difference between candle block and a wall in mm 
+
+
+
+Definition at line 44 of file Candle\-Detector.\-hpp.
 
 \hypertarget{classCandleDetector_ab3c96353ba6d64163cf5e44b1ce2aa9e}{\index{Candle\-Detector@{Candle\-Detector}!R\-A\-D\-I\-U\-S\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E@{R\-A\-D\-I\-U\-S\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}}
 \index{R\-A\-D\-I\-U\-S\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E@{R\-A\-D\-I\-U\-S\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}!CandleDetector@{Candle\-Detector}}
 \subsubsection[{R\-A\-D\-I\-U\-S\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-R\-A\-D\-I\-U\-S\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E = 50\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_ab3c96353ba6d64163cf5e44b1ce2aa9e}
 
 
-Definition at line 29 of file Candle\-Detector.\-hpp.
+The max difference between the distance of two edge of the candle block in mm. 
+
+
+
+Definition at line 41 of file Candle\-Detector.\-hpp.
 
 \hypertarget{classCandleDetector_ac8aa00d0477ff096c344ec71d8ccdf82}{\index{Candle\-Detector@{Candle\-Detector}!V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
 \index{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}!CandleDetector@{Candle\-Detector}}
 \subsubsection[{V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}const float Candle\-Detector\-::\-V\-A\-L\-I\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D = 0.\-8\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_ac8aa00d0477ff096c344ec71d8ccdf82}
 
 
-Definition at line 33 of file Candle\-Detector.\-hpp.
+the percentage of valid data required between two spikes to consider it a candle 
+
+
+
+Definition at line 52 of file Candle\-Detector.\-hpp.
 
 \hypertarget{classCandleDetector_af4c5d2170cea56fa4263639f20ed13ed}{\index{Candle\-Detector@{Candle\-Detector}!W\-I\-D\-T\-H@{W\-I\-D\-T\-H}}
 \index{W\-I\-D\-T\-H@{W\-I\-D\-T\-H}!CandleDetector@{Candle\-Detector}}
 \subsubsection[{W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-W\-I\-D\-T\-H = 130\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_af4c5d2170cea56fa4263639f20ed13ed}
 
 
-Definition at line 27 of file Candle\-Detector.\-hpp.
+The width of the candle block in mm. 
+
+
+
+Definition at line 35 of file Candle\-Detector.\-hpp.
 
 \hypertarget{classCandleDetector_a1c8f0232491ba37dd10032c1da376145}{\index{Candle\-Detector@{Candle\-Detector}!W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E@{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}}
 \index{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E@{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}!CandleDetector@{Candle\-Detector}}
 \subsubsection[{W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Candle\-Detector\-::\-W\-I\-D\-T\-H\-\_\-\-T\-O\-L\-E\-R\-A\-N\-C\-E = 35\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classCandleDetector_a1c8f0232491ba37dd10032c1da376145}
 
 
-Definition at line 28 of file Candle\-Detector.\-hpp.
+Tolerance for the with of the candle block in mm. 
+
+
+
+Definition at line 38 of file Candle\-Detector.\-hpp.
 
 
 

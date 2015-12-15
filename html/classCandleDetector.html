@@ -64,7 +64,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -98,15 +97,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad018cfcc4256482dcc093cca4411fea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#ad018cfcc4256482dcc093cca4411fea6">CandleDetector</a> ()</td></tr>
-<tr class="separator:ad018cfcc4256482dcc093cca4411fea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b9d654f3be7f3ae44d4e1fc07d08b51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a8b9d654f3be7f3ae44d4e1fc07d08b51">detect</a> ()</td></tr>
 <tr class="separator:a8b9d654f3be7f3ae44d4e1fc07d08b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01619df190ca44d8171055b49e81444f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a01619df190ca44d8171055b49e81444f">distance</a> ()</td></tr>
+<tr class="memdesc:a01619df190ca44d8171055b49e81444f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the relative distance in mm of the last candle found.  <a href="#a01619df190ca44d8171055b49e81444f">More...</a><br/></td></tr>
 <tr class="separator:a01619df190ca44d8171055b49e81444f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69d5ea11e04eaa51214c3a786eec7455"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">angle</a> ()</td></tr>
+<tr class="memdesc:a69d5ea11e04eaa51214c3a786eec7455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the relative angle in degrees of the last candle found.  <a href="#a69d5ea11e04eaa51214c3a786eec7455">More...</a><br/></td></tr>
 <tr class="separator:a69d5ea11e04eaa51214c3a786eec7455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a773abb6491519a0d1b7111e2973c7199"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a773abb6491519a0d1b7111e2973c7199">relativePosition</a> ()</td></tr>
+<tr class="memdesc:a773abb6491519a0d1b7111e2973c7199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the point (x,y) of the candle relative to the robot when it was found.  <a href="#a773abb6491519a0d1b7111e2973c7199">More...</a><br/></td></tr>
 <tr class="separator:a773abb6491519a0d1b7111e2973c7199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -114,6 +114,7 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9920f067f44f9dc8aab6747699a244f7"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a9920f067f44f9dc8aab6747699a244f7">CANDLE_CENTER_OFFSET</a> = 40</td></tr>
 <tr class="separator:a9920f067f44f9dc8aab6747699a244f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d4f2c951c77838bfc5c068b58cf9fda"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a3d4f2c951c77838bfc5c068b58cf9fda">candleDistance</a> = 0</td></tr>
+<tr class="memdesc:a3d4f2c951c77838bfc5c068b58cf9fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal variables for candle location.  <a href="#a3d4f2c951c77838bfc5c068b58cf9fda">More...</a><br/></td></tr>
 <tr class="separator:a3d4f2c951c77838bfc5c068b58cf9fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a043c3f35890b36e187734a492f96f84c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a043c3f35890b36e187734a492f96f84c">candleAngle</a> = 0</td></tr>
 <tr class="separator:a043c3f35890b36e187734a492f96f84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,40 +122,28 @@ Private Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:af4c5d2170cea56fa4263639f20ed13ed"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#af4c5d2170cea56fa4263639f20ed13ed">WIDTH</a> = 130</td></tr>
+<tr class="memdesc:af4c5d2170cea56fa4263639f20ed13ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of the candle block in mm.  <a href="#af4c5d2170cea56fa4263639f20ed13ed">More...</a><br/></td></tr>
 <tr class="separator:af4c5d2170cea56fa4263639f20ed13ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c8f0232491ba37dd10032c1da376145"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145">WIDTH_TOLERANCE</a> = 35</td></tr>
+<tr class="memdesc:a1c8f0232491ba37dd10032c1da376145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tolerance for the with of the candle block in mm.  <a href="#a1c8f0232491ba37dd10032c1da376145">More...</a><br/></td></tr>
 <tr class="separator:a1c8f0232491ba37dd10032c1da376145"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3c96353ba6d64163cf5e44b1ce2aa9e"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#ab3c96353ba6d64163cf5e44b1ce2aa9e">RADIUS_TOLERANCE</a> = 50</td></tr>
+<tr class="memdesc:ab3c96353ba6d64163cf5e44b1ce2aa9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max difference between the distance of two edge of the candle block in mm.  <a href="#ab3c96353ba6d64163cf5e44b1ce2aa9e">More...</a><br/></td></tr>
 <tr class="separator:ab3c96353ba6d64163cf5e44b1ce2aa9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9062a3c45b98c5d051082dbf4a285fd5"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a9062a3c45b98c5d051082dbf4a285fd5">MIN_SPIKE</a> = 300</td></tr>
+<tr class="memdesc:a9062a3c45b98c5d051082dbf4a285fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">the minimum difference between candle block and a wall in mm  <a href="#a9062a3c45b98c5d051082dbf4a285fd5">More...</a><br/></td></tr>
 <tr class="separator:a9062a3c45b98c5d051082dbf4a285fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3903cd4085162f1fc38ca74cac3b954e"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e">MAX_SPIKE</a> = 3000</td></tr>
+<tr class="memdesc:a3903cd4085162f1fc38ca74cac3b954e"><td class="mdescLeft">&#160;</td><td class="mdescRight">the maximum distanc between a candle block and a wall in mm  <a href="#a3903cd4085162f1fc38ca74cac3b954e">More...</a><br/></td></tr>
 <tr class="separator:a3903cd4085162f1fc38ca74cac3b954e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8aa00d0477ff096c344ec71d8ccdf82"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">VALID_CANDLE_THRESHOLD</a> = 0.8</td></tr>
+<tr class="memdesc:ac8aa00d0477ff096c344ec71d8ccdf82"><td class="mdescLeft">&#160;</td><td class="mdescRight">the percentage of valid data required between two spikes to consider it a candle  <a href="#ac8aa00d0477ff096c344ec71d8ccdf82">More...</a><br/></td></tr>
 <tr class="separator:ac8aa00d0477ff096c344ec71d8ccdf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00005">5</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad018cfcc4256482dcc093cca4411fea6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">CandleDetector::CandleDetector </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00008">8</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a69d5ea11e04eaa51214c3a786eec7455"></a>
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +157,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00010">10</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+<p>Return the relative angle in degrees of the last candle found. </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00008">8</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
 
 </div>
 </div>
@@ -184,9 +175,10 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Looks for candle and returns true if found assigns values to given pointers for distance and angle based on input array of distances </p>
+<p>Looks for candle and returns true if found. Gets lidar data from <a class="el" href="classRobot.html">Robot</a>. Iterates over data and if two spikes in data are found and they are right distance apart, return true </p>
+<dl class="section return"><dt>Returns</dt><dd>whether a candle has been found. It's location is then available in <a class="el" href="classCandleDetector.html#a01619df190ca44d8171055b49e81444f" title="Return the relative distance in mm of the last candle found. ">distance()</a> and <a class="el" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455" title="Return the relative angle in degrees of the last candle found. ">angle()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00024">24</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00022">22</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +195,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00014">14</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+<p>Return the relative distance in mm of the last candle found. </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00012">12</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
 
 </div>
 </div>
@@ -220,7 +214,9 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00018">18</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+<p>Return the point (x,y) of the candle relative to the robot when it was found. </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00016">16</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
 
 </div>
 </div>
@@ -243,7 +239,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00022">22</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00028">28</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -265,7 +261,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00025">25</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00032">32</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -287,7 +283,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00024">24</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Internal variables for candle location. </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00031">31</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -309,7 +307,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00031">31</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>the maximum distanc between a candle block and a wall in mm </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00047">47</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -331,7 +331,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00030">30</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>the minimum difference between candle block and a wall in mm </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00044">44</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +355,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00029">29</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>The max difference between the distance of two edge of the candle block in mm. </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00041">41</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -375,7 +379,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00033">33</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>the percentage of valid data required between two spikes to consider it a candle </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00052">52</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -397,7 +403,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00027">27</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>The width of the candle block in mm. </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00035">35</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -419,7 +427,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00028">28</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Tolerance for the with of the candle block in mm. </p>
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00038">38</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -430,7 +440,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 15 2015 00:01:31 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 15:36:42 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
