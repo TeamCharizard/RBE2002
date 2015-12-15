@@ -80,7 +80,7 @@ bool CandleDetector::detect(){
             }
           }
 
-          float validPercent = (float)valid/(a-lastSpikeAStart+1);
+          float validPercent = (float)valid/(max(0, a-lastSpikeAStart+1-2));
 #if defined(DEBUG_LIDAR)
           Serial.print("Percent valid: ");
           Serial.print(validPercent);

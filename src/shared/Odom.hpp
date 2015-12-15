@@ -20,7 +20,9 @@ class Odom {
     void setup() {
       Enc1::setup();
       Enc2::setup();
+      Serial.println("Gyro start");
       gyro.setup();
+      Serial.println("Gyro end");
     }
 
     float dir, gyroAngle;

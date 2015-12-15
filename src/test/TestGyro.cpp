@@ -5,5 +5,7 @@ void TestGyro::setup(){
 }
 
 void TestGyro::loop(){
-  int angle = gyro.read();
+  float angle = gyro.read();
+  Serial.println(angle);
+  delay(100);
 }

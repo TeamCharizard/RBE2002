@@ -33,7 +33,16 @@ int PID::run(float value, bool doWrap){
 
   //the plus equals is because this is a velocity PID
   if (feedForward){
+    //Serial.print("err uns=");
+    //Serial.println(error);
+    //error *= (now-lastUpdateTime);
+    //Serial.print("err=");
+    //Serial.println(error);
+    //Serial.print("t=");
+    //Serial.println(now-lastUpdateTime);
     output += (kP * error) + kI*iTerm*(now-lastUpdateTime) +(kD * (error - lastError ) / (float)(now-lastUpdateTime));
+    //Serial.print("out=");
+    //Serial.println(output);
     if(output > 100) output = 100;
     if(output < -100) output = -100;
   }
