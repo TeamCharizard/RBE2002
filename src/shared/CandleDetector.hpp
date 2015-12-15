@@ -13,22 +13,35 @@ class CandleDetector{
       */
     bool detect();
 
+    /**
+     * \brief Get the distance to the last detected candle
+     * \return the distance to the last detected candle in millimeters
+     */
     int distance();
+    /**
+     * \brief Get the angle to the last detected candle
+     * \return the distance to the last detected candle in degrees
+     */
     int angle();
+
+    /**
+     * \brief Get the relative position of the last detected candle
+     * \return The x,y coordinates of the last detected candle in inches
+     */
     Point<float> relativePosition();
 
   private:
-    // Add 40 mm (~1.5in) to detected candle distance to account for size of base
+    // Add offset detected candle distance to account for size of base
     const int CANDLE_CENTER_OFFSET = 40;
 
     int candleDistance = 0,
         candleAngle = 0;
 
-    const static int WIDTH = 130,
-          WIDTH_TOLERANCE = 35,
-          RADIUS_TOLERANCE = 50,
-          MIN_SPIKE = 300,
-          MAX_SPIKE = 3000;
+    const static int WIDTH = 130, //! Rough width for the base of the candle
+          WIDTH_TOLERANCE = 35, //! Tolerance for detecting the width of the candle base
+          RADIUS_TOLERANCE = 50, //! s
+          MIN_SPIKE = 300, //! Minimum difference between two lidar points for them to be a 'spike'
+          MAX_SPIKE = 3000; //! Maximum difference between two lidar points for them to be a 'spike'
 
     const static float VALID_CANDLE_THRESHOLD;
 
