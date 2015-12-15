@@ -7,14 +7,20 @@
  */
 class Fan{
   public:
-
-    /** \brief Setup for the servo object. Also handles arming of the ESC */
+    /** \brief
+     * Initialize the fan's motor controller.
+     * Waits for button to be released before initializing
+     */
     void setup();
 
-    /** \brief spin the motor at FULL POWER! */
+    /** \brief
+     * Turn the fan on
+     */
     void spin();
 
-    /** \brief stop the motor. speed controller will ramp it down for us */
+    /** \brief
+     * Turn the fan off
+     */
     void stop();
 
   private:
@@ -23,5 +29,10 @@ class Fan{
     Servo motor;
 
     /** \brief the pause time between ESC arming sequences */
+    const static int BUTTON_PIN = 29;
+
+    /** \brief
+     * Time for initial pause during initialization of the motor controller
+    */
     const static int INIT_PAUSE = 3000;
 };

@@ -5,9 +5,15 @@
 #include "StatusManager.hpp"
 #include "../charizard.hpp"
 
+/**
+ * \brief Tracks the robot's position via encoders
+ */
 template<typename Enc1, typename Enc2>
 class Odom {
   private:
+    /**
+     * \brief Robot's current position in world frame
+     */
     Point<float> pos;
     Gyro gyro;
 
@@ -25,10 +31,16 @@ class Odom {
       Serial.println("Gyro end");
     }
 
+    //! Direction the robot is facing
     float dir, gyroAngle;
+
     int left_disp,
         right_disp;
 
+    /**
+     * \brief update the robots position based on encoder ticks since last update
+     * \return distance the robot has traveled forward (since the last update)
+     */
     float updateDifferential() {
 
       left_disp = Enc1::read(true);
@@ -50,16 +62,31 @@ class Odom {
       return disp;
     }
 
+    /**
+     * \return get the number of ticks seen by the left encoder from the last update
+     */
     int leftDisplacement() {
       return left_disp;
     }
 
+    /**
+     * \return get the number of ticks seen by the right encoder from the last update
+     */
     int rightDisplacement() {
       return right_disp;
     }
 
+    /**
+     * \brief get the lastest robot position
+     * \return the lastest robot position
+     */
     inline Point<float> getPos() { return pos; }
 
+    /**
+     * \brief transform a point from robot frame to world frame
+     * \param robotPoint a point the the frame of the robot
+     * \return the input point trasnformed to world frame
+     */
     Point<float> robotToWorld(Point<float> robotPoint) {
       return robotPoint.rotate(dir).translate(pos);
     }

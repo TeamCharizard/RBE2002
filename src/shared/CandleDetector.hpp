@@ -14,17 +14,25 @@ class CandleDetector{
       */
     bool detect();
 
-    /** \brief Return the relative distance in mm of the last candle found */
+    /**
+     * \brief Get the distance to the last detected candle
+     * \return the distance to the last detected candle in millimeters
+     */
     int distance();
-
-    /** \brief Return the relative angle in degrees of the last candle found */
+    /**
+     * \brief Get the angle to the last detected candle
+     * \return the distance to the last detected candle in degrees
+     */
     int angle();
 
-    /** \brief Return the point (x,y) of the candle relative to the robot when it was found */
+    /**
+     * \brief Get the relative position of the last detected candle
+     * \return The x,y coordinates of the last detected candle in inches
+     */
     Point<float> relativePosition();
 
   private:
-    // Add 40 mm (~1.5in) to detected candle distance to account for size of base
+    // Add offset detected candle distance to account for size of base
     const int CANDLE_CENTER_OFFSET = 40;
 
     /** \brief Internal variables for candle location */
@@ -45,7 +53,6 @@ class CandleDetector{
 
     /** \brief the maximum distanc between a candle block and a wall in mm */
     const static int MAX_SPIKE = 3000;
-
 
     /** \brief the percentage of valid data required between two spikes to
      * consider it a candle */
