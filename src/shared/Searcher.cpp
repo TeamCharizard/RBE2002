@@ -62,6 +62,8 @@ bool Searcher::run(){
 
           break;
         case FOUND:
+          //set this the first time you find the candle to be more accurate
+          Robot::getInstance()->setFinalAbsoluteCandlePosition();
           changeState(CHECK_PATH);
           break;
         case MISTAKEN:
@@ -134,7 +136,6 @@ bool Searcher::run(){
     case CHECK_FINAL:
       switch (check()){
         case FOUND:
-          Robot::getInstance()->setFinalAbsoluteCandlePosition();
           Robot::getInstance()->pushPos();
           changeState(TURN_TO_CANDLE);
           break;
