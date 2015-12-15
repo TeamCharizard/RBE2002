@@ -96,6 +96,12 @@ bool Robot::findCandleHeight(){
   float candleHeight = ff.watch(detector.distance());
 
   if(candleHeight > 0){
+    if (candleHeight > 11){
+      candleHeight = 11;
+    }
+    else if (candleHeight < 6.5){
+      candleHeight = 6.5;
+    }
     StatusManager::candleHeight = (int)(candleHeight + 0.5);
     StatusManager::candleHeightFrac = (int)(candleHeight * 10) % 10;
 
