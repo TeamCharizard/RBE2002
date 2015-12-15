@@ -5,6 +5,8 @@
 #include "../Robot.hpp"
 #include "Searcher.hpp"
 
+const float Searcher::AVOID_TURN_ANGLE = 2*M_PI/3;
+
 Searcher::Searcher() : state(SEARCHING) {}
 
 void Searcher::setup(){
@@ -143,13 +145,13 @@ bool Searcher::search(){
     DriveDirection currentDriveDirection = driveAndAvoid();
 
     if (currentDriveDirection == LEFT){
-      absoluteTurnGoalAngle = Robot::getInstance()->base.dir() - M_PI/2;
+      absoluteTurnGoalAngle = Robot::getInstance()->base.dir() - AVOID_TURN_ANGLE;
       Robot::getInstance()->pushPos();
       changeState(TURNING);
       return false;
     }
     else if (currentDriveDirection == RIGHT){
-      absoluteTurnGoalAngle = Robot::getInstance()->base.dir() + M_PI/2;
+      absoluteTurnGoalAngle = Robot::getInstance()->base.dir() + AVOID_TURN_ANGLE;
       Robot::getInstance()->pushPos();
       changeState(TURNING);
       return false;
@@ -279,7 +281,7 @@ int Searcher::minInSample(int i, int ss){
 DriveDirection Searcher::driveAndAvoid(){
   DriveDirection dir;
 
-  int diff = 45;
+  int diff = 50;
   int dFront = minInSample(0);
   int dLeft = minInSample(360-diff);
   int dRight = minInSample(diff, 0);

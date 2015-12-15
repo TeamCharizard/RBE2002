@@ -74,4 +74,5 @@ class Searcher {
 
     const static long UPDATE_PERIOD = 50;
     const static int AVOID_DISTANCE = 400;
+    const static float AVOID_TURN_ANGLE;
 };
