@@ -1,7 +1,7 @@
 #include "StatusManager.hpp"
 
 const char *const StatusManager::format[] = {
-      "X=%-3d Y=%-3d",
+      "X=%-3d Y=%-3d      ",
       " =%-3dX=%-3dY=%-2d",
       "H=%-1d.%-2d"};
 
