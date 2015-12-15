@@ -116,6 +116,8 @@ class Robot {
     /** \brief Stack for the navigation waypoints */
     Stack<Point<float>, 256> path;
 
+    /** \brief distance at which we blow out candle */
+    const static int CANDLE_APPROACH_DISTANCE_INCHES = 40;
 
     /** \brief WIDTH of half the robot plus a little bit to give some */
     const static int WIDTH = 205;
@@ -145,8 +147,6 @@ class Robot {
 
     /** \brief the current waypoint we're navigating to */
     Point<float> waypoint;
-
-    const static int CANDLE_APPROACH_DISTANCE_INCHES = 40;
 
     long lastUpdateTime = 0;
     const static long UPDATE_PERIOD = 50;

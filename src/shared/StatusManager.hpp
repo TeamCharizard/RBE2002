@@ -14,12 +14,12 @@ class StatusManager {
     static void printState(const char* stateString);
     static void printPose();
     static void finalUpdate();
-    static int candleX, candleY, candleHeight;
+    static int candleX, candleY, candleHeight, candleHeightFrac;
     static int robotX, robotY, robotAngle;
     static const char* state;
     static bool candleFound;
 
   private:
-    static const char *const format[2];
+    static const char *const format[3];
     static byte angleChar[8];
 };

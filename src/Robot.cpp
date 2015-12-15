@@ -93,10 +93,12 @@ bool Robot::findCandleHeight(){
     scanning = true;
   }
 
-  int candleHeight = ff.watch(detector.distance());
+  float candleHeight = ff.watch(detector.distance());
 
   if(candleHeight > 0){
-    StatusManager::candleY = candleHeight;
+    StatusManager::candleHeight = (int)(candleHeight + 0.5);
+    StatusManager::candleHeightFrac = (int)(candleHeight * 10) % 10;
+
     return true;
   }
   else if (candleHeight == 0){
@@ -155,7 +157,6 @@ bool Robot::turnToFaceAbsolutely(float angle){
 }
 
 void Robot::end(){
-  stop();
-  base.drive();
+  hardStop();
   StatusManager::finalUpdate();
 }

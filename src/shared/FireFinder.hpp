@@ -15,9 +15,9 @@ class FireFinder {
      */
     bool seesCandle();
 
-    int watch(int dToCandle);
+    float watch(int dToCandle);
 
-    int heightInInches = 0;
+    void levelHead();
 
   private:
 

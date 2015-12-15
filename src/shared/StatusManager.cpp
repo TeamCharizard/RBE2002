@@ -1,8 +1,9 @@
 #include "StatusManager.hpp"
 
 const char *const StatusManager::format[] = {
-      "X=%-3dY=%-3dH=%-2d",
-      " =%-3dX=%-3dY=%-2d" };
+      "X=%-3d Y=%-3d",
+      " =%-3dX=%-3dY=%-2d",
+      "H=%-1d.%-2d"};
 
 byte StatusManager::angleChar[] = {
       B00000,
@@ -20,6 +21,7 @@ int StatusManager::robotAngle = 0;
 int StatusManager::candleX = 0;
 int StatusManager::candleY = 0;
 int StatusManager::candleHeight = 0;
+int StatusManager::candleHeightFrac = 0;
 bool StatusManager::candleFound = false;
 
 void StatusManager::setup(){
@@ -40,6 +42,7 @@ void StatusManager::printPose(){
 
 void StatusManager::finalUpdate(){
   debugPrint(0,format[0],
-      candleX,candleY,candleHeight);
-  printPose();
+      candleX,candleY);
+  debugPrint(1,format[2],
+      candleHeight,candleHeightFrac);
 }

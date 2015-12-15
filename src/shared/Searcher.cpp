@@ -84,8 +84,15 @@ bool Searcher::run(){
           changeState(SCOOT);
         }
         else {
-          Robot::getInstance()->setGoalToCandle();
-          changeState(GO_TO_CANDLE);
+          int distToCandleInches = Robot::getInstance()->detector.distance() / 25.4;
+          bool tooClose = distToCandleInches < Robot::CANDLE_APPROACH_DISTANCE_INCHES;
+          if (!tooClose){
+            Robot::getInstance()->setGoalToCandle();
+            changeState(GO_TO_CANDLE);
+          }
+          else {
+            changeState(TURN_TO_CANDLE);
+          }
         }
       }
       break;
@@ -94,9 +101,18 @@ bool Searcher::run(){
         case THINKING:
           break;
         case FOUND:
-          Robot::getInstance()->setGoalToCandle();
-          Robot::getInstance()->pushPos();
-          changeState(GO_TO_CANDLE);
+          {
+            int distToCandleInches = Robot::getInstance()->detector.distance() / 25.4;
+            bool tooClose = distToCandleInches < Robot::CANDLE_APPROACH_DISTANCE_INCHES;
+            if (!tooClose){
+              Robot::getInstance()->setGoalToCandle();
+              Robot::getInstance()->pushPos();
+              changeState(GO_TO_CANDLE);
+            }
+            else {
+              changeState(TURN_TO_CANDLE);
+            }
+          }
           break;
         case MISTAKEN:
           changeState(CHECKING);
