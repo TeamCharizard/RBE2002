@@ -7,7 +7,8 @@
  * The proper way to do this is call read continuously,
  * and wait for it to return true. When it returns true you know a
  * full sweep of lidar has passed, and then you can
- * update motors and do print statements and stuch.
+ * update motors and do print statements and stuck.
+ */
 class Lidar {
 
   public:
