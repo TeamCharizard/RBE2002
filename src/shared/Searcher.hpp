@@ -66,6 +66,6 @@ class Searcher {
     int candleCount = 0,
         sweeps = 0;
 
-    const static long UPDATE_PERIOD = 50;
+    const static long UPDATE_PERIOD = 270;// 50;
     const static int AVOID_DISTANCE = 400;
 };

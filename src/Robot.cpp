@@ -52,7 +52,7 @@ void Robot::setDrive(DriveDirection dir){
 }
 
 void Robot::pushPos(){
-  debugPrint(1, "X=%-3d Y=%-3d     ", (int)base.x(), (int)base.y());
+  //debugPrint(1, "X=%-3d Y=%-3d     ", (int)base.x(), (int)base.y());
   path.push(Point<float>(base.x(),base.y()));
 }
 
@@ -118,7 +118,7 @@ bool Robot::extinguishCandle(){
 }
 
 void Robot::popWaypoint(){
-  debugPrint(1, "cur=(%d,%d)", (int)base.pos().x(), (int)base.pos().y());
+  //debugPrint(1, "cur=(%d,%d)", (int)base.pos().x(), (int)base.pos().y());
   waypoint = path.pop();
   navigator.setGoal(waypoint);
   Serial.print("wpt=(");

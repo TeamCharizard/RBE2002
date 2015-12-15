@@ -1,7 +1,7 @@
 #include "Navigator.hpp"
 #include "../Robot.hpp"
 
-Navigator::Navigator() : distPid(-3.8, 0, 525/*15*50*/, false) {}
+Navigator::Navigator() : distPid(-10, 0, 2500, false) {}
 
 void Navigator::setGoal(Point<float> goal) {
   state = TURNING;

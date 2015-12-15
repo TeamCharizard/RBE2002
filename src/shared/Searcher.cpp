@@ -184,10 +184,10 @@ int Searcher::checkPath(){
     int lookup_angle = i;
 
     if (angle < 0) angle += 360;
-    if (angle > 360) angle -= 360;
+    if (angle > 359) angle -= 360;
 
     if (i < 0) lookup_angle += 360;
-    if (i > 360) lookup_angle -= 360;
+    if (i > 359) lookup_angle -= 360;
 
     int r = Robot::getInstance()->lidar.distances[angle];
 

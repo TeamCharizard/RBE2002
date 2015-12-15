@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include "CandleDetector.hpp"
 #include <stdio.h>
+#include "../charizard.hpp"
 
 const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.8;
 
@@ -79,7 +80,7 @@ bool CandleDetector::detect(int radii[]){
             }
           }
 
-          float validPercent = (float)valid/(a-lastSpikeAStart+1);
+          float validPercent = (float)valid/(max(0, a-lastSpikeAStart+1-2));
 #if defined(DEBUG_LIDAR)
           Serial.print("Percent valid: ");
           Serial.print(validPercent);
@@ -89,6 +90,12 @@ bool CandleDetector::detect(int radii[]){
           Serial.println(midRadius);
 #endif
 
+          //Serial.print("Percent valid: ");
+          //Serial.print(validPercent);
+          //Serial.print(", a=");
+          //Serial.print(midAngle);
+          //Serial.print(", r=");
+          //debugPrint(1, "pv=%-3d          ", (int)(validPercent*100));
           if (validPercent >= VALID_CANDLE_THRESHOLD){
             for (int i=lastSpikeAStart;i<=a;i++){
               int ang = i < 0 ? 360 + i : i;

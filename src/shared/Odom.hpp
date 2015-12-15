@@ -19,7 +19,9 @@ class Odom {
     void setup() {
       Enc1::setup();
       Enc2::setup();
+      Serial.println("Gyro start");
       gyro.setup();
+      Serial.println("Gyro end");
     }
 
     float dir, gyroAngle;
@@ -29,7 +31,8 @@ class Odom {
     float updateDifferential() {
       gyroAngle = gyro.read();
 
-      debugPrint(1,"gyroAngle=%-3d",(int)(gyroAngle * 180 / M_PI));
+      //debugPrint(1,"gyroAngle=%-3d",(int)(gyroAngle * 180 / M_PI));
+      debugPrint(1, "X=%-4d Y=%-4d", (int)(pos.x()+0.5), (int)(pos.y()+0.5));
 
       left_disp = Enc1::read(true);
       right_disp = Enc2::read(true);
