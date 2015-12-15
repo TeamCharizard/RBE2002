@@ -42,5 +42,5 @@ class FireFinder {
           SAMPLE_SIZE = 10,
           SENSOR_HEIGHT = 210,
           INTENSITY_THRESHOLD = 35,
-          MIN_INTENSITY = 985;
+          MIN_INTENSITY = 995;
 };

@@ -97,6 +97,7 @@ bool Robot::findCandleHeight(){
   int candleHeight = ff.watch(detector.distance());
 
   if(candleHeight > 0){
+    StatusManager::candleY candleHeight;
     return true;
   }
   else if (candleHeight == 0){
