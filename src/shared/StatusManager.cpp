@@ -1,9 +1,9 @@
 #include "StatusManager.hpp"
 
 const char *const StatusManager::format[] = {
-      "X=%-3d Y=%-3d      ",
-      " =%-3dX=%-3dY=%-2d",
-      "H=%-1d.%-2d"};
+      "X=%-3d Y=%-3d        ",
+      " =%-3dX=%-3dY=%-2d   ",
+      "H=%-2d.%-2d          "};
 
 byte StatusManager::angleChar[] = {
       B00000,
@@ -36,7 +36,7 @@ void StatusManager::printState(const char* stateString){
 void StatusManager::printPose(){
   debugPrint(1,format[1],
       robotAngle,robotX,robotY);
-  Display.setCursor(1,1);
+  Display.setCursor(0,1);
   Display.write(byte(0)); //write custom angle char
 }
 
