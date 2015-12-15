@@ -117,7 +117,7 @@ class Robot {
     Stack<Point<float>, 256> path;
 
     /** \brief distance at which we blow out candle */
-    const static int CANDLE_APPROACH_DISTANCE_INCHES = 40;
+    const static int CANDLE_APPROACH_DISTANCE_INCHES = 30;
 
     /** \brief WIDTH of half the robot plus a little bit to give some */
     const static int WIDTH = 205;
