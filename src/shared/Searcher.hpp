@@ -28,7 +28,7 @@ class Searcher {
     bool driveToCandle();
 
     bool run();
-    int sampleAt(int i, int ss = 15);
+    int minInSample(int i, int ss = 15);
 
   private:
 

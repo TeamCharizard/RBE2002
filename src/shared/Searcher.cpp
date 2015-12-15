@@ -247,8 +247,8 @@ bool Searcher::turnToFaceCandle(){
   return false;
 }
 
-int Searcher::sampleAt(int i, int ss){
-  long sum = 0;
+int Searcher::minInSample(int i, int ss){
+  int minDistance = 6000;
   int start = i - ss,
       end = i + ss;
 
@@ -264,21 +264,25 @@ int Searcher::sampleAt(int i, int ss){
     }
 
     int d = Robot::getInstance()->lidar.distances[angle];
-    if ( d> 0){
-      sum += d;
+    if ( d > 0){
+      if (d < minDistance){
+        minDistance = d;
+      }
       count++;
     }
   }
-  return sum/count;
+
+  Serial.println(minDistance);
+  return minDistance;
 }
 
 DriveDirection Searcher::driveAndAvoid(){
   DriveDirection dir;
 
   int diff = 45;
-  int dFront = sampleAt(0);
-  int dLeft = sampleAt(360-diff);
-  int dRight = sampleAt(diff, 0);
+  int dFront = minInSample(0);
+  int dLeft = minInSample(360-diff);
+  int dRight = minInSample(diff, 0);
 
   if (dFront < AVOID_DISTANCE && dFront > 0){
     if ( dLeft > dRight ){

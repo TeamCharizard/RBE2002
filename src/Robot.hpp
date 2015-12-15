@@ -118,7 +118,7 @@ class Robot {
 
 
     /** \brief WIDTH of half the robot plus a little bit to give some */
-    const static int WIDTH = 185;
+    const static int WIDTH = 205;
 
   private:
 
