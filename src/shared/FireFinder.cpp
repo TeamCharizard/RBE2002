@@ -41,7 +41,7 @@ int FireFinder::watch(int dToCandle){
 
       float angle = (minPosition * (MAX_HEAD_ANGLE - MIN_HEAD_ANGLE) / 180) + MIN_HEAD_ANGLE;
       int height = SENSOR_HEIGHT + tan(angle * M_PI / 180.0) * dToCandle;
-      heightInInches = height / 25.4;
+      heightInInches = (height / 25.4 + 0.5);
       return heightInInches;
     }
     else {

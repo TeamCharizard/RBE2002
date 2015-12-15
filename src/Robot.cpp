@@ -76,7 +76,6 @@ float Robot::absoluteCandleAngleFromCurrentPosition(){
   return base.dir() + detector.angle() * M_PI / 180;
 }
 
-
 bool Robot::search(){
   return searcher.run();
 }
