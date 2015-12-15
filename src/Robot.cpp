@@ -1,4 +1,5 @@
 #include "Robot.hpp"
+#include "shared/StatusManager.hpp"
 #include "charizard.hpp"
 #include "Arduino.h"
 
@@ -52,7 +53,6 @@ void Robot::setDrive(DriveDirection dir){
 }
 
 void Robot::pushPos(){
-  debugPrint(1, "X=%-3d Y=%-3d     ", (int)base.x(), (int)base.y());
   path.push(Point<float>(base.x(),base.y()));
 }
 
@@ -72,7 +72,7 @@ void Robot::setGoalInCandleFrame(Point<float> delta){
   navigator.setGoal(goalPoint);
 }
 
-float Robot::absoluteCandleAngle(){
+float Robot::lastestAbsoluteCandleAngle(){
   return base.dir() + detector.angle() * M_PI / 180;
 }
 
@@ -118,7 +118,6 @@ bool Robot::extinguishCandle(){
 }
 
 void Robot::popWaypoint(){
-  debugPrint(1, "cur=(%d,%d)", (int)base.pos().x(), (int)base.pos().y());
   waypoint = path.pop();
   navigator.setGoal(waypoint);
   Serial.print("wpt=(");
@@ -145,8 +144,10 @@ bool Robot::returnToOrigin(){
   return false;
 }
 
-Point<float> Robot::absoluteCandlePosition(){
-  return base.odom.robotToWorld(detector.position());
+void Robot::setFinalAbsoluteCandlePosition(){
+  Point<float> position = base.odom.robotToWorld(detector.relativePosition());
+  StatusManager::candleX = position.x();
+  StatusManager::candleY = position.y();
 }
 
 bool Robot::turnToFaceAbsolutely(float angle){
@@ -154,9 +155,7 @@ bool Robot::turnToFaceAbsolutely(float angle){
 }
 
 void Robot::end(){
-  Point<float> candle_pos = absoluteCandlePosition();
   stop();
   base.drive();
-  debugPrint(0, "Pose=(%-3d,%-3d)", (int)(0.5 + candle_pos.x()), (int)(0.5 + candle_pos.y()));
-  debugPrint(1, "Height=%-3d     ", (int)ff.heightInInches);
+  StatusManager::finalUpdate();
 }

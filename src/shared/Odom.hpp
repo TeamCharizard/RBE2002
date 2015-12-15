@@ -2,6 +2,7 @@
 #include "Point.hpp"
 #include "Encoder.hpp"
 #include "Gyro.hpp"
+#include "StatusManager.hpp"
 #include "../charizard.hpp"
 
 template<typename Enc1, typename Enc2>
@@ -27,9 +28,6 @@ class Odom {
         right_disp;
 
     float updateDifferential() {
-      gyroAngle = gyro.read();
-
-      debugPrint(1,"gyroAngle=%-3d",(int)(gyroAngle * 180 / M_PI));
 
       left_disp = Enc1::read(true);
       right_disp = Enc2::read(true);
@@ -41,6 +39,11 @@ class Odom {
 
       pos.x() += disp*cos(dir);
       pos.y() += disp*sin(dir);
+
+      StatusManager::robotX = pos.x();
+      StatusManager::robotY = pos.y();
+      StatusManager::robotAngle = gyro.read();
+      StatusManager::printPose();
 
       return disp;
     }

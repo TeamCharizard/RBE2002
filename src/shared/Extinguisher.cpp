@@ -7,6 +7,11 @@ void Extinguisher::setup(){
   state = INIT;
 }
 
+void Extinguisher::changeState(State state){
+  state =  state;
+  StatusManager::printState(stateNames[state]);
+}
+
 bool Extinguisher::run(){
   switch(state){
     case INIT :

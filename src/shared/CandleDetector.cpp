@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "CandleDetector.hpp"
+#include "StatusManager.hpp"
 #include <stdio.h>
 
 const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.8;
@@ -14,11 +15,10 @@ int CandleDetector::distance(){
   return candleDistance;
 }
 
-Point<float> CandleDetector::position(){
+Point<float> CandleDetector::relativePosition(){
   float relativeXInches = distance()*cos(angle()*M_PI/180)/25.4;
   float relativeYInches = distance()*sin(angle()*M_PI/180)/25.4;
-  Point<float> relative(relativeXInches, relativeYInches);
-  return relative;
+  return Point<float>(relativeXInches, relativeYInches);
 }
 
 bool CandleDetector::detect(int radii[]){
@@ -90,17 +90,6 @@ bool CandleDetector::detect(int radii[]){
 #endif
 
           if (validPercent >= VALID_CANDLE_THRESHOLD){
-            for (int i=lastSpikeAStart;i<=a;i++){
-              int ang = i < 0 ? 360 + i : i;
-              //Serial.print(i);
-              //Serial.print(" ");
-              //Serial.println(radii[ang]);
-            }
-            //Serial.print("Percent valid: ");
-            //Serial.print(validPercent);
-            //Serial.print(", a=");
-            //Serial.print(midAngle);
-            //Serial.print(", r=");
             candleDistance = midRadius;
             candleAngle = midAngle;
             return true;

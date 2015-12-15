@@ -2,18 +2,20 @@
 
 #include "Fan.hpp"
 
-enum State{
-  INIT,
-  TURNING_TO_BLOW,
-  TURNING_TO_VERIFY,
-  BLOWING,
-  VERIFYING
-};
-
-
 class Extinguisher {
+  private:
+    enum State{
+      INIT,
+      TURNING_TO_BLOW,
+      TURNING_TO_VERIFY,
+      BLOWING,
+      VERIFYING
+    };
+
+
   public:
     void setup();
+    void changeState(State state);
     bool run();
 
   private:

@@ -58,11 +58,17 @@ class Searcher {
       "TURN_2_CANDLE"
     };
 
+    void changeState(State state);
+
     State state;
+
     long lastUpdateTime = 0;
+
     Point<float> goalPoint;
+
     float absoluteTurnGoalAngle,
           absoluteCandleAngle;
+
     int candleCount = 0,
         sweeps = 0;
 

@@ -1,5 +1,10 @@
 #include "Gyro.hpp"
 
+Gyro::Gyro() :
+    gyro_z(0),
+    gyro_zold(0),
+    gerrz(0) {}
+
 void Gyro::setup(){
   Wire.begin();
 
@@ -15,14 +20,15 @@ void Gyro::setup(){
   gerrz = gerrz/100;
 }
 
-float Gyro::read(){
-    gyro.read();
+int Gyro::read(){
+  gyro.read();
 
-    gyro_z=(float)(gyro.g.z-gerrz)*G_gain;
-    gyro_z = gyro_z*G_Dt;
-    gyro_z += gyro_zold;
-    gyro_zold=gyro_z;
+  gyro_z=(float)(gyro.g.z-gerrz)*G_gain;
+  gyro_z = gyro_z*G_Dt;
+  gyro_z += gyro_zold;
+  gyro_zold=gyro_z;
 
-    return gyro_z;
+  //to degrees!
+  return gyro_z * 180 / M_PI;
 }
 

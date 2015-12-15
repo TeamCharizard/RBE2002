@@ -5,8 +5,12 @@
 
 class Gyro {
   public:
+    Gyro();
     void setup();
-    float read();
+
+    /** \brief angle of robot
+     * \return angle in degrees of robot in world frame */
+    int read();
 
   private:
     /** \brief the gyro duh */

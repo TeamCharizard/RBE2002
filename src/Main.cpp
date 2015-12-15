@@ -1,41 +1,40 @@
 #include "Main.hpp"
 #include "charizard.hpp"
+#include "shared/StatusManager.hpp"
 #include "Robot.hpp"
 
 void Main::setup(){
   charizard = Robot::getInstance();
   charizard->setup();
-  state = SEARCH_FOR_CANDLE;
+  changeState(SEARCH_FOR_CANDLE);
+}
 
-  debugPrint(0,stateNames[state]);
+void Main::changeState(State state){
+  this->state = state;
+  StatusManager::printState(stateNames[state]);
 }
 
 void Main::loop(){
   switch(state){
     case SEARCH_FOR_CANDLE:
       if (charizard->search()){
-        state = FIND_CANDLE_HEIGHT;
-        debugPrint(0,stateNames[state]);
+        changeState(FIND_CANDLE_HEIGHT);
       }
       break;
     case FIND_CANDLE_HEIGHT:
       if (charizard->findCandleHeight()){
-        state = EXTINGUISH_CANDLE;
-        debugPrint(0,stateNames[state]);
+        changeState(EXTINGUISH_CANDLE);
       }
       break;
     case EXTINGUISH_CANDLE:
-
       if (charizard->extinguishCandle()){
-        state = RETURN_TO_ORIGIN;
+        changeState(RETURN_TO_ORIGIN);
         Robot::getInstance()->popWaypoint();
-        debugPrint(0,stateNames[state]);
       }
       break;
     case RETURN_TO_ORIGIN:
       if (charizard->returnToOrigin()){
         state = END;
-        debugPrint(0,stateNames[state]);
       }
       break;
     case END:

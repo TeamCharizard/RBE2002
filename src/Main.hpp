@@ -3,6 +3,16 @@
 #include "Robot.hpp"
 
 class Main{
+  private:
+    /** \brief The main states of the robot */
+    enum State {
+      SEARCH_FOR_CANDLE,
+      FIND_CANDLE_HEIGHT,
+      EXTINGUISH_CANDLE,
+      RETURN_TO_ORIGIN,
+      END
+    };
+
   public:
     /** \brief setup method calls setup for robot */
     void setup();
@@ -10,16 +20,10 @@ class Main{
     /** \brief main state machine controls overall program flow */
     void loop();
 
-  private:
+    /** \brief change state and print state */
+    void changeState(State state);
 
-    /** \brief The main states of the robot */
-    enum RobotState {
-      SEARCH_FOR_CANDLE,
-      FIND_CANDLE_HEIGHT,
-      EXTINGUISH_CANDLE,
-      RETURN_TO_ORIGIN,
-      END
-    };
+  private:
 
     /** \brief English state names allows us to easily print what state the
      * robot is in */
@@ -31,7 +35,7 @@ class Main{
       "END            "};
 
     /** \brief variable for the current state of the robot. */
-    RobotState state = SEARCH_FOR_CANDLE;
+    State state = SEARCH_FOR_CANDLE;
 
     /** \brief convenient pointer to the singleton robot instance */
     Robot *charizard;

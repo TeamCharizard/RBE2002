@@ -42,11 +42,23 @@ class Robot {
      */
     bool search();
 
-    /** \brief pushes the current position of the robot on to the stack.
-     * This allows us to reverse out path to the candle.
-     * Call this every time the robot has significantly changed it's position
+    /** \brief calls out to FireFinder to determine the height of the candle
+     * \return whether the height of the candle has been determinued
      */
-    void pushPos();
+    bool findCandleHeight();
+
+    /** \brief calls the sub-state machine to extinguish the candl
+     * \return whether the candle is extinguished yet
+     */
+    bool extinguishCandle();
+
+    /** \brief Returns robot to origin. Pops all the Points pushed on to the stack and traverses them.
+     * \return whether the robot has returned to origin yet
+     */
+    bool returnToOrigin();
+
+    /** \brief The end routine. Stops the robot and prints final info */
+    void end();
 
     /** \brief set the goal for navigator to a delta in the candle frame
      * candle frame is centered at the robot, but with x towards the candle
@@ -60,30 +72,21 @@ class Robot {
      */
     void setGoalToCandle();
 
-    /** \brief calls out to FireFinder to determine the height of the candle
-     * \return whether the height of the candle has been determinued
-     */
-    bool findCandleHeight();
-
-    /** \brief calls the sub-state machine to extinguish the candl
-     * \return whether the candle is extinguished yet
-     */
-    bool extinguishCandle();
-
     /** \brief gets the last known angle to the candle in absolute world frame
      * \return last known angle to candle in absolute world frame
      */
-    float absoluteCandleAngle();
-
-    /** \brief Returns robot to origin. Pops all the Points pushed on to the stack and traverses them.
-     * \return whether the robot has returned to origin yet
-     */
-    bool returnToOrigin();
+    float lastestAbsoluteCandleAngle();
 
     /** \brief gets the last known absolute position of the candle
-     * \return the last known absolute position of the candle
+     * and sets it as final in status manager
      */
-    Point<float> absoluteCandlePosition();
+    void setFinalAbsoluteCandlePosition();
+
+    /** \brief pushes the current position of the robot on to the stack.
+     * This allows us to reverse out path to the candle.
+     * Call this every time the robot has significantly changed it's position
+     */
+    void pushPos();
 
     /** \brief pops a waypoint off the stack and sets it as the current goal in navigator */
     void popWaypoint();
@@ -92,9 +95,6 @@ class Robot {
      * \return whether the robot has reached it's goal angle
      */
     bool turnToFaceAbsolutely(float angle);
-
-    /** \brief The end routine. Stops the robot and prints final info */
-    void end();
 
     // making these public so other subsystems
 
@@ -143,8 +143,9 @@ class Robot {
     /** \brief variable for determining when we're scanning for candle height */
     bool scanning = false;
 
-    /** \brief the current waypoint we're
+    /** \brief the current waypoint we're navigating to */
     Point<float> waypoint;
+
     const static int CANDLE_APPROACH_DISTANCE_INCHES = 40;
 
     long lastUpdateTime = 0;

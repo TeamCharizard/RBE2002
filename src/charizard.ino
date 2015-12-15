@@ -1,5 +1,6 @@
 #include "charizard.hpp"
 
+#include "shared/StatusManager.hpp"
 #include "Main.hpp"
 
 LiquidCrystal Display(40,41,42,43,44,45);
@@ -20,6 +21,7 @@ void debugPrint(int line, const char *format, ...){
 }
 
 void setup(){
+  StatusManager::setup();
   Display.begin(16,2);
   Serial.begin(9600);
   sketch.setup();

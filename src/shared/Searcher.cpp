@@ -20,12 +20,16 @@ void Searcher::setup(){
   }
 }
 
+void Searcher::changeState(State state){
+  this->state =  state;
+  StatusManager::printState(stateNames[state]);
+}
+
 bool Searcher::run(){
   switch(state){
     case SEARCHING:
       if (search()){
-        state = CHECKING;
-        debugPrint(0,"ST:%s",stateNames[state]);
+        changeState(CHECKING);
       }
       break;
     case TURNING:
@@ -34,8 +38,7 @@ bool Searcher::run(){
         if (now - lastUpdateTime > UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->turnToFaceAbsolutely(absoluteTurnGoalAngle)){
-            state = SEARCHING;
-            debugPrint(0,"ST:%s",stateNames[state]);
+            changeState(SEARCHING);
           }
         }
       }
@@ -46,8 +49,7 @@ bool Searcher::run(){
         if (now - lastUpdateTime > UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
-            state = CHECK_AFTER_SCOOT;
-            debugPrint(0,"ST:%s",stateNames[state]);
+            changeState(CHECK_AFTER_SCOOT);
           }
         }
       }
@@ -55,14 +57,13 @@ bool Searcher::run(){
     case CHECKING:
       switch(check()){
         case THINKING:
+
           break;
         case FOUND:
-          state = CHECK_PATH;
-          debugPrint(0,"ST:%s",stateNames[state]);
+          changeState(CHECK_PATH);
           break;
         case MISTAKEN:
-          state = SEARCHING;
-          debugPrint(0,"ST:%s",stateNames[state]);
+          changeState(SEARCHING);
           break;
       }
       break;
@@ -78,11 +79,11 @@ bool Searcher::run(){
           Point<float> delta(0, amountToScootInches);
           Robot::getInstance()->setGoalInCandleFrame(delta);
           Robot::getInstance()->pushPos();
-          state = SCOOT;
+          changeState(SCOOT);
         }
         else {
           Robot::getInstance()->setGoalToCandle();
-          state = GO_TO_CANDLE;
+          changeState(GO_TO_CANDLE);
         }
       }
       break;
@@ -93,12 +94,10 @@ bool Searcher::run(){
         case FOUND:
           Robot::getInstance()->setGoalToCandle();
           Robot::getInstance()->pushPos();
-          state = GO_TO_CANDLE;
-          debugPrint(0,"ST:%s",stateNames[state]);
+          changeState(GO_TO_CANDLE);
           break;
         case MISTAKEN:
-          state = CHECKING;
-          debugPrint(0,"ST:%s",stateNames[state]);
+          changeState(CHECKING);
           break;
       }
       break;
@@ -108,8 +107,7 @@ bool Searcher::run(){
         if (now - lastUpdateTime > UPDATE_PERIOD){
           lastUpdateTime = now;
           if (Robot::getInstance()->navigator.run()){
-            state = CHECK_FINAL;
-            debugPrint(0,"ST:%s",stateNames[state]);
+            changeState(CHECK_FINAL);
           }
         }
       }
@@ -117,12 +115,12 @@ bool Searcher::run(){
     case CHECK_FINAL:
       switch (check()){
         case FOUND:
+          Robot::getInstance()->setFinalAbsoluteCandlePosition();
           Robot::getInstance()->pushPos();
-          state = TURN_TO_CANDLE;
-          debugPrint(0,"ST:%s",stateNames[state]);
+          changeState(TURN_TO_CANDLE);
           break;
         case MISTAKEN:
-          state = SEARCHING;
+          changeState(SEARCHING);
           break;
         case THINKING:
           break;
@@ -131,7 +129,7 @@ bool Searcher::run(){
     case TURN_TO_CANDLE:
       if (turnToFaceCandle()){
         return true;
-        debugPrint(0,"ST:%s",stateNames[state]);
+        StatusManager::printState(stateNames[state]);
       }
       break;
   }
@@ -147,15 +145,13 @@ bool Searcher::search(){
     if (currentDriveDirection == LEFT){
       absoluteTurnGoalAngle = Robot::getInstance()->base.dir() - M_PI/2;
       Robot::getInstance()->pushPos();
-      state = TURNING;
-      debugPrint(0,"ST:%s",stateNames[state]);
+      changeState(TURNING);
       return false;
     }
     else if (currentDriveDirection == RIGHT){
       absoluteTurnGoalAngle = Robot::getInstance()->base.dir() + M_PI/2;
       Robot::getInstance()->pushPos();
-      state = TURNING;
-      debugPrint(0,"ST:%s",stateNames[state]);
+      changeState(TURNING);
       return false;
     }
 
@@ -196,7 +192,6 @@ int Searcher::checkPath(){
 
     int interferrence = R_TH[lookup_angle] - r;
     if (interferrence > 0){
-      debugPrint(1, "inf a=%3d r=%4d", angle, r);
       return i > 0 ? -Robot::WIDTH : Robot::WIDTH;
     }
   }
@@ -220,11 +215,7 @@ Searcher::CheckState Searcher::check(){
     if (candleFound && sweeps > 1){
       candleCount++;
       if (candleCount > 5){
-
-        Point<float> candle_pos = Robot::getInstance()->absoluteCandlePosition();
-
-        absoluteCandleAngle = Robot::getInstance()->absoluteCandleAngle();
-
+        absoluteCandleAngle = Robot::getInstance()->lastestAbsoluteCandleAngle();;
         sweeps = 0;
         candleCount = 0;
         return FOUND;

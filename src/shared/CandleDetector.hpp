@@ -15,7 +15,7 @@ class CandleDetector{
 
     int distance();
     int angle();
-    Point<float> position();
+    Point<float> relativePosition();
 
   private:
 
