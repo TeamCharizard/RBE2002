@@ -86,6 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classCandleDetector-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -99,8 +100,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad018cfcc4256482dcc093cca4411fea6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#ad018cfcc4256482dcc093cca4411fea6">CandleDetector</a> ()</td></tr>
 <tr class="separator:ad018cfcc4256482dcc093cca4411fea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae02492f18d3f1ff4282bebb70bfdd905"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#ae02492f18d3f1ff4282bebb70bfdd905">detect</a> (int *distance, int *angle, int *radii)</td></tr>
-<tr class="separator:ae02492f18d3f1ff4282bebb70bfdd905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9d654f3be7f3ae44d4e1fc07d08b51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a8b9d654f3be7f3ae44d4e1fc07d08b51">detect</a> ()</td></tr>
+<tr class="separator:a8b9d654f3be7f3ae44d4e1fc07d08b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01619df190ca44d8171055b49e81444f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a01619df190ca44d8171055b49e81444f">distance</a> ()</td></tr>
+<tr class="separator:a01619df190ca44d8171055b49e81444f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d5ea11e04eaa51214c3a786eec7455"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">angle</a> ()</td></tr>
+<tr class="separator:a69d5ea11e04eaa51214c3a786eec7455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773abb6491519a0d1b7111e2973c7199"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a773abb6491519a0d1b7111e2973c7199">relativePosition</a> ()</td></tr>
+<tr class="separator:a773abb6491519a0d1b7111e2973c7199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9920f067f44f9dc8aab6747699a244f7"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a9920f067f44f9dc8aab6747699a244f7">CANDLE_CENTER_OFFSET</a> = 40</td></tr>
+<tr class="separator:a9920f067f44f9dc8aab6747699a244f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d4f2c951c77838bfc5c068b58cf9fda"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a3d4f2c951c77838bfc5c068b58cf9fda">candleDistance</a> = 0</td></tr>
+<tr class="separator:a3d4f2c951c77838bfc5c068b58cf9fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a043c3f35890b36e187734a492f96f84c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a043c3f35890b36e187734a492f96f84c">candleAngle</a> = 0</td></tr>
+<tr class="separator:a043c3f35890b36e187734a492f96f84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -108,16 +124,18 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:af4c5d2170cea56fa4263639f20ed13ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c8f0232491ba37dd10032c1da376145"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145">WIDTH_TOLERANCE</a> = 35</td></tr>
 <tr class="separator:a1c8f0232491ba37dd10032c1da376145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c96353ba6d64163cf5e44b1ce2aa9e"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#ab3c96353ba6d64163cf5e44b1ce2aa9e">RADIUS_TOLERANCE</a> = 50</td></tr>
+<tr class="separator:ab3c96353ba6d64163cf5e44b1ce2aa9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9062a3c45b98c5d051082dbf4a285fd5"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a9062a3c45b98c5d051082dbf4a285fd5">MIN_SPIKE</a> = 300</td></tr>
 <tr class="separator:a9062a3c45b98c5d051082dbf4a285fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3903cd4085162f1fc38ca74cac3b954e"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e">MAX_SPIKE</a> = 3000</td></tr>
 <tr class="separator:a3903cd4085162f1fc38ca74cac3b954e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8aa00d0477ff096c344ec71d8ccdf82"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">VALID_CANDLE_THRESHOLD</a> = 0.9</td></tr>
+<tr class="memitem:ac8aa00d0477ff096c344ec71d8ccdf82"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">VALID_CANDLE_THRESHOLD</a> = 0.8</td></tr>
 <tr class="separator:ac8aa00d0477ff096c344ec71d8ccdf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00003">3</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00005">5</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad018cfcc4256482dcc093cca4411fea6"></a>
 <div class="memitem">
@@ -132,47 +150,147 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00007">7</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00008">8</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae02492f18d3f1ff4282bebb70bfdd905"></a>
+<a class="anchor" id="a69d5ea11e04eaa51214c3a786eec7455"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CandleDetector::angle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00010">10</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b9d654f3be7f3ae44d4e1fc07d08b51"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool CandleDetector::detect </td>
           <td>(</td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>distance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>angle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>radii</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Looks for candle and returns true if found assigns values to given pointers for distance and angle based on input array of distances </p>
 
-<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00009">9</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00024">24</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a01619df190ca44d8171055b49e81444f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CandleDetector::distance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00014">14</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a773abb6491519a0d1b7111e2973c7199"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPoint.html">Point</a>&lt; float &gt; CandleDetector::relativePosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="CandleDetector_8cpp_source.html#l00018">18</a> of file <a class="el" href="CandleDetector_8cpp_source.html">CandleDetector.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9920f067f44f9dc8aab6747699a244f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int CandleDetector::CANDLE_CENTER_OFFSET = 40</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00022">22</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a043c3f35890b36e187734a492f96f84c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CandleDetector::candleAngle = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00025">25</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d4f2c951c77838bfc5c068b58cf9fda"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CandleDetector::candleDistance = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00024">24</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3903cd4085162f1fc38ca74cac3b954e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -191,7 +309,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00018">18</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00031">31</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -213,7 +331,29 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00017">17</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00030">30</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3c96353ba6d64163cf5e44b1ce2aa9e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int CandleDetector::RADIUS_TOLERANCE = 50</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00029">29</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -225,7 +365,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.9</td>
+          <td class="memname">const float CandleDetector::VALID_CANDLE_THRESHOLD = 0.8</td>
         </tr>
       </table>
   </td>
@@ -235,7 +375,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00020">20</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00033">33</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -257,7 +397,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00015">15</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00027">27</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -279,7 +419,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00016">16</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="CandleDetector_8hpp_source.html#l00028">28</a> of file <a class="el" href="CandleDetector_8hpp_source.html">CandleDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -290,7 +430,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 10 2015 23:04:59 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 00:01:31 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

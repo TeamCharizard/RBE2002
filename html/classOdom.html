@@ -103,8 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab45cc0ea11f5300b84afe6133859a2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6736e8d83d7276bc7b4a656b9dc8dda5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a6736e8d83d7276bc7b4a656b9dc8dda5">setup</a> ()</td></tr>
 <tr class="separator:a6736e8d83d7276bc7b4a656b9dc8dda5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8bfe47ce84b923b09abf1cf4428c516"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#ab8bfe47ce84b923b09abf1cf4428c516">updateDifferential</a> ()</td></tr>
-<tr class="separator:ab8bfe47ce84b923b09abf1cf4428c516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1627e2cf01e2d9869d24027a1a98469"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#ab1627e2cf01e2d9869d24027a1a98469">updateDifferential</a> ()</td></tr>
+<tr class="separator:ab1627e2cf01e2d9869d24027a1a98469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad18072b90a4f0951165577a014024de"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#aad18072b90a4f0951165577a014024de">leftDisplacement</a> ()</td></tr>
 <tr class="separator:aad18072b90a4f0951165577a014024de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee42d44f07335600703f40061a01836e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#aee42d44f07335600703f40061a01836e">rightDisplacement</a> ()</td></tr>
@@ -118,6 +118,8 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad2308d2e662650534d2a85aad6c97349"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#ad2308d2e662650534d2a85aad6c97349">dir</a></td></tr>
 <tr class="separator:ad2308d2e662650534d2a85aad6c97349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4c2d005150e15fef0db14e923bfca3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a4c4c2d005150e15fef0db14e923bfca3">gyroAngle</a></td></tr>
+<tr class="separator:a4c4c2d005150e15fef0db14e923bfca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa29154456ebb189815df2501cc8eb2fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#aa29154456ebb189815df2501cc8eb2fd">left_disp</a></td></tr>
 <tr class="separator:aa29154456ebb189815df2501cc8eb2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a967a8ce7e6bea53de203e37cf180389a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a967a8ce7e6bea53de203e37cf180389a">right_disp</a></td></tr>
@@ -127,6 +129,8 @@ Public Attributes</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0e43d9feb433dec91e7a08cee64d732b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a0e43d9feb433dec91e7a08cee64d732b">pos</a></td></tr>
 <tr class="separator:a0e43d9feb433dec91e7a08cee64d732b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52380c80a1c7072904a766a59e09d3b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGyro.html">Gyro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOdom.html#a52380c80a1c7072904a766a59e09d3b5">gyro</a></td></tr>
+<tr class="separator:a52380c80a1c7072904a766a59e09d3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -140,7 +144,7 @@ Static Private Attributes</h2></td></tr>
 class Odom&lt; Enc1, Enc2 &gt;</h3>
 
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00006">6</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00009">9</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab45cc0ea11f5300b84afe6133859a2c2"></a>
 <div class="memitem">
@@ -165,7 +169,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00013">13</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00018">18</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -193,7 +197,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00045">45</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00061">61</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -220,7 +224,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00037">37</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00053">53</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -247,7 +251,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00041">41</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00057">57</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -275,7 +279,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00047">47</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00063">63</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -302,11 +306,11 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00015">15</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00020">20</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab8bfe47ce84b923b09abf1cf4428c516"></a>
+<a class="anchor" id="ab1627e2cf01e2d9869d24027a1a98469"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -316,7 +320,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOdom.html">Odom</a>&lt; Enc1, Enc2 &gt;::updateDifferential </td>
+          <td class="memname">float <a class="el" href="classOdom.html">Odom</a>&lt; Enc1, Enc2 &gt;::updateDifferential </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -329,7 +333,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00024">24</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00032">32</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +350,47 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00020">20</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00028">28</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a52380c80a1c7072904a766a59e09d3b5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Enc1, typename Enc2&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classGyro.html">Gyro</a> <a class="el" href="classOdom.html">Odom</a>&lt; Enc1, Enc2 &gt;::gyro</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00012">12</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c4c2d005150e15fef0db14e923bfca3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Enc1, typename Enc2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classOdom.html">Odom</a>&lt; Enc1, Enc2 &gt;::gyroAngle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00028">28</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -362,7 +406,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00021">21</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00029">29</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -386,7 +430,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00008">8</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00011">11</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -402,7 +446,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00021">21</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00029">29</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -426,7 +470,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00011">11</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00015">15</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -450,7 +494,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00010">10</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Odom_8hpp_source.html#l00014">14</a> of file <a class="el" href="Odom_8hpp_source.html">Odom.hpp</a>.</p>
 
 </div>
 </div>
@@ -460,7 +504,7 @@ template&lt;typename Enc1, typename Enc2&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 10 2015 23:04:59 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 00:01:32 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

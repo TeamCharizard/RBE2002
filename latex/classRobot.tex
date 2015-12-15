@@ -9,74 +9,99 @@
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classRobot_a1fc37e3c329d59795f6adf44199d4df9}{setup} ()
-\item 
-void \hyperlink{classRobot_a8ad37bfa9e1efeaf7b5eb67667513dbe}{drive} ()
-\item 
+\begin{DoxyCompactList}\small\item\em calls setups for all subsystems \end{DoxyCompactList}\item 
 void \hyperlink{classRobot_a14dfe126ae973d3b9f81fee81a06ac22}{stop} ()
-\item 
+\begin{DoxyCompactList}\small\item\em sets the velocity of \hyperlink{classPIDBase}{P\-I\-D\-Base} to 0. This won't nessecarily stop the robot unless you're calling base.\-drive \end{DoxyCompactList}\item 
+void \hyperlink{classRobot_a5d21e8314db61586ed66637baac6063a}{hard\-Stop} ()
+\begin{DoxyCompactList}\small\item\em genuinely stops the motors. It simply writes 90 to both motors. Don't use this if you can avoid it, it can jerk the robot around. \end{DoxyCompactList}\item 
 void \hyperlink{classRobot_ade0935cead03791f27fa854df88a3f22}{set\-Drive} (\hyperlink{DriveMotor_8hpp_a077d9d13989efa3142086ea83cbb1e68}{Drive\-Direction} dir)
 \item 
 bool \hyperlink{classRobot_a1f08dec6eea6b51d73cd41a8db3bb893}{search} ()
-\item 
-bool \hyperlink{classRobot_a6b943dfc58f8e1d49ee063250a2621de}{drive\-To\-Candle} ()
-\item 
+\begin{DoxyCompactList}\small\item\em search for candle by driving around \end{DoxyCompactList}\item 
 bool \hyperlink{classRobot_a17e0de9c529197b3575e11a87470376b}{find\-Candle\-Height} ()
-\item 
+\begin{DoxyCompactList}\small\item\em calls out to \hyperlink{classFireFinder}{Fire\-Finder} to determine the height of the candle \end{DoxyCompactList}\item 
 bool \hyperlink{classRobot_a0dfb8f97d6a9448bc6f9ccc5b9efb9fb}{extinguish\-Candle} ()
-\item 
+\begin{DoxyCompactList}\small\item\em calls the sub-\/state machine to extinguish the candl \end{DoxyCompactList}\item 
 bool \hyperlink{classRobot_ac1faa7fbfb483c4053dc35f368359c0b}{return\-To\-Origin} ()
-\item 
-bool \hyperlink{classRobot_afa750c4ecf35e5f26992779ac89eb13e}{turn\-To\-Face} (int angle)
-\item 
-void \hyperlink{classRobot_ae7a44c77eacc2a9a3d41f7a18cfb401f}{drive\-And\-Avoid} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns robot to origin. Pops all the Points pushed on to the stack and traverses them. \end{DoxyCompactList}\item 
+void \hyperlink{classRobot_a9dab3fb1d3619cbc9b8b1e19f6320c6f}{end} ()
+\begin{DoxyCompactList}\small\item\em The end routine. Stops the robot and prints final info. \end{DoxyCompactList}\item 
+void \hyperlink{classRobot_a890d4f4ee0eed7fe96f551b52f0d7407}{set\-Goal\-In\-Candle\-Frame} (\hyperlink{classPoint}{Point}$<$ float $>$ delta)
+\begin{DoxyCompactList}\small\item\em set the goal for navigator to a delta in the candle frame candle frame is centered at the robot, but with x towards the candle \end{DoxyCompactList}\item 
+void \hyperlink{classRobot_a6d144ed908ee859cfadda61e2adcb393}{set\-Goal\-To\-Candle} ()
+\begin{DoxyCompactList}\small\item\em set the goal for navigator to the current position of the candle, minus a constant C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S. This is based on the last known location of the candle in the world frame. \end{DoxyCompactList}\item 
+float \hyperlink{classRobot_a100ecac9c55a7c1552bf933e1a2dd9d1}{absolute\-Candle\-Angle\-From\-Current\-Position} ()
+\begin{DoxyCompactList}\small\item\em gets the last known angle to the candle in current robot frame \end{DoxyCompactList}\item 
+void \hyperlink{classRobot_a0041769ee864f2952fab05db433e20ea}{set\-Final\-Absolute\-Candle\-Position} ()
+\begin{DoxyCompactList}\small\item\em gets the last known absolute position of the candle and sets it as final in status manager \end{DoxyCompactList}\item 
+void \hyperlink{classRobot_abec1c3c25468c64565a4e1c934f32d62}{push\-Pos} ()
+\begin{DoxyCompactList}\small\item\em pushes the current position of the robot on to the stack. This allows us to reverse out path to the candle. Call this every time the robot has significantly changed it's position \end{DoxyCompactList}\item 
+void \hyperlink{classRobot_a7e05e17417f58dd3b9d3d02b365a5df1}{pop\-Waypoint} ()
+\begin{DoxyCompactList}\small\item\em pops a waypoint off the stack and sets it as the current goal in navigator \end{DoxyCompactList}\item 
+bool \hyperlink{classRobot_a485de0486179cbbdc32561fd87bfe1c2}{turn\-To\-Face\-Absolutely} (float angle)
+\begin{DoxyCompactList}\small\item\em uses \hyperlink{classPIDBase}{P\-I\-D\-Base} to turn to face an angle in the world frame \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classRobot}{Robot} $\ast$ \hyperlink{classRobot_ac6f19dc31b435f8a2d43944ba49286d0}{get\-Instance} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em singleton accessor for robot instance. Using a singleton makes sense because only one robot exists, and everyone can access it statically \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classLidar}{Lidar} \hyperlink{classRobot_a222e54f477e23f5af80cfa10bcd85e7a}{lidar}
-\item 
+\begin{DoxyCompactList}\small\item\em lidar subsystem \end{DoxyCompactList}\item 
 \hyperlink{classPIDBase}{P\-I\-D\-Base} \hyperlink{classRobot_adbf538f97c0f9f98337f5171e715badc}{base}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPID}{P\-I\-D} drive base subsystem. \end{DoxyCompactList}\item 
+\hyperlink{classFireFinder}{Fire\-Finder} \hyperlink{classRobot_a342f5f8be2b5641eb3ae8f9c8475ebe6}{ff}
+\begin{DoxyCompactList}\small\item\em fire finder subsystem \end{DoxyCompactList}\item 
+\hyperlink{classCandleDetector}{Candle\-Detector} \hyperlink{classRobot_a19cb4c2ee87b595db9275e6b3d9ca30d}{detector}
+\begin{DoxyCompactList}\small\item\em cande detector subsystem \end{DoxyCompactList}\item 
+\hyperlink{classNavigator}{Navigator} \hyperlink{classRobot_a71e296a4f32c3a81b5a9fabeac12747b}{navigator}
+\begin{DoxyCompactList}\small\item\em navigator subsystem \end{DoxyCompactList}\item 
+\hyperlink{classStack}{Stack}$<$ \hyperlink{classPoint}{Point}$<$ float $>$, 256 $>$ \hyperlink{classRobot_a36d071e82aea40470cea9559477e5115}{path}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classStack}{Stack} for the navigation waypoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classRobot_a59c0d01f9863b7c1e504b558bd9fae67}{C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S} = 30
+\begin{DoxyCompactList}\small\item\em distance at which we blow out candle \end{DoxyCompactList}\item 
+static const int \hyperlink{classRobot_aeefc61d76e6ba024e4af9c844715a84d}{W\-I\-D\-T\-H} = 205
+\begin{DoxyCompactList}\small\item\em W\-I\-D\-T\-H of half the robot plus a little bit to give some. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classRobot_a4fc7c70ae20623f05e06f2ecb388b6c4}{Robot} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em constructor is private because it's a singleton class \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classSearcher}{Searcher} \hyperlink{classRobot_af0ba30c47b84dc976f5bb7bd978f95ef}{searcher}
-\item 
 \hyperlink{DriveMotor_8hpp_a077d9d13989efa3142086ea83cbb1e68}{Drive\-Direction} \hyperlink{classRobot_af15d2eaa46a9736e5d3d3aa9e8a9751c}{drive\-Direction}
-\item 
-\hyperlink{classCandleDetector}{Candle\-Detector} \hyperlink{classRobot_a19cb4c2ee87b595db9275e6b3d9ca30d}{detector}
-\item 
-\hyperlink{classFireFinder}{Fire\-Finder} \hyperlink{classRobot_a342f5f8be2b5641eb3ae8f9c8475ebe6}{ff}
-\item 
-int $\ast$ \hyperlink{classRobot_aba9dccea96aa95bb8fbdd1a5ba72ca73}{distances}
-\item 
-int \hyperlink{classRobot_afae387e4e9419530d3217055301ba939}{distance\-To\-Candle}
-\item 
-int \hyperlink{classRobot_a7c1bd342087a6eedeeb0df07fa9cf3d2}{angle\-To\-Candle}
+\begin{DoxyCompactList}\small\item\em drive direction enum \end{DoxyCompactList}\item 
+\hyperlink{classExtinguisher}{Extinguisher} \hyperlink{classRobot_a506ec05fcf24208b486c48367b003e96}{extinguisher}
+\begin{DoxyCompactList}\small\item\em extinguisher instance. Controls the extinguish routine \end{DoxyCompactList}\item 
+\hyperlink{classSearcher}{Searcher} \hyperlink{classRobot_af0ba30c47b84dc976f5bb7bd978f95ef}{searcher}
+\begin{DoxyCompactList}\small\item\em searcher instance. Controls the search routine \end{DoxyCompactList}\item 
+\hyperlink{classGyro}{Gyro} \hyperlink{classRobot_adafaf54e27eb3bd0cf08e32d7206e6a8}{gyro}
+\begin{DoxyCompactList}\small\item\em gyro for getting points \end{DoxyCompactList}\item 
+bool \hyperlink{classRobot_adcfb83201cfb8c8a7588d83aae0fc5be}{scanning} = false
+\begin{DoxyCompactList}\small\item\em variable for determining when we're scanning for candle height \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classRobot_a4e7ca1c81831d252aa1545f549bff3f4}{waypoint}
+\begin{DoxyCompactList}\small\item\em the current waypoint we're navigating to \end{DoxyCompactList}\item 
+long \hyperlink{classRobot_a82a33c66efce935d2cac37c9f11c6efd}{last\-Update\-Time} = 0
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classRobot}{Robot} $\ast$ \hyperlink{classRobot_aad5c5d6db601aac62393d47ec9385fa3}{instance} = N\-U\-L\-L
-\item 
-static const int \hyperlink{classRobot_afb4449356b3a3f92b2c76c612e8951ee}{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E} = 300
+\begin{DoxyCompactList}\small\item\em static instance of robot \end{DoxyCompactList}\item 
+static const long \hyperlink{classRobot_a6a76c7da686c2cec0cba2877e0c914dc}{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D} = 50
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 10 of file Robot.\-hpp.
+Definition at line 14 of file Robot.\-hpp.
 
 
 
@@ -88,45 +113,49 @@ Definition at line 10 of file Robot.\-hpp.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a4fc7c70ae20623f05e06f2ecb388b6c4}
+
+
 constructor is private because it's a singleton class 
 
-Definition at line 7 of file Robot.\-cpp.
+
+
+Definition at line 8 of file Robot.\-cpp.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classRobot_a8ad37bfa9e1efeaf7b5eb67667513dbe}{\index{Robot@{Robot}!drive@{drive}}
-\index{drive@{drive}!Robot@{Robot}}
-\subsubsection[{drive}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::drive (
+\hypertarget{classRobot_a100ecac9c55a7c1552bf933e1a2dd9d1}{\index{Robot@{Robot}!absolute\-Candle\-Angle\-From\-Current\-Position@{absolute\-Candle\-Angle\-From\-Current\-Position}}
+\index{absolute\-Candle\-Angle\-From\-Current\-Position@{absolute\-Candle\-Angle\-From\-Current\-Position}!Robot@{Robot}}
+\subsubsection[{absolute\-Candle\-Angle\-From\-Current\-Position}]{\setlength{\rightskip}{0pt plus 5cm}float Robot\-::absolute\-Candle\-Angle\-From\-Current\-Position (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classRobot_a8ad37bfa9e1efeaf7b5eb67667513dbe}
+)}}\label{classRobot_a100ecac9c55a7c1552bf933e1a2dd9d1}
 
 
-Definition at line 23 of file Robot.\-cpp.
+gets the last known angle to the candle in current robot frame 
 
-\hypertarget{classRobot_ae7a44c77eacc2a9a3d41f7a18cfb401f}{\index{Robot@{Robot}!drive\-And\-Avoid@{drive\-And\-Avoid}}
-\index{drive\-And\-Avoid@{drive\-And\-Avoid}!Robot@{Robot}}
-\subsubsection[{drive\-And\-Avoid}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::drive\-And\-Avoid (
+\begin{DoxyReturn}{Returns}
+last known angle to candle in current robot frame 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a9dab3fb1d3619cbc9b8b1e19f6320c6f}{\index{Robot@{Robot}!end@{end}}
+\index{end@{end}!Robot@{Robot}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::end (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classRobot_ae7a44c77eacc2a9a3d41f7a18cfb401f}
+)}}\label{classRobot_a9dab3fb1d3619cbc9b8b1e19f6320c6f}
 
 
-Definition at line 117 of file Robot.\-cpp.
-
-\hypertarget{classRobot_a6b943dfc58f8e1d49ee063250a2621de}{\index{Robot@{Robot}!drive\-To\-Candle@{drive\-To\-Candle}}
-\index{drive\-To\-Candle@{drive\-To\-Candle}!Robot@{Robot}}
-\subsubsection[{drive\-To\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::drive\-To\-Candle (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classRobot_a6b943dfc58f8e1d49ee063250a2621de}
+The end routine. Stops the robot and prints final info. 
 
 
-Definition at line 69 of file Robot.\-cpp.
+
+Definition at line 165 of file Robot.\-cpp.
 
 \hypertarget{classRobot_a0dfb8f97d6a9448bc6f9ccc5b9efb9fb}{\index{Robot@{Robot}!extinguish\-Candle@{extinguish\-Candle}}
 \index{extinguish\-Candle@{extinguish\-Candle}!Robot@{Robot}}
@@ -137,7 +166,14 @@ Definition at line 69 of file Robot.\-cpp.
 )}}\label{classRobot_a0dfb8f97d6a9448bc6f9ccc5b9efb9fb}
 
 
-Definition at line 86 of file Robot.\-cpp.
+calls the sub-\/state machine to extinguish the candl 
+
+\begin{DoxyReturn}{Returns}
+whether the candle is extinguished yet 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file Robot.\-cpp.
 
 \hypertarget{classRobot_a17e0de9c529197b3575e11a87470376b}{\index{Robot@{Robot}!find\-Candle\-Height@{find\-Candle\-Height}}
 \index{find\-Candle\-Height@{find\-Candle\-Height}!Robot@{Robot}}
@@ -148,7 +184,14 @@ Definition at line 86 of file Robot.\-cpp.
 )}}\label{classRobot_a17e0de9c529197b3575e11a87470376b}
 
 
-Definition at line 81 of file Robot.\-cpp.
+calls out to \hyperlink{classFireFinder}{Fire\-Finder} to determine the height of the candle 
+
+\begin{DoxyReturn}{Returns}
+whether the height of the candle has been determinued 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file Robot.\-cpp.
 
 \hypertarget{classRobot_ac6f19dc31b435f8a2d43944ba49286d0}{\index{Robot@{Robot}!get\-Instance@{get\-Instance}}
 \index{get\-Instance@{get\-Instance}!Robot@{Robot}}
@@ -159,7 +202,56 @@ Definition at line 81 of file Robot.\-cpp.
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classRobot_ac6f19dc31b435f8a2d43944ba49286d0}
 
 
-Definition at line 15 of file Robot.\-cpp.
+singleton accessor for robot instance. Using a singleton makes sense because only one robot exists, and everyone can access it statically 
+
+
+
+Definition at line 20 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a5d21e8314db61586ed66637baac6063a}{\index{Robot@{Robot}!hard\-Stop@{hard\-Stop}}
+\index{hard\-Stop@{hard\-Stop}!Robot@{Robot}}
+\subsubsection[{hard\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::hard\-Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a5d21e8314db61586ed66637baac6063a}
+
+
+genuinely stops the motors. It simply writes 90 to both motors. Don't use this if you can avoid it, it can jerk the robot around. 
+
+
+
+Definition at line 31 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a7e05e17417f58dd3b9d3d02b365a5df1}{\index{Robot@{Robot}!pop\-Waypoint@{pop\-Waypoint}}
+\index{pop\-Waypoint@{pop\-Waypoint}!Robot@{Robot}}
+\subsubsection[{pop\-Waypoint}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::pop\-Waypoint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a7e05e17417f58dd3b9d3d02b365a5df1}
+
+
+pops a waypoint off the stack and sets it as the current goal in navigator 
+
+
+
+Definition at line 128 of file Robot.\-cpp.
+
+\hypertarget{classRobot_abec1c3c25468c64565a4e1c934f32d62}{\index{Robot@{Robot}!push\-Pos@{push\-Pos}}
+\index{push\-Pos@{push\-Pos}!Robot@{Robot}}
+\subsubsection[{push\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::push\-Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_abec1c3c25468c64565a4e1c934f32d62}
+
+
+pushes the current position of the robot on to the stack. This allows us to reverse out path to the candle. Call this every time the robot has significantly changed it's position 
+
+
+
+Definition at line 55 of file Robot.\-cpp.
 
 \hypertarget{classRobot_ac1faa7fbfb483c4053dc35f368359c0b}{\index{Robot@{Robot}!return\-To\-Origin@{return\-To\-Origin}}
 \index{return\-To\-Origin@{return\-To\-Origin}!Robot@{Robot}}
@@ -170,7 +262,14 @@ Definition at line 15 of file Robot.\-cpp.
 )}}\label{classRobot_ac1faa7fbfb483c4053dc35f368359c0b}
 
 
-Definition at line 90 of file Robot.\-cpp.
+Returns robot to origin. Pops all the Points pushed on to the stack and traverses them. 
+
+\begin{DoxyReturn}{Returns}
+whether the robot has returned to origin yet 
+\end{DoxyReturn}
+
+
+Definition at line 138 of file Robot.\-cpp.
 
 \hypertarget{classRobot_a1f08dec6eea6b51d73cd41a8db3bb893}{\index{Robot@{Robot}!search@{search}}
 \index{search@{search}!Robot@{Robot}}
@@ -179,12 +278,16 @@ Definition at line 90 of file Robot.\-cpp.
 {}
 \end{DoxyParamCaption}
 )}}\label{classRobot_a1f08dec6eea6b51d73cd41a8db3bb893}
-search for candle by driving around \begin{DoxyReturn}{Returns}
+
+
+search for candle by driving around 
+
+\begin{DoxyReturn}{Returns}
 true when the candle has been found 
 \end{DoxyReturn}
 
 
-Definition at line 53 of file Robot.\-cpp.
+Definition at line 79 of file Robot.\-cpp.
 
 \hypertarget{classRobot_ade0935cead03791f27fa854df88a3f22}{\index{Robot@{Robot}!set\-Drive@{set\-Drive}}
 \index{set\-Drive@{set\-Drive}!Robot@{Robot}}
@@ -200,7 +303,57 @@ given a direction, set the motor P\-I\-Ds accordingly
 \end{DoxyParams}
 
 
-Definition at line 49 of file Robot.\-cpp.
+Definition at line 36 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a0041769ee864f2952fab05db433e20ea}{\index{Robot@{Robot}!set\-Final\-Absolute\-Candle\-Position@{set\-Final\-Absolute\-Candle\-Position}}
+\index{set\-Final\-Absolute\-Candle\-Position@{set\-Final\-Absolute\-Candle\-Position}!Robot@{Robot}}
+\subsubsection[{set\-Final\-Absolute\-Candle\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::set\-Final\-Absolute\-Candle\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a0041769ee864f2952fab05db433e20ea}
+
+
+gets the last known absolute position of the candle and sets it as final in status manager 
+
+
+
+Definition at line 155 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a890d4f4ee0eed7fe96f551b52f0d7407}{\index{Robot@{Robot}!set\-Goal\-In\-Candle\-Frame@{set\-Goal\-In\-Candle\-Frame}}
+\index{set\-Goal\-In\-Candle\-Frame@{set\-Goal\-In\-Candle\-Frame}!Robot@{Robot}}
+\subsubsection[{set\-Goal\-In\-Candle\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::set\-Goal\-In\-Candle\-Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf Point}$<$ float $>$}]{delta}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a890d4f4ee0eed7fe96f551b52f0d7407}
+
+
+set the goal for navigator to a delta in the candle frame candle frame is centered at the robot, but with x towards the candle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & the x and y displacement in candle frame \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a6d144ed908ee859cfadda61e2adcb393}{\index{Robot@{Robot}!set\-Goal\-To\-Candle@{set\-Goal\-To\-Candle}}
+\index{set\-Goal\-To\-Candle@{set\-Goal\-To\-Candle}!Robot@{Robot}}
+\subsubsection[{set\-Goal\-To\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\-::set\-Goal\-To\-Candle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRobot_a6d144ed908ee859cfadda61e2adcb393}
+
+
+set the goal for navigator to the current position of the candle, minus a constant C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S. This is based on the last known location of the candle in the world frame. 
+
+
+
+Definition at line 59 of file Robot.\-cpp.
 
 \hypertarget{classRobot_a1fc37e3c329d59795f6adf44199d4df9}{\index{Robot@{Robot}!setup@{setup}}
 \index{setup@{setup}!Robot@{Robot}}
@@ -211,7 +364,11 @@ Definition at line 49 of file Robot.\-cpp.
 )}}\label{classRobot_a1fc37e3c329d59795f6adf44199d4df9}
 
 
-Definition at line 9 of file Robot.\-cpp.
+calls setups for all subsystems 
+
+
+
+Definition at line 10 of file Robot.\-cpp.
 
 \hypertarget{classRobot_a14dfe126ae973d3b9f81fee81a06ac22}{\index{Robot@{Robot}!stop@{stop}}
 \index{stop@{stop}!Robot@{Robot}}
@@ -222,102 +379,215 @@ Definition at line 9 of file Robot.\-cpp.
 )}}\label{classRobot_a14dfe126ae973d3b9f81fee81a06ac22}
 
 
-Definition at line 45 of file Robot.\-cpp.
+sets the velocity of \hyperlink{classPIDBase}{P\-I\-D\-Base} to 0. This won't nessecarily stop the robot unless you're calling base.\-drive 
 
-\hypertarget{classRobot_afa750c4ecf35e5f26992779ac89eb13e}{\index{Robot@{Robot}!turn\-To\-Face@{turn\-To\-Face}}
-\index{turn\-To\-Face@{turn\-To\-Face}!Robot@{Robot}}
-\subsubsection[{turn\-To\-Face}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::turn\-To\-Face (
+
+
+Definition at line 27 of file Robot.\-cpp.
+
+\hypertarget{classRobot_a485de0486179cbbdc32561fd87bfe1c2}{\index{Robot@{Robot}!turn\-To\-Face\-Absolutely@{turn\-To\-Face\-Absolutely}}
+\index{turn\-To\-Face\-Absolutely@{turn\-To\-Face\-Absolutely}!Robot@{Robot}}
+\subsubsection[{turn\-To\-Face\-Absolutely}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::turn\-To\-Face\-Absolutely (
 \begin{DoxyParamCaption}
-\item[{int}]{angle}
+\item[{float}]{angle}
 \end{DoxyParamCaption}
-)}}\label{classRobot_afa750c4ecf35e5f26992779ac89eb13e}
+)}}\label{classRobot_a485de0486179cbbdc32561fd87bfe1c2}
 
 
-Definition at line 94 of file Robot.\-cpp.
+uses \hyperlink{classPIDBase}{P\-I\-D\-Base} to turn to face an angle in the world frame 
+
+\begin{DoxyReturn}{Returns}
+whether the robot has reached it's goal angle 
+\end{DoxyReturn}
+
+
+Definition at line 161 of file Robot.\-cpp.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classRobot_a7c1bd342087a6eedeeb0df07fa9cf3d2}{\index{Robot@{Robot}!angle\-To\-Candle@{angle\-To\-Candle}}
-\index{angle\-To\-Candle@{angle\-To\-Candle}!Robot@{Robot}}
-\subsubsection[{angle\-To\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}int Robot\-::angle\-To\-Candle\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a7c1bd342087a6eedeeb0df07fa9cf3d2}
-
-
-Definition at line 59 of file Robot.\-hpp.
-
 \hypertarget{classRobot_adbf538f97c0f9f98337f5171e715badc}{\index{Robot@{Robot}!base@{base}}
 \index{base@{base}!Robot@{Robot}}
 \subsubsection[{base}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-I\-D\-Base} Robot\-::base}}\label{classRobot_adbf538f97c0f9f98337f5171e715badc}
 
 
-Definition at line 44 of file Robot.\-hpp.
+\hyperlink{classPID}{P\-I\-D} drive base subsystem. 
+
+
+
+Definition at line 105 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a59c0d01f9863b7c1e504b558bd9fae67}{\index{Robot@{Robot}!C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S@{C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S}}
+\index{C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S@{C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S}!Robot@{Robot}}
+\subsubsection[{C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int Robot\-::\-C\-A\-N\-D\-L\-E\-\_\-\-A\-P\-P\-R\-O\-A\-C\-H\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-I\-N\-C\-H\-E\-S = 30\hspace{0.3cm}{\ttfamily [static]}}}\label{classRobot_a59c0d01f9863b7c1e504b558bd9fae67}
+
+
+distance at which we blow out candle 
+
+
+
+Definition at line 120 of file Robot.\-hpp.
 
 \hypertarget{classRobot_a19cb4c2ee87b595db9275e6b3d9ca30d}{\index{Robot@{Robot}!detector@{detector}}
 \index{detector@{detector}!Robot@{Robot}}
-\subsubsection[{detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Candle\-Detector} Robot\-::detector\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a19cb4c2ee87b595db9275e6b3d9ca30d}
+\subsubsection[{detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Candle\-Detector} Robot\-::detector}}\label{classRobot_a19cb4c2ee87b595db9275e6b3d9ca30d}
 
 
-Definition at line 54 of file Robot.\-hpp.
-
-\hypertarget{classRobot_aba9dccea96aa95bb8fbdd1a5ba72ca73}{\index{Robot@{Robot}!distances@{distances}}
-\index{distances@{distances}!Robot@{Robot}}
-\subsubsection[{distances}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Robot\-::distances\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_aba9dccea96aa95bb8fbdd1a5ba72ca73}
+cande detector subsystem 
 
 
-Definition at line 57 of file Robot.\-hpp.
 
-\hypertarget{classRobot_afae387e4e9419530d3217055301ba939}{\index{Robot@{Robot}!distance\-To\-Candle@{distance\-To\-Candle}}
-\index{distance\-To\-Candle@{distance\-To\-Candle}!Robot@{Robot}}
-\subsubsection[{distance\-To\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}int Robot\-::distance\-To\-Candle\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_afae387e4e9419530d3217055301ba939}
-
-
-Definition at line 58 of file Robot.\-hpp.
+Definition at line 111 of file Robot.\-hpp.
 
 \hypertarget{classRobot_af15d2eaa46a9736e5d3d3aa9e8a9751c}{\index{Robot@{Robot}!drive\-Direction@{drive\-Direction}}
 \index{drive\-Direction@{drive\-Direction}!Robot@{Robot}}
 \subsubsection[{drive\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Direction} Robot\-::drive\-Direction\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_af15d2eaa46a9736e5d3d3aa9e8a9751c}
 
 
-Definition at line 53 of file Robot.\-hpp.
+drive direction enum 
+
+
+
+Definition at line 134 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a506ec05fcf24208b486c48367b003e96}{\index{Robot@{Robot}!extinguisher@{extinguisher}}
+\index{extinguisher@{extinguisher}!Robot@{Robot}}
+\subsubsection[{extinguisher}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Extinguisher} Robot\-::extinguisher\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a506ec05fcf24208b486c48367b003e96}
+
+
+extinguisher instance. Controls the extinguish routine 
+
+
+
+Definition at line 137 of file Robot.\-hpp.
 
 \hypertarget{classRobot_a342f5f8be2b5641eb3ae8f9c8475ebe6}{\index{Robot@{Robot}!ff@{ff}}
 \index{ff@{ff}!Robot@{Robot}}
-\subsubsection[{ff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fire\-Finder} Robot\-::ff\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a342f5f8be2b5641eb3ae8f9c8475ebe6}
+\subsubsection[{ff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fire\-Finder} Robot\-::ff}}\label{classRobot_a342f5f8be2b5641eb3ae8f9c8475ebe6}
 
 
-Definition at line 55 of file Robot.\-hpp.
-
-\hypertarget{classRobot_afb4449356b3a3f92b2c76c612e8951ee}{\index{Robot@{Robot}!G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
-\index{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!Robot@{Robot}}
-\subsubsection[{G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Robot\-::\-G\-O\-A\-L\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E = 300\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classRobot_afb4449356b3a3f92b2c76c612e8951ee}
+fire finder subsystem 
 
 
-Definition at line 61 of file Robot.\-hpp.
+
+Definition at line 108 of file Robot.\-hpp.
+
+\hypertarget{classRobot_adafaf54e27eb3bd0cf08e32d7206e6a8}{\index{Robot@{Robot}!gyro@{gyro}}
+\index{gyro@{gyro}!Robot@{Robot}}
+\subsubsection[{gyro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gyro} Robot\-::gyro\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_adafaf54e27eb3bd0cf08e32d7206e6a8}
+
+
+gyro for getting points 
+
+
+
+Definition at line 143 of file Robot.\-hpp.
 
 \hypertarget{classRobot_aad5c5d6db601aac62393d47ec9385fa3}{\index{Robot@{Robot}!instance@{instance}}
 \index{instance@{instance}!Robot@{Robot}}
 \subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Robot} $\ast$ Robot\-::instance = N\-U\-L\-L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classRobot_aad5c5d6db601aac62393d47ec9385fa3}
 
 
-Definition at line 50 of file Robot.\-hpp.
+static instance of robot 
+
+
+
+Definition at line 131 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a82a33c66efce935d2cac37c9f11c6efd}{\index{Robot@{Robot}!last\-Update\-Time@{last\-Update\-Time}}
+\index{last\-Update\-Time@{last\-Update\-Time}!Robot@{Robot}}
+\subsubsection[{last\-Update\-Time}]{\setlength{\rightskip}{0pt plus 5cm}long Robot\-::last\-Update\-Time = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a82a33c66efce935d2cac37c9f11c6efd}
+
+
+Definition at line 151 of file Robot.\-hpp.
 
 \hypertarget{classRobot_a222e54f477e23f5af80cfa10bcd85e7a}{\index{Robot@{Robot}!lidar@{lidar}}
 \index{lidar@{lidar}!Robot@{Robot}}
 \subsubsection[{lidar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lidar} Robot\-::lidar}}\label{classRobot_a222e54f477e23f5af80cfa10bcd85e7a}
-making these public so other subsystems (candle) 
 
-Definition at line 43 of file Robot.\-hpp.
+
+lidar subsystem 
+
+
+
+Definition at line 102 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a71e296a4f32c3a81b5a9fabeac12747b}{\index{Robot@{Robot}!navigator@{navigator}}
+\index{navigator@{navigator}!Robot@{Robot}}
+\subsubsection[{navigator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Navigator} Robot\-::navigator}}\label{classRobot_a71e296a4f32c3a81b5a9fabeac12747b}
+
+
+navigator subsystem 
+
+
+
+Definition at line 114 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a36d071e82aea40470cea9559477e5115}{\index{Robot@{Robot}!path@{path}}
+\index{path@{path}!Robot@{Robot}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stack}$<${\bf Point}$<$float$>$, 256$>$ Robot\-::path}}\label{classRobot_a36d071e82aea40470cea9559477e5115}
+
+
+\hyperlink{classStack}{Stack} for the navigation waypoints. 
+
+
+
+Definition at line 117 of file Robot.\-hpp.
+
+\hypertarget{classRobot_adcfb83201cfb8c8a7588d83aae0fc5be}{\index{Robot@{Robot}!scanning@{scanning}}
+\index{scanning@{scanning}!Robot@{Robot}}
+\subsubsection[{scanning}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\-::scanning = false\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_adcfb83201cfb8c8a7588d83aae0fc5be}
+
+
+variable for determining when we're scanning for candle height 
+
+
+
+Definition at line 146 of file Robot.\-hpp.
 
 \hypertarget{classRobot_af0ba30c47b84dc976f5bb7bd978f95ef}{\index{Robot@{Robot}!searcher@{searcher}}
 \index{searcher@{searcher}!Robot@{Robot}}
 \subsubsection[{searcher}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Searcher} Robot\-::searcher\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_af0ba30c47b84dc976f5bb7bd978f95ef}
 
 
-Definition at line 52 of file Robot.\-hpp.
+searcher instance. Controls the search routine 
+
+
+
+Definition at line 140 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a6a76c7da686c2cec0cba2877e0c914dc}{\index{Robot@{Robot}!U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D@{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}}
+\index{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D@{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}!Robot@{Robot}}
+\subsubsection[{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}const long Robot\-::\-U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D = 50\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classRobot_a6a76c7da686c2cec0cba2877e0c914dc}
+
+
+Definition at line 152 of file Robot.\-hpp.
+
+\hypertarget{classRobot_a4e7ca1c81831d252aa1545f549bff3f4}{\index{Robot@{Robot}!waypoint@{waypoint}}
+\index{waypoint@{waypoint}!Robot@{Robot}}
+\subsubsection[{waypoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}$<$float$>$ Robot\-::waypoint\hspace{0.3cm}{\ttfamily [private]}}}\label{classRobot_a4e7ca1c81831d252aa1545f549bff3f4}
+
+
+the current waypoint we're navigating to 
+
+
+
+Definition at line 149 of file Robot.\-hpp.
+
+\hypertarget{classRobot_aeefc61d76e6ba024e4af9c844715a84d}{\index{Robot@{Robot}!W\-I\-D\-T\-H@{W\-I\-D\-T\-H}}
+\index{W\-I\-D\-T\-H@{W\-I\-D\-T\-H}!Robot@{Robot}}
+\subsubsection[{W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int Robot\-::\-W\-I\-D\-T\-H = 205\hspace{0.3cm}{\ttfamily [static]}}}\label{classRobot_aeefc61d76e6ba024e4af9c844715a84d}
+
+
+W\-I\-D\-T\-H of half the robot plus a little bit to give some. 
+
+
+
+Definition at line 123 of file Robot.\-hpp.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-src/test/\hyperlink{Robot_8hpp}{Robot.\-hpp}\item 
-src/test/\hyperlink{Robot_8cpp}{Robot.\-cpp}\end{DoxyCompactItemize}
+src/\hyperlink{Robot_8hpp}{Robot.\-hpp}\item 
+src/\hyperlink{Robot_8cpp}{Robot.\-cpp}\end{DoxyCompactItemize}

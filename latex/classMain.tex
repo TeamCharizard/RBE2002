@@ -9,31 +9,32 @@
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classMain_ab93af44e220d33016f01ed1b70612899}{setup} ()
-\item 
+\begin{DoxyCompactList}\small\item\em setup method calls setup for robot \end{DoxyCompactList}\item 
 void \hyperlink{classMain_ac061692135a219ec5b7a8211c4e26ed6}{loop} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em main state machine controls overall program flow \end{DoxyCompactList}\item 
+void \hyperlink{classMain_a2c24ed69c03010e24c109b7b4d59eca1}{change\-State} (\hyperlink{classMain_a551231243a758b95cf29d8ed2b7508da}{State} \hyperlink{classMain_a8b4ada43c3c3720b177018191ac6ee90}{state})
+\begin{DoxyCompactList}\small\item\em change state and print state \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98c}{Robot\-State} \{ \\*
-\hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98ca9229c9e5dce20fda7fd5bbd54799fb32}{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}, 
-\hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98ca548307ff4dd856e6420422153139c219}{D\-R\-I\-V\-E\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}, 
-\hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98cab2b9975fcdb8d0d79230156c24adf5b4}{F\-I\-N\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-H\-E\-I\-G\-H\-T}, 
-\hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98caf335b92cf0219a9b661613556bbe96b6}{E\-X\-T\-I\-N\-G\-U\-I\-S\-H\-\_\-\-C\-A\-N\-D\-L\-E}, 
+enum \hyperlink{classMain_a551231243a758b95cf29d8ed2b7508da}{State} \{ \\*
+\hyperlink{classMain_a551231243a758b95cf29d8ed2b7508daa9229c9e5dce20fda7fd5bbd54799fb32}{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}, 
+\hyperlink{classMain_a551231243a758b95cf29d8ed2b7508daab2b9975fcdb8d0d79230156c24adf5b4}{F\-I\-N\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-H\-E\-I\-G\-H\-T}, 
+\hyperlink{classMain_a551231243a758b95cf29d8ed2b7508daaf335b92cf0219a9b661613556bbe96b6}{E\-X\-T\-I\-N\-G\-U\-I\-S\-H\-\_\-\-C\-A\-N\-D\-L\-E}, 
+\hyperlink{classMain_a551231243a758b95cf29d8ed2b7508daa3ff87a64146af251296a5ce0a05e923d}{R\-E\-T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-O\-R\-I\-G\-I\-N}, 
 \\*
-\hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98ca3ff87a64146af251296a5ce0a05e923d}{R\-E\-T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-O\-R\-I\-G\-I\-N}, 
-\hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98ca6c2f5ff7b13123b1b782ac3664f20087}{E\-N\-D}
+\hyperlink{classMain_a551231243a758b95cf29d8ed2b7508daa6c2f5ff7b13123b1b782ac3664f20087}{E\-N\-D}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The main states of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \hyperlink{classMain_a2b7c0a58d48668f3b54b50c2800edb68}{state\-Names} \mbox{[}6\mbox{]}
-\item 
-\hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98c}{Robot\-State} \hyperlink{classMain_a487b0fe523e37213256cf63f696b3bb0}{state} = \hyperlink{classMain_a92ef9240246e98c3eb7cc8126982f98ca9229c9e5dce20fda7fd5bbd54799fb32}{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}
-\item 
+char $\ast$ \hyperlink{classMain_a10090d1fa7fa606c1bf7c5bdf23d7eda}{state\-Names} \mbox{[}5\mbox{]}
+\begin{DoxyCompactList}\small\item\em English state names allows us to easily print what state the robot is in. \end{DoxyCompactList}\item 
+\hyperlink{classMain_a551231243a758b95cf29d8ed2b7508da}{State} \hyperlink{classMain_a8b4ada43c3c3720b177018191ac6ee90}{state} = \hyperlink{classMain_a551231243a758b95cf29d8ed2b7508daa9229c9e5dce20fda7fd5bbd54799fb32}{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}
+\begin{DoxyCompactList}\small\item\em variable for the current state of the robot. \end{DoxyCompactList}\item 
 \hyperlink{classRobot}{Robot} $\ast$ \hyperlink{classMain_a6b8534d72e39e2b43c3d46f2ca6e49f4}{charizard}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em convenient pointer to the singleton robot instance \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -44,33 +45,50 @@ Definition at line 5 of file Main.\-hpp.
 
 
 \subsection{Member Enumeration Documentation}
-\hypertarget{classMain_a92ef9240246e98c3eb7cc8126982f98c}{\index{Main@{Main}!Robot\-State@{Robot\-State}}
-\index{Robot\-State@{Robot\-State}!Main@{Main}}
-\subsubsection[{Robot\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Main\-::\-Robot\-State}\hspace{0.3cm}{\ttfamily [private]}}}\label{classMain_a92ef9240246e98c3eb7cc8126982f98c}
+\hypertarget{classMain_a551231243a758b95cf29d8ed2b7508da}{\index{Main@{Main}!State@{State}}
+\index{State@{State}!Main@{Main}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Main\-::\-State}\hspace{0.3cm}{\ttfamily [private]}}}\label{classMain_a551231243a758b95cf29d8ed2b7508da}
+
+
+The main states of the robot. 
+
 \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
 \index{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E@{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}!Main@{Main}}\index{Main@{Main}!S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E@{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}}\item[{\em 
-\hypertarget{classMain_a92ef9240246e98c3eb7cc8126982f98ca9229c9e5dce20fda7fd5bbd54799fb32}{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}\label{classMain_a92ef9240246e98c3eb7cc8126982f98ca9229c9e5dce20fda7fd5bbd54799fb32}
-}]\index{D\-R\-I\-V\-E\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E@{D\-R\-I\-V\-E\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}!Main@{Main}}\index{Main@{Main}!D\-R\-I\-V\-E\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E@{D\-R\-I\-V\-E\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}}\item[{\em 
-\hypertarget{classMain_a92ef9240246e98c3eb7cc8126982f98ca548307ff4dd856e6420422153139c219}{D\-R\-I\-V\-E\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}\label{classMain_a92ef9240246e98c3eb7cc8126982f98ca548307ff4dd856e6420422153139c219}
+\hypertarget{classMain_a551231243a758b95cf29d8ed2b7508daa9229c9e5dce20fda7fd5bbd54799fb32}{S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}\label{classMain_a551231243a758b95cf29d8ed2b7508daa9229c9e5dce20fda7fd5bbd54799fb32}
 }]\index{F\-I\-N\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-H\-E\-I\-G\-H\-T@{F\-I\-N\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-H\-E\-I\-G\-H\-T}!Main@{Main}}\index{Main@{Main}!F\-I\-N\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-H\-E\-I\-G\-H\-T@{F\-I\-N\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-H\-E\-I\-G\-H\-T}}\item[{\em 
-\hypertarget{classMain_a92ef9240246e98c3eb7cc8126982f98cab2b9975fcdb8d0d79230156c24adf5b4}{F\-I\-N\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-H\-E\-I\-G\-H\-T}\label{classMain_a92ef9240246e98c3eb7cc8126982f98cab2b9975fcdb8d0d79230156c24adf5b4}
+\hypertarget{classMain_a551231243a758b95cf29d8ed2b7508daab2b9975fcdb8d0d79230156c24adf5b4}{F\-I\-N\-D\-\_\-\-C\-A\-N\-D\-L\-E\-\_\-\-H\-E\-I\-G\-H\-T}\label{classMain_a551231243a758b95cf29d8ed2b7508daab2b9975fcdb8d0d79230156c24adf5b4}
 }]\index{E\-X\-T\-I\-N\-G\-U\-I\-S\-H\-\_\-\-C\-A\-N\-D\-L\-E@{E\-X\-T\-I\-N\-G\-U\-I\-S\-H\-\_\-\-C\-A\-N\-D\-L\-E}!Main@{Main}}\index{Main@{Main}!E\-X\-T\-I\-N\-G\-U\-I\-S\-H\-\_\-\-C\-A\-N\-D\-L\-E@{E\-X\-T\-I\-N\-G\-U\-I\-S\-H\-\_\-\-C\-A\-N\-D\-L\-E}}\item[{\em 
-\hypertarget{classMain_a92ef9240246e98c3eb7cc8126982f98caf335b92cf0219a9b661613556bbe96b6}{E\-X\-T\-I\-N\-G\-U\-I\-S\-H\-\_\-\-C\-A\-N\-D\-L\-E}\label{classMain_a92ef9240246e98c3eb7cc8126982f98caf335b92cf0219a9b661613556bbe96b6}
+\hypertarget{classMain_a551231243a758b95cf29d8ed2b7508daaf335b92cf0219a9b661613556bbe96b6}{E\-X\-T\-I\-N\-G\-U\-I\-S\-H\-\_\-\-C\-A\-N\-D\-L\-E}\label{classMain_a551231243a758b95cf29d8ed2b7508daaf335b92cf0219a9b661613556bbe96b6}
 }]\index{R\-E\-T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-O\-R\-I\-G\-I\-N@{R\-E\-T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-O\-R\-I\-G\-I\-N}!Main@{Main}}\index{Main@{Main}!R\-E\-T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-O\-R\-I\-G\-I\-N@{R\-E\-T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-O\-R\-I\-G\-I\-N}}\item[{\em 
-\hypertarget{classMain_a92ef9240246e98c3eb7cc8126982f98ca3ff87a64146af251296a5ce0a05e923d}{R\-E\-T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-O\-R\-I\-G\-I\-N}\label{classMain_a92ef9240246e98c3eb7cc8126982f98ca3ff87a64146af251296a5ce0a05e923d}
+\hypertarget{classMain_a551231243a758b95cf29d8ed2b7508daa3ff87a64146af251296a5ce0a05e923d}{R\-E\-T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-O\-R\-I\-G\-I\-N}\label{classMain_a551231243a758b95cf29d8ed2b7508daa3ff87a64146af251296a5ce0a05e923d}
 }]\index{E\-N\-D@{E\-N\-D}!Main@{Main}}\index{Main@{Main}!E\-N\-D@{E\-N\-D}}\item[{\em 
-\hypertarget{classMain_a92ef9240246e98c3eb7cc8126982f98ca6c2f5ff7b13123b1b782ac3664f20087}{E\-N\-D}\label{classMain_a92ef9240246e98c3eb7cc8126982f98ca6c2f5ff7b13123b1b782ac3664f20087}
+\hypertarget{classMain_a551231243a758b95cf29d8ed2b7508daa6c2f5ff7b13123b1b782ac3664f20087}{E\-N\-D}\label{classMain_a551231243a758b95cf29d8ed2b7508daa6c2f5ff7b13123b1b782ac3664f20087}
 }]\end{description}
 \end{Desc}
 
 
-Definition at line 12 of file Main.\-hpp.
+Definition at line 8 of file Main.\-hpp.
 
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classMain_a2c24ed69c03010e24c109b7b4d59eca1}{\index{Main@{Main}!change\-State@{change\-State}}
+\index{change\-State@{change\-State}!Main@{Main}}
+\subsubsection[{change\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-::change\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf State}}]{state}
+\end{DoxyParamCaption}
+)}}\label{classMain_a2c24ed69c03010e24c109b7b4d59eca1}
+
+
+change state and print state 
+
+
+
+Definition at line 12 of file Main.\-cpp.
+
 \hypertarget{classMain_ac061692135a219ec5b7a8211c4e26ed6}{\index{Main@{Main}!loop@{loop}}
 \index{loop@{loop}!Main@{Main}}
 \subsubsection[{loop}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-::loop (
@@ -80,7 +98,11 @@ Definition at line 12 of file Main.\-hpp.
 )}}\label{classMain_ac061692135a219ec5b7a8211c4e26ed6}
 
 
-Definition at line 10 of file Main.\-cpp.
+main state machine controls overall program flow 
+
+
+
+Definition at line 17 of file Main.\-cpp.
 
 \hypertarget{classMain_ab93af44e220d33016f01ed1b70612899}{\index{Main@{Main}!setup@{setup}}
 \index{setup@{setup}!Main@{Main}}
@@ -91,7 +113,11 @@ Definition at line 10 of file Main.\-cpp.
 )}}\label{classMain_ab93af44e220d33016f01ed1b70612899}
 
 
-Definition at line 5 of file Main.\-cpp.
+setup method calls setup for robot 
+
+
+
+Definition at line 6 of file Main.\-cpp.
 
 
 
@@ -101,34 +127,46 @@ Definition at line 5 of file Main.\-cpp.
 \subsubsection[{charizard}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Robot}$\ast$ Main\-::charizard\hspace{0.3cm}{\ttfamily [private]}}}\label{classMain_a6b8534d72e39e2b43c3d46f2ca6e49f4}
 
 
-Definition at line 28 of file Main.\-hpp.
+convenient pointer to the singleton robot instance 
 
-\hypertarget{classMain_a487b0fe523e37213256cf63f696b3bb0}{\index{Main@{Main}!state@{state}}
+
+
+Definition at line 41 of file Main.\-hpp.
+
+\hypertarget{classMain_a8b4ada43c3c3720b177018191ac6ee90}{\index{Main@{Main}!state@{state}}
 \index{state@{state}!Main@{Main}}
-\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Robot\-State} Main\-::state = {\bf S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}\hspace{0.3cm}{\ttfamily [private]}}}\label{classMain_a487b0fe523e37213256cf63f696b3bb0}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State} Main\-::state = {\bf S\-E\-A\-R\-C\-H\-\_\-\-F\-O\-R\-\_\-\-C\-A\-N\-D\-L\-E}\hspace{0.3cm}{\ttfamily [private]}}}\label{classMain_a8b4ada43c3c3720b177018191ac6ee90}
 
 
-Definition at line 27 of file Main.\-hpp.
+variable for the current state of the robot. 
 
-\hypertarget{classMain_a2b7c0a58d48668f3b54b50c2800edb68}{\index{Main@{Main}!state\-Names@{state\-Names}}
+
+
+Definition at line 38 of file Main.\-hpp.
+
+\hypertarget{classMain_a10090d1fa7fa606c1bf7c5bdf23d7eda}{\index{Main@{Main}!state\-Names@{state\-Names}}
 \index{state\-Names@{state\-Names}!Main@{Main}}
-\subsubsection[{state\-Names}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Main\-::state\-Names\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classMain_a2b7c0a58d48668f3b54b50c2800edb68}
+\subsubsection[{state\-Names}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Main\-::state\-Names\mbox{[}5\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classMain_a10090d1fa7fa606c1bf7c5bdf23d7eda}
 {\bfseries Initial value\-:}
 \begin{DoxyCode}
-= \{\textcolor{stringliteral}{"SERCH\_FOR\_CANDLE"},
-      \textcolor{stringliteral}{"DRIVE\_TO\_CANDLE"},
-      \textcolor{stringliteral}{"CANDLE\_HEIGHT"},
-      \textcolor{stringliteral}{"EXTNGISH\_CANDLE"},
-      \textcolor{stringliteral}{"RETURN\_TO\_ORGIN"},
-      \textcolor{stringliteral}{"END"}\}
+= \{
+      \textcolor{stringliteral}{"SEARCH\_4\_CANDLE "},
+      \textcolor{stringliteral}{"CANDLE\_HEIGHT   "},
+      \textcolor{stringliteral}{"EXNTIGISH\_CANDLE"},
+      \textcolor{stringliteral}{"RETRN\_TO\_ORGIN  "},
+      \textcolor{stringliteral}{"END             "}\}
 \end{DoxyCode}
 
 
-Definition at line 20 of file Main.\-hpp.
+English state names allows us to easily print what state the robot is in. 
+
+
+
+Definition at line 30 of file Main.\-hpp.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-src/test/\hyperlink{Main_8hpp}{Main.\-hpp}\item 
-src/test/\hyperlink{Main_8cpp}{Main.\-cpp}\end{DoxyCompactItemize}
+src/\hyperlink{Main_8hpp}{Main.\-hpp}\item 
+src/\hyperlink{Main_8cpp}{Main.\-cpp}\end{DoxyCompactItemize}

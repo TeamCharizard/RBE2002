@@ -10,9 +10,11 @@
 \item 
 \hyperlink{classPID_acf0310be28ae782627e1671f4a663543}{P\-I\-D} (float \hyperlink{classPID_ac4815cca85109a6e13b10c2415104328}{k\-P}, float \hyperlink{classPID_ac686925341bcab06b11df109533b6807}{k\-I}, float \hyperlink{classPID_a5a07dca1e267a62af08ebd07781f1e9e}{k\-D}, bool \hyperlink{classPID_aaad110febd9150a54528b9cb6ff145e8}{feed\-Forward})
 \item 
-void \hyperlink{classPID_add6409a5065a91aba8e1982521fbc09c}{set} (int \hyperlink{classPID_a2686d248042aff0e1730dd3a0b705fd2}{set\-Point})
+void \hyperlink{classPID_ac42a9b324383cc5ba0fec0f3ff41913e}{set} (float \hyperlink{classPID_aab66dffb3291ee486568e8b73cb71831}{set\-Point})
 \item 
-int \hyperlink{classPID_a58191a0c19f6ea9761bf7cb8f1b7137c}{run} (int value)
+int \hyperlink{classPID_a787c74101b0fed1eba2df4d82000028e}{run} (float value, bool do\-Wrap=false)
+\item 
+bool \hyperlink{classPID_a443ba218324fabf44754b1bab2be5fd6}{stopped} ()
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -23,11 +25,13 @@ float \hyperlink{classPID_ac686925341bcab06b11df109533b6807}{k\-I}
 \item 
 float \hyperlink{classPID_a5a07dca1e267a62af08ebd07781f1e9e}{k\-D}
 \item 
-int \hyperlink{classPID_abbf07ac762e11dc7fedf56302c7bda8e}{last\-Error}
+float \hyperlink{classPID_abf0cc22331707048925c27a242be7d3e}{last\-Error}
 \item 
-int \hyperlink{classPID_a0ab15f9f3e6d301b25696a32469ba3eb}{i\-Term}
+float \hyperlink{classPID_a940a94095581f2d32d1ed3426a2cdf4b}{i\-Term}
 \item 
-int \hyperlink{classPID_a2686d248042aff0e1730dd3a0b705fd2}{set\-Point}
+long \hyperlink{classPID_ac544c553fc46b395600413117df8a1f8}{last\-Update\-Time}
+\item 
+float \hyperlink{classPID_aab66dffb3291ee486568e8b73cb71831}{set\-Point}
 \item 
 int \hyperlink{classPID_a34f2887b625d8d49e546b4e2fb389d04}{output}
 \item 
@@ -60,27 +64,39 @@ Definition at line 5 of file P\-I\-D.\-cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classPID_a58191a0c19f6ea9761bf7cb8f1b7137c}{\index{P\-I\-D@{P\-I\-D}!run@{run}}
+\hypertarget{classPID_a787c74101b0fed1eba2df4d82000028e}{\index{P\-I\-D@{P\-I\-D}!run@{run}}
 \index{run@{run}!PID@{P\-I\-D}}
 \subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}int P\-I\-D\-::run (
 \begin{DoxyParamCaption}
-\item[{int}]{value}
+\item[{float}]{value, }
+\item[{bool}]{do\-Wrap = {\ttfamily false}}
 \end{DoxyParamCaption}
-)}}\label{classPID_a58191a0c19f6ea9761bf7cb8f1b7137c}
+)}}\label{classPID_a787c74101b0fed1eba2df4d82000028e}
+this returns an int because motor speeds can't be more precise than an int after scaling 
 
+Definition at line 20 of file P\-I\-D.\-cpp.
 
-Definition at line 12 of file P\-I\-D.\-cpp.
-
-\hypertarget{classPID_add6409a5065a91aba8e1982521fbc09c}{\index{P\-I\-D@{P\-I\-D}!set@{set}}
+\hypertarget{classPID_ac42a9b324383cc5ba0fec0f3ff41913e}{\index{P\-I\-D@{P\-I\-D}!set@{set}}
 \index{set@{set}!PID@{P\-I\-D}}
 \subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void P\-I\-D\-::set (
 \begin{DoxyParamCaption}
-\item[{int}]{set\-Point}
+\item[{float}]{set\-Point}
 \end{DoxyParamCaption}
-)}}\label{classPID_add6409a5065a91aba8e1982521fbc09c}
+)}}\label{classPID_ac42a9b324383cc5ba0fec0f3ff41913e}
 
 
-Definition at line 8 of file P\-I\-D.\-cpp.
+Definition at line 9 of file P\-I\-D.\-cpp.
+
+\hypertarget{classPID_a443ba218324fabf44754b1bab2be5fd6}{\index{P\-I\-D@{P\-I\-D}!stopped@{stopped}}
+\index{stopped@{stopped}!PID@{P\-I\-D}}
+\subsubsection[{stopped}]{\setlength{\rightskip}{0pt plus 5cm}bool P\-I\-D\-::stopped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPID_a443ba218324fabf44754b1bab2be5fd6}
+
+
+Definition at line 13 of file P\-I\-D.\-cpp.
 
 
 
@@ -90,56 +106,63 @@ Definition at line 8 of file P\-I\-D.\-cpp.
 \subsubsection[{feed\-Forward}]{\setlength{\rightskip}{0pt plus 5cm}bool P\-I\-D\-::feed\-Forward = false}}\label{classPID_aaad110febd9150a54528b9cb6ff145e8}
 
 
-Definition at line 16 of file P\-I\-D.\-hpp.
+Definition at line 21 of file P\-I\-D.\-hpp.
 
-\hypertarget{classPID_a0ab15f9f3e6d301b25696a32469ba3eb}{\index{P\-I\-D@{P\-I\-D}!i\-Term@{i\-Term}}
+\hypertarget{classPID_a940a94095581f2d32d1ed3426a2cdf4b}{\index{P\-I\-D@{P\-I\-D}!i\-Term@{i\-Term}}
 \index{i\-Term@{i\-Term}!PID@{P\-I\-D}}
-\subsubsection[{i\-Term}]{\setlength{\rightskip}{0pt plus 5cm}int P\-I\-D\-::i\-Term}}\label{classPID_a0ab15f9f3e6d301b25696a32469ba3eb}
+\subsubsection[{i\-Term}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::i\-Term}}\label{classPID_a940a94095581f2d32d1ed3426a2cdf4b}
 
 
-Definition at line 10 of file P\-I\-D.\-hpp.
+Definition at line 14 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_a5a07dca1e267a62af08ebd07781f1e9e}{\index{P\-I\-D@{P\-I\-D}!k\-D@{k\-D}}
 \index{k\-D@{k\-D}!PID@{P\-I\-D}}
 \subsubsection[{k\-D}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::k\-D}}\label{classPID_a5a07dca1e267a62af08ebd07781f1e9e}
 
 
-Definition at line 9 of file P\-I\-D.\-hpp.
+Definition at line 13 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_ac686925341bcab06b11df109533b6807}{\index{P\-I\-D@{P\-I\-D}!k\-I@{k\-I}}
 \index{k\-I@{k\-I}!PID@{P\-I\-D}}
 \subsubsection[{k\-I}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::k\-I}}\label{classPID_ac686925341bcab06b11df109533b6807}
 
 
-Definition at line 9 of file P\-I\-D.\-hpp.
+Definition at line 13 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_ac4815cca85109a6e13b10c2415104328}{\index{P\-I\-D@{P\-I\-D}!k\-P@{k\-P}}
 \index{k\-P@{k\-P}!PID@{P\-I\-D}}
 \subsubsection[{k\-P}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::k\-P}}\label{classPID_ac4815cca85109a6e13b10c2415104328}
 
 
-Definition at line 9 of file P\-I\-D.\-hpp.
+Definition at line 13 of file P\-I\-D.\-hpp.
 
-\hypertarget{classPID_abbf07ac762e11dc7fedf56302c7bda8e}{\index{P\-I\-D@{P\-I\-D}!last\-Error@{last\-Error}}
+\hypertarget{classPID_abf0cc22331707048925c27a242be7d3e}{\index{P\-I\-D@{P\-I\-D}!last\-Error@{last\-Error}}
 \index{last\-Error@{last\-Error}!PID@{P\-I\-D}}
-\subsubsection[{last\-Error}]{\setlength{\rightskip}{0pt plus 5cm}int P\-I\-D\-::last\-Error}}\label{classPID_abbf07ac762e11dc7fedf56302c7bda8e}
+\subsubsection[{last\-Error}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::last\-Error}}\label{classPID_abf0cc22331707048925c27a242be7d3e}
 
 
-Definition at line 10 of file P\-I\-D.\-hpp.
+Definition at line 14 of file P\-I\-D.\-hpp.
+
+\hypertarget{classPID_ac544c553fc46b395600413117df8a1f8}{\index{P\-I\-D@{P\-I\-D}!last\-Update\-Time@{last\-Update\-Time}}
+\index{last\-Update\-Time@{last\-Update\-Time}!PID@{P\-I\-D}}
+\subsubsection[{last\-Update\-Time}]{\setlength{\rightskip}{0pt plus 5cm}long P\-I\-D\-::last\-Update\-Time}}\label{classPID_ac544c553fc46b395600413117df8a1f8}
+
+
+Definition at line 16 of file P\-I\-D.\-hpp.
 
 \hypertarget{classPID_a34f2887b625d8d49e546b4e2fb389d04}{\index{P\-I\-D@{P\-I\-D}!output@{output}}
 \index{output@{output}!PID@{P\-I\-D}}
 \subsubsection[{output}]{\setlength{\rightskip}{0pt plus 5cm}int P\-I\-D\-::output}}\label{classPID_a34f2887b625d8d49e546b4e2fb389d04}
 
 
-Definition at line 14 of file P\-I\-D.\-hpp.
+Definition at line 19 of file P\-I\-D.\-hpp.
 
-\hypertarget{classPID_a2686d248042aff0e1730dd3a0b705fd2}{\index{P\-I\-D@{P\-I\-D}!set\-Point@{set\-Point}}
+\hypertarget{classPID_aab66dffb3291ee486568e8b73cb71831}{\index{P\-I\-D@{P\-I\-D}!set\-Point@{set\-Point}}
 \index{set\-Point@{set\-Point}!PID@{P\-I\-D}}
-\subsubsection[{set\-Point}]{\setlength{\rightskip}{0pt plus 5cm}int P\-I\-D\-::set\-Point}}\label{classPID_a2686d248042aff0e1730dd3a0b705fd2}
+\subsubsection[{set\-Point}]{\setlength{\rightskip}{0pt plus 5cm}float P\-I\-D\-::set\-Point}}\label{classPID_aab66dffb3291ee486568e8b73cb71831}
 
 
-Definition at line 13 of file P\-I\-D.\-hpp.
+Definition at line 18 of file P\-I\-D.\-hpp.
 
 
 

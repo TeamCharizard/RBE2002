@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['valid_5fcandle_5fthreshold',['VALID_CANDLE_THRESHOLD',['../classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82',1,'CandleDetector']]]
+  ['update',['update',['../classStatusManager.html#a1e349aaaaaafe34873aa39e9dee621b0',1,'StatusManager']]],
+  ['update_5fperiod',['UPDATE_PERIOD',['../classRobot.html#a6a76c7da686c2cec0cba2877e0c914dc',1,'Robot::UPDATE_PERIOD()'],['../classSearcher.html#af4dd5850dbe46a9a76605ad4ba454066',1,'Searcher::UPDATE_PERIOD()']]],
+  ['updatedifferential',['updateDifferential',['../classOdom.html#ab1627e2cf01e2d9869d24027a1a98469',1,'Odom']]]
 ];

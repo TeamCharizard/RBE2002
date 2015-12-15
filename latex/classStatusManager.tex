@@ -1,0 +1,222 @@
+\hypertarget{classStatusManager}{\section{Status\-Manager Class Reference}
+\label{classStatusManager}\index{Status\-Manager@{Status\-Manager}}
+}
+
+
+{\ttfamily \#include $<$Status\-Manager.\-hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classStatusManager_a1e349aaaaaafe34873aa39e9dee621b0}{update} ()
+\begin{DoxyCompactList}\small\item\em updates the L\-C\-D with the current value of the members \end{DoxyCompactList}\item 
+static void \hyperlink{classStatusManager_ad95281dfa485185d334183e9570d85af}{setup} ()
+\begin{DoxyCompactList}\small\item\em creates custom L\-C\-D character \end{DoxyCompactList}\item 
+static void \hyperlink{classStatusManager_a384e6af33f26993bd070f40fc601eeef}{print\-State} (const char $\ast$state\-String)
+\item 
+static void \hyperlink{classStatusManager_a9931fbceb4e172cb68ad0e23db6f0a8c}{print\-Pose} ()
+\item 
+static void \hyperlink{classStatusManager_a7ff2d1d408a9a295a7e7815ce23347c4}{final\-Update} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classStatusManager_a53de0b4eac2d76c8b2d075b8020d1c7f}{candle\-X} = 0
+\item 
+static int \hyperlink{classStatusManager_ac5a5ebf9f76a5ae36536be7fb2ce5383}{candle\-Y} = 0
+\item 
+static int \hyperlink{classStatusManager_a1a9f7a4fdb19e56e3f8352a78ea4648e}{candle\-Height} = 0
+\item 
+static int \hyperlink{classStatusManager_ac813f7d48ed51e0246126a53775c5b65}{candle\-Height\-Frac} = 0
+\item 
+static int \hyperlink{classStatusManager_a844d999c234bdcfcb0f465bdf2da9b72}{robot\-X} = 0
+\item 
+static int \hyperlink{classStatusManager_a2e09a9dcfcc6c38cae621c04f49c58b4}{robot\-Y} = 0
+\item 
+static int \hyperlink{classStatusManager_af55087be7ac997b2db4258b26c285f1d}{robot\-Angle} = 0
+\item 
+static const char $\ast$ \hyperlink{classStatusManager_a6f3c0467116c3bfbf9d7507cb04b7d5a}{state}
+\item 
+static bool \hyperlink{classStatusManager_addac8003cb381bc134170516966135aa}{candle\-Found} = false
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$const \hyperlink{classStatusManager_a98bdd9d3e963455b576ff9a9bc5482ca}{format} \mbox{[}3\mbox{]}
+\item 
+static byte \hyperlink{classStatusManager_ad215f7e2fd44cebe76d6e60d40d110e6}{angle\-Char} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Status\-Manager.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classStatusManager_a7ff2d1d408a9a295a7e7815ce23347c4}{\index{Status\-Manager@{Status\-Manager}!final\-Update@{final\-Update}}
+\index{final\-Update@{final\-Update}!StatusManager@{Status\-Manager}}
+\subsubsection[{final\-Update}]{\setlength{\rightskip}{0pt plus 5cm}void Status\-Manager\-::final\-Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a7ff2d1d408a9a295a7e7815ce23347c4}
+
+
+Definition at line 43 of file Status\-Manager.\-cpp.
+
+\hypertarget{classStatusManager_a9931fbceb4e172cb68ad0e23db6f0a8c}{\index{Status\-Manager@{Status\-Manager}!print\-Pose@{print\-Pose}}
+\index{print\-Pose@{print\-Pose}!StatusManager@{Status\-Manager}}
+\subsubsection[{print\-Pose}]{\setlength{\rightskip}{0pt plus 5cm}void Status\-Manager\-::print\-Pose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a9931fbceb4e172cb68ad0e23db6f0a8c}
+
+
+Definition at line 36 of file Status\-Manager.\-cpp.
+
+\hypertarget{classStatusManager_a384e6af33f26993bd070f40fc601eeef}{\index{Status\-Manager@{Status\-Manager}!print\-State@{print\-State}}
+\index{print\-State@{print\-State}!StatusManager@{Status\-Manager}}
+\subsubsection[{print\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Status\-Manager\-::print\-State (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{state\-String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a384e6af33f26993bd070f40fc601eeef}
+
+
+Definition at line 31 of file Status\-Manager.\-cpp.
+
+\hypertarget{classStatusManager_ad95281dfa485185d334183e9570d85af}{\index{Status\-Manager@{Status\-Manager}!setup@{setup}}
+\index{setup@{setup}!StatusManager@{Status\-Manager}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Status\-Manager\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_ad95281dfa485185d334183e9570d85af}
+
+
+creates custom L\-C\-D character 
+
+
+
+Definition at line 27 of file Status\-Manager.\-cpp.
+
+\hypertarget{classStatusManager_a1e349aaaaaafe34873aa39e9dee621b0}{\index{Status\-Manager@{Status\-Manager}!update@{update}}
+\index{update@{update}!StatusManager@{Status\-Manager}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}static void Status\-Manager\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a1e349aaaaaafe34873aa39e9dee621b0}
+
+
+updates the L\-C\-D with the current value of the members 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classStatusManager_ad215f7e2fd44cebe76d6e60d40d110e6}{\index{Status\-Manager@{Status\-Manager}!angle\-Char@{angle\-Char}}
+\index{angle\-Char@{angle\-Char}!StatusManager@{Status\-Manager}}
+\subsubsection[{angle\-Char}]{\setlength{\rightskip}{0pt plus 5cm}byte Status\-Manager\-::angle\-Char\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classStatusManager_ad215f7e2fd44cebe76d6e60d40d110e6}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+      B00000,
+      B00001,
+      B00010,
+      B00100,
+      B01000,
+      B10000,
+      B11111,
+    \}
+\end{DoxyCode}
+
+
+Definition at line 24 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_addac8003cb381bc134170516966135aa}{\index{Status\-Manager@{Status\-Manager}!candle\-Found@{candle\-Found}}
+\index{candle\-Found@{candle\-Found}!StatusManager@{Status\-Manager}}
+\subsubsection[{candle\-Found}]{\setlength{\rightskip}{0pt plus 5cm}bool Status\-Manager\-::candle\-Found = false\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_addac8003cb381bc134170516966135aa}
+
+
+Definition at line 20 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_a1a9f7a4fdb19e56e3f8352a78ea4648e}{\index{Status\-Manager@{Status\-Manager}!candle\-Height@{candle\-Height}}
+\index{candle\-Height@{candle\-Height}!StatusManager@{Status\-Manager}}
+\subsubsection[{candle\-Height}]{\setlength{\rightskip}{0pt plus 5cm}int Status\-Manager\-::candle\-Height = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a1a9f7a4fdb19e56e3f8352a78ea4648e}
+
+
+Definition at line 17 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_ac813f7d48ed51e0246126a53775c5b65}{\index{Status\-Manager@{Status\-Manager}!candle\-Height\-Frac@{candle\-Height\-Frac}}
+\index{candle\-Height\-Frac@{candle\-Height\-Frac}!StatusManager@{Status\-Manager}}
+\subsubsection[{candle\-Height\-Frac}]{\setlength{\rightskip}{0pt plus 5cm}int Status\-Manager\-::candle\-Height\-Frac = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_ac813f7d48ed51e0246126a53775c5b65}
+
+
+Definition at line 17 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_a53de0b4eac2d76c8b2d075b8020d1c7f}{\index{Status\-Manager@{Status\-Manager}!candle\-X@{candle\-X}}
+\index{candle\-X@{candle\-X}!StatusManager@{Status\-Manager}}
+\subsubsection[{candle\-X}]{\setlength{\rightskip}{0pt plus 5cm}int Status\-Manager\-::candle\-X = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a53de0b4eac2d76c8b2d075b8020d1c7f}
+
+
+Definition at line 17 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_ac5a5ebf9f76a5ae36536be7fb2ce5383}{\index{Status\-Manager@{Status\-Manager}!candle\-Y@{candle\-Y}}
+\index{candle\-Y@{candle\-Y}!StatusManager@{Status\-Manager}}
+\subsubsection[{candle\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int Status\-Manager\-::candle\-Y = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_ac5a5ebf9f76a5ae36536be7fb2ce5383}
+
+
+Definition at line 17 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_a98bdd9d3e963455b576ff9a9bc5482ca}{\index{Status\-Manager@{Status\-Manager}!format@{format}}
+\index{format@{format}!StatusManager@{Status\-Manager}}
+\subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$const Status\-Manager\-::format\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classStatusManager_a98bdd9d3e963455b576ff9a9bc5482ca}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+      \textcolor{stringliteral}{"X=%-3d Y=%-3d        "},
+      \textcolor{stringliteral}{" =%-3dX=%-3dY=%-2d   "},
+      \textcolor{stringliteral}{"H=%-2d.%-2d          "}\}
+\end{DoxyCode}
+
+
+Definition at line 23 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_af55087be7ac997b2db4258b26c285f1d}{\index{Status\-Manager@{Status\-Manager}!robot\-Angle@{robot\-Angle}}
+\index{robot\-Angle@{robot\-Angle}!StatusManager@{Status\-Manager}}
+\subsubsection[{robot\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}int Status\-Manager\-::robot\-Angle = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_af55087be7ac997b2db4258b26c285f1d}
+
+
+Definition at line 18 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_a844d999c234bdcfcb0f465bdf2da9b72}{\index{Status\-Manager@{Status\-Manager}!robot\-X@{robot\-X}}
+\index{robot\-X@{robot\-X}!StatusManager@{Status\-Manager}}
+\subsubsection[{robot\-X}]{\setlength{\rightskip}{0pt plus 5cm}int Status\-Manager\-::robot\-X = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a844d999c234bdcfcb0f465bdf2da9b72}
+
+
+Definition at line 18 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_a2e09a9dcfcc6c38cae621c04f49c58b4}{\index{Status\-Manager@{Status\-Manager}!robot\-Y@{robot\-Y}}
+\index{robot\-Y@{robot\-Y}!StatusManager@{Status\-Manager}}
+\subsubsection[{robot\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int Status\-Manager\-::robot\-Y = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a2e09a9dcfcc6c38cae621c04f49c58b4}
+
+
+Definition at line 18 of file Status\-Manager.\-hpp.
+
+\hypertarget{classStatusManager_a6f3c0467116c3bfbf9d7507cb04b7d5a}{\index{Status\-Manager@{Status\-Manager}!state@{state}}
+\index{state@{state}!StatusManager@{Status\-Manager}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Status\-Manager\-::state\hspace{0.3cm}{\ttfamily [static]}}}\label{classStatusManager_a6f3c0467116c3bfbf9d7507cb04b7d5a}
+
+
+Definition at line 19 of file Status\-Manager.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{StatusManager_8hpp}{Status\-Manager.\-hpp}\item 
+src/shared/\hyperlink{StatusManager_8cpp}{Status\-Manager.\-cpp}\end{DoxyCompactItemize}

@@ -99,38 +99,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab93af44e220d33016f01ed1b70612899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#ab93af44e220d33016f01ed1b70612899">setup</a> ()</td></tr>
+<tr class="memdesc:ab93af44e220d33016f01ed1b70612899"><td class="mdescLeft">&#160;</td><td class="mdescRight">setup method calls setup for robot  <a href="#ab93af44e220d33016f01ed1b70612899">More...</a><br/></td></tr>
 <tr class="separator:ab93af44e220d33016f01ed1b70612899"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac061692135a219ec5b7a8211c4e26ed6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#ac061692135a219ec5b7a8211c4e26ed6">loop</a> ()</td></tr>
+<tr class="memdesc:ac061692135a219ec5b7a8211c4e26ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">main state machine controls overall program flow  <a href="#ac061692135a219ec5b7a8211c4e26ed6">More...</a><br/></td></tr>
 <tr class="separator:ac061692135a219ec5b7a8211c4e26ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c24ed69c03010e24c109b7b4d59eca1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#a2c24ed69c03010e24c109b7b4d59eca1">changeState</a> (<a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508da">State</a> <a class="el" href="classMain.html#a8b4ada43c3c3720b177018191ac6ee90">state</a>)</td></tr>
+<tr class="memdesc:a2c24ed69c03010e24c109b7b4d59eca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">change state and print state  <a href="#a2c24ed69c03010e24c109b7b4d59eca1">More...</a><br/></td></tr>
+<tr class="separator:a2c24ed69c03010e24c109b7b4d59eca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:a92ef9240246e98c3eb7cc8126982f98c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98c">RobotState</a> { <br/>
-&#160;&#160;<a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98ca9229c9e5dce20fda7fd5bbd54799fb32">SEARCH_FOR_CANDLE</a>, 
-<a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98ca548307ff4dd856e6420422153139c219">DRIVE_TO_CANDLE</a>, 
-<a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98cab2b9975fcdb8d0d79230156c24adf5b4">FIND_CANDLE_HEIGHT</a>, 
-<a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98caf335b92cf0219a9b661613556bbe96b6">EXTINGUISH_CANDLE</a>, 
+<tr class="memitem:a551231243a758b95cf29d8ed2b7508da"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508da">State</a> { <br/>
+&#160;&#160;<a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508daa9229c9e5dce20fda7fd5bbd54799fb32">SEARCH_FOR_CANDLE</a>, 
+<a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508daab2b9975fcdb8d0d79230156c24adf5b4">FIND_CANDLE_HEIGHT</a>, 
+<a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508daaf335b92cf0219a9b661613556bbe96b6">EXTINGUISH_CANDLE</a>, 
+<a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508daa3ff87a64146af251296a5ce0a05e923d">RETURN_TO_ORIGIN</a>, 
 <br/>
-&#160;&#160;<a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98ca3ff87a64146af251296a5ce0a05e923d">RETURN_TO_ORIGIN</a>, 
-<a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98ca6c2f5ff7b13123b1b782ac3664f20087">END</a>
+&#160;&#160;<a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508daa6c2f5ff7b13123b1b782ac3664f20087">END</a>
 <br/>
  }</td></tr>
-<tr class="separator:a92ef9240246e98c3eb7cc8126982f98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a551231243a758b95cf29d8ed2b7508da"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main states of the robot.  <a href="classMain.html#a551231243a758b95cf29d8ed2b7508da">More...</a><br/></td></tr>
+<tr class="separator:a551231243a758b95cf29d8ed2b7508da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a2b7c0a58d48668f3b54b50c2800edb68"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#a2b7c0a58d48668f3b54b50c2800edb68">stateNames</a> [6]</td></tr>
-<tr class="separator:a2b7c0a58d48668f3b54b50c2800edb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a487b0fe523e37213256cf63f696b3bb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98c">RobotState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#a487b0fe523e37213256cf63f696b3bb0">state</a> = <a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98ca9229c9e5dce20fda7fd5bbd54799fb32">SEARCH_FOR_CANDLE</a></td></tr>
-<tr class="separator:a487b0fe523e37213256cf63f696b3bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10090d1fa7fa606c1bf7c5bdf23d7eda"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#a10090d1fa7fa606c1bf7c5bdf23d7eda">stateNames</a> [5]</td></tr>
+<tr class="memdesc:a10090d1fa7fa606c1bf7c5bdf23d7eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">English state names allows us to easily print what state the robot is in.  <a href="#a10090d1fa7fa606c1bf7c5bdf23d7eda">More...</a><br/></td></tr>
+<tr class="separator:a10090d1fa7fa606c1bf7c5bdf23d7eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4ada43c3c3720b177018191ac6ee90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508da">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#a8b4ada43c3c3720b177018191ac6ee90">state</a> = <a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508daa9229c9e5dce20fda7fd5bbd54799fb32">SEARCH_FOR_CANDLE</a></td></tr>
+<tr class="memdesc:a8b4ada43c3c3720b177018191ac6ee90"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable for the current state of the robot.  <a href="#a8b4ada43c3c3720b177018191ac6ee90">More...</a><br/></td></tr>
+<tr class="separator:a8b4ada43c3c3720b177018191ac6ee90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b8534d72e39e2b43c3d46f2ca6e49f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRobot.html">Robot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMain.html#a6b8534d72e39e2b43c3d46f2ca6e49f4">charizard</a></td></tr>
+<tr class="memdesc:a6b8534d72e39e2b43c3d46f2ca6e49f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">convenient pointer to the singleton robot instance  <a href="#a6b8534d72e39e2b43c3d46f2ca6e49f4">More...</a><br/></td></tr>
 <tr class="separator:a6b8534d72e39e2b43c3d46f2ca6e49f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="Main_8hpp_source.html#l00005">5</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="a92ef9240246e98c3eb7cc8126982f98c"></a>
+<a class="anchor" id="a551231243a758b95cf29d8ed2b7508da"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -138,7 +146,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98c">Main::RobotState</a></td>
+          <td class="memname">enum <a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508da">Main::State</a></td>
         </tr>
       </table>
   </td>
@@ -147,26 +155,46 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The main states of the robot. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a92ef9240246e98c3eb7cc8126982f98ca9229c9e5dce20fda7fd5bbd54799fb32"></a>SEARCH_FOR_CANDLE</em>&#160;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a551231243a758b95cf29d8ed2b7508daa9229c9e5dce20fda7fd5bbd54799fb32"></a>SEARCH_FOR_CANDLE</em>&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a92ef9240246e98c3eb7cc8126982f98ca548307ff4dd856e6420422153139c219"></a>DRIVE_TO_CANDLE</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a551231243a758b95cf29d8ed2b7508daab2b9975fcdb8d0d79230156c24adf5b4"></a>FIND_CANDLE_HEIGHT</em>&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a92ef9240246e98c3eb7cc8126982f98cab2b9975fcdb8d0d79230156c24adf5b4"></a>FIND_CANDLE_HEIGHT</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a551231243a758b95cf29d8ed2b7508daaf335b92cf0219a9b661613556bbe96b6"></a>EXTINGUISH_CANDLE</em>&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a92ef9240246e98c3eb7cc8126982f98caf335b92cf0219a9b661613556bbe96b6"></a>EXTINGUISH_CANDLE</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a551231243a758b95cf29d8ed2b7508daa3ff87a64146af251296a5ce0a05e923d"></a>RETURN_TO_ORIGIN</em>&#160;</td><td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a92ef9240246e98c3eb7cc8126982f98ca3ff87a64146af251296a5ce0a05e923d"></a>RETURN_TO_ORIGIN</em>&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a92ef9240246e98c3eb7cc8126982f98ca6c2f5ff7b13123b1b782ac3664f20087"></a>END</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a551231243a758b95cf29d8ed2b7508daa6c2f5ff7b13123b1b782ac3664f20087"></a>END</em>&#160;</td><td class="fielddoc">
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="Main_8hpp_source.html#l00012">12</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Main_8hpp_source.html#l00008">8</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a2c24ed69c03010e24c109b7b4d59eca1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Main::changeState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508da">State</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>change state and print state </p>
+
+<p>Definition at line <a class="el" href="Main_8cpp_source.html#l00012">12</a> of file <a class="el" href="Main_8cpp_source.html">Main.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac061692135a219ec5b7a8211c4e26ed6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -180,7 +208,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Main_8cpp_source.html#l00010">10</a> of file <a class="el" href="Main_8cpp_source.html">Main.cpp</a>.</p>
+<p>main state machine controls overall program flow </p>
+
+<p>Definition at line <a class="el" href="Main_8cpp_source.html#l00017">17</a> of file <a class="el" href="Main_8cpp_source.html">Main.cpp</a>.</p>
 
 </div>
 </div>
@@ -197,7 +227,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Main_8cpp_source.html#l00005">5</a> of file <a class="el" href="Main_8cpp_source.html">Main.cpp</a>.</p>
+<p>setup method calls setup for robot </p>
+
+<p>Definition at line <a class="el" href="Main_8cpp_source.html#l00006">6</a> of file <a class="el" href="Main_8cpp_source.html">Main.cpp</a>.</p>
 
 </div>
 </div>
@@ -220,11 +252,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Main_8hpp_source.html#l00028">28</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
+<p>convenient pointer to the singleton robot instance </p>
+
+<p>Definition at line <a class="el" href="Main_8hpp_source.html#l00041">41</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a487b0fe523e37213256cf63f696b3bb0"></a>
+<a class="anchor" id="a8b4ada43c3c3720b177018191ac6ee90"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -232,7 +266,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98c">RobotState</a> Main::state = <a class="el" href="classMain.html#a92ef9240246e98c3eb7cc8126982f98ca9229c9e5dce20fda7fd5bbd54799fb32">SEARCH_FOR_CANDLE</a></td>
+          <td class="memname"><a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508da">State</a> Main::state = <a class="el" href="classMain.html#a551231243a758b95cf29d8ed2b7508daa9229c9e5dce20fda7fd5bbd54799fb32">SEARCH_FOR_CANDLE</a></td>
         </tr>
       </table>
   </td>
@@ -242,11 +276,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Main_8hpp_source.html#l00027">27</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
+<p>variable for the current state of the robot. </p>
+
+<p>Definition at line <a class="el" href="Main_8hpp_source.html#l00038">38</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2b7c0a58d48668f3b54b50c2800edb68"></a>
+<a class="anchor" id="a10090d1fa7fa606c1bf7c5bdf23d7eda"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -254,7 +290,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* Main::stateNames[6]</td>
+          <td class="memname">char* Main::stateNames[5]</td>
         </tr>
       </table>
   </td>
@@ -263,25 +299,27 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {<span class="stringliteral">&quot;SERCH_FOR_CANDLE&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;DRIVE_TO_CANDLE&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;CANDLE_HEIGHT&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;EXTNGISH_CANDLE&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;RETURN_TO_ORGIN&quot;</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;END&quot;</span>}</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">      <span class="stringliteral">&quot;SEARCH_4_CANDLE &quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;CANDLE_HEIGHT   &quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;EXNTIGISH_CANDLE&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;RETRN_TO_ORGIN  &quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;END             &quot;</span>}</div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="Main_8hpp_source.html#l00020">20</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
+<p>English state names allows us to easily print what state the robot is in. </p>
+
+<p>Definition at line <a class="el" href="Main_8hpp_source.html#l00030">30</a> of file <a class="el" href="Main_8hpp_source.html">Main.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/test/<a class="el" href="Main_8hpp_source.html">Main.hpp</a></li>
-<li>src/test/<a class="el" href="Main_8cpp_source.html">Main.cpp</a></li>
+<li>src/<a class="el" href="Main_8hpp_source.html">Main.hpp</a></li>
+<li>src/<a class="el" href="Main_8cpp_source.html">Main.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 10 2015 23:04:59 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 00:01:32 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

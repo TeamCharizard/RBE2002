@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['woah_2c_20doxygen_20is_20super_20cool_21',['Woah, doxygen is super cool!',['../index.html',1,'']]],
-  ['watch',['watch',['../classFireFinder.html#a8521d3f518599280ff0c671905c91820',1,'FireFinder']]],
-  ['wheel_5fradius',['wheel_radius',['../classOdom.html#a567d0fcf68e65948aed27f27f35e6973',1,'Odom']]],
-  ['width',['WIDTH',['../classCandleDetector.html#af4c5d2170cea56fa4263639f20ed13ed',1,'CandleDetector']]],
-  ['width_5ftolerance',['WIDTH_TOLERANCE',['../classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145',1,'CandleDetector']]]
+  ['valid_5fcandle_5fthreshold',['VALID_CANDLE_THRESHOLD',['../classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82',1,'CandleDetector']]],
+  ['values',['values',['../classStack.html#ad6737211e34f9e427b9c91f32a16ad18',1,'Stack']]],
+  ['verify_5ftime',['VERIFY_TIME',['../classExtinguisher.html#a1f4f2c248d5fcf98a62eab8019ab79f9',1,'Extinguisher']]],
+  ['verifying',['VERIFYING',['../classExtinguisher.html#a969a7cce3382fc5d67f687540896e3aba5152bb2f7b6f5f9f8b53204d0ae61ddd',1,'Extinguisher']]]
 ];

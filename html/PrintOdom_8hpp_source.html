@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="PrintOdom_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MainSketch_8hpp.html">MainSketch.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../MainSketch.hpp&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../shared/Odom.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../shared/Point.hpp&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
@@ -107,19 +107,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classPrintOdom.html#a4741396ec009336b54896ade384b102d">   15</a></span>&#160;    <a class="code" href="classOdom.html">Odom&lt;LeftEnc, RightEnc&gt;</a> <a class="code" href="classPrintOdom.html#a4741396ec009336b54896ade384b102d">odom</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
 <div class="ttc" id="classPrintOdom_html"><div class="ttname"><a href="classPrintOdom.html">PrintOdom</a></div><div class="ttdef"><b>Definition:</b> <a href="PrintOdom_8hpp_source.html#l00007">PrintOdom.hpp:7</a></div></div>
-<div class="ttc" id="MainSketch_8hpp_html"><div class="ttname"><a href="MainSketch_8hpp.html">MainSketch.hpp</a></div></div>
 <div class="ttc" id="classPrintOdom_html_a6888479f567846e63b00665fe95c4073"><div class="ttname"><a href="classPrintOdom.html#a6888479f567846e63b00665fe95c4073">PrintOdom::LeftEnc</a></div><div class="ttdeci">Encoder&lt; 2, 3 &gt; LeftEnc</div><div class="ttdef"><b>Definition:</b> <a href="PrintOdom_8hpp_source.html#l00013">PrintOdom.hpp:13</a></div></div>
 <div class="ttc" id="classEncoder_html"><div class="ttname"><a href="classEncoder.html">Encoder</a></div><div class="ttdef"><b>Definition:</b> <a href="Encoder_8hpp_source.html#l00005">Encoder.hpp:5</a></div></div>
-<div class="ttc" id="classOdom_html"><div class="ttname"><a href="classOdom.html">Odom</a></div><div class="ttdef"><b>Definition:</b> <a href="Odom_8hpp_source.html#l00006">Odom.hpp:6</a></div></div>
+<div class="ttc" id="classOdom_html"><div class="ttname"><a href="classOdom.html">Odom</a></div><div class="ttdef"><b>Definition:</b> <a href="Odom_8hpp_source.html#l00009">Odom.hpp:9</a></div></div>
 <div class="ttc" id="classMainSketch_html"><div class="ttname"><a href="classMainSketch.html">MainSketch</a></div><div class="ttdef"><b>Definition:</b> <a href="MainSketch_8hpp_source.html#l00005">MainSketch.hpp:5</a></div></div>
 <div class="ttc" id="classPrintOdom_html_a4741396ec009336b54896ade384b102d"><div class="ttname"><a href="classPrintOdom.html#a4741396ec009336b54896ade384b102d">PrintOdom::odom</a></div><div class="ttdeci">Odom&lt; LeftEnc, RightEnc &gt; odom</div><div class="ttdef"><b>Definition:</b> <a href="PrintOdom_8hpp_source.html#l00015">PrintOdom.hpp:15</a></div></div>
 <div class="ttc" id="classPrintOdom_html_ac090b58cc7388d8f2e26d5b7c912f383"><div class="ttname"><a href="classPrintOdom.html#ac090b58cc7388d8f2e26d5b7c912f383">PrintOdom::RightEnc</a></div><div class="ttdeci">Encoder&lt; 18, 19 &gt; RightEnc</div><div class="ttdef"><b>Definition:</b> <a href="PrintOdom_8hpp_source.html#l00014">PrintOdom.hpp:14</a></div></div>
-<div class="ttc" id="classPrintOdom_html_ae99dc882b588ebd47873b7455da5f50a"><div class="ttname"><a href="classPrintOdom.html#ae99dc882b588ebd47873b7455da5f50a">PrintOdom::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> <a href="PrintOdom_8cpp_source.html#l00003">PrintOdom.cpp:3</a></div></div>
-<div class="ttc" id="classPrintOdom_html_a4b2515b27a03cb3b143256a52acd5a0c"><div class="ttname"><a href="classPrintOdom.html#a4b2515b27a03cb3b143256a52acd5a0c">PrintOdom::loop</a></div><div class="ttdeci">void loop()</div><div class="ttdef"><b>Definition:</b> <a href="PrintOdom_8cpp_source.html#l00007">PrintOdom.cpp:7</a></div></div>
+<div class="ttc" id="classPrintOdom_html_ae99dc882b588ebd47873b7455da5f50a"><div class="ttname"><a href="classPrintOdom.html#ae99dc882b588ebd47873b7455da5f50a">PrintOdom::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">pure virtual function for setup. Sublcasses must define </div><div class="ttdef"><b>Definition:</b> <a href="PrintOdom_8cpp_source.html#l00003">PrintOdom.cpp:3</a></div></div>
+<div class="ttc" id="classPrintOdom_html_a4b2515b27a03cb3b143256a52acd5a0c"><div class="ttname"><a href="classPrintOdom.html#a4b2515b27a03cb3b143256a52acd5a0c">PrintOdom::loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">pure virtual function for loop. Sublcasses must define </div><div class="ttdef"><b>Definition:</b> <a href="PrintOdom_8cpp_source.html#l00007">PrintOdom.cpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 10 2015 23:04:59 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 00:01:31 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

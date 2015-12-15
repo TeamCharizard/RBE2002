@@ -99,10 +99,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acf0310be28ae782627e1671f4a663543"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#acf0310be28ae782627e1671f4a663543">PID</a> (float <a class="el" href="classPID.html#ac4815cca85109a6e13b10c2415104328">kP</a>, float <a class="el" href="classPID.html#ac686925341bcab06b11df109533b6807">kI</a>, float <a class="el" href="classPID.html#a5a07dca1e267a62af08ebd07781f1e9e">kD</a>, bool <a class="el" href="classPID.html#aaad110febd9150a54528b9cb6ff145e8">feedForward</a>)</td></tr>
 <tr class="separator:acf0310be28ae782627e1671f4a663543"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add6409a5065a91aba8e1982521fbc09c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#add6409a5065a91aba8e1982521fbc09c">set</a> (int <a class="el" href="classPID.html#a2686d248042aff0e1730dd3a0b705fd2">setPoint</a>)</td></tr>
-<tr class="separator:add6409a5065a91aba8e1982521fbc09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58191a0c19f6ea9761bf7cb8f1b7137c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a58191a0c19f6ea9761bf7cb8f1b7137c">run</a> (int value)</td></tr>
-<tr class="separator:a58191a0c19f6ea9761bf7cb8f1b7137c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac42a9b324383cc5ba0fec0f3ff41913e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#ac42a9b324383cc5ba0fec0f3ff41913e">set</a> (float <a class="el" href="classPID.html#aab66dffb3291ee486568e8b73cb71831">setPoint</a>)</td></tr>
+<tr class="separator:ac42a9b324383cc5ba0fec0f3ff41913e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787c74101b0fed1eba2df4d82000028e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a787c74101b0fed1eba2df4d82000028e">run</a> (float value, bool doWrap=false)</td></tr>
+<tr class="separator:a787c74101b0fed1eba2df4d82000028e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443ba218324fabf44754b1bab2be5fd6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a443ba218324fabf44754b1bab2be5fd6">stopped</a> ()</td></tr>
+<tr class="separator:a443ba218324fabf44754b1bab2be5fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -112,12 +114,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ac686925341bcab06b11df109533b6807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a07dca1e267a62af08ebd07781f1e9e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a5a07dca1e267a62af08ebd07781f1e9e">kD</a></td></tr>
 <tr class="separator:a5a07dca1e267a62af08ebd07781f1e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbf07ac762e11dc7fedf56302c7bda8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#abbf07ac762e11dc7fedf56302c7bda8e">lastError</a></td></tr>
-<tr class="separator:abbf07ac762e11dc7fedf56302c7bda8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ab15f9f3e6d301b25696a32469ba3eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a0ab15f9f3e6d301b25696a32469ba3eb">iTerm</a></td></tr>
-<tr class="separator:a0ab15f9f3e6d301b25696a32469ba3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2686d248042aff0e1730dd3a0b705fd2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a2686d248042aff0e1730dd3a0b705fd2">setPoint</a></td></tr>
-<tr class="separator:a2686d248042aff0e1730dd3a0b705fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0cc22331707048925c27a242be7d3e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#abf0cc22331707048925c27a242be7d3e">lastError</a></td></tr>
+<tr class="separator:abf0cc22331707048925c27a242be7d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940a94095581f2d32d1ed3426a2cdf4b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a940a94095581f2d32d1ed3426a2cdf4b">iTerm</a></td></tr>
+<tr class="separator:a940a94095581f2d32d1ed3426a2cdf4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac544c553fc46b395600413117df8a1f8"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#ac544c553fc46b395600413117df8a1f8">lastUpdateTime</a></td></tr>
+<tr class="separator:ac544c553fc46b395600413117df8a1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab66dffb3291ee486568e8b73cb71831"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#aab66dffb3291ee486568e8b73cb71831">setPoint</a></td></tr>
+<tr class="separator:aab66dffb3291ee486568e8b73cb71831"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34f2887b625d8d49e546b4e2fb389d04"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#a34f2887b625d8d49e546b4e2fb389d04">output</a></td></tr>
 <tr class="separator:a34f2887b625d8d49e546b4e2fb389d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaad110febd9150a54528b9cb6ff145e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPID.html#aaad110febd9150a54528b9cb6ff145e8">feedForward</a> = false</td></tr>
@@ -168,39 +172,67 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a58191a0c19f6ea9761bf7cb8f1b7137c"></a>
+<a class="anchor" id="a787c74101b0fed1eba2df4d82000028e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int PID::run </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>doWrap</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>this returns an int because motor speeds can't be more precise than an int after scaling </p>
 
-<p>Definition at line <a class="el" href="PID_8cpp_source.html#l00012">12</a> of file <a class="el" href="PID_8cpp_source.html">PID.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8cpp_source.html#l00020">20</a> of file <a class="el" href="PID_8cpp_source.html">PID.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="add6409a5065a91aba8e1982521fbc09c"></a>
+<a class="anchor" id="ac42a9b324383cc5ba0fec0f3ff41913e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void PID::set </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>setPoint</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8cpp_source.html#l00008">8</a> of file <a class="el" href="PID_8cpp_source.html">PID.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8cpp_source.html#l00009">9</a> of file <a class="el" href="PID_8cpp_source.html">PID.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a443ba218324fabf44754b1bab2be5fd6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PID::stopped </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="PID_8cpp_source.html#l00013">13</a> of file <a class="el" href="PID_8cpp_source.html">PID.cpp</a>.</p>
 
 </div>
 </div>
@@ -215,21 +247,21 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00016">16</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00021">21</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0ab15f9f3e6d301b25696a32469ba3eb"></a>
+<a class="anchor" id="a940a94095581f2d32d1ed3426a2cdf4b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int PID::iTerm</td>
+          <td class="memname">float PID::iTerm</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00010">10</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00014">14</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -243,7 +275,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00009">9</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00013">13</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -257,7 +289,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00009">9</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00013">13</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -271,21 +303,35 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00009">9</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00013">13</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abbf07ac762e11dc7fedf56302c7bda8e"></a>
+<a class="anchor" id="abf0cc22331707048925c27a242be7d3e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int PID::lastError</td>
+          <td class="memname">float PID::lastError</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00010">10</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00014">14</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac544c553fc46b395600413117df8a1f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long PID::lastUpdateTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00016">16</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -299,21 +345,21 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00014">14</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00019">19</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2686d248042aff0e1730dd3a0b705fd2"></a>
+<a class="anchor" id="aab66dffb3291ee486568e8b73cb71831"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int PID::setPoint</td>
+          <td class="memname">float PID::setPoint</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00013">13</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PID_8hpp_source.html#l00018">18</a> of file <a class="el" href="PID_8hpp_source.html">PID.hpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +370,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 10 2015 23:04:59 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 00:01:32 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

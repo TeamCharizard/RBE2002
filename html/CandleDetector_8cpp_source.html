@@ -92,97 +92,134 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="CandleDetector_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CandleDetector_8hpp.html">CandleDetector.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">CandleDetector::VALID_CANDLE_THRESHOLD</a> = 0.9;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classCandleDetector.html#ad018cfcc4256482dcc093cca4411fea6">    7</a></span>&#160;<a class="code" href="classCandleDetector.html#ad018cfcc4256482dcc093cca4411fea6">CandleDetector::CandleDetector</a>(){}</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classCandleDetector.html#ae02492f18d3f1ff4282bebb70bfdd905">    9</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classCandleDetector.html#ae02492f18d3f1ff4282bebb70bfdd905">CandleDetector::detect</a>(<span class="keywordtype">int</span> *distanceOut, <span class="keywordtype">int</span> *angleOut, <span class="keywordtype">int</span> radii[]){</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">double</span> lastRadius = 0,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;         lastA = 0,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;      dRadius = 0,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      lastSpikeRad = 0,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      lastSpikeA = 0,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      lastSpikeAStart = 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">//in the event that we are facing the candle...</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="comment">// the values could be split across 0 degress</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">// to fix this, we wrap around by 20 degrees.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> a=-20;a&lt;360;a++){</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> angle = a;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (a&lt;0) angle = 360 + a;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="StatusManager_8hpp.html">StatusManager.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../Robot.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">CandleDetector::VALID_CANDLE_THRESHOLD</a> = 0.8;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classCandleDetector.html#ad018cfcc4256482dcc093cca4411fea6">    8</a></span>&#160;<a class="code" href="classCandleDetector.html#ad018cfcc4256482dcc093cca4411fea6">CandleDetector::CandleDetector</a>(){}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">   10</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">CandleDetector::angle</a>(){</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classCandleDetector.html#a043c3f35890b36e187734a492f96f84c">candleAngle</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCandleDetector.html#a01619df190ca44d8171055b49e81444f">   14</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classCandleDetector.html#a01619df190ca44d8171055b49e81444f">CandleDetector::distance</a>(){</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classCandleDetector.html#a3d4f2c951c77838bfc5c068b58cf9fda">candleDistance</a>+<a class="code" href="classCandleDetector.html#a9920f067f44f9dc8aab6747699a244f7">CANDLE_CENTER_OFFSET</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCandleDetector.html#a773abb6491519a0d1b7111e2973c7199">   18</a></span>&#160;<a class="code" href="classPoint.html">Point&lt;float&gt;</a> <a class="code" href="classCandleDetector.html#a773abb6491519a0d1b7111e2973c7199">CandleDetector::relativePosition</a>(){</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">float</span> relativeXInches = <a class="code" href="classCandleDetector.html#a01619df190ca44d8171055b49e81444f">distance</a>()*cos(<a class="code" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">angle</a>()*M_PI/180)/25.4;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">float</span> relativeYInches = <a class="code" href="classCandleDetector.html#a01619df190ca44d8171055b49e81444f">distance</a>()*sin(<a class="code" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">angle</a>()*M_PI/180)/25.4;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classPoint.html">Point&lt;float&gt;</a>(relativeXInches, relativeYInches);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> radius = radii[angle];</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">//ignore obviously invalid data</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//120mm is within the robot</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (radius &gt; 0) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      dRadius = lastRadius - radius;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="comment">//spikes on the rising edge</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordflow">if</span> (dRadius &gt; <a class="code" href="classCandleDetector.html#a9062a3c45b98c5d051082dbf4a285fd5">MIN_SPIKE</a> &amp;&amp; dRadius &lt; <a class="code" href="classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e">MAX_SPIKE</a>){</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">//we use &quot;a&quot; here because we want +10 and +355 to be 15deg apart</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        lastSpikeA = a;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        lastSpikeAStart = lastA;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        lastSpikeRad = radius;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="comment">//spikes on the falling edge</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <span class="keywordflow">if</span> (dRadius &lt; -MIN_SPIKE &amp;&amp; dRadius &gt; -<a class="code" href="classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e">MAX_SPIKE</a>){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">//calculate the distance between the points</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">int</span> angleBetweenSpikes = abs(lastSpikeA - a);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">double</span> angleInRadians = angleBetweenSpikes*3.1415926535/180.0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> c = sqrt(lastRadius * lastRadius +</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            lastSpikeRad * lastSpikeRad -</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            2.0 * lastRadius * lastSpikeRad * cos(angleInRadians));</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classCandleDetector.html#a8b9d654f3be7f3ae44d4e1fc07d08b51">   24</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classCandleDetector.html#a8b9d654f3be7f3ae44d4e1fc07d08b51">CandleDetector::detect</a>(){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">int</span> *radii = <a class="code" href="classRobot.html#ac6f19dc31b435f8a2d43944ba49286d0">Robot::getInstance</a>()-&gt;<a class="code" href="classRobot.html#a222e54f477e23f5af80cfa10bcd85e7a">lidar</a>.<a class="code" href="classLidar.html#a5f97323ace606c1b4d2f817ebb8ebf7d">distances</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">double</span> lastRadius = 0,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         lastA = 0,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      dRadius = 0,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      lastSpikeRad = 0,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      lastSpikeA = 0,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      lastSpikeAStart = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">//in the event that we are facing the candle...</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// the values could be split across 0 degress</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// to fix this, we wrap around by 20 degrees.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> a=-20;a&lt;360;a++){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">angle</a> = a;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (a&lt;0) angle = 360 + a;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> radius = radii[<a class="code" href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">angle</a>];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//ignore obviously invalid data</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//120mm is within the robot</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (radius &gt; 0) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      dRadius = lastRadius - radius;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">int</span> midAngle = angle - angleBetweenSpikes/2;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">int</span> midRadius = (lastRadius + lastSpikeRad)/2;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (abs(c - <a class="code" href="classCandleDetector.html#af4c5d2170cea56fa4263639f20ed13ed">WIDTH</a>) &lt; <a class="code" href="classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145">WIDTH_TOLERANCE</a>){</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          <span class="keywordtype">int</span> valid = 0;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>=lastSpikeAStart;<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>&lt;=a;<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>++){</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">int</span> ang = <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a> &lt; 0 ? 360 + <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a> : <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            Serial.print(<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            Serial.print(<span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            Serial.println(radii[ang]);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span>(radii[ang] &gt; 0) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                valid++;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;          }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="comment">//spikes on the rising edge</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">if</span> (dRadius &gt; <a class="code" href="classCandleDetector.html#a9062a3c45b98c5d051082dbf4a285fd5">MIN_SPIKE</a> &amp;&amp; dRadius &lt; <a class="code" href="classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e">MAX_SPIKE</a>){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">//we use &quot;a&quot; here because we want +10 and +355 to be 15deg apart</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        lastSpikeA = a;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        lastSpikeAStart = lastA;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        lastSpikeRad = radius;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="comment">//spikes on the falling edge</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">if</span> (dRadius &lt; -MIN_SPIKE &amp;&amp; dRadius &gt; -<a class="code" href="classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e">MAX_SPIKE</a>){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">//calculate the distance between the points</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span> angleBetweenSpikes = abs(lastSpikeA - a);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">double</span> angleInRadians = angleBetweenSpikes*3.1415926535/180.0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">int</span> c = sqrt(lastRadius * lastRadius +</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            lastSpikeRad * lastSpikeRad -</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            2.0 * lastRadius * lastSpikeRad * cos(angleInRadians));</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          <span class="keywordtype">float</span> validPercent = (float)valid/(a-lastSpikeAStart+1);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;          Serial.print(<span class="stringliteral">&quot;Percent valid: &quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          Serial.println(validPercent);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          <span class="keywordflow">if</span> (validPercent &gt; <a class="code" href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">VALID_CANDLE_THRESHOLD</a>){</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            *distanceOut = midRadius;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            *angleOut = midAngle;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      lastRadius = radius;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      lastA = a;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">int</span> midAngle = angle - angleBetweenSpikes/2;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">int</span> midRadius = (lastRadius + lastSpikeRad)/2;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (abs(c - <a class="code" href="classCandleDetector.html#af4c5d2170cea56fa4263639f20ed13ed">WIDTH</a>) &lt; <a class="code" href="classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145">WIDTH_TOLERANCE</a> &amp;&amp;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            abs(lastSpikeRad-lastRadius) &lt; <a class="code" href="classCandleDetector.html#ab3c96353ba6d64163cf5e44b1ce2aa9e">RADIUS_TOLERANCE</a>){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          <span class="keywordtype">int</span> valid = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>=lastSpikeAStart;<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>&lt;=a;<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>++){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordtype">int</span> ang = <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a> &lt; 0 ? 360 + <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a> : <a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#if defined(DEBUG_LIDAR)</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor"></span>            Serial.print(<a class="code" href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            Serial.print(<span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            Serial.println(radii[ang]);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">if</span>(radii[ang] &gt; 0) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                valid++;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;          <span class="keywordtype">float</span> validPercent = (float)valid/(max(0, a-lastSpikeAStart+1-2));</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#if defined(DEBUG_LIDAR)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor"></span>          Serial.print(<span class="stringliteral">&quot;Percent valid: &quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          Serial.print(validPercent);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;          Serial.print(<span class="stringliteral">&quot;, a=&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;          Serial.print(midAngle);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;          Serial.print(<span class="stringliteral">&quot;, r=&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          Serial.println(midRadius);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;          <span class="keywordflow">if</span> (validPercent &gt;= <a class="code" href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">VALID_CANDLE_THRESHOLD</a>){</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="classCandleDetector.html#a3d4f2c951c77838bfc5c068b58cf9fda">candleDistance</a> = midRadius;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="classCandleDetector.html#a043c3f35890b36e187734a492f96f84c">candleAngle</a> = midAngle;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;          }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      lastRadius = radius;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      lastA = a;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="ttc" id="classRobot_html_ac6f19dc31b435f8a2d43944ba49286d0"><div class="ttname"><a href="classRobot.html#ac6f19dc31b435f8a2d43944ba49286d0">Robot::getInstance</a></div><div class="ttdeci">static Robot * getInstance()</div><div class="ttdoc">singleton accessor for robot instance. Using a singleton makes sense because only one robot exists...</div><div class="ttdef"><b>Definition:</b> <a href="Robot_8cpp_source.html#l00020">Robot.cpp:20</a></div></div>
 <div class="ttc" id="LidarBenchmark_8cpp_html_acb559820d9ca11295b4500f179ef6392"><div class="ttname"><a href="LidarBenchmark_8cpp.html#acb559820d9ca11295b4500f179ef6392">i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="LidarBenchmark_8cpp_source.html#l00004">LidarBenchmark.cpp:4</a></div></div>
-<div class="ttc" id="classCandleDetector_html_ac8aa00d0477ff096c344ec71d8ccdf82"><div class="ttname"><a href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">CandleDetector::VALID_CANDLE_THRESHOLD</a></div><div class="ttdeci">static const float VALID_CANDLE_THRESHOLD</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00020">CandleDetector.hpp:20</a></div></div>
-<div class="ttc" id="classCandleDetector_html_a3903cd4085162f1fc38ca74cac3b954e"><div class="ttname"><a href="classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e">CandleDetector::MAX_SPIKE</a></div><div class="ttdeci">static const int MAX_SPIKE</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00018">CandleDetector.hpp:18</a></div></div>
-<div class="ttc" id="classCandleDetector_html_a1c8f0232491ba37dd10032c1da376145"><div class="ttname"><a href="classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145">CandleDetector::WIDTH_TOLERANCE</a></div><div class="ttdeci">static const int WIDTH_TOLERANCE</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00016">CandleDetector.hpp:16</a></div></div>
-<div class="ttc" id="classCandleDetector_html_ae02492f18d3f1ff4282bebb70bfdd905"><div class="ttname"><a href="classCandleDetector.html#ae02492f18d3f1ff4282bebb70bfdd905">CandleDetector::detect</a></div><div class="ttdeci">bool detect(int *distance, int *angle, int *radii)</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8cpp_source.html#l00009">CandleDetector.cpp:9</a></div></div>
-<div class="ttc" id="classCandleDetector_html_af4c5d2170cea56fa4263639f20ed13ed"><div class="ttname"><a href="classCandleDetector.html#af4c5d2170cea56fa4263639f20ed13ed">CandleDetector::WIDTH</a></div><div class="ttdeci">static const int WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00015">CandleDetector.hpp:15</a></div></div>
-<div class="ttc" id="classCandleDetector_html_a9062a3c45b98c5d051082dbf4a285fd5"><div class="ttname"><a href="classCandleDetector.html#a9062a3c45b98c5d051082dbf4a285fd5">CandleDetector::MIN_SPIKE</a></div><div class="ttdeci">static const int MIN_SPIKE</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00017">CandleDetector.hpp:17</a></div></div>
-<div class="ttc" id="classCandleDetector_html_ad018cfcc4256482dcc093cca4411fea6"><div class="ttname"><a href="classCandleDetector.html#ad018cfcc4256482dcc093cca4411fea6">CandleDetector::CandleDetector</a></div><div class="ttdeci">CandleDetector()</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8cpp_source.html#l00007">CandleDetector.cpp:7</a></div></div>
+<div class="ttc" id="classLidar_html_a5f97323ace606c1b4d2f817ebb8ebf7d"><div class="ttname"><a href="classLidar.html#a5f97323ace606c1b4d2f817ebb8ebf7d">Lidar::distances</a></div><div class="ttdeci">int distances[360]</div><div class="ttdef"><b>Definition:</b> <a href="Lidar_8hpp_source.html#l00006">Lidar.hpp:6</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a043c3f35890b36e187734a492f96f84c"><div class="ttname"><a href="classCandleDetector.html#a043c3f35890b36e187734a492f96f84c">CandleDetector::candleAngle</a></div><div class="ttdeci">int candleAngle</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00025">CandleDetector.hpp:25</a></div></div>
+<div class="ttc" id="classCandleDetector_html_ac8aa00d0477ff096c344ec71d8ccdf82"><div class="ttname"><a href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">CandleDetector::VALID_CANDLE_THRESHOLD</a></div><div class="ttdeci">static const float VALID_CANDLE_THRESHOLD</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00033">CandleDetector.hpp:33</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a69d5ea11e04eaa51214c3a786eec7455"><div class="ttname"><a href="classCandleDetector.html#a69d5ea11e04eaa51214c3a786eec7455">CandleDetector::angle</a></div><div class="ttdeci">int angle()</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8cpp_source.html#l00010">CandleDetector.cpp:10</a></div></div>
+<div class="ttc" id="classPoint_html"><div class="ttname"><a href="classPoint.html">Point&lt; float &gt;</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a01619df190ca44d8171055b49e81444f"><div class="ttname"><a href="classCandleDetector.html#a01619df190ca44d8171055b49e81444f">CandleDetector::distance</a></div><div class="ttdeci">int distance()</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8cpp_source.html#l00014">CandleDetector.cpp:14</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a3903cd4085162f1fc38ca74cac3b954e"><div class="ttname"><a href="classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e">CandleDetector::MAX_SPIKE</a></div><div class="ttdeci">static const int MAX_SPIKE</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00031">CandleDetector.hpp:31</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a1c8f0232491ba37dd10032c1da376145"><div class="ttname"><a href="classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145">CandleDetector::WIDTH_TOLERANCE</a></div><div class="ttdeci">static const int WIDTH_TOLERANCE</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00028">CandleDetector.hpp:28</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a9920f067f44f9dc8aab6747699a244f7"><div class="ttname"><a href="classCandleDetector.html#a9920f067f44f9dc8aab6747699a244f7">CandleDetector::CANDLE_CENTER_OFFSET</a></div><div class="ttdeci">const int CANDLE_CENTER_OFFSET</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00022">CandleDetector.hpp:22</a></div></div>
+<div class="ttc" id="classCandleDetector_html_af4c5d2170cea56fa4263639f20ed13ed"><div class="ttname"><a href="classCandleDetector.html#af4c5d2170cea56fa4263639f20ed13ed">CandleDetector::WIDTH</a></div><div class="ttdeci">static const int WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00027">CandleDetector.hpp:27</a></div></div>
+<div class="ttc" id="classRobot_html_a222e54f477e23f5af80cfa10bcd85e7a"><div class="ttname"><a href="classRobot.html#a222e54f477e23f5af80cfa10bcd85e7a">Robot::lidar</a></div><div class="ttdeci">Lidar lidar</div><div class="ttdoc">lidar subsystem </div><div class="ttdef"><b>Definition:</b> <a href="Robot_8hpp_source.html#l00102">Robot.hpp:102</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a9062a3c45b98c5d051082dbf4a285fd5"><div class="ttname"><a href="classCandleDetector.html#a9062a3c45b98c5d051082dbf4a285fd5">CandleDetector::MIN_SPIKE</a></div><div class="ttdeci">static const int MIN_SPIKE</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00030">CandleDetector.hpp:30</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a773abb6491519a0d1b7111e2973c7199"><div class="ttname"><a href="classCandleDetector.html#a773abb6491519a0d1b7111e2973c7199">CandleDetector::relativePosition</a></div><div class="ttdeci">Point&lt; float &gt; relativePosition()</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8cpp_source.html#l00018">CandleDetector.cpp:18</a></div></div>
+<div class="ttc" id="classCandleDetector_html_ad018cfcc4256482dcc093cca4411fea6"><div class="ttname"><a href="classCandleDetector.html#ad018cfcc4256482dcc093cca4411fea6">CandleDetector::CandleDetector</a></div><div class="ttdeci">CandleDetector()</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8cpp_source.html#l00008">CandleDetector.cpp:8</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a3d4f2c951c77838bfc5c068b58cf9fda"><div class="ttname"><a href="classCandleDetector.html#a3d4f2c951c77838bfc5c068b58cf9fda">CandleDetector::candleDistance</a></div><div class="ttdeci">int candleDistance</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00024">CandleDetector.hpp:24</a></div></div>
+<div class="ttc" id="StatusManager_8hpp_html"><div class="ttname"><a href="StatusManager_8hpp.html">StatusManager.hpp</a></div></div>
+<div class="ttc" id="classCandleDetector_html_ab3c96353ba6d64163cf5e44b1ce2aa9e"><div class="ttname"><a href="classCandleDetector.html#ab3c96353ba6d64163cf5e44b1ce2aa9e">CandleDetector::RADIUS_TOLERANCE</a></div><div class="ttdeci">static const int RADIUS_TOLERANCE</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8hpp_source.html#l00029">CandleDetector.hpp:29</a></div></div>
 <div class="ttc" id="CandleDetector_8hpp_html"><div class="ttname"><a href="CandleDetector_8hpp.html">CandleDetector.hpp</a></div></div>
+<div class="ttc" id="classCandleDetector_html_a8b9d654f3be7f3ae44d4e1fc07d08b51"><div class="ttname"><a href="classCandleDetector.html#a8b9d654f3be7f3ae44d4e1fc07d08b51">CandleDetector::detect</a></div><div class="ttdeci">bool detect()</div><div class="ttdef"><b>Definition:</b> <a href="CandleDetector_8cpp_source.html#l00024">CandleDetector.cpp:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 10 2015 23:04:58 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 00:01:31 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

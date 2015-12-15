@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['odom',['Odom',['../classOdom.html',1,'Odom&lt; Enc1, Enc2 &gt;'],['../classOdom.html#ab45cc0ea11f5300b84afe6133859a2c2',1,'Odom::Odom()'],['../classPIDBase.html#a3adee9b84ba975616f672a7620ac16b8',1,'PIDBase::odom()'],['../classPrintOdom.html#a4741396ec009336b54896ade384b102d',1,'PrintOdom::odom()']]],
-  ['odom_2ehpp',['Odom.hpp',['../Odom_8hpp.html',1,'']]],
-  ['odom_3c_20encoder_2c_20encoder_20_3e',['Odom&lt; Encoder, Encoder &gt;',['../classOdom.html',1,'']]],
-  ['on',['on',['../LidarBenchmark_8cpp.html#aaa928c9a62449f7946da1e32f66c70d2',1,'LidarBenchmark.cpp']]],
-  ['output',['output',['../classPID.html#a34f2887b625d8d49e546b4e2fb389d04',1,'PID']]]
+  ['navigator',['Navigator',['../classNavigator.html',1,'Navigator'],['../classRobot.html#a71e296a4f32c3a81b5a9fabeac12747b',1,'Robot::navigator()'],['../classNavigator.html#a59230ab4698882f754d5ce275a1a4030',1,'Navigator::Navigator()']]],
+  ['navigator_2ecpp',['Navigator.cpp',['../Navigator_8cpp.html',1,'']]],
+  ['navigator_2ehpp',['Navigator.hpp',['../Navigator_8hpp.html',1,'']]],
+  ['normalize',['normalize',['../classPIDBase.html#a57c25abb7d7981fc0498fee62312d50e',1,'PIDBase']]]
 ];

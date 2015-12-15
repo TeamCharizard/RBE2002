@@ -99,21 +99,25 @@ Inheritance diagram for MainSketch:</div>
  <div class="center">
   <img src="classMainSketch.png" usemap="#MainSketch_map" alt=""/>
   <map id="MainSketch_map" name="MainSketch_map">
-<area href="classDriveUntilCandle.html" alt="DriveUntilCandle" shape="rect" coords="0,56,107,80"/>
-<area href="classHeight.html" alt="Height" shape="rect" coords="117,56,224,80"/>
-<area href="classLidarBenchmark.html" alt="LidarBenchmark" shape="rect" coords="234,56,341,80"/>
-<area href="classPointToCandle.html" alt="PointToCandle" shape="rect" coords="351,56,458,80"/>
-<area href="classPrintOdom.html" alt="PrintOdom" shape="rect" coords="468,56,575,80"/>
-<area href="classSearch.html" alt="Search" shape="rect" coords="585,56,692,80"/>
-<area href="classTestOdom.html" alt="TestOdom" shape="rect" coords="702,56,809,80"/>
+<area href="classDriveUntilCandle.html" alt="DriveUntilCandle" shape="rect" coords="117,56,224,80"/>
+<area href="classHeight.html" alt="Height" shape="rect" coords="117,112,224,136"/>
+<area href="classLidarBenchmark.html" alt="LidarBenchmark" shape="rect" coords="117,168,224,192"/>
+<area href="classPointToCandle.html" alt="PointToCandle" shape="rect" coords="117,224,224,248"/>
+<area href="classPrintOdom.html" alt="PrintOdom" shape="rect" coords="117,280,224,304"/>
+<area href="classSearch.html" alt="Search" shape="rect" coords="117,336,224,360"/>
+<area href="classTestGyro.html" alt="TestGyro" shape="rect" coords="117,392,224,416"/>
+<area href="classTestOdom.html" alt="TestOdom" shape="rect" coords="117,448,224,472"/>
+<area href="classTurn.html" alt="Turn" shape="rect" coords="117,504,224,528"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0708e1eb0ced1063f600f4111df90bf2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainSketch.html#a0708e1eb0ced1063f600f4111df90bf2">setup</a> ()=0</td></tr>
+<tr class="memdesc:a0708e1eb0ced1063f600f4111df90bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">pure virtual function for setup. Sublcasses must define  <a href="#a0708e1eb0ced1063f600f4111df90bf2">More...</a><br/></td></tr>
 <tr class="separator:a0708e1eb0ced1063f600f4111df90bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd69845de8c794dce73d309f142a6795"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMainSketch.html#acd69845de8c794dce73d309f142a6795">loop</a> ()=0</td></tr>
+<tr class="memdesc:acd69845de8c794dce73d309f142a6795"><td class="mdescLeft">&#160;</td><td class="mdescRight">pure virtual function for loop. Sublcasses must define  <a href="#acd69845de8c794dce73d309f142a6795">More...</a><br/></td></tr>
 <tr class="separator:acd69845de8c794dce73d309f142a6795"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -141,7 +145,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classPointToCandle.html#a446be96046c19b1eff25cf2fcc92ccec">PointToCandle</a>, <a class="el" href="classDriveUntilCandle.html#a6c5970d7250b2fd9658bb1a84d2a4ce7">DriveUntilCandle</a>, <a class="el" href="classSearch.html#a75f9358f4551ee9ed0d750eac8fd479e">Search</a>, <a class="el" href="classTestOdom.html#aa920dd334ddf70f766499f798ca57a8b">TestOdom</a>, <a class="el" href="classHeight.html#aa39bf5774d0ddf8e853d600dc70fd443">Height</a>, <a class="el" href="classLidarBenchmark.html#a0bfe575d370277a4e594bcae1b6f9a1a">LidarBenchmark</a>, and <a class="el" href="classPrintOdom.html#a4b2515b27a03cb3b143256a52acd5a0c">PrintOdom</a>.</p>
+<p>pure virtual function for loop. Sublcasses must define </p>
+
+<p>Implemented in <a class="el" href="classPointToCandle.html#a446be96046c19b1eff25cf2fcc92ccec">PointToCandle</a>, <a class="el" href="classTestOdom.html#aa920dd334ddf70f766499f798ca57a8b">TestOdom</a>, <a class="el" href="classDriveUntilCandle.html#a6c5970d7250b2fd9658bb1a84d2a4ce7">DriveUntilCandle</a>, <a class="el" href="classSearch.html#a75f9358f4551ee9ed0d750eac8fd479e">Search</a>, <a class="el" href="classHeight.html#aa39bf5774d0ddf8e853d600dc70fd443">Height</a>, <a class="el" href="classLidarBenchmark.html#a0bfe575d370277a4e594bcae1b6f9a1a">LidarBenchmark</a>, <a class="el" href="classPrintOdom.html#a4b2515b27a03cb3b143256a52acd5a0c">PrintOdom</a>, <a class="el" href="classTestGyro.html#a7ae3922dac31681bd2adc7aaf34bf58e">TestGyro</a>, and <a class="el" href="classTurn.html#ae13f2a047c9ab7e4d4043c568d2fa5e3">Turn</a>.</p>
 
 </div>
 </div>
@@ -166,17 +172,19 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classPointToCandle.html#a99ace73720580afda4a41cf01c2418a2">PointToCandle</a>, <a class="el" href="classDriveUntilCandle.html#a520ee2277625ce84b594b0a073d23f84">DriveUntilCandle</a>, <a class="el" href="classSearch.html#ad5de8c844478b7f0903d724236fd12ad">Search</a>, <a class="el" href="classTestOdom.html#ac468b764eecd5e27f3d1eb7667810230">TestOdom</a>, <a class="el" href="classHeight.html#a62695cd45bcf1f441a73959774ef1151">Height</a>, <a class="el" href="classLidarBenchmark.html#a8e8ccd212f927ba3ca36bc1e3daba4ec">LidarBenchmark</a>, and <a class="el" href="classPrintOdom.html#ae99dc882b588ebd47873b7455da5f50a">PrintOdom</a>.</p>
+<p>pure virtual function for setup. Sublcasses must define </p>
+
+<p>Implemented in <a class="el" href="classPointToCandle.html#a99ace73720580afda4a41cf01c2418a2">PointToCandle</a>, <a class="el" href="classTestOdom.html#ac468b764eecd5e27f3d1eb7667810230">TestOdom</a>, <a class="el" href="classDriveUntilCandle.html#a520ee2277625ce84b594b0a073d23f84">DriveUntilCandle</a>, <a class="el" href="classSearch.html#ad5de8c844478b7f0903d724236fd12ad">Search</a>, <a class="el" href="classHeight.html#a62695cd45bcf1f441a73959774ef1151">Height</a>, <a class="el" href="classLidarBenchmark.html#a8e8ccd212f927ba3ca36bc1e3daba4ec">LidarBenchmark</a>, <a class="el" href="classPrintOdom.html#ae99dc882b588ebd47873b7455da5f50a">PrintOdom</a>, <a class="el" href="classTestGyro.html#a22db01127ec2059a00d2c47f07fa6302">TestGyro</a>, and <a class="el" href="classTurn.html#a8fdb6293836d60fb74c5b4d147050373">Turn</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/test/<a class="el" href="MainSketch_8hpp_source.html">MainSketch.hpp</a></li>
+<li>src/<a class="el" href="MainSketch_8hpp_source.html">MainSketch.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 10 2015 23:04:59 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 00:01:32 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

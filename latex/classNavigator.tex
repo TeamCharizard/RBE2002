@@ -1,0 +1,148 @@
+\hypertarget{classNavigator}{\section{Navigator Class Reference}
+\label{classNavigator}\index{Navigator@{Navigator}}
+}
+
+
+{\ttfamily \#include $<$Navigator.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNavigator_a59230ab4698882f754d5ce275a1a4030}{Navigator} ()
+\item 
+void \hyperlink{classNavigator_a14da808a74fdc15ae4e0781060884ef8}{set\-Goal} (\hyperlink{classPoint}{Point}$<$ float $>$ goal)
+\begin{DoxyCompactList}\small\item\em set the goal to drive to This also resets the internal state \end{DoxyCompactList}\item 
+bool \hyperlink{classNavigator_a8841b985afa17a86112b8522ee6913e6}{run} ()
+\begin{DoxyCompactList}\small\item\em drive to the point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classNavigator_aae36be38543e3fae30dc53208e2f9913}{State} \{ \hyperlink{classNavigator_aae36be38543e3fae30dc53208e2f9913a80d7d232a04edaac4c8055a05242790b}{T\-U\-R\-N\-I\-N\-G}, 
+\hyperlink{classNavigator_aae36be38543e3fae30dc53208e2f9913a9f34e19722c2c3385c6fe61d8de249e7}{D\-R\-I\-V\-I\-N\-G}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPID}{P\-I\-D} \hyperlink{classNavigator_ab6f4e8b5937d700d4514c438cb7b3927}{dist\-Pid}
+\item 
+float \hyperlink{classNavigator_a20335cc0cf85bdd18af14ee2dfbd1501}{angle}
+\item 
+float \hyperlink{classNavigator_accc10be1bc4dfe67ce799e69869f0caa}{distance}
+\item 
+enum \hyperlink{classNavigator_aae36be38543e3fae30dc53208e2f9913}{Navigator\-::\-State} \hyperlink{classNavigator_a15263fe64d0ea29a1bbfe9e5ef849c4c}{state}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 5 of file Navigator.\-hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classNavigator_aae36be38543e3fae30dc53208e2f9913}{\index{Navigator@{Navigator}!State@{State}}
+\index{State@{State}!Navigator@{Navigator}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Navigator\-::\-State}\hspace{0.3cm}{\ttfamily [private]}}}\label{classNavigator_aae36be38543e3fae30dc53208e2f9913}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\-U\-R\-N\-I\-N\-G@{T\-U\-R\-N\-I\-N\-G}!Navigator@{Navigator}}\index{Navigator@{Navigator}!T\-U\-R\-N\-I\-N\-G@{T\-U\-R\-N\-I\-N\-G}}\item[{\em 
+\hypertarget{classNavigator_aae36be38543e3fae30dc53208e2f9913a80d7d232a04edaac4c8055a05242790b}{T\-U\-R\-N\-I\-N\-G}\label{classNavigator_aae36be38543e3fae30dc53208e2f9913a80d7d232a04edaac4c8055a05242790b}
+}]\index{D\-R\-I\-V\-I\-N\-G@{D\-R\-I\-V\-I\-N\-G}!Navigator@{Navigator}}\index{Navigator@{Navigator}!D\-R\-I\-V\-I\-N\-G@{D\-R\-I\-V\-I\-N\-G}}\item[{\em 
+\hypertarget{classNavigator_aae36be38543e3fae30dc53208e2f9913a9f34e19722c2c3385c6fe61d8de249e7}{D\-R\-I\-V\-I\-N\-G}\label{classNavigator_aae36be38543e3fae30dc53208e2f9913a9f34e19722c2c3385c6fe61d8de249e7}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 23 of file Navigator.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNavigator_a59230ab4698882f754d5ce275a1a4030}{\index{Navigator@{Navigator}!Navigator@{Navigator}}
+\index{Navigator@{Navigator}!Navigator@{Navigator}}
+\subsubsection[{Navigator}]{\setlength{\rightskip}{0pt plus 5cm}Navigator\-::\-Navigator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNavigator_a59230ab4698882f754d5ce275a1a4030}
+
+
+Definition at line 4 of file Navigator.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNavigator_a8841b985afa17a86112b8522ee6913e6}{\index{Navigator@{Navigator}!run@{run}}
+\index{run@{run}!Navigator@{Navigator}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Navigator\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNavigator_a8841b985afa17a86112b8522ee6913e6}
+
+
+drive to the point 
+
+\begin{DoxyReturn}{Returns}
+true when the drive is complete 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file Navigator.\-cpp.
+
+\hypertarget{classNavigator_a14da808a74fdc15ae4e0781060884ef8}{\index{Navigator@{Navigator}!set\-Goal@{set\-Goal}}
+\index{set\-Goal@{set\-Goal}!Navigator@{Navigator}}
+\subsubsection[{set\-Goal}]{\setlength{\rightskip}{0pt plus 5cm}void Navigator\-::set\-Goal (
+\begin{DoxyParamCaption}
+\item[{{\bf Point}$<$ float $>$}]{goal}
+\end{DoxyParamCaption}
+)}}\label{classNavigator_a14da808a74fdc15ae4e0781060884ef8}
+
+
+set the goal to drive to This also resets the internal state 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & the point to drive to (in world coordinates) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 6 of file Navigator.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classNavigator_a20335cc0cf85bdd18af14ee2dfbd1501}{\index{Navigator@{Navigator}!angle@{angle}}
+\index{angle@{angle}!Navigator@{Navigator}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}float Navigator\-::angle\hspace{0.3cm}{\ttfamily [private]}}}\label{classNavigator_a20335cc0cf85bdd18af14ee2dfbd1501}
+
+
+Definition at line 22 of file Navigator.\-hpp.
+
+\hypertarget{classNavigator_accc10be1bc4dfe67ce799e69869f0caa}{\index{Navigator@{Navigator}!distance@{distance}}
+\index{distance@{distance}!Navigator@{Navigator}}
+\subsubsection[{distance}]{\setlength{\rightskip}{0pt plus 5cm}float Navigator\-::distance\hspace{0.3cm}{\ttfamily [private]}}}\label{classNavigator_accc10be1bc4dfe67ce799e69869f0caa}
+
+
+Definition at line 22 of file Navigator.\-hpp.
+
+\hypertarget{classNavigator_ab6f4e8b5937d700d4514c438cb7b3927}{\index{Navigator@{Navigator}!dist\-Pid@{dist\-Pid}}
+\index{dist\-Pid@{dist\-Pid}!Navigator@{Navigator}}
+\subsubsection[{dist\-Pid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\-I\-D} Navigator\-::dist\-Pid\hspace{0.3cm}{\ttfamily [private]}}}\label{classNavigator_ab6f4e8b5937d700d4514c438cb7b3927}
+
+
+Definition at line 21 of file Navigator.\-hpp.
+
+\hypertarget{classNavigator_a15263fe64d0ea29a1bbfe9e5ef849c4c}{\index{Navigator@{Navigator}!state@{state}}
+\index{state@{state}!Navigator@{Navigator}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Navigator\-::\-State}  Navigator\-::state\hspace{0.3cm}{\ttfamily [private]}}}\label{classNavigator_a15263fe64d0ea29a1bbfe9e5ef849c4c}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{Navigator_8hpp}{Navigator.\-hpp}\item 
+src/shared/\hyperlink{Navigator_8cpp}{Navigator.\-cpp}\end{DoxyCompactItemize}

@@ -1,4 +1,20 @@
 var searchData=
 [
-  ['watch',['watch',['../classFireFinder.html#a8521d3f518599280ff0c671905c91820',1,'FireFinder']]]
+  ['scale',['scale',['../classPIDBase.html#acf14092bf5bcbc54e8bb717b37524534',1,'PIDBase']]],
+  ['search',['search',['../classRobot.html#a1f08dec6eea6b51d73cd41a8db3bb893',1,'Robot::search()'],['../classSearcher.html#ac568e6ce4cd7ca5c0b9283ab240e6537',1,'Searcher::search()']]],
+  ['searcher',['Searcher',['../classSearcher.html#a46e9a9fa3aad21131cf6bd25237e3a80',1,'Searcher']]],
+  ['seescandle',['seesCandle',['../classFireFinder.html#afa2879ee6ace8a6b5e298c4186df6178',1,'FireFinder']]],
+  ['set',['set',['../classDriveMotor.html#a616b2eb611ddc4862d2d52103bb7aadc',1,'DriveMotor::set()'],['../classPID.html#ac42a9b324383cc5ba0fec0f3ff41913e',1,'PID::set()']]],
+  ['setdrive',['setDrive',['../classRobot.html#ade0935cead03791f27fa854df88a3f22',1,'Robot']]],
+  ['setfinalabsolutecandleposition',['setFinalAbsoluteCandlePosition',['../classRobot.html#a0041769ee864f2952fab05db433e20ea',1,'Robot']]],
+  ['setgoal',['setGoal',['../classNavigator.html#a14da808a74fdc15ae4e0781060884ef8',1,'Navigator']]],
+  ['setgoalincandleframe',['setGoalInCandleFrame',['../classRobot.html#a890d4f4ee0eed7fe96f551b52f0d7407',1,'Robot']]],
+  ['setgoaltocandle',['setGoalToCandle',['../classRobot.html#a6d144ed908ee859cfadda61e2adcb393',1,'Robot']]],
+  ['setspeeds',['setSpeeds',['../classPIDBase.html#ab078b6c0e03b48efc73def33eb1b03e2',1,'PIDBase']]],
+  ['setup',['setup',['../classMain.html#ab93af44e220d33016f01ed1b70612899',1,'Main::setup()'],['../classMainSketch.html#a0708e1eb0ced1063f600f4111df90bf2',1,'MainSketch::setup()'],['../classRobot.html#a1fc37e3c329d59795f6adf44199d4df9',1,'Robot::setup()'],['../classDriveMotor.html#aac017793d1fc4a5b0c75d6f1bc507230',1,'DriveMotor::setup()'],['../classEncoder.html#a7945aef1fa1eef9c69eae3059c7383f5',1,'Encoder::setup()'],['../classExtinguisher.html#a5a6f4652de68d87d3c94a5133770036f',1,'Extinguisher::setup()'],['../classFan.html#afa6c28ec10c0f00270e04abc8344e220',1,'Fan::setup()'],['../classFireFinder.html#aaa2beb5a87e2d9dbd83c0dee1f4f1ef0',1,'FireFinder::setup()'],['../classGyro.html#aab09f758425de1758f284853712cb18b',1,'Gyro::setup()'],['../classLidar.html#abbb8e57bb39cb156cd03b9274843b32d',1,'Lidar::setup()'],['../classOdom.html#a6736e8d83d7276bc7b4a656b9dc8dda5',1,'Odom::setup()'],['../classPIDBase.html#a326fb682c5a801ed57a98418db7702a4',1,'PIDBase::setup()'],['../classSearcher.html#a8de47195c81aefbc9e2c3f9bf3a082fa',1,'Searcher::setup()'],['../classStatusManager.html#ad95281dfa485185d334183e9570d85af',1,'StatusManager::setup()'],['../classDriveUntilCandle.html#a520ee2277625ce84b594b0a073d23f84',1,'DriveUntilCandle::setup()'],['../classHeight.html#a62695cd45bcf1f441a73959774ef1151',1,'Height::setup()'],['../classLidarBenchmark.html#a8e8ccd212f927ba3ca36bc1e3daba4ec',1,'LidarBenchmark::setup()'],['../classLidarDump.html#ad0368709dae4efa58d381fa252245360',1,'LidarDump::setup()'],['../classPointToCandle.html#a99ace73720580afda4a41cf01c2418a2',1,'PointToCandle::setup()'],['../classPrintOdom.html#ae99dc882b588ebd47873b7455da5f50a',1,'PrintOdom::setup()'],['../classSearch.html#ad5de8c844478b7f0903d724236fd12ad',1,'Search::setup()'],['../classTestGyro.html#a22db01127ec2059a00d2c47f07fa6302',1,'TestGyro::setup()'],['../classTestOdom.html#ac468b764eecd5e27f3d1eb7667810230',1,'TestOdom::setup()'],['../classTurn.html#a8fdb6293836d60fb74c5b4d147050373',1,'Turn::setup()']]],
+  ['spin',['spin',['../classFan.html#ab0574452a1e4ad34f668b4792be6021c',1,'Fan']]],
+  ['stack',['Stack',['../classStack.html#ab1fc0ee4439d367bb92facdc37766a7a',1,'Stack']]],
+  ['startscan',['startScan',['../classFireFinder.html#ab2cddefdf1200e176231a601a3a1ede3',1,'FireFinder']]],
+  ['stop',['stop',['../classRobot.html#a14dfe126ae973d3b9f81fee81a06ac22',1,'Robot::stop()'],['../classDriveMotor.html#af40ee6f659e9512e2af2c8e7df07218e',1,'DriveMotor::stop()'],['../classFan.html#af4a96b6fd535b30f933a8bf8d1af50ff',1,'Fan::stop()'],['../classPIDBase.html#adf5a06686538194d39659ddadc78def6',1,'PIDBase::stop()']]],
+  ['stopped',['stopped',['../classPID.html#a443ba218324fabf44754b1bab2be5fd6',1,'PID::stopped()'],['../classPIDBase.html#ad577132b4c9a2b0d26dc0a94e950efbc',1,'PIDBase::stopped()']]]
 ];

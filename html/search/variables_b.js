@@ -1,6 +1,13 @@
 var searchData=
 [
-  ['odom',['odom',['../classPIDBase.html#a3adee9b84ba975616f672a7620ac16b8',1,'PIDBase::odom()'],['../classPrintOdom.html#a4741396ec009336b54896ade384b102d',1,'PrintOdom::odom()']]],
-  ['on',['on',['../LidarBenchmark_8cpp.html#aaa928c9a62449f7946da1e32f66c70d2',1,'LidarBenchmark.cpp']]],
-  ['output',['output',['../classPID.html#a34f2887b625d8d49e546b4e2fb389d04',1,'PID']]]
+  ['max_5fhead_5fangle',['MAX_HEAD_ANGLE',['../classFireFinder.html#ace5a0c6c6435a4d36377dc94a5f785db',1,'FireFinder']]],
+  ['max_5fspike',['MAX_SPIKE',['../classCandleDetector.html#a3903cd4085162f1fc38ca74cac3b954e',1,'CandleDetector']]],
+  ['min_5fhead_5fangle',['MIN_HEAD_ANGLE',['../classFireFinder.html#ac6743699fd08f97088855dc1e87f8dea',1,'FireFinder']]],
+  ['min_5fintensity',['MIN_INTENSITY',['../classFireFinder.html#aa05ce7d7760ac59ea294df68475dcf05',1,'FireFinder']]],
+  ['min_5fspike',['MIN_SPIKE',['../classCandleDetector.html#a9062a3c45b98c5d051082dbf4a285fd5',1,'CandleDetector']]],
+  ['minintensity',['minIntensity',['../classFireFinder.html#a7d3912a911843b60de3468588cfe8579',1,'FireFinder']]],
+  ['minposition',['minPosition',['../classFireFinder.html#ad8be0837d88f10d65b6f8a405f29494a',1,'FireFinder']]],
+  ['misses',['misses',['../classLidar.html#a8eea2300d585c1b514ac6211a7326aca',1,'Lidar']]],
+  ['motor',['motor',['../classDriveMotor.html#a27de76439b7bd1035b17faf78be59478',1,'DriveMotor::motor()'],['../classFan.html#aff9de16d110a96ff5788f7d6ad6ef715',1,'Fan::motor()']]],
+  ['motor_5fpin',['MOTOR_PIN',['../classFireFinder.html#ac29b178da56a9347787371708bb62a20',1,'FireFinder']]]
 ];

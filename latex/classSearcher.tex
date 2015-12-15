@@ -8,88 +8,416 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{DriveMotor_8hpp_a077d9d13989efa3142086ea83cbb1e68}{Drive\-Direction} \hyperlink{classSearcher_a9ef68e37a381056db7ed4f119b472719}{get\-Direction} ()
+\hyperlink{classSearcher_a46e9a9fa3aad21131cf6bd25237e3a80}{Searcher} ()
+\item 
+void \hyperlink{classSearcher_a8de47195c81aefbc9e2c3f9bf3a082fa}{setup} ()
+\begin{DoxyCompactList}\small\item\em Creates the lookup table of lidar distances to guarantee a safe path. \end{DoxyCompactList}\item 
+\hyperlink{DriveMotor_8hpp_a077d9d13989efa3142086ea83cbb1e68}{Drive\-Direction} \hyperlink{classSearcher_ae2933c43728ef6783d0e793cb23ab5f6}{drive\-And\-Avoid} ()
+\begin{DoxyCompactList}\small\item\em Drives around the field and avoids obstacles in front Always turns 90 degrees away from obstacles. \end{DoxyCompactList}\item 
+\hyperlink{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9c}{Check\-State} \hyperlink{classSearcher_ad730a64dfa33bd178841c8bad64bc27a}{check} ()
+\begin{DoxyCompactList}\small\item\em Stops driving and double checks candle. \end{DoxyCompactList}\item 
+bool \hyperlink{classSearcher_ac568e6ce4cd7ca5c0b9283ab240e6537}{search} ()
+\begin{DoxyCompactList}\small\item\em Searches for candle If the robot needs to turn, pushes the location onto the stack for returning Returns true when it sees a candle. \end{DoxyCompactList}\item 
+int \hyperlink{classSearcher_ac541c9bafe6431e5fbf5b7e9c754b56a}{check\-Path} ()
+\item 
+bool \hyperlink{classSearcher_a557322c3deb361501d199b541ca7fdd3}{turn\-To\-Face\-Candle} ()
+\begin{DoxyCompactList}\small\item\em Turns the angle to the found candle. \end{DoxyCompactList}\item 
+bool \hyperlink{classSearcher_aaea092416ef215eb96f46ef3d6f1b581}{run} ()
+\begin{DoxyCompactList}\small\item\em Runs the main state machine for searching. \end{DoxyCompactList}\item 
+int \hyperlink{classSearcher_a72f0af23bc595eaa70e4fb017eac8d79}{min\-In\-Sample} (int \hyperlink{LidarBenchmark_8cpp_acb559820d9ca11295b4500f179ef6392}{i}, int ss=15)
+\begin{DoxyCompactList}\small\item\em Samples lidar data at a given angle over a certain window default window is +/-\/15 degrees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9c}{Check\-State} \{ \hyperlink{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca3ab7d02ec8c70edce3b79cef009feaae}{T\-H\-I\-N\-K\-I\-N\-G}, 
+\hyperlink{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca464345238bfd562b33e293b4ce8a5f06}{F\-O\-U\-N\-D}, 
+\hyperlink{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca2e776f179e07bdd02764f1b78aeda8b9}{M\-I\-S\-T\-A\-K\-E\-N}
+ \}
+\item 
+enum \hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57}{State} \{ \\*
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57a2ae2adf7296bc018ccfa3e4cb7f017db}{S\-E\-A\-R\-C\-H\-I\-N\-G}, 
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57af464509a3d677b55121f97c25d823202}{T\-U\-R\-N\-I\-N\-G}, 
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57a2182c983b5957f0a3fdc4251654acbe5}{C\-H\-E\-C\-K\-\_\-\-P\-A\-T\-H}, 
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57a1a45d3084f55b040010a5fc9fc5ee0bf}{S\-C\-O\-O\-T}, 
+\\*
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57a79cee82e851194da5965420a078ec4ff}{C\-H\-E\-C\-K\-I\-N\-G}, 
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57aa966ccae58e54ef312b8a63e81135543}{C\-H\-E\-C\-K\-\_\-\-A\-F\-T\-E\-R\-\_\-\-S\-C\-O\-O\-T}, 
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57a7343adc6b3d00f640fc450a98d10a6d6}{G\-O\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}, 
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57a71a9cfaae80d57de38b7b7009387202b}{C\-H\-E\-C\-K\-\_\-\-F\-I\-N\-A\-L}, 
+\\*
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57a9acc62c7adaafa496e626fffad278a2f}{T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}
+ \}
+\begin{DoxyCompactList}\small\item\em The states of the state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSearcher_a96bbc956347affc50d2365018535aa52}{change\-State} (\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57}{State} \hyperlink{classSearcher_aadc83ce2d77610d6572f98ecd8b4d6e4}{state})
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classSearcher_aa1764fe370476e6bf19b30e5a8c2b073}{turning} = false
+int \hyperlink{classSearcher_ab21f940dc1ed76c01611be56b95961e1}{R\-\_\-\-T\-H} \mbox{[}360\mbox{]}
 \item 
-int \hyperlink{classSearcher_ae9ecf25b0705199abad716431659d4b6}{d\-Front}
+const char $\ast$ \hyperlink{classSearcher_a2403bbf24da371ea9a31eeaec1f98b96}{state\-Names} \mbox{[}9\mbox{]}
+\begin{DoxyCompactList}\small\item\em Names of States to display on L\-C\-D. \end{DoxyCompactList}\item 
+\hyperlink{classSearcher_ae8599d557b97324ac716e105dc044c57}{State} \hyperlink{classSearcher_aadc83ce2d77610d6572f98ecd8b4d6e4}{state}
+\begin{DoxyCompactList}\small\item\em state variable \end{DoxyCompactList}\item 
+long \hyperlink{classSearcher_a91de3c7ecdda8d3a6d231c35fbf363c5}{last\-Update\-Time} = 0
+\begin{DoxyCompactList}\small\item\em timer variable \end{DoxyCompactList}\item 
+\hyperlink{classPoint}{Point}$<$ float $>$ \hyperlink{classSearcher_ae2eb4f5be779517a4e3264b0223459e2}{goal\-Point}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classPoint}{Point} the robot is going toward. \end{DoxyCompactList}\item 
+float \hyperlink{classSearcher_aed8b034d6faa5556330af017c56f3a53}{absolute\-Turn\-Goal\-Angle}
+\begin{DoxyCompactList}\small\item\em Turning angles. \end{DoxyCompactList}\item 
+float \hyperlink{classSearcher_a5a2d774c5f42091cbb584cfe944313d6}{absolute\-Candle\-Angle}
 \item 
-int \hyperlink{classSearcher_a56c7e8eb20ba293376d59dc55ac4a0c5}{d\-Right}
+int \hyperlink{classSearcher_acd63673f1b401dffee29f88eceaa1ada}{candle\-Count} = 0
+\begin{DoxyCompactList}\small\item\em Counts of sweeps and candles. \end{DoxyCompactList}\item 
+int \hyperlink{classSearcher_af8a7e7ddce46577fca506e2f31aead60}{sweeps} = 0
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classSearcher_afa55bd372a5cb9cdebc9720dfe098e4d}{d\-Left}
+static const long \hyperlink{classSearcher_af4dd5850dbe46a9a76605ad4ba454066}{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D} = 270
+\begin{DoxyCompactList}\small\item\em Timer lengths. \end{DoxyCompactList}\item 
+static const int \hyperlink{classSearcher_ae0cc94f0e90c705ee21da7abf58fcc22}{A\-V\-O\-I\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E} = 400
 \item 
-float \hyperlink{classSearcher_af6082983203ee203e741b79737c205d6}{last\-Direction}
-\item 
-bool \hyperlink{classSearcher_a34cdc6cbf4aa91ade07e1b9e5aa362fb}{full\-Sweep}
+static const float \hyperlink{classSearcher_afbe5b3bf208f18f77a3dcdb0aa86a96c}{A\-V\-O\-I\-D\-\_\-\-T\-U\-R\-N\-\_\-\-A\-N\-G\-L\-E} = 1$\ast$M\-\_\-\-P\-I/4
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+Houses state machine for searching for the candle 
+
+Definition at line 9 of file Searcher.\-hpp.
 
 
-Definition at line 6 of file Searcher.\-hpp.
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9c}{\index{Searcher@{Searcher}!Check\-State@{Check\-State}}
+\index{Check\-State@{Check\-State}!Searcher@{Searcher}}
+\subsubsection[{Check\-State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Searcher\-::\-Check\-State}\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\-H\-I\-N\-K\-I\-N\-G@{T\-H\-I\-N\-K\-I\-N\-G}!Searcher@{Searcher}}\index{Searcher@{Searcher}!T\-H\-I\-N\-K\-I\-N\-G@{T\-H\-I\-N\-K\-I\-N\-G}}\item[{\em 
+\hypertarget{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca3ab7d02ec8c70edce3b79cef009feaae}{T\-H\-I\-N\-K\-I\-N\-G}\label{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca3ab7d02ec8c70edce3b79cef009feaae}
+}]\index{F\-O\-U\-N\-D@{F\-O\-U\-N\-D}!Searcher@{Searcher}}\index{Searcher@{Searcher}!F\-O\-U\-N\-D@{F\-O\-U\-N\-D}}\item[{\em 
+\hypertarget{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca464345238bfd562b33e293b4ce8a5f06}{F\-O\-U\-N\-D}\label{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca464345238bfd562b33e293b4ce8a5f06}
+}]\index{M\-I\-S\-T\-A\-K\-E\-N@{M\-I\-S\-T\-A\-K\-E\-N}!Searcher@{Searcher}}\index{Searcher@{Searcher}!M\-I\-S\-T\-A\-K\-E\-N@{M\-I\-S\-T\-A\-K\-E\-N}}\item[{\em 
+\hypertarget{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca2e776f179e07bdd02764f1b78aeda8b9}{M\-I\-S\-T\-A\-K\-E\-N}\label{classSearcher_a2c16b7eb56e090a7b832da7f2c9d5e9ca2e776f179e07bdd02764f1b78aeda8b9}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 11 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57}{\index{Searcher@{Searcher}!State@{State}}
+\index{State@{State}!Searcher@{Searcher}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Searcher\-::\-State}\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_ae8599d557b97324ac716e105dc044c57}
+
+
+The states of the state machine. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\-E\-A\-R\-C\-H\-I\-N\-G@{S\-E\-A\-R\-C\-H\-I\-N\-G}!Searcher@{Searcher}}\index{Searcher@{Searcher}!S\-E\-A\-R\-C\-H\-I\-N\-G@{S\-E\-A\-R\-C\-H\-I\-N\-G}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57a2ae2adf7296bc018ccfa3e4cb7f017db}{S\-E\-A\-R\-C\-H\-I\-N\-G}\label{classSearcher_ae8599d557b97324ac716e105dc044c57a2ae2adf7296bc018ccfa3e4cb7f017db}
+}]\index{T\-U\-R\-N\-I\-N\-G@{T\-U\-R\-N\-I\-N\-G}!Searcher@{Searcher}}\index{Searcher@{Searcher}!T\-U\-R\-N\-I\-N\-G@{T\-U\-R\-N\-I\-N\-G}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57af464509a3d677b55121f97c25d823202}{T\-U\-R\-N\-I\-N\-G}\label{classSearcher_ae8599d557b97324ac716e105dc044c57af464509a3d677b55121f97c25d823202}
+}]\index{C\-H\-E\-C\-K\-\_\-\-P\-A\-T\-H@{C\-H\-E\-C\-K\-\_\-\-P\-A\-T\-H}!Searcher@{Searcher}}\index{Searcher@{Searcher}!C\-H\-E\-C\-K\-\_\-\-P\-A\-T\-H@{C\-H\-E\-C\-K\-\_\-\-P\-A\-T\-H}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57a2182c983b5957f0a3fdc4251654acbe5}{C\-H\-E\-C\-K\-\_\-\-P\-A\-T\-H}\label{classSearcher_ae8599d557b97324ac716e105dc044c57a2182c983b5957f0a3fdc4251654acbe5}
+}]\index{S\-C\-O\-O\-T@{S\-C\-O\-O\-T}!Searcher@{Searcher}}\index{Searcher@{Searcher}!S\-C\-O\-O\-T@{S\-C\-O\-O\-T}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57a1a45d3084f55b040010a5fc9fc5ee0bf}{S\-C\-O\-O\-T}\label{classSearcher_ae8599d557b97324ac716e105dc044c57a1a45d3084f55b040010a5fc9fc5ee0bf}
+}]\index{C\-H\-E\-C\-K\-I\-N\-G@{C\-H\-E\-C\-K\-I\-N\-G}!Searcher@{Searcher}}\index{Searcher@{Searcher}!C\-H\-E\-C\-K\-I\-N\-G@{C\-H\-E\-C\-K\-I\-N\-G}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57a79cee82e851194da5965420a078ec4ff}{C\-H\-E\-C\-K\-I\-N\-G}\label{classSearcher_ae8599d557b97324ac716e105dc044c57a79cee82e851194da5965420a078ec4ff}
+}]\index{C\-H\-E\-C\-K\-\_\-\-A\-F\-T\-E\-R\-\_\-\-S\-C\-O\-O\-T@{C\-H\-E\-C\-K\-\_\-\-A\-F\-T\-E\-R\-\_\-\-S\-C\-O\-O\-T}!Searcher@{Searcher}}\index{Searcher@{Searcher}!C\-H\-E\-C\-K\-\_\-\-A\-F\-T\-E\-R\-\_\-\-S\-C\-O\-O\-T@{C\-H\-E\-C\-K\-\_\-\-A\-F\-T\-E\-R\-\_\-\-S\-C\-O\-O\-T}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57aa966ccae58e54ef312b8a63e81135543}{C\-H\-E\-C\-K\-\_\-\-A\-F\-T\-E\-R\-\_\-\-S\-C\-O\-O\-T}\label{classSearcher_ae8599d557b97324ac716e105dc044c57aa966ccae58e54ef312b8a63e81135543}
+}]\index{G\-O\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E@{G\-O\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}!Searcher@{Searcher}}\index{Searcher@{Searcher}!G\-O\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E@{G\-O\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57a7343adc6b3d00f640fc450a98d10a6d6}{G\-O\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}\label{classSearcher_ae8599d557b97324ac716e105dc044c57a7343adc6b3d00f640fc450a98d10a6d6}
+}]\index{C\-H\-E\-C\-K\-\_\-\-F\-I\-N\-A\-L@{C\-H\-E\-C\-K\-\_\-\-F\-I\-N\-A\-L}!Searcher@{Searcher}}\index{Searcher@{Searcher}!C\-H\-E\-C\-K\-\_\-\-F\-I\-N\-A\-L@{C\-H\-E\-C\-K\-\_\-\-F\-I\-N\-A\-L}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57a71a9cfaae80d57de38b7b7009387202b}{C\-H\-E\-C\-K\-\_\-\-F\-I\-N\-A\-L}\label{classSearcher_ae8599d557b97324ac716e105dc044c57a71a9cfaae80d57de38b7b7009387202b}
+}]\index{T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E@{T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}!Searcher@{Searcher}}\index{Searcher@{Searcher}!T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E@{T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}}\item[{\em 
+\hypertarget{classSearcher_ae8599d557b97324ac716e105dc044c57a9acc62c7adaafa496e626fffad278a2f}{T\-U\-R\-N\-\_\-\-T\-O\-\_\-\-C\-A\-N\-D\-L\-E}\label{classSearcher_ae8599d557b97324ac716e105dc044c57a9acc62c7adaafa496e626fffad278a2f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 80 of file Searcher.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSearcher_a46e9a9fa3aad21131cf6bd25237e3a80}{\index{Searcher@{Searcher}!Searcher@{Searcher}}
+\index{Searcher@{Searcher}!Searcher@{Searcher}}
+\subsubsection[{Searcher}]{\setlength{\rightskip}{0pt plus 5cm}Searcher\-::\-Searcher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSearcher_a46e9a9fa3aad21131cf6bd25237e3a80}
+
+
+Definition at line 10 of file Searcher.\-cpp.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classSearcher_a9ef68e37a381056db7ed4f119b472719}{\index{Searcher@{Searcher}!get\-Direction@{get\-Direction}}
-\index{get\-Direction@{get\-Direction}!Searcher@{Searcher}}
-\subsubsection[{get\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Direction} Searcher\-::get\-Direction (
+\hypertarget{classSearcher_a96bbc956347affc50d2365018535aa52}{\index{Searcher@{Searcher}!change\-State@{change\-State}}
+\index{change\-State@{change\-State}!Searcher@{Searcher}}
+\subsubsection[{change\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Searcher\-::change\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf State}}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_a96bbc956347affc50d2365018535aa52}
+
+
+Definition at line 25 of file Searcher.\-cpp.
+
+\hypertarget{classSearcher_ad730a64dfa33bd178841c8bad64bc27a}{\index{Searcher@{Searcher}!check@{check}}
+\index{check@{check}!Searcher@{Searcher}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Searcher\-::\-Check\-State} Searcher\-::check (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classSearcher_a9ef68e37a381056db7ed4f119b472719}
+)}}\label{classSearcher_ad730a64dfa33bd178841c8bad64bc27a}
 
 
-Definition at line 5 of file Searcher.\-cpp.
+Stops driving and double checks candle. 
+
+
+
+Definition at line 221 of file Searcher.\-cpp.
+
+\hypertarget{classSearcher_ac541c9bafe6431e5fbf5b7e9c754b56a}{\index{Searcher@{Searcher}!check\-Path@{check\-Path}}
+\index{check\-Path@{check\-Path}!Searcher@{Searcher}}
+\subsubsection[{check\-Path}]{\setlength{\rightskip}{0pt plus 5cm}int Searcher\-::check\-Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSearcher_ac541c9bafe6431e5fbf5b7e9c754b56a}
+
+
+Definition at line 188 of file Searcher.\-cpp.
+
+\hypertarget{classSearcher_ae2933c43728ef6783d0e793cb23ab5f6}{\index{Searcher@{Searcher}!drive\-And\-Avoid@{drive\-And\-Avoid}}
+\index{drive\-And\-Avoid@{drive\-And\-Avoid}!Searcher@{Searcher}}
+\subsubsection[{drive\-And\-Avoid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Drive\-Direction} Searcher\-::drive\-And\-Avoid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSearcher_ae2933c43728ef6783d0e793cb23ab5f6}
+
+
+Drives around the field and avoids obstacles in front Always turns 90 degrees away from obstacles. 
+
+
+
+Definition at line 295 of file Searcher.\-cpp.
+
+\hypertarget{classSearcher_a72f0af23bc595eaa70e4fb017eac8d79}{\index{Searcher@{Searcher}!min\-In\-Sample@{min\-In\-Sample}}
+\index{min\-In\-Sample@{min\-In\-Sample}!Searcher@{Searcher}}
+\subsubsection[{min\-In\-Sample}]{\setlength{\rightskip}{0pt plus 5cm}int Searcher\-::min\-In\-Sample (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{ss = {\ttfamily 15}}
+\end{DoxyParamCaption}
+)}}\label{classSearcher_a72f0af23bc595eaa70e4fb017eac8d79}
+
+
+Samples lidar data at a given angle over a certain window default window is +/-\/15 degrees. 
+
+
+
+Definition at line 266 of file Searcher.\-cpp.
+
+\hypertarget{classSearcher_aaea092416ef215eb96f46ef3d6f1b581}{\index{Searcher@{Searcher}!run@{run}}
+\index{run@{run}!Searcher@{Searcher}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Searcher\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSearcher_aaea092416ef215eb96f46ef3d6f1b581}
+
+
+Runs the main state machine for searching. 
+
+
+
+Definition at line 30 of file Searcher.\-cpp.
+
+\hypertarget{classSearcher_ac568e6ce4cd7ca5c0b9283ab240e6537}{\index{Searcher@{Searcher}!search@{search}}
+\index{search@{search}!Searcher@{Searcher}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}bool Searcher\-::search (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSearcher_ac568e6ce4cd7ca5c0b9283ab240e6537}
+
+
+Searches for candle If the robot needs to turn, pushes the location onto the stack for returning Returns true when it sees a candle. 
+
+
+
+Definition at line 159 of file Searcher.\-cpp.
+
+\hypertarget{classSearcher_a8de47195c81aefbc9e2c3f9bf3a082fa}{\index{Searcher@{Searcher}!setup@{setup}}
+\index{setup@{setup}!Searcher@{Searcher}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Searcher\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSearcher_a8de47195c81aefbc9e2c3f9bf3a082fa}
+
+
+Creates the lookup table of lidar distances to guarantee a safe path. 
+
+
+
+Definition at line 12 of file Searcher.\-cpp.
+
+\hypertarget{classSearcher_a557322c3deb361501d199b541ca7fdd3}{\index{Searcher@{Searcher}!turn\-To\-Face\-Candle@{turn\-To\-Face\-Candle}}
+\index{turn\-To\-Face\-Candle@{turn\-To\-Face\-Candle}!Searcher@{Searcher}}
+\subsubsection[{turn\-To\-Face\-Candle}]{\setlength{\rightskip}{0pt plus 5cm}bool Searcher\-::turn\-To\-Face\-Candle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSearcher_a557322c3deb361501d199b541ca7fdd3}
+
+
+Turns the angle to the found candle. 
+
+
+
+Definition at line 253 of file Searcher.\-cpp.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classSearcher_ae9ecf25b0705199abad716431659d4b6}{\index{Searcher@{Searcher}!d\-Front@{d\-Front}}
-\index{d\-Front@{d\-Front}!Searcher@{Searcher}}
-\subsubsection[{d\-Front}]{\setlength{\rightskip}{0pt plus 5cm}int Searcher\-::d\-Front\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_ae9ecf25b0705199abad716431659d4b6}
+\hypertarget{classSearcher_a5a2d774c5f42091cbb584cfe944313d6}{\index{Searcher@{Searcher}!absolute\-Candle\-Angle@{absolute\-Candle\-Angle}}
+\index{absolute\-Candle\-Angle@{absolute\-Candle\-Angle}!Searcher@{Searcher}}
+\subsubsection[{absolute\-Candle\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}float Searcher\-::absolute\-Candle\-Angle\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_a5a2d774c5f42091cbb584cfe944313d6}
 
 
-Definition at line 12 of file Searcher.\-hpp.
+Definition at line 123 of file Searcher.\-hpp.
 
-\hypertarget{classSearcher_afa55bd372a5cb9cdebc9720dfe098e4d}{\index{Searcher@{Searcher}!d\-Left@{d\-Left}}
-\index{d\-Left@{d\-Left}!Searcher@{Searcher}}
-\subsubsection[{d\-Left}]{\setlength{\rightskip}{0pt plus 5cm}int Searcher\-::d\-Left\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_afa55bd372a5cb9cdebc9720dfe098e4d}
-
-
-Definition at line 12 of file Searcher.\-hpp.
-
-\hypertarget{classSearcher_a56c7e8eb20ba293376d59dc55ac4a0c5}{\index{Searcher@{Searcher}!d\-Right@{d\-Right}}
-\index{d\-Right@{d\-Right}!Searcher@{Searcher}}
-\subsubsection[{d\-Right}]{\setlength{\rightskip}{0pt plus 5cm}int Searcher\-::d\-Right\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_a56c7e8eb20ba293376d59dc55ac4a0c5}
+\hypertarget{classSearcher_aed8b034d6faa5556330af017c56f3a53}{\index{Searcher@{Searcher}!absolute\-Turn\-Goal\-Angle@{absolute\-Turn\-Goal\-Angle}}
+\index{absolute\-Turn\-Goal\-Angle@{absolute\-Turn\-Goal\-Angle}!Searcher@{Searcher}}
+\subsubsection[{absolute\-Turn\-Goal\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}float Searcher\-::absolute\-Turn\-Goal\-Angle\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_aed8b034d6faa5556330af017c56f3a53}
 
 
-Definition at line 12 of file Searcher.\-hpp.
-
-\hypertarget{classSearcher_a34cdc6cbf4aa91ade07e1b9e5aa362fb}{\index{Searcher@{Searcher}!full\-Sweep@{full\-Sweep}}
-\index{full\-Sweep@{full\-Sweep}!Searcher@{Searcher}}
-\subsubsection[{full\-Sweep}]{\setlength{\rightskip}{0pt plus 5cm}bool Searcher\-::full\-Sweep\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_a34cdc6cbf4aa91ade07e1b9e5aa362fb}
+Turning angles. 
 
 
-Definition at line 14 of file Searcher.\-hpp.
 
-\hypertarget{classSearcher_af6082983203ee203e741b79737c205d6}{\index{Searcher@{Searcher}!last\-Direction@{last\-Direction}}
-\index{last\-Direction@{last\-Direction}!Searcher@{Searcher}}
-\subsubsection[{last\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}float Searcher\-::last\-Direction\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_af6082983203ee203e741b79737c205d6}
+Definition at line 123 of file Searcher.\-hpp.
 
-
-Definition at line 13 of file Searcher.\-hpp.
-
-\hypertarget{classSearcher_aa1764fe370476e6bf19b30e5a8c2b073}{\index{Searcher@{Searcher}!turning@{turning}}
-\index{turning@{turning}!Searcher@{Searcher}}
-\subsubsection[{turning}]{\setlength{\rightskip}{0pt plus 5cm}bool Searcher\-::turning = false\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_aa1764fe370476e6bf19b30e5a8c2b073}
+\hypertarget{classSearcher_ae0cc94f0e90c705ee21da7abf58fcc22}{\index{Searcher@{Searcher}!A\-V\-O\-I\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{A\-V\-O\-I\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
+\index{A\-V\-O\-I\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{A\-V\-O\-I\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!Searcher@{Searcher}}
+\subsubsection[{A\-V\-O\-I\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Searcher\-::\-A\-V\-O\-I\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E = 400\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classSearcher_ae0cc94f0e90c705ee21da7abf58fcc22}
 
 
-Definition at line 11 of file Searcher.\-hpp.
+Definition at line 134 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_afbe5b3bf208f18f77a3dcdb0aa86a96c}{\index{Searcher@{Searcher}!A\-V\-O\-I\-D\-\_\-\-T\-U\-R\-N\-\_\-\-A\-N\-G\-L\-E@{A\-V\-O\-I\-D\-\_\-\-T\-U\-R\-N\-\_\-\-A\-N\-G\-L\-E}}
+\index{A\-V\-O\-I\-D\-\_\-\-T\-U\-R\-N\-\_\-\-A\-N\-G\-L\-E@{A\-V\-O\-I\-D\-\_\-\-T\-U\-R\-N\-\_\-\-A\-N\-G\-L\-E}!Searcher@{Searcher}}
+\subsubsection[{A\-V\-O\-I\-D\-\_\-\-T\-U\-R\-N\-\_\-\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const float Searcher\-::\-A\-V\-O\-I\-D\-\_\-\-T\-U\-R\-N\-\_\-\-A\-N\-G\-L\-E = 1$\ast$M\-\_\-\-P\-I/4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classSearcher_afbe5b3bf208f18f77a3dcdb0aa86a96c}
+
+
+Definition at line 135 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_acd63673f1b401dffee29f88eceaa1ada}{\index{Searcher@{Searcher}!candle\-Count@{candle\-Count}}
+\index{candle\-Count@{candle\-Count}!Searcher@{Searcher}}
+\subsubsection[{candle\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Searcher\-::candle\-Count = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_acd63673f1b401dffee29f88eceaa1ada}
+
+
+Counts of sweeps and candles. 
+
+
+
+Definition at line 128 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_ae2eb4f5be779517a4e3264b0223459e2}{\index{Searcher@{Searcher}!goal\-Point@{goal\-Point}}
+\index{goal\-Point@{goal\-Point}!Searcher@{Searcher}}
+\subsubsection[{goal\-Point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point}$<$float$>$ Searcher\-::goal\-Point\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_ae2eb4f5be779517a4e3264b0223459e2}
+
+
+The \hyperlink{classPoint}{Point} the robot is going toward. 
+
+
+
+Definition at line 119 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_a91de3c7ecdda8d3a6d231c35fbf363c5}{\index{Searcher@{Searcher}!last\-Update\-Time@{last\-Update\-Time}}
+\index{last\-Update\-Time@{last\-Update\-Time}!Searcher@{Searcher}}
+\subsubsection[{last\-Update\-Time}]{\setlength{\rightskip}{0pt plus 5cm}long Searcher\-::last\-Update\-Time = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_a91de3c7ecdda8d3a6d231c35fbf363c5}
+
+
+timer variable 
+
+
+
+Definition at line 115 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_ab21f940dc1ed76c01611be56b95961e1}{\index{Searcher@{Searcher}!R\-\_\-\-T\-H@{R\-\_\-\-T\-H}}
+\index{R\-\_\-\-T\-H@{R\-\_\-\-T\-H}!Searcher@{Searcher}}
+\subsubsection[{R\-\_\-\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}int Searcher\-::\-R\-\_\-\-T\-H\mbox{[}360\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_ab21f940dc1ed76c01611be56b95961e1}
+
+
+Definition at line 75 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_aadc83ce2d77610d6572f98ecd8b4d6e4}{\index{Searcher@{Searcher}!state@{state}}
+\index{state@{state}!Searcher@{Searcher}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State} Searcher\-::state\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_aadc83ce2d77610d6572f98ecd8b4d6e4}
+
+
+state variable 
+
+
+
+Definition at line 111 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_a2403bbf24da371ea9a31eeaec1f98b96}{\index{Searcher@{Searcher}!state\-Names@{state\-Names}}
+\index{state\-Names@{state\-Names}!Searcher@{Searcher}}
+\subsubsection[{state\-Names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Searcher\-::state\-Names\mbox{[}9\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_a2403bbf24da371ea9a31eeaec1f98b96}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+      \textcolor{stringliteral}{"SEARCHNG        "},
+      \textcolor{stringliteral}{"TURNNG          "},
+      \textcolor{stringliteral}{"CHECK\_PATH      "},
+      \textcolor{stringliteral}{"SCOOT           "},
+      \textcolor{stringliteral}{"CHECKNG         "},
+      \textcolor{stringliteral}{"CHECK\_AFTR\_SCOOT"},
+      \textcolor{stringliteral}{"GO\_TO\_CANDLE    "},
+      \textcolor{stringliteral}{"CHECK\_FINAL     "},
+      \textcolor{stringliteral}{"TURN\_TO\_CANDLE  "}
+    \}
+\end{DoxyCode}
+
+
+Names of States to display on L\-C\-D. 
+
+
+
+Definition at line 95 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_af8a7e7ddce46577fca506e2f31aead60}{\index{Searcher@{Searcher}!sweeps@{sweeps}}
+\index{sweeps@{sweeps}!Searcher@{Searcher}}
+\subsubsection[{sweeps}]{\setlength{\rightskip}{0pt plus 5cm}int Searcher\-::sweeps = 0\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearcher_af8a7e7ddce46577fca506e2f31aead60}
+
+
+Definition at line 129 of file Searcher.\-hpp.
+
+\hypertarget{classSearcher_af4dd5850dbe46a9a76605ad4ba454066}{\index{Searcher@{Searcher}!U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D@{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}}
+\index{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D@{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}!Searcher@{Searcher}}
+\subsubsection[{U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}const long Searcher\-::\-U\-P\-D\-A\-T\-E\-\_\-\-P\-E\-R\-I\-O\-D = 270\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classSearcher_af4dd5850dbe46a9a76605ad4ba454066}
+
+
+Timer lengths. 
+
+
+
+Definition at line 133 of file Searcher.\-hpp.
 
 
 

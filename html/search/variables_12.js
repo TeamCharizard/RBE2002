@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['wheel_5fradius',['wheel_radius',['../classOdom.html#a567d0fcf68e65948aed27f27f35e6973',1,'Odom']]],
-  ['width',['WIDTH',['../classCandleDetector.html#af4c5d2170cea56fa4263639f20ed13ed',1,'CandleDetector']]],
-  ['width_5ftolerance',['WIDTH_TOLERANCE',['../classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145',1,'CandleDetector']]]
+  ['update_5fperiod',['UPDATE_PERIOD',['../classRobot.html#a6a76c7da686c2cec0cba2877e0c914dc',1,'Robot::UPDATE_PERIOD()'],['../classSearcher.html#af4dd5850dbe46a9a76605ad4ba454066',1,'Searcher::UPDATE_PERIOD()']]]
 ];

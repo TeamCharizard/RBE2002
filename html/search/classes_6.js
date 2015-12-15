@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main',['Main',['../classMain.html',1,'']]],
-  ['mainsketch',['MainSketch',['../classMainSketch.html',1,'']]]
+  ['lidar',['Lidar',['../classLidar.html',1,'']]],
+  ['lidarbenchmark',['LidarBenchmark',['../classLidarBenchmark.html',1,'']]],
+  ['lidardump',['LidarDump',['../classLidarDump.html',1,'']]]
 ];

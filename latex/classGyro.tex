@@ -1,0 +1,155 @@
+\hypertarget{classGyro}{\section{Gyro Class Reference}
+\label{classGyro}\index{Gyro@{Gyro}}
+}
+
+
+{\ttfamily \#include $<$Gyro.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGyro_a8ff2fdb2417c677f4694fa23fc0ce6da}{Gyro} ()
+\item 
+void \hyperlink{classGyro_aab09f758425de1758f284853712cb18b}{setup} ()
+\item 
+int \hyperlink{classGyro_a8bf35077e5f6237629e093c67a0bb1d9}{read} ()
+\begin{DoxyCompactList}\small\item\em angle of robot \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+L3\-G \hyperlink{classGyro_ab449066006f8cdd13efcefc3542c6130}{gyro}
+\begin{DoxyCompactList}\small\item\em the gyro duh \end{DoxyCompactList}\item 
+float \hyperlink{classGyro_a307e59e89fb61d10526ffee339248324}{G\-\_\-\-Dt} =0.\-005
+\begin{DoxyCompactList}\small\item\em Integration time (D\-C\-M algorithm) We will run the integration loop at 50\-Hz if possible. \end{DoxyCompactList}\item 
+float \hyperlink{classGyro_a47a4402067b812740622d729478ec1be}{G\-\_\-gain} =.\-00875
+\begin{DoxyCompactList}\small\item\em gyros gain factor for 250deg/sec \end{DoxyCompactList}\item 
+float \hyperlink{classGyro_af158408e03992ce3d5fc020d22a0f2a9}{gyro\-\_\-z}
+\begin{DoxyCompactList}\small\item\em gyro x val \end{DoxyCompactList}\item 
+float \hyperlink{classGyro_a50fdddd60b9220d2f61645653dd6053d}{gyro\-\_\-zold}
+\begin{DoxyCompactList}\small\item\em gyro cummulative z value \end{DoxyCompactList}\item 
+float \hyperlink{classGyro_aa725b8e8f7f7ae066c28ae67bcb310d6}{gerrz}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Gyro.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGyro_a8ff2fdb2417c677f4694fa23fc0ce6da}{\index{Gyro@{Gyro}!Gyro@{Gyro}}
+\index{Gyro@{Gyro}!Gyro@{Gyro}}
+\subsubsection[{Gyro}]{\setlength{\rightskip}{0pt plus 5cm}Gyro\-::\-Gyro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGyro_a8ff2fdb2417c677f4694fa23fc0ce6da}
+
+
+Definition at line 3 of file Gyro.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGyro_a8bf35077e5f6237629e093c67a0bb1d9}{\index{Gyro@{Gyro}!read@{read}}
+\index{read@{read}!Gyro@{Gyro}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}int Gyro\-::read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGyro_a8bf35077e5f6237629e093c67a0bb1d9}
+
+
+angle of robot 
+
+\begin{DoxyReturn}{Returns}
+angle in degrees of robot in world frame 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file Gyro.\-cpp.
+
+\hypertarget{classGyro_aab09f758425de1758f284853712cb18b}{\index{Gyro@{Gyro}!setup@{setup}}
+\index{setup@{setup}!Gyro@{Gyro}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Gyro\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGyro_aab09f758425de1758f284853712cb18b}
+
+
+Definition at line 8 of file Gyro.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGyro_a307e59e89fb61d10526ffee339248324}{\index{Gyro@{Gyro}!G\-\_\-\-Dt@{G\-\_\-\-Dt}}
+\index{G\-\_\-\-Dt@{G\-\_\-\-Dt}!Gyro@{Gyro}}
+\subsubsection[{G\-\_\-\-Dt}]{\setlength{\rightskip}{0pt plus 5cm}float Gyro\-::\-G\-\_\-\-Dt =0.\-005\hspace{0.3cm}{\ttfamily [private]}}}\label{classGyro_a307e59e89fb61d10526ffee339248324}
+
+
+Integration time (D\-C\-M algorithm) We will run the integration loop at 50\-Hz if possible. 
+
+
+
+Definition at line 20 of file Gyro.\-hpp.
+
+\hypertarget{classGyro_a47a4402067b812740622d729478ec1be}{\index{Gyro@{Gyro}!G\-\_\-gain@{G\-\_\-gain}}
+\index{G\-\_\-gain@{G\-\_\-gain}!Gyro@{Gyro}}
+\subsubsection[{G\-\_\-gain}]{\setlength{\rightskip}{0pt plus 5cm}float Gyro\-::\-G\-\_\-gain =.\-00875\hspace{0.3cm}{\ttfamily [private]}}}\label{classGyro_a47a4402067b812740622d729478ec1be}
+
+
+gyros gain factor for 250deg/sec 
+
+
+
+Definition at line 24 of file Gyro.\-hpp.
+
+\hypertarget{classGyro_aa725b8e8f7f7ae066c28ae67bcb310d6}{\index{Gyro@{Gyro}!gerrz@{gerrz}}
+\index{gerrz@{gerrz}!Gyro@{Gyro}}
+\subsubsection[{gerrz}]{\setlength{\rightskip}{0pt plus 5cm}float Gyro\-::gerrz\hspace{0.3cm}{\ttfamily [private]}}}\label{classGyro_aa725b8e8f7f7ae066c28ae67bcb310d6}
+\hyperlink{classGyro}{Gyro} 7 error 
+
+Definition at line 33 of file Gyro.\-hpp.
+
+\hypertarget{classGyro_ab449066006f8cdd13efcefc3542c6130}{\index{Gyro@{Gyro}!gyro@{gyro}}
+\index{gyro@{gyro}!Gyro@{Gyro}}
+\subsubsection[{gyro}]{\setlength{\rightskip}{0pt plus 5cm}L3\-G Gyro\-::gyro\hspace{0.3cm}{\ttfamily [private]}}}\label{classGyro_ab449066006f8cdd13efcefc3542c6130}
+
+
+the gyro duh 
+
+
+
+Definition at line 17 of file Gyro.\-hpp.
+
+\hypertarget{classGyro_af158408e03992ce3d5fc020d22a0f2a9}{\index{Gyro@{Gyro}!gyro\-\_\-z@{gyro\-\_\-z}}
+\index{gyro\-\_\-z@{gyro\-\_\-z}!Gyro@{Gyro}}
+\subsubsection[{gyro\-\_\-z}]{\setlength{\rightskip}{0pt plus 5cm}float Gyro\-::gyro\-\_\-z\hspace{0.3cm}{\ttfamily [private]}}}\label{classGyro_af158408e03992ce3d5fc020d22a0f2a9}
+
+
+gyro x val 
+
+
+
+Definition at line 27 of file Gyro.\-hpp.
+
+\hypertarget{classGyro_a50fdddd60b9220d2f61645653dd6053d}{\index{Gyro@{Gyro}!gyro\-\_\-zold@{gyro\-\_\-zold}}
+\index{gyro\-\_\-zold@{gyro\-\_\-zold}!Gyro@{Gyro}}
+\subsubsection[{gyro\-\_\-zold}]{\setlength{\rightskip}{0pt plus 5cm}float Gyro\-::gyro\-\_\-zold\hspace{0.3cm}{\ttfamily [private]}}}\label{classGyro_a50fdddd60b9220d2f61645653dd6053d}
+
+
+gyro cummulative z value 
+
+
+
+Definition at line 30 of file Gyro.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{Gyro_8hpp}{Gyro.\-hpp}\item 
+src/shared/\hyperlink{Gyro_8cpp}{Gyro.\-cpp}\end{DoxyCompactItemize}

@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
@@ -91,6 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_k"><span>k</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
@@ -122,8 +124,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
-<li>angleToCandle
-: <a class="el" href="classRobot.html#a7c1bd342087a6eedeeb0df07fa9cf3d2">Robot</a>
+<li>absoluteCandleAngle
+: <a class="el" href="classSearcher.html#a5a2d774c5f42091cbb584cfe944313d6">Searcher</a>
+</li>
+<li>absoluteTurnGoalAngle
+: <a class="el" href="classSearcher.html#aed8b034d6faa5556330af017c56f3a53">Searcher</a>
+</li>
+<li>angle
+: <a class="el" href="classNavigator.html#a20335cc0cf85bdd18af14ee2dfbd1501">Navigator</a>
+</li>
+<li>angleChar
+: <a class="el" href="classStatusManager.html#ad215f7e2fd44cebe76d6e60d40d110e6">StatusManager</a>
+</li>
+<li>AVOID_DISTANCE
+: <a class="el" href="classSearcher.html#ae0cc94f0e90c705ee21da7abf58fcc22">Searcher</a>
+</li>
+<li>AVOID_TURN_ANGLE
+: <a class="el" href="classSearcher.html#afbe5b3bf208f18f77a3dcdb0aa86a96c">Searcher</a>
 </li>
 </ul>
 
@@ -134,17 +151,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classRobot.html#adbf538f97c0f9f98337f5171e715badc">Robot</a>
 , <a class="el" href="classTestOdom.html#a185b4bf8f3906701729e77109a22538a">TestOdom</a>
 </li>
+<li>BLOW_TIME
+: <a class="el" href="classExtinguisher.html#a454a63d5013db7cec4e5ae18fbfe64fa">Extinguisher</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>CANDLE_APPROACH_DISTANCE_INCHES
+: <a class="el" href="classRobot.html#a59c0d01f9863b7c1e504b558bd9fae67">Robot</a>
+</li>
+<li>CANDLE_CENTER_OFFSET
+: <a class="el" href="classCandleDetector.html#a9920f067f44f9dc8aab6747699a244f7">CandleDetector</a>
+</li>
 <li>candleAngle
-: <a class="el" href="classDriveUntilCandle.html#a786f5c46c30956d8fafdd57f143b4960">DriveUntilCandle</a>
+: <a class="el" href="classCandleDetector.html#a043c3f35890b36e187734a492f96f84c">CandleDetector</a>
+, <a class="el" href="classDriveUntilCandle.html#a786f5c46c30956d8fafdd57f143b4960">DriveUntilCandle</a>
 , <a class="el" href="classTestOdom.html#a5645cf7c9e70140e5b7b96d3168e8006">TestOdom</a>
 </li>
+<li>candleCount
+: <a class="el" href="classSearcher.html#acd63673f1b401dffee29f88eceaa1ada">Searcher</a>
+</li>
 <li>candleDistance
-: <a class="el" href="classDriveUntilCandle.html#a36b2ce9badf48a77df0ce3ecd38922ec">DriveUntilCandle</a>
+: <a class="el" href="classCandleDetector.html#a3d4f2c951c77838bfc5c068b58cf9fda">CandleDetector</a>
+, <a class="el" href="classDriveUntilCandle.html#a36b2ce9badf48a77df0ce3ecd38922ec">DriveUntilCandle</a>
 , <a class="el" href="classTestOdom.html#a64c15d32fcf64aa273cc19f210accd35">TestOdom</a>
+</li>
+<li>candleFound
+: <a class="el" href="classStatusManager.html#addac8003cb381bc134170516966135aa">StatusManager</a>
+</li>
+<li>candleHeight
+: <a class="el" href="classStatusManager.html#a1a9f7a4fdb19e56e3f8352a78ea4648e">StatusManager</a>
+</li>
+<li>candleHeightFrac
+: <a class="el" href="classStatusManager.html#ac813f7d48ed51e0246126a53775c5b65">StatusManager</a>
+</li>
+<li>candleX
+: <a class="el" href="classStatusManager.html#a53de0b4eac2d76c8b2d075b8020d1c7f">StatusManager</a>
+</li>
+<li>candleY
+: <a class="el" href="classStatusManager.html#ac5a5ebf9f76a5ae36536be7fb2ce5383">StatusManager</a>
 </li>
 <li>cd
 : <a class="el" href="classDriveUntilCandle.html#af93647db50bc410773c8399642b91450">DriveUntilCandle</a>
@@ -152,7 +198,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classTestOdom.html#a4ea35bef135d6bf40b9377ae6c38f1d9">TestOdom</a>
 </li>
 <li>charizard
-: <a class="el" href="classMain.html#a6b8534d72e39e2b43c3d46f2ca6e49f4">Main</a>
+: <a class="el" href="classLidarDump.html#a855703e06ed680346b0f6accecf17b11">LidarDump</a>
+, <a class="el" href="classMain.html#a6b8534d72e39e2b43c3d46f2ca6e49f4">Main</a>
 </li>
 <li>consideringCandle
 : <a class="el" href="classDriveUntilCandle.html#a4a3766796623146b80c0a3fa083136d3">DriveUntilCandle</a>
@@ -161,6 +208,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>count
 : <a class="el" href="classDriveUntilCandle.html#a518d428f126c93f016e62c8b1ac88c2f">DriveUntilCandle</a>
 , <a class="el" href="classEncoder.html#a7f71986ee5780e0fe3a91c93b7116c38">Encoder&lt; port1, port2 &gt;</a>
+, <a class="el" href="classLidarDump.html#a0d68951dd2bd7da58bde795c76979e0e">LidarDump</a>
 , <a class="el" href="classTestOdom.html#a336a8f23ac4a1dcc780448bc7ef7f88b">TestOdom</a>
 </li>
 </ul>
@@ -172,10 +220,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>dFront
 : <a class="el" href="classSearch.html#a443c7d18e6cfd0d114f7e2c2b1495bec">Search</a>
-, <a class="el" href="classSearcher.html#ae9ecf25b0705199abad716431659d4b6">Searcher</a>
 </li>
 <li>dir
 : <a class="el" href="classOdom.html#ad2308d2e662650534d2a85aad6c97349">Odom&lt; Enc1, Enc2 &gt;</a>
+</li>
+<li>direction
+: <a class="el" href="classTurn.html#a389aaac2be62ab0a1ab03d729c664e24">Turn</a>
+</li>
+<li>dirPID
+: <a class="el" href="classPIDBase.html#a00db94bebcd5b966d8ee1020f8c33951">PIDBase</a>
+</li>
+<li>distance
+: <a class="el" href="classNavigator.html#accc10be1bc4dfe67ce799e69869f0caa">Navigator</a>
 </li>
 <li>distanceIndex
 : <a class="el" href="classLidar.html#a5d198ec3f5d3de7829dda616ea13d016">Lidar</a>
@@ -184,20 +240,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classDriveUntilCandle.html#ab1308b79db403f3c35b2d84b8254c349">DriveUntilCandle</a>
 , <a class="el" href="classLidar.html#a5f97323ace606c1b4d2f817ebb8ebf7d">Lidar</a>
 , <a class="el" href="classPointToCandle.html#aa905d6ae2cd3d72225020c87f74e30e0">PointToCandle</a>
-, <a class="el" href="classRobot.html#aba9dccea96aa95bb8fbdd1a5ba72ca73">Robot</a>
 , <a class="el" href="classSearch.html#acae7260fec1cd49350860f94955b1e63">Search</a>
 , <a class="el" href="classTestOdom.html#a235ba0e8870aec23452d6030efaf8c7e">TestOdom</a>
 </li>
-<li>distanceToCandle
-: <a class="el" href="classRobot.html#afae387e4e9419530d3217055301ba939">Robot</a>
+<li>distPid
+: <a class="el" href="classNavigator.html#ab6f4e8b5937d700d4514c438cb7b3927">Navigator</a>
 </li>
 <li>dLeft
 : <a class="el" href="classSearch.html#aeab525e9821cdb2dc5ed996a207d9084">Search</a>
-, <a class="el" href="classSearcher.html#afa55bd372a5cb9cdebc9720dfe098e4d">Searcher</a>
 </li>
 <li>dRight
 : <a class="el" href="classSearch.html#a376def82b93387197752cc169ddf060e">Search</a>
-, <a class="el" href="classSearcher.html#a56c7e8eb20ba293376d59dc55ac4a0c5">Searcher</a>
 </li>
 <li>driveDirection
 : <a class="el" href="classRobot.html#af15d2eaa46a9736e5d3d3aa9e8a9751c">Robot</a>
@@ -205,7 +258,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 
 
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>extinguisher
+: <a class="el" href="classRobot.html#a506ec05fcf24208b486c48367b003e96">Robot</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<li>fan
+: <a class="el" href="classExtinguisher.html#a47ec6f79ddc26b18bbc1a0ac9741ae24">Extinguisher</a>
+</li>
 <li>feedForward
 : <a class="el" href="classPID.html#aaad110febd9150a54528b9cb6ff145e8">PID</a>
 </li>
@@ -213,20 +276,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classHeight.html#a9cb83b4ed7622c3961552cf8f383d1b0">Height</a>
 , <a class="el" href="classRobot.html#a342f5f8be2b5641eb3ae8f9c8475ebe6">Robot</a>
 </li>
+<li>format
+: <a class="el" href="classStatusManager.html#a98bdd9d3e963455b576ff9a9bc5482ca">StatusManager</a>
+</li>
 <li>foundCandle
 : <a class="el" href="classDriveUntilCandle.html#a99cfadc7663aebef445e59d721dfe0bc">DriveUntilCandle</a>
 , <a class="el" href="classTestOdom.html#ac289c026423da6aec36952f02bc39b4f">TestOdom</a>
 </li>
 <li>fullSweep
 : <a class="el" href="classSearch.html#a113ce5d7076372bbe5041749f42a7ee3">Search</a>
-, <a class="el" href="classSearcher.html#a34cdc6cbf4aa91ade07e1b9e5aa362fb">Searcher</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
-<li>GOAL_DISTANCE
-: <a class="el" href="classRobot.html#afb4449356b3a3f92b2c76c612e8951ee">Robot</a>
+<li>G_Dt
+: <a class="el" href="classGyro.html#a307e59e89fb61d10526ffee339248324">Gyro</a>
+</li>
+<li>G_gain
+: <a class="el" href="classGyro.html#a47a4402067b812740622d729478ec1be">Gyro</a>
+</li>
+<li>gerrz
+: <a class="el" href="classGyro.html#aa725b8e8f7f7ae066c28ae67bcb310d6">Gyro</a>
+</li>
+<li>goalAngle
+: <a class="el" href="classExtinguisher.html#af7b156761cc23a5bee07f3cecd50213a">Extinguisher</a>
+</li>
+<li>goalPoint
+: <a class="el" href="classSearcher.html#ae2eb4f5be779517a4e3264b0223459e2">Searcher</a>
+</li>
+<li>gyro
+: <a class="el" href="classGyro.html#ab449066006f8cdd13efcefc3542c6130">Gyro</a>
+, <a class="el" href="classOdom.html#a52380c80a1c7072904a766a59e09d3b5">Odom&lt; Enc1, Enc2 &gt;</a>
+, <a class="el" href="classRobot.html#adafaf54e27eb3bd0cf08e32d7206e6a8">Robot</a>
+, <a class="el" href="classTestGyro.html#a3227ef60350305553a8cd0712aa807bb">TestGyro</a>
+</li>
+<li>gyro_z
+: <a class="el" href="classGyro.html#af158408e03992ce3d5fc020d22a0f2a9">Gyro</a>
+</li>
+<li>gyro_zold
+: <a class="el" href="classGyro.html#a50fdddd60b9220d2f61645653dd6053d">Gyro</a>
+</li>
+<li>gyroAngle
+: <a class="el" href="classOdom.html#a4c4c2d005150e15fef0db14e923bfca3">Odom&lt; Enc1, Enc2 &gt;</a>
 </li>
 </ul>
 
@@ -239,14 +331,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>INIT_PAUSE
+: <a class="el" href="classFan.html#a8d7eb0f5de190ffc2f5d0ae1c5c10e29">Fan</a>
+</li>
 <li>instance
 : <a class="el" href="classRobot.html#aad5c5d6db601aac62393d47ec9385fa3">Robot</a>
+</li>
+<li>INTENSITY_THRESHOLD
+: <a class="el" href="classFireFinder.html#a0b9c6aa9ba75e2900477f94b02b2bb0b">FireFinder</a>
 </li>
 <li>invalids
 : <a class="el" href="classLidar.html#a43a0f4c1f8d6b0c9f1b21be32c99890d">Lidar</a>
 </li>
 <li>iTerm
-: <a class="el" href="classPID.html#a0ab15f9f3e6d301b25696a32469ba3eb">PID</a>
+: <a class="el" href="classPID.html#a940a94095581f2d32d1ed3426a2cdf4b">PID</a>
 </li>
 </ul>
 
@@ -274,17 +372,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>last_update
 : <a class="el" href="classSearch.html#ac5a0e7842cdfec65c8af8fd2dd0d4dcc">Search</a>
 </li>
-<li>lastDirection
-: <a class="el" href="classSearcher.html#af6082983203ee203e741b79737c205d6">Searcher</a>
-</li>
 <li>lastError
-: <a class="el" href="classPID.html#abbf07ac762e11dc7fedf56302c7bda8e">PID</a>
+: <a class="el" href="classPID.html#abf0cc22331707048925c27a242be7d3e">PID</a>
 </li>
 <li>lastMotorLoop
 : <a class="el" href="classSearch.html#af73bd725381f47afa3bf6af64d39f3b6">Search</a>
 </li>
-<li>lastUpdate
-: <a class="el" href="classPIDBase.html#a9ac4b3515239d988dae8ebc95dc09ed5">PIDBase</a>
+<li>lastUpdateTime
+: <a class="el" href="classPID.html#ac544c553fc46b395600413117df8a1f8">PID</a>
+, <a class="el" href="classRobot.html#a82a33c66efce935d2cac37c9f11c6efd">Robot</a>
+, <a class="el" href="classSearcher.html#a91de3c7ecdda8d3a6d231c35fbf363c5">Searcher</a>
+, <a class="el" href="classTurn.html#aea10c7359bfbeab45fea812356caae6b">Turn</a>
 </li>
 <li>left
 : <a class="el" href="classPointToCandle.html#a8976db9c7a0e1484762bf27c829cb06f">PointToCandle</a>
@@ -320,6 +418,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>MIN_HEAD_ANGLE
 : <a class="el" href="classFireFinder.html#ac6743699fd08f97088855dc1e87f8dea">FireFinder</a>
 </li>
+<li>MIN_INTENSITY
+: <a class="el" href="classFireFinder.html#aa05ce7d7760ac59ea294df68475dcf05">FireFinder</a>
+</li>
 <li>MIN_SPIKE
 : <a class="el" href="classCandleDetector.html#a9062a3c45b98c5d051082dbf4a285fd5">CandleDetector</a>
 </li>
@@ -334,9 +435,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>motor
 : <a class="el" href="classDriveMotor.html#a27de76439b7bd1035b17faf78be59478">DriveMotor</a>
+, <a class="el" href="classFan.html#aff9de16d110a96ff5788f7d6ad6ef715">Fan</a>
 </li>
 <li>MOTOR_PIN
 : <a class="el" href="classFireFinder.html#ac29b178da56a9347787371708bb62a20">FireFinder</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>navigator
+: <a class="el" href="classRobot.html#a71e296a4f32c3a81b5a9fabeac12747b">Robot</a>
 </li>
 </ul>
 
@@ -362,6 +471,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>packetNumber
 : <a class="el" href="classLidar.html#abcca8f7f6c4cff325e6b225ddbe14796">Lidar</a>
 </li>
+<li>path
+: <a class="el" href="classRobot.html#a36d071e82aea40470cea9559477e5115">Robot</a>
+</li>
 <li>pos
 : <a class="el" href="classOdom.html#a0e43d9feb433dec91e7a08cee64d732b">Odom&lt; Enc1, Enc2 &gt;</a>
 </li>
@@ -372,6 +484,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>R_TH
+: <a class="el" href="classSearcher.html#ab21f940dc1ed76c01611be56b95961e1">Searcher</a>
+</li>
+<li>RADIUS_TOLERANCE
+: <a class="el" href="classCandleDetector.html#ab3c96353ba6d64163cf5e44b1ce2aa9e">CandleDetector</a>
+</li>
+<li>reading
+: <a class="el" href="classLidarDump.html#a2b76c3131d789b4eb45f92c6b9847f82">LidarDump</a>
+</li>
 <li>right
 : <a class="el" href="classPointToCandle.html#ad0913e5dfa04c7205c16cc893ff238c5">PointToCandle</a>
 , <a class="el" href="classSearch.html#a7f0e23cc5c8aa635fbe7f5b4c8e30eb0">Search</a>
@@ -381,6 +502,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>rMotor
 : <a class="el" href="classPIDBase.html#ae52cf8a147c90af4334e1ad14f48aa4a">PIDBase</a>
+</li>
+<li>robotAngle
+: <a class="el" href="classStatusManager.html#af55087be7ac997b2db4258b26c285f1d">StatusManager</a>
+</li>
+<li>robotX
+: <a class="el" href="classStatusManager.html#a844d999c234bdcfcb0f465bdf2da9b72">StatusManager</a>
+</li>
+<li>robotY
+: <a class="el" href="classStatusManager.html#a2e09a9dcfcc6c38cae621c04f49c58b4">StatusManager</a>
 </li>
 <li>rot_wheel_pos
 : <a class="el" href="classOdom.html#a3d72db210126e10ebcae996e1e707ce5">Odom&lt; Enc1, Enc2 &gt;</a>
@@ -397,6 +527,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>scanning
 : <a class="el" href="classFireFinder.html#aec1a3ae4b80847a907898601c64386cb">FireFinder</a>
+, <a class="el" href="classRobot.html#adcfb83201cfb8c8a7588d83aae0fc5be">Robot</a>
 </li>
 <li>searcher
 : <a class="el" href="classRobot.html#af0ba30c47b84dc976f5bb7bd978f95ef">Robot</a>
@@ -408,22 +539,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classFireFinder.html#a5afc5290c8ba58893228414ba5965ed3">FireFinder</a>
 </li>
 <li>setPoint
-: <a class="el" href="classPID.html#a2686d248042aff0e1730dd3a0b705fd2">PID</a>
+: <a class="el" href="classPID.html#aab66dffb3291ee486568e8b73cb71831">PID</a>
+</li>
+<li>size
+: <a class="el" href="classStack.html#a2bf4c06162c7356ca41792de93a68f49">Stack&lt; T, SIZE &gt;</a>
 </li>
 <li>startReading
 : <a class="el" href="classLidar.html#a69b0909cc44f4e4e155d0ae2aa4ef3b4">Lidar</a>
 </li>
+<li>startStateTime
+: <a class="el" href="classExtinguisher.html#a75020779b6ba6fcd9ac11148a378d441">Extinguisher</a>
+</li>
 <li>state
-: <a class="el" href="classMain.html#a487b0fe523e37213256cf63f696b3bb0">Main</a>
+: <a class="el" href="classExtinguisher.html#aa67c13dc091e5dc2c054d53f7fcae69b">Extinguisher</a>
+, <a class="el" href="classMain.html#a8b4ada43c3c3720b177018191ac6ee90">Main</a>
+, <a class="el" href="classNavigator.html#a15263fe64d0ea29a1bbfe9e5ef849c4c">Navigator</a>
+, <a class="el" href="classSearcher.html#aadc83ce2d77610d6572f98ecd8b4d6e4">Searcher</a>
+, <a class="el" href="classStatusManager.html#a6f3c0467116c3bfbf9d7507cb04b7d5a">StatusManager</a>
 </li>
 <li>stateNames
-: <a class="el" href="classMain.html#a2b7c0a58d48668f3b54b50c2800edb68">Main</a>
+: <a class="el" href="classExtinguisher.html#a91cd54af9125620a68939ccdc5796c66">Extinguisher</a>
+, <a class="el" href="classMain.html#a10090d1fa7fa606c1bf7c5bdf23d7eda">Main</a>
+, <a class="el" href="classSearcher.html#a2403bbf24da371ea9a31eeaec1f98b96">Searcher</a>
 </li>
 <li>step
 : <a class="el" href="classFireFinder.html#ad482526cf32997919cbc31f61d12065d">FireFinder</a>
 </li>
 <li>sum
 : <a class="el" href="classFireFinder.html#a84926ae7c01b8c03bb87c810136a41ff">FireFinder</a>
+</li>
+<li>sweeps
+: <a class="el" href="classSearcher.html#af8a7e7ddce46577fca506e2f31aead60">Searcher</a>
 </li>
 <li>sweepTime
 : <a class="el" href="classFireFinder.html#aaa38192d82bc4120129b72fee61f72f1">FireFinder</a>
@@ -443,14 +589,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>turning
 : <a class="el" href="classSearch.html#aef5f5e911426d02067e2ac01e5549f1e">Search</a>
-, <a class="el" href="classSearcher.html#aa1764fe370476e6bf19b30e5a8c2b073">Searcher</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
 <li>UPDATE_PERIOD
-: <a class="el" href="classPIDBase.html#a6756b30f25632224de999cb7a4ff2315">PIDBase</a>
+: <a class="el" href="classRobot.html#a6a76c7da686c2cec0cba2877e0c914dc">Robot</a>
+, <a class="el" href="classSearcher.html#af4dd5850dbe46a9a76605ad4ba454066">Searcher</a>
 </li>
 </ul>
 
@@ -459,15 +605,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>VALID_CANDLE_THRESHOLD
 : <a class="el" href="classCandleDetector.html#ac8aa00d0477ff096c344ec71d8ccdf82">CandleDetector</a>
 </li>
+<li>values
+: <a class="el" href="classStack.html#ad6737211e34f9e427b9c91f32a16ad18">Stack&lt; T, SIZE &gt;</a>
+</li>
+<li>VERIFY_TIME
+: <a class="el" href="classExtinguisher.html#a1f4f2c248d5fcf98a62eab8019ab79f9">Extinguisher</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
+<li>waypoint
+: <a class="el" href="classRobot.html#a4e7ca1c81831d252aa1545f549bff3f4">Robot</a>
+</li>
 <li>wheel_radius
 : <a class="el" href="classOdom.html#a567d0fcf68e65948aed27f27f35e6973">Odom&lt; Enc1, Enc2 &gt;</a>
 </li>
 <li>WIDTH
 : <a class="el" href="classCandleDetector.html#af4c5d2170cea56fa4263639f20ed13ed">CandleDetector</a>
+, <a class="el" href="classRobot.html#aeefc61d76e6ba024e4af9c844715a84d">Robot</a>
 </li>
 <li>WIDTH_TOLERANCE
 : <a class="el" href="classCandleDetector.html#a1c8f0232491ba37dd10032c1da376145">CandleDetector</a>
@@ -490,7 +646,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 10 2015 23:04:59 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 15 2015 00:01:32 for RBE 2002 Group #3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

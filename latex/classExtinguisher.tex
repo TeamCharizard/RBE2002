@@ -1,0 +1,220 @@
+\hypertarget{classExtinguisher}{\section{Extinguisher Class Reference}
+\label{classExtinguisher}\index{Extinguisher@{Extinguisher}}
+}
+
+
+houses the state machine for extinguishing the candle \hyperlink{classFan}{Fan} is included  
+
+
+
+
+{\ttfamily \#include $<$Extinguisher.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classExtinguisher_a5a6f4652de68d87d3c94a5133770036f}{setup} ()
+\begin{DoxyCompactList}\small\item\em setup fan and state machine. Called my main setup \end{DoxyCompactList}\item 
+void \hyperlink{classExtinguisher_add162f2794a81915e50bdde84f582ab9}{change\-State} (\hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}{State} \hyperlink{classExtinguisher_aa67c13dc091e5dc2c054d53f7fcae69b}{state})
+\item 
+bool \hyperlink{classExtinguisher_ab11afd0f55af4485a1a4f369c7743a40}{run} ()
+\begin{DoxyCompactList}\small\item\em state machine method. States liste in $\ast$state\-Names \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}{State} \{ \\*
+\hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba25f6661e71a4e779393f9e1d0afdb9cd}{I\-N\-I\-T}, 
+\hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba2ff965592f07601418ca89485f335cb2}{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-B\-L\-O\-W}, 
+\hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba1defb0b77459569c811478b71cbbf13e}{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-V\-E\-R\-I\-F\-Y}, 
+\hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba9d3fa0261c6cf909a97ca68eee27ed0d}{B\-L\-O\-W\-I\-N\-G}, 
+\\*
+\hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba5152bb2f7b6f5f9f8b53204d0ae61ddd}{V\-E\-R\-I\-F\-Y\-I\-N\-G}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFan}{Fan} \hyperlink{classExtinguisher_a47ec6f79ddc26b18bbc1a0ac9741ae24}{fan}
+\begin{DoxyCompactList}\small\item\em Extinguishing fan. \end{DoxyCompactList}\item 
+\hyperlink{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}{State} \hyperlink{classExtinguisher_aa67c13dc091e5dc2c054d53f7fcae69b}{state}
+\begin{DoxyCompactList}\small\item\em State Machine control variable. \end{DoxyCompactList}\item 
+long \hyperlink{classExtinguisher_a75020779b6ba6fcd9ac11148a378d441}{start\-State\-Time} = 0l
+\begin{DoxyCompactList}\small\item\em Timer variable for time based states. \end{DoxyCompactList}\item 
+float \hyperlink{classExtinguisher_af7b156761cc23a5bee07f3cecd50213a}{goal\-Angle} = 0.\-0f
+\begin{DoxyCompactList}\small\item\em Goal Angle to face after turns. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classExtinguisher_a91cd54af9125620a68939ccdc5796c66}{state\-Names} \mbox{[}5\mbox{]}
+\begin{DoxyCompactList}\small\item\em Names of States. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classExtinguisher_a454a63d5013db7cec4e5ae18fbfe64fa}{B\-L\-O\-W\-\_\-\-T\-I\-M\-E} = 6000
+\begin{DoxyCompactList}\small\item\em Length of timers. \end{DoxyCompactList}\item 
+static const int \hyperlink{classExtinguisher_a1f4f2c248d5fcf98a62eab8019ab79f9}{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E} = 2000
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+houses the state machine for extinguishing the candle \hyperlink{classFan}{Fan} is included 
+
+Definition at line 8 of file Extinguisher.\-hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}{\index{Extinguisher@{Extinguisher}!State@{State}}
+\index{State@{State}!Extinguisher@{Extinguisher}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Extinguisher\-::\-State}\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtinguisher_a969a7cce3382fc5d67f687540896e3ab}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\-N\-I\-T@{I\-N\-I\-T}!Extinguisher@{Extinguisher}}\index{Extinguisher@{Extinguisher}!I\-N\-I\-T@{I\-N\-I\-T}}\item[{\em 
+\hypertarget{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba25f6661e71a4e779393f9e1d0afdb9cd}{I\-N\-I\-T}\label{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba25f6661e71a4e779393f9e1d0afdb9cd}
+}]\index{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-B\-L\-O\-W@{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-B\-L\-O\-W}!Extinguisher@{Extinguisher}}\index{Extinguisher@{Extinguisher}!T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-B\-L\-O\-W@{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-B\-L\-O\-W}}\item[{\em 
+\hypertarget{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba2ff965592f07601418ca89485f335cb2}{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-B\-L\-O\-W}\label{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba2ff965592f07601418ca89485f335cb2}
+}]\index{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-V\-E\-R\-I\-F\-Y@{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-V\-E\-R\-I\-F\-Y}!Extinguisher@{Extinguisher}}\index{Extinguisher@{Extinguisher}!T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-V\-E\-R\-I\-F\-Y@{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-V\-E\-R\-I\-F\-Y}}\item[{\em 
+\hypertarget{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba1defb0b77459569c811478b71cbbf13e}{T\-U\-R\-N\-I\-N\-G\-\_\-\-T\-O\-\_\-\-V\-E\-R\-I\-F\-Y}\label{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba1defb0b77459569c811478b71cbbf13e}
+}]\index{B\-L\-O\-W\-I\-N\-G@{B\-L\-O\-W\-I\-N\-G}!Extinguisher@{Extinguisher}}\index{Extinguisher@{Extinguisher}!B\-L\-O\-W\-I\-N\-G@{B\-L\-O\-W\-I\-N\-G}}\item[{\em 
+\hypertarget{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba9d3fa0261c6cf909a97ca68eee27ed0d}{B\-L\-O\-W\-I\-N\-G}\label{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba9d3fa0261c6cf909a97ca68eee27ed0d}
+}]\index{V\-E\-R\-I\-F\-Y\-I\-N\-G@{V\-E\-R\-I\-F\-Y\-I\-N\-G}!Extinguisher@{Extinguisher}}\index{Extinguisher@{Extinguisher}!V\-E\-R\-I\-F\-Y\-I\-N\-G@{V\-E\-R\-I\-F\-Y\-I\-N\-G}}\item[{\em 
+\hypertarget{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba5152bb2f7b6f5f9f8b53204d0ae61ddd}{V\-E\-R\-I\-F\-Y\-I\-N\-G}\label{classExtinguisher_a969a7cce3382fc5d67f687540896e3aba5152bb2f7b6f5f9f8b53204d0ae61ddd}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 10 of file Extinguisher.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExtinguisher_add162f2794a81915e50bdde84f582ab9}{\index{Extinguisher@{Extinguisher}!change\-State@{change\-State}}
+\index{change\-State@{change\-State}!Extinguisher@{Extinguisher}}
+\subsubsection[{change\-State}]{\setlength{\rightskip}{0pt plus 5cm}void Extinguisher\-::change\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf State}}]{state}
+\end{DoxyParamCaption}
+)}}\label{classExtinguisher_add162f2794a81915e50bdde84f582ab9}
+
+
+Definition at line 10 of file Extinguisher.\-cpp.
+
+\hypertarget{classExtinguisher_ab11afd0f55af4485a1a4f369c7743a40}{\index{Extinguisher@{Extinguisher}!run@{run}}
+\index{run@{run}!Extinguisher@{Extinguisher}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}bool Extinguisher\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classExtinguisher_ab11afd0f55af4485a1a4f369c7743a40}
+
+
+state machine method. States liste in $\ast$state\-Names 
+
+
+
+Definition at line 15 of file Extinguisher.\-cpp.
+
+\hypertarget{classExtinguisher_a5a6f4652de68d87d3c94a5133770036f}{\index{Extinguisher@{Extinguisher}!setup@{setup}}
+\index{setup@{setup}!Extinguisher@{Extinguisher}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}void Extinguisher\-::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classExtinguisher_a5a6f4652de68d87d3c94a5133770036f}
+
+
+setup fan and state machine. Called my main setup 
+
+
+
+Definition at line 5 of file Extinguisher.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classExtinguisher_a454a63d5013db7cec4e5ae18fbfe64fa}{\index{Extinguisher@{Extinguisher}!B\-L\-O\-W\-\_\-\-T\-I\-M\-E@{B\-L\-O\-W\-\_\-\-T\-I\-M\-E}}
+\index{B\-L\-O\-W\-\_\-\-T\-I\-M\-E@{B\-L\-O\-W\-\_\-\-T\-I\-M\-E}!Extinguisher@{Extinguisher}}
+\subsubsection[{B\-L\-O\-W\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Extinguisher\-::\-B\-L\-O\-W\-\_\-\-T\-I\-M\-E = 6000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classExtinguisher_a454a63d5013db7cec4e5ae18fbfe64fa}
+
+
+Length of timers. 
+
+
+
+Definition at line 41 of file Extinguisher.\-hpp.
+
+\hypertarget{classExtinguisher_a47ec6f79ddc26b18bbc1a0ac9741ae24}{\index{Extinguisher@{Extinguisher}!fan@{fan}}
+\index{fan@{fan}!Extinguisher@{Extinguisher}}
+\subsubsection[{fan}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fan} Extinguisher\-::fan\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtinguisher_a47ec6f79ddc26b18bbc1a0ac9741ae24}
+
+
+Extinguishing fan. 
+
+
+
+Definition at line 29 of file Extinguisher.\-hpp.
+
+\hypertarget{classExtinguisher_af7b156761cc23a5bee07f3cecd50213a}{\index{Extinguisher@{Extinguisher}!goal\-Angle@{goal\-Angle}}
+\index{goal\-Angle@{goal\-Angle}!Extinguisher@{Extinguisher}}
+\subsubsection[{goal\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}float Extinguisher\-::goal\-Angle = 0.\-0f\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtinguisher_af7b156761cc23a5bee07f3cecd50213a}
+
+
+Goal Angle to face after turns. 
+
+
+
+Definition at line 38 of file Extinguisher.\-hpp.
+
+\hypertarget{classExtinguisher_a75020779b6ba6fcd9ac11148a378d441}{\index{Extinguisher@{Extinguisher}!start\-State\-Time@{start\-State\-Time}}
+\index{start\-State\-Time@{start\-State\-Time}!Extinguisher@{Extinguisher}}
+\subsubsection[{start\-State\-Time}]{\setlength{\rightskip}{0pt plus 5cm}long Extinguisher\-::start\-State\-Time = 0l\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtinguisher_a75020779b6ba6fcd9ac11148a378d441}
+
+
+Timer variable for time based states. 
+
+
+
+Definition at line 35 of file Extinguisher.\-hpp.
+
+\hypertarget{classExtinguisher_aa67c13dc091e5dc2c054d53f7fcae69b}{\index{Extinguisher@{Extinguisher}!state@{state}}
+\index{state@{state}!Extinguisher@{Extinguisher}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State} Extinguisher\-::state\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtinguisher_aa67c13dc091e5dc2c054d53f7fcae69b}
+
+
+State Machine control variable. 
+
+
+
+Definition at line 32 of file Extinguisher.\-hpp.
+
+\hypertarget{classExtinguisher_a91cd54af9125620a68939ccdc5796c66}{\index{Extinguisher@{Extinguisher}!state\-Names@{state\-Names}}
+\index{state\-Names@{state\-Names}!Extinguisher@{Extinguisher}}
+\subsubsection[{state\-Names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Extinguisher\-::state\-Names\mbox{[}5\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}}\label{classExtinguisher_a91cd54af9125620a68939ccdc5796c66}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \{
+      \textcolor{stringliteral}{"INIT          "},
+      \textcolor{stringliteral}{"TURNING\_BLOW  "},
+      \textcolor{stringliteral}{"TURNING\_VERIFY"},
+      \textcolor{stringliteral}{"BLOWING       "},
+      \textcolor{stringliteral}{"VERIFYING     "}\}
+\end{DoxyCode}
+
+
+Names of States. 
+
+
+
+Definition at line 45 of file Extinguisher.\-hpp.
+
+\hypertarget{classExtinguisher_a1f4f2c248d5fcf98a62eab8019ab79f9}{\index{Extinguisher@{Extinguisher}!V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E@{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E}}
+\index{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E@{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E}!Extinguisher@{Extinguisher}}
+\subsubsection[{V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Extinguisher\-::\-V\-E\-R\-I\-F\-Y\-\_\-\-T\-I\-M\-E = 2000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classExtinguisher_a1f4f2c248d5fcf98a62eab8019ab79f9}
+
+
+Definition at line 42 of file Extinguisher.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/shared/\hyperlink{Extinguisher_8hpp}{Extinguisher.\-hpp}\item 
+src/shared/\hyperlink{Extinguisher_8cpp}{Extinguisher.\-cpp}\end{DoxyCompactItemize}
