@@ -13,7 +13,6 @@ void Robot::setup(){
   ff.setup();
   searcher.setup();
   extinguisher.setup();
-  pinMode(29,INPUT_PULLUP);
   pushPos();
 }
 
