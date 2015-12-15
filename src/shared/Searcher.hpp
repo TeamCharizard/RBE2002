@@ -85,7 +85,6 @@ class Searcher {
       CHECKING,
       CHECK_AFTER_SCOOT,
       GO_TO_CANDLE,
-      CHECK_FINAL,
       TURN_TO_CANDLE
     };
 
@@ -100,7 +99,6 @@ class Searcher {
       "CHECKNG         ",
       "CHECK_AFTR_SCOOT",
       "GO_TO_CANDLE    ",
-      "CHECK_FINAL     ",
       "TURN_TO_CANDLE  "
     };
 

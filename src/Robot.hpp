@@ -96,6 +96,8 @@ class Robot {
      */
     bool turnToFaceAbsolutely(float angle);
 
+    /** \brief blink LED eyes for 1 second */
+    void blink();
     // making these public so other subsystems
 
     /** \brief lidar subsystem */

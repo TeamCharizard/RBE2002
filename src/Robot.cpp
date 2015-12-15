@@ -8,11 +8,12 @@ Robot *Robot::instance = NULL;
 Robot::Robot() {}
 
 void Robot::setup(){
+  extinguisher.setup();
   lidar.setup();
   base.setup();
   ff.setup();
   searcher.setup();
-  extinguisher.setup();
+  pinMode(13,OUTPUT);
   pushPos();
 }
 
@@ -48,6 +49,15 @@ void Robot::setDrive(DriveDirection dir){
     case DriveDirection::BACKWARD:
       base.setSpeeds(-100,-100);
       break;
+  }
+}
+
+void Robot::blink(){
+  bool ledOn = false;
+  for (int i=0; i<10; i++){
+    digitalWrite(13,ledOn);
+    ledOn = !ledOn;
+    delay(100);
   }
 }
 

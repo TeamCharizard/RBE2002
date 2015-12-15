@@ -90,6 +90,7 @@ bool Searcher::run(){
           bool tooClose = distToCandleInches < Robot::CANDLE_APPROACH_DISTANCE_INCHES;
           if (!tooClose){
             Robot::getInstance()->setGoalToCandle();
+            Robot::getInstance()->blink();
             changeState(GO_TO_CANDLE);
           }
           else {
@@ -109,6 +110,7 @@ bool Searcher::run(){
             if (!tooClose){
               Robot::getInstance()->setGoalToCandle();
               Robot::getInstance()->pushPos();
+              Robot::getInstance()->blink();
               changeState(GO_TO_CANDLE);
             }
             else {
@@ -131,19 +133,6 @@ bool Searcher::run(){
             changeState(TURN_TO_CANDLE);
           }
         }
-      }
-      break;
-    case CHECK_FINAL:
-      switch (check()){
-        case FOUND:
-          Robot::getInstance()->pushPos();
-          changeState(TURN_TO_CANDLE);
-          break;
-        case MISTAKEN:
-          changeState(SEARCHING);
-          break;
-        case THINKING:
-          break;
       }
       break;
     case TURN_TO_CANDLE:

@@ -10,9 +10,7 @@ void Fan::setup(){
   while(digitalRead(BUTTON_PIN));
   while(!digitalRead(BUTTON_PIN));
     //wait for button press and release
-  delay(INIT_PAUSE);
   motor.write(0);
-  delay(INIT_PAUSE);
 }
 
 void Fan::spin(){
