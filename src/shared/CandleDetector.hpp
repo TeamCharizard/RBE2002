@@ -18,6 +18,8 @@ class CandleDetector{
     Point<float> relativePosition();
 
   private:
+    // Add 40 mm (~1.5in) to detected candle distance to account for size of base
+    const int CANDLE_CENTER_OFFSET = 40;
 
     int candleDistance = 0,
         candleAngle = 0;

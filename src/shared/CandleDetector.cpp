@@ -12,7 +12,7 @@ int CandleDetector::angle(){
 }
 
 int CandleDetector::distance(){
-  return candleDistance;
+  return candleDistance+CANDLE_CENTER_OFFSET;
 }
 
 Point<float> CandleDetector::relativePosition(){
