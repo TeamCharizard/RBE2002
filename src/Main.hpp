@@ -2,6 +2,7 @@
 
 #include "Robot.hpp"
 
+/** \brief Main is the highest level state machine for the robot */
 class Main{
   private:
     /** \brief The main states of the robot */

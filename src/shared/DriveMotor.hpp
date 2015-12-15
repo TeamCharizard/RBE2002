@@ -10,6 +10,8 @@ enum DriveDirection{
   RIGHT
 };
 
+/** \brief Basic wrapper around servo that allows -100 to 100 speeds
+ * instead of 0 to 180 */
 class DriveMotor {
   public:
     /** \brief setup motor */

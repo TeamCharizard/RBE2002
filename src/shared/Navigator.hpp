@@ -2,11 +2,12 @@
 #include "Point.hpp"
 #include "PID.hpp"
 
+/** \brief Contains methods for navigating to absolute points on the field */
 class Navigator {
 public:
   Navigator();
   /**
-   * \brief set the goal to drive to 
+   * \brief set the goal to drive to
    * This also resets the internal state
    * \param goal the point to drive to (in world coordinates)
    */

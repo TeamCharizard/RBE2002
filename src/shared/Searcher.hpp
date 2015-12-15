@@ -1,11 +1,14 @@
 #pragma once
-/** \bried
- *  Houses state machine for searching for the candle
- *  */
 #include "Point.hpp"
 #include "DriveMotor.hpp"
 #include "Lidar.hpp"
 
+/** \brief
+ *  Houses state machine for searching for the candle.
+ *  Functions like check, driveAndAvoid, and others
+ *  are used to control the states up until the robot is at the candle
+ *  and ready to extiguish.
+ *  */
 class Searcher {
   private:
     enum CheckState {

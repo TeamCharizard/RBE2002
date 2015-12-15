@@ -3,6 +3,9 @@
 #include <Arduino.h>
 #include "../charizard.hpp"
 
+/** \brief Wrapper class around the Display in charizard.
+ * Allows for clean printing and custom characters
+ */
 class StatusManager {
   public:
 

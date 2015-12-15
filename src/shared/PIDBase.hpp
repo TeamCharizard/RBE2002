@@ -5,6 +5,10 @@
 #include "DriveMotor.hpp"
 #include "PID.hpp"
 
+/** \brief contains PIDs for controlling the turning and driving of the robot.
+ * You can turn to a specific angle, drive straight with a speed,
+ * or turn at a speed.
+ */
 class PIDBase {
   public:
     PIDBase();

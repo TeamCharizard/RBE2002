@@ -2,6 +2,8 @@
 
 #include <Servo.h>
 
+/** \brief Wrapper around head servo,
+ * and contains functions for scanning for fire and reporting candle height */
 class FireFinder {
 
   public:

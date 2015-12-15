@@ -11,6 +11,8 @@
 #include "shared/Stack.hpp"
 #include "shared/Navigator.hpp"
 
+/** \brief Contains functions like setting drive PIDs, and functions corresponding to states in the Main state machine
+ */
 class Robot {
   public:
     /** \brief singleton accessor for robot instance.

@@ -2,6 +2,7 @@
 
 #include "Point.hpp"
 
+/** \brief Contains methods for detecting candle and storing its location */
 class CandleDetector{
 
   public:

@@ -3,6 +3,7 @@
 #include <L3G.h>
 #include <Wire.h>
 
+/** \brief simple wrapper around L3G gyro to do the integration */
 class Gyro {
   public:
     Gyro();

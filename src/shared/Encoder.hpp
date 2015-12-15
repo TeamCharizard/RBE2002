@@ -1,6 +1,9 @@
 #pragma once
 #include <Arduino.h>
 
+/** \brief Template class for encoder counting.
+ * It takes the two ports as template arguments
+ * and uses simple quadrature counting */
 template<int port1, int port2>
 class Encoder {
 public:
