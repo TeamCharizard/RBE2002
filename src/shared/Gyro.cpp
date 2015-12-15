@@ -29,6 +29,11 @@ int Gyro::read(){
   gyro_zold=gyro_z;
 
   //to degrees!
-  return gyro_z * 180 / M_PI;
+  float angleInDegress = gyro_z * 180 / M_PI;
+
+  if (angleInDegress > 359) angleInDegress -= 360;
+  if (angleInDegress < 0) angleInDegress += 360;
+
+  return angleInDegress;
 }
 
