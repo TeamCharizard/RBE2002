@@ -114,11 +114,13 @@ bool Searcher::run(){
               changeState(GO_TO_CANDLE);
             }
             else {
+              Robot::getInstance()->pushPos();
               changeState(TURN_TO_CANDLE);
             }
           }
           break;
         case MISTAKEN:
+          Robot::getInstance()->pushPos();
           changeState(CHECKING);
           break;
       }
