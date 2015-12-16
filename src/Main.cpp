@@ -6,7 +6,7 @@
 void Main::setup(){
   charizard = Robot::getInstance();
   charizard->setup();
-  changeState(SEARCH_FOR_CANDLE);
+  changeState(RETURN_TO_ORIGIN);
 }
 
 void Main::changeState(State state){

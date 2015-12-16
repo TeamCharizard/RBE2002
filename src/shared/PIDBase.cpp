@@ -6,7 +6,7 @@
 PIDBase::PIDBase() :
   lPID(-1.0,0,0,true),
   rPID(1.0,0,0,true),
-  dirPID(-50,0.0,9.5,false){
+  dirPID(-60,0.0,0.0,false){
   }
 
 void PIDBase::setup(){
@@ -81,14 +81,10 @@ bool PIDBase::turnAbsolutely(float direction){
 
   float angleError = abs(current - setpoint);
 
-  /*
-   *Serial.print("error=");
-   *Serial.print(angleError);
-   *Serial.print("dirOut=");
-   *Serial.println(dirOut);
-   */
+  Serial.print(angleError);
+  Serial.print(",");
+  Serial.println(dirOut);
 
-  //debugPrint(1,"err=%-3d            ",  (int)(angleError*180/M_PI));
   if ( rPID.stopped() && lPID.stopped() &&
       (angleError < M_PI*4.0/180.0)){
     return true;

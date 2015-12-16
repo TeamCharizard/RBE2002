@@ -27,8 +27,11 @@ bool Navigator::run() {
     float power = distPid.run(distance);
     power = min(100, max(-100, power));
     Robot::getInstance()->base.setSpeeds(power, power);
+    Serial.print(distance);
+    Serial.print(",");
+    Serial.println(power);
 
-    if(Robot::getInstance()->base.stopped() && abs(distance) < 1.0) {
+    if(Robot::getInstance()->base.stopped() && abs(distance) < 1) {
       return true;
     }
 

@@ -15,6 +15,12 @@ void Robot::setup(){
   searcher.setup();
   pinMode(13,OUTPUT);
   pushPos();
+
+  int d = 20;
+  path.push(Point<float>(0,0));
+  path.push(Point<float>(0,d));
+  path.push(Point<float>(d,d));
+  path.push(Point<float>(d,0));
 }
 
 Robot *Robot::getInstance(){
