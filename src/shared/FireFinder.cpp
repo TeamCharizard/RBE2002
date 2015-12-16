@@ -34,8 +34,6 @@ void FireFinder::startScan(){
 float FireFinder::watch(int dToCandle){
   if (scanning){
     if (position > 180){
-      head.write(0);
-
       scanning = false;
       position = 0;
 
@@ -43,16 +41,15 @@ float FireFinder::watch(int dToCandle){
         return -1;
       }
 
+      head.write(minPosition);
       float angle = (minPosition * (MAX_HEAD_ANGLE - MIN_HEAD_ANGLE) / 180) + MIN_HEAD_ANGLE;
-      float height = SENSOR_HEIGHT + tan(angle * M_PI / 180.0) * dToCandle;
-      float heightInInches = (height / 25.4 + 0.5);
+      float height = SENSOR_HEIGHT + tan(angle * M_PI / 180.0) * (dToCandle - SENSOR_X_OFFSET);
+      float heightInInches = height / 25.4;
       return heightInInches;
     }
     else {
       long now = millis();
       if (now - timeToChangeAngle > sweepTime/(180/step)){
-        head.write(position);
-        position += step;
         timeToChangeAngle = now;
 
         long sum = 0;
@@ -65,6 +62,8 @@ float FireFinder::watch(int dToCandle){
           minPosition = position;
         }
 
+        head.write(position);
+        position += step;
       }
     }
   }

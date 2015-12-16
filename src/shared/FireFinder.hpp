@@ -20,6 +20,7 @@ class FireFinder {
     bool seesCandle();
 
     /** \brief Call this continuously to check candle height.
+     * \param dToCandle the distance to candle in millimeters
      * \return 0 for not finish, -1 for no candle, and positive for the candle height
      */
     float watch(int dToCandle);
@@ -46,15 +47,16 @@ class FireFinder {
 
     /** \brief Controls the speed of sweeping. */
     long timeToChangeAngle = 0l;
-    long sweepTime = 5000l;
+    long sweepTime = 10000l;
     long step = 3;
 
     const static int MOTOR_PIN = 10;
     const static int SENSOR_PIN = 0;
-    const static int MAX_HEAD_ANGLE = 20;
+    const static int MAX_HEAD_ANGLE = 30;
     const static int MIN_HEAD_ANGLE = -35;
     const static int SAMPLE_SIZE = 10;
-    const static int SENSOR_HEIGHT = 210;
+    const static int SENSOR_HEIGHT = 220;
     const static int INTENSITY_THRESHOLD = 35;
+    const static int SENSOR_X_OFFSET = 90;
     const static int MIN_INTENSITY = 995;
 };

@@ -47,6 +47,7 @@ bool Extinguisher::run(){
       Robot::getInstance()->base.drive();
       if (millis() - startStateTime > VERIFY_TIME){
         if (!Robot::getInstance()->ff.seesCandle()){
+          Robot::getInstance()->ledsOff();
           return true;
         }
         else {

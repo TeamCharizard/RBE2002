@@ -61,6 +61,10 @@ void Robot::blink(){
   }
 }
 
+void Robot::ledsOff(){
+  digitalWrite(13,0);
+}
+
 void Robot::pushPos(){
   path.push(Point<float>(base.x(),base.y()));
 }
@@ -102,7 +106,8 @@ bool Robot::findCandleHeight(){
     scanning = true;
   }
 
-  float candleHeight = ff.watch(detector.distance());
+  int dToCandle = detector.distance();
+  float candleHeight = ff.watch(762);
 
   if(candleHeight > 0){
     if (candleHeight > 11){
@@ -111,9 +116,10 @@ bool Robot::findCandleHeight(){
     else if (candleHeight < 6.5){
       candleHeight = 6.5;
     }
-    StatusManager::candleHeight = (int)(candleHeight + 0.5);
+    StatusManager::candleHeight = (int)(candleHeight);
     StatusManager::candleHeightFrac = (int)(candleHeight * 10) % 10;
 
+    delay(1000);
     return true;
   }
   else if (candleHeight == 0){

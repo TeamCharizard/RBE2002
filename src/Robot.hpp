@@ -100,6 +100,10 @@ class Robot {
 
     /** \brief blink LED eyes for 1 second */
     void blink();
+
+    /** \brief turn of LEDs */
+    void ledsOff();
+
     // making these public so other subsystems
 
     /** \brief lidar subsystem */
