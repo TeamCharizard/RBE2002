@@ -124,7 +124,7 @@ class Robot {
     const static int CANDLE_APPROACH_DISTANCE_INCHES = 30;
 
     /** \brief WIDTH of half the robot plus a little bit to give some */
-    const static int WIDTH = 205;
+    const static int WIDTH = 275;
 
     /** \brief the period at which we update odometry */
     const static long UPDATE_PERIOD = 270;
